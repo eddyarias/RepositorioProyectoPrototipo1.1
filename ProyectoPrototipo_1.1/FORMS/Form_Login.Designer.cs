@@ -28,108 +28,115 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.BLogin = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.TBUsername = new System.Windows.Forms.TextBox();
-            this.TBPassword = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Login));
+            BLogin = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            TBUsername = new TextBox();
+            TBPassword = new TextBox();
+            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // BLogin
             // 
-            this.BLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BLogin.Location = new System.Drawing.Point(59, 152);
-            this.BLogin.Name = "BLogin";
-            this.BLogin.Size = new System.Drawing.Size(190, 55);
-            this.BLogin.TabIndex = 0;
-            this.BLogin.UseVisualStyleBackColor = false;
-            this.BLogin.Click += new System.EventHandler(this.BLogin_Click);
+            BLogin.BackColor = SystemColors.ButtonFace;
+            BLogin.Image = (Image)resources.GetObject("BLogin.Image");
+            BLogin.Location = new Point(59, 190);
+            BLogin.Margin = new Padding(3, 4, 3, 4);
+            BLogin.Name = "BLogin";
+            BLogin.Size = new Size(190, 69);
+            BLogin.TabIndex = 0;
+            BLogin.UseVisualStyleBackColor = false;
+            BLogin.Click += BLogin_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(15, 45);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Username:";
+            label1.AutoSize = true;
+            label1.Location = new Point(15, 56);
+            label1.Name = "label1";
+            label1.Size = new Size(78, 20);
+            label1.TabIndex = 1;
+            label1.Text = "Username:";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(15, 100);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 16);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Password:";
+            label2.AutoSize = true;
+            label2.Location = new Point(15, 125);
+            label2.Name = "label2";
+            label2.Size = new Size(73, 20);
+            label2.TabIndex = 2;
+            label2.Text = "Password:";
             // 
             // TBUsername
             // 
-            this.TBUsername.Location = new System.Drawing.Point(114, 42);
-            this.TBUsername.Name = "TBUsername";
-            this.TBUsername.Size = new System.Drawing.Size(160, 22);
-            this.TBUsername.TabIndex = 3;
+            TBUsername.Location = new Point(114, 52);
+            TBUsername.Margin = new Padding(3, 4, 3, 4);
+            TBUsername.Name = "TBUsername";
+            TBUsername.Size = new Size(160, 27);
+            TBUsername.TabIndex = 3;
             // 
             // TBPassword
             // 
-            this.TBPassword.Location = new System.Drawing.Point(114, 94);
-            this.TBPassword.Name = "TBPassword";
-            this.TBPassword.PasswordChar = '*';
-            this.TBPassword.Size = new System.Drawing.Size(160, 22);
-            this.TBPassword.TabIndex = 4;
+            TBPassword.Location = new Point(114, 118);
+            TBPassword.Margin = new Padding(3, 4, 3, 4);
+            TBPassword.Name = "TBPassword";
+            TBPassword.PasswordChar = '*';
+            TBPassword.Size = new Size(160, 27);
+            TBPassword.TabIndex = 4;
             // 
             // pictureBox1
             // 
-      
-            this.pictureBox1.Location = new System.Drawing.Point(3, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(265, 239);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 9);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(265, 299);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.TBUsername);
-            this.panel1.Controls.Add(this.BLogin);
-            this.panel1.Controls.Add(this.TBPassword);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Location = new System.Drawing.Point(274, 7);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(297, 239);
-            this.panel1.TabIndex = 6;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(TBUsername);
+            panel1.Controls.Add(BLogin);
+            panel1.Controls.Add(TBPassword);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(label2);
+            panel1.Location = new Point(274, 9);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(297, 298);
+            panel1.TabIndex = 6;
             // 
             // Form_Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(578, 254);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.pictureBox1);
-            this.Name = "Form_Login";
-            this.Text = "Autenticación";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ButtonHighlight;
+            ClientSize = new Size(578, 318);
+            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form_Login";
+            Text = "Autenticación";
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ResumeLayout(false);
         }
 
         #endregion
 
-        private System.Windows.Forms.Button BLogin;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TBUsername;
-        private System.Windows.Forms.TextBox TBPassword;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private Button BLogin;
+        private Label label1;
+        private Label label2;
+        private TextBox TBUsername;
+        private TextBox TBPassword;
+        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }
