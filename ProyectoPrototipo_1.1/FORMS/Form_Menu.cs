@@ -20,13 +20,13 @@ namespace ProyectoPrototipo_1._0
         private void Form1_Load(object sender, EventArgs e)
         {
             // Ajustar el tamaño del formulario
-            this.Width = 968; // Ancho del formulario
-            this.Height = 1200; // Altura del formulario
+            this.Width = 1700; // Ancho del formulario
+            this.Height = 1000; // Altura del formulario
 
             // Centrar el formulario en la pantalla un poco hacia arriba
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
-                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 - 80); ;
+                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 - 40); ;
 
         }
 

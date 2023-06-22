@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menu));
             bttModuloInventario = new Button();
             bttModuloClientes = new Button();
             bttModuloProveedores = new Button();
@@ -44,7 +45,7 @@
             // 
             // bttModuloInventario
             // 
-            bttModuloInventario.Location = new Point(764, 105);
+            bttModuloInventario.Location = new Point(118, 675);
             bttModuloInventario.Margin = new Padding(3, 4, 3, 4);
             bttModuloInventario.Name = "bttModuloInventario";
             bttModuloInventario.Size = new Size(143, 145);
@@ -55,7 +56,7 @@
             // 
             // bttModuloClientes
             // 
-            bttModuloClientes.Location = new Point(408, 181);
+            bttModuloClientes.Location = new Point(207, 358);
             bttModuloClientes.Margin = new Padding(3, 4, 3, 4);
             bttModuloClientes.Name = "bttModuloClientes";
             bttModuloClientes.Size = new Size(145, 145);
@@ -66,7 +67,7 @@
             // 
             // bttModuloProveedores
             // 
-            bttModuloProveedores.Location = new Point(596, 181);
+            bttModuloProveedores.Location = new Point(207, 522);
             bttModuloProveedores.Margin = new Padding(3, 4, 3, 4);
             bttModuloProveedores.Name = "bttModuloProveedores";
             bttModuloProveedores.Size = new Size(137, 145);
@@ -77,7 +78,7 @@
             // 
             // bttModuloVentas
             // 
-            bttModuloVentas.Location = new Point(408, 20);
+            bttModuloVentas.Location = new Point(32, 358);
             bttModuloVentas.Margin = new Padding(3, 4, 3, 4);
             bttModuloVentas.Name = "bttModuloVentas";
             bttModuloVentas.Size = new Size(145, 145);
@@ -88,7 +89,7 @@
             // 
             // bttModuloCompras
             // 
-            bttModuloCompras.Location = new Point(596, 20);
+            bttModuloCompras.Location = new Point(32, 522);
             bttModuloCompras.Margin = new Padding(3, 4, 3, 4);
             bttModuloCompras.Name = "bttModuloCompras";
             bttModuloCompras.Size = new Size(137, 145);
@@ -117,7 +118,7 @@
             // 
             // BSalir
             // 
-            BSalir.Location = new Point(844, 998);
+            BSalir.Location = new Point(159, 891);
             BSalir.Margin = new Padding(3, 4, 3, 4);
             BSalir.Name = "BSalir";
             BSalir.Size = new Size(88, 49);
@@ -128,11 +129,12 @@
             // 
             // pictureBox1
             // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
             pictureBox1.Location = new Point(32, 4);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(320, 336);
-            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
@@ -145,10 +147,10 @@
             panel1.Controls.Add(bttModuloProveedores);
             panel1.Controls.Add(bttModuloVentas);
             panel1.Controls.Add(bttModuloCompras);
-            panel1.Location = new Point(15, 2);
+            panel1.Location = new Point(12, 13);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(917, 349);
+            panel1.Size = new Size(381, 861);
             panel1.TabIndex = 13;
             // 
             // Form_Menu
@@ -156,7 +158,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(980, 1055);
+            ClientSize = new Size(1682, 953);
             Controls.Add(panel1);
             Controls.Add(BSalir);
             Controls.Add(label2);
