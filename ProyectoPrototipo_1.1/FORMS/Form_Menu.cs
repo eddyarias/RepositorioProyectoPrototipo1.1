@@ -20,7 +20,7 @@ namespace ProyectoPrototipo_1._0
         private void Form1_Load(object sender, EventArgs e)
         {
             // Ajustar el tamaño del formulario
-            this.Width = 1700; // Ancho del formulario
+            this.Width = 1600; // Ancho del formulario
             this.Height = 1000; // Altura del formulario
 
             // Centrar el formulario en la pantalla un poco hacia arriba
@@ -65,12 +65,14 @@ namespace ProyectoPrototipo_1._0
             form_Compras.Show();
         }
 
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
 
-        }
 
         private void BSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Form_Menu_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
         }

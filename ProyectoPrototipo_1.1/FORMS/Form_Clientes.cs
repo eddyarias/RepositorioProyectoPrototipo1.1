@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoPrototipo_1._0.CLASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,8 +14,10 @@ namespace ProyectoPrototipo_1._0
 {
     public partial class Form_Clientes : Form
     {
+        private FarmaciaDbContext dbContext;
         public Form_Clientes()
         {
+            dbContext = new FarmaciaDbContext();
             InitializeComponent();
         }
 
@@ -22,9 +26,10 @@ namespace ProyectoPrototipo_1._0
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
-                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); 
-                                      ////cambio 1
-                                      ;
+                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+            dbContext.Cliente.Load();
+            dataGridView1.DataSource = dbContext.Cliente.Local.ToBindingList();
+            //dbContext.SaveChanges();
         }
 
         private void findClientButton_Click(object sender, EventArgs e)

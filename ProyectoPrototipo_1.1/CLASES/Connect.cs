@@ -21,7 +21,7 @@ namespace ProyectoPrototipo_1._0
         {
             usuario = ""; //crean un usuario como muestra el video 4, o usan el generico "sa" con la contraseña que crean cuando se instala el sql server
             server = "LAPTOP-S7D8N62P\\MSSQLSERVER10"; //poner su propio servidor con \\ en medio
-            bd = "db_farmacy"; //nombre de su base de datos
+            bd = "db_farmacia"; //nombre de su base de datos
 
             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
         }
@@ -31,7 +31,7 @@ namespace ProyectoPrototipo_1._0
             this.usuario = usuario;
             this.pass = pass;
             server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
-            bd = "db_farmacy";
+            bd = "db_farmacia";
 
             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
         }

@@ -158,7 +158,8 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
-            ClientSize = new Size(1682, 953);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            ClientSize = new Size(1510, 953);
             Controls.Add(panel1);
             Controls.Add(BSalir);
             Controls.Add(label2);
@@ -167,6 +168,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Menu";
             Text = "SISTEMA DE GESTIÓN PARA “FARMACY ECUADOR”";
+            FormClosing += Form_Menu_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             panel1.ResumeLayout(false);

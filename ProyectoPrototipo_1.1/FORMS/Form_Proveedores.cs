@@ -29,11 +29,9 @@ namespace ProyectoPrototipo_1._0
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); ;
 
-            dbContext.Proveedores.Load();
-            dataGridView1.DataSource = dbContext.Proveedores.Local.ToBindingList();
-            dbContext.SaveChanges();
-            MessageBox.Show("Conexión exitosa.");
-
+            dbContext.Proveedor.Load();
+            dataGridView1.DataSource = dbContext.Proveedor.Local.ToBindingList();
+            //dbContext.SaveChanges();
         }
         // Variable para almacenar el índice de la pestaña actual
         private int indicePestanaActual = 0;

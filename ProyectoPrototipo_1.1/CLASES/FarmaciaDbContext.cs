@@ -11,12 +11,15 @@ namespace ProyectoPrototipo_1._0.CLASES
 {
     public class FarmaciaDbContext : DbContext
     {
-        public DbSet<Class_Proveedores> Proveedores { get; set; }
+        public DbSet<Class_Proveedor> Proveedor { get; set; }
+        public DbSet<Class_Producto> Producto { get; set; }
+        public DbSet<Class_Cliente> Cliente { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            // Configuración para SQL Server
-            optionsBuilder.UseSqlServer("Server=LAPTOP-S7D8N62P\\MSSQLSERVER10;Database=db_farmacy;User=jonathan;Password=PJseverous75;TrustServerCertificate=true;");
+
+            //CAMBIAR LA CADENA DE CONEXIÓN CON SUS DATOS
+            optionsBuilder.UseSqlServer("Server=LAPTOP-S7D8N62P\\MSSQLSERVER10;Database=db_farmacia;User=jonathan;Password=PJseverous75;TrustServerCertificate=true;");
 
         }
     }
