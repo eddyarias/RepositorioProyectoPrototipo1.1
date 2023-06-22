@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eddya\\source\\repos\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {}
+    "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eddya\\source\\repos\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {
+    "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eddya\\source\\repos\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
+        "projectUniqueName": "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
         "projectName": "ProyectoPrototipo_1.1",
-        "projectPath": "C:\\Users\\eddya\\source\\repos\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
+        "projectPath": "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
         "packagesPath": "C:\\Users\\eddya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eddya\\source\\repos\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1\\obj\\",
+        "outputPath": "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\eddya\\AppData\\Roaming\\NuGet\\NuGet.Config",
