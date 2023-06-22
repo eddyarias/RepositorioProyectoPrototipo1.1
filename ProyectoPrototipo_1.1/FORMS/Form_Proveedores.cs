@@ -1,12 +1,11 @@
-﻿using ProyectoPrototipo_1._0.CLASES;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoPrototipo_1._0.CLASES;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.Entity;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.Remoting.Contexts;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -15,10 +14,10 @@ namespace ProyectoPrototipo_1._0
 {
     public partial class Form_Proveedores : Form
     {
-        //private FarmaciaDbContext dbContext;
+        private FarmaciaDbContext dbContext;
         public Form_Proveedores()
         {
-            //dbContext = new FarmaciaDbContext();
+            dbContext = new FarmaciaDbContext();
             InitializeComponent();
 
         }
@@ -30,49 +29,10 @@ namespace ProyectoPrototipo_1._0
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2-400,
                                       (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); ;
 
-
-            /*if (dbContext.Database.Exists())
-            {
-                dbContext.Proveedores.Load();
-                dataGridView1.DataSource = dbContext.Proveedores.Local.ToBindingList();
-                dbContext.SaveChanges();
-                MessageBox.Show("Conexión exitosa.");
-            }
-            else
-            {
-                MessageBox.Show("Conexión no exitosa.");
-            }*/
-
-            // Crear 5 proveedores
-            List<Class_Proveedores> proveedores = new List<Class_Proveedores>();
-
-            for (int i = 1; i <= 5; i++)
-            {
-                Class_Proveedores proveedor = new Class_Proveedores();
-                proveedor.ruc = i;
-                proveedor.razon_social = "Proveedor " + i;
-                proveedor.nombre = "Nombre " + i;
-                proveedor.apellido = "Apellido " + i;
-                proveedor.email = "proveedor" + i + "@example.com";
-                proveedor.ciudad = "Ciudad " + i;
-                proveedor.direccion = "Dirección " + i;
-                proveedor.telefono = "12345678" + i;
-                proveedor.rubro = "Rubro " + i;
-                proveedor.observaciones = "Observaciones del proveedor " + i;
-                proveedor.informacion_bancaria = "Información bancaria del proveedor " + i;
-                proveedor.calificacion = "Calificación " + i;
-
-                // Agregar el proveedor al contexto de la base de datos
-                //dbContext.Proveedores.Add(proveedor);
-
-                proveedores.Add(proveedor);
-            }
-
-            // Cargar los datos de los proveedores en el DataGridView
-            dataGridView1.DataSource = proveedores;
-
-            // Opcional: Guardar los cambios en la base de datos
-            //dbContext.SaveChanges();
+            dbContext.Proveedores.Load();
+            dataGridView1.DataSource = dbContext.Proveedores.Local.ToBindingList();
+            dbContext.SaveChanges();
+            MessageBox.Show("Conexión exitosa.");
 
         }
         // Variable para almacenar el índice de la pestaña actual

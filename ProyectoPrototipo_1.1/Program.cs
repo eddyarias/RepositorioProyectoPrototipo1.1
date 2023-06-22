@@ -1,3 +1,5 @@
+using ProyectoPrototipo_1._0;
+
 namespace ProyectoPrototipo_1._1
 {
     internal static class Program

@@ -42,7 +42,6 @@
             // BLogin
             // 
             this.BLogin.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BLogin.Image = global::ProyectoPrototipo_1._0.Properties.Resources.IngresarIcon;
             this.BLogin.Location = new System.Drawing.Point(59, 152);
             this.BLogin.Name = "BLogin";
             this.BLogin.Size = new System.Drawing.Size(190, 55);
@@ -85,7 +84,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProyectoPrototipo_1._0.Properties.Resources.Logo_Sysmacy2;
+      
             this.pictureBox1.Location = new System.Drawing.Point(3, 7);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(265, 239);

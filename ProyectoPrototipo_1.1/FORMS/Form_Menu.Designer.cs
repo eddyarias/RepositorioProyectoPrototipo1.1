@@ -28,156 +28,162 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.bttModuloInventario = new System.Windows.Forms.Button();
-            this.bttModuloClientes = new System.Windows.Forms.Button();
-            this.bttModuloProveedores = new System.Windows.Forms.Button();
-            this.bttModuloVentas = new System.Windows.Forms.Button();
-            this.bttModuloCompras = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.BSalir = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel1.SuspendLayout();
-            this.SuspendLayout();
+            bttModuloInventario = new Button();
+            bttModuloClientes = new Button();
+            bttModuloProveedores = new Button();
+            bttModuloVentas = new Button();
+            bttModuloCompras = new Button();
+            label1 = new Label();
+            label2 = new Label();
+            BSalir = new Button();
+            pictureBox1 = new PictureBox();
+            panel1 = new Panel();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panel1.SuspendLayout();
+            SuspendLayout();
             // 
             // bttModuloInventario
             // 
-            this.bttModuloInventario.Location = new System.Drawing.Point(764, 84);
-            this.bttModuloInventario.Name = "bttModuloInventario";
-            this.bttModuloInventario.Size = new System.Drawing.Size(143, 116);
-            this.bttModuloInventario.TabIndex = 0;
-            this.bttModuloInventario.Text = "MÓDULO DE INVENTARIO";
-            this.bttModuloInventario.UseVisualStyleBackColor = true;
-            this.bttModuloInventario.Click += new System.EventHandler(this.bttModuloInventario_Click);
+            bttModuloInventario.Location = new Point(764, 105);
+            bttModuloInventario.Margin = new Padding(3, 4, 3, 4);
+            bttModuloInventario.Name = "bttModuloInventario";
+            bttModuloInventario.Size = new Size(143, 145);
+            bttModuloInventario.TabIndex = 0;
+            bttModuloInventario.Text = "MÓDULO DE INVENTARIO";
+            bttModuloInventario.UseVisualStyleBackColor = true;
+            bttModuloInventario.Click += bttModuloInventario_Click;
             // 
             // bttModuloClientes
             // 
-            this.bttModuloClientes.Location = new System.Drawing.Point(408, 145);
-            this.bttModuloClientes.Name = "bttModuloClientes";
-            this.bttModuloClientes.Size = new System.Drawing.Size(145, 116);
-            this.bttModuloClientes.TabIndex = 1;
-            this.bttModuloClientes.Text = "MÓDULO DE CLIENTES";
-            this.bttModuloClientes.UseVisualStyleBackColor = true;
-            this.bttModuloClientes.Click += new System.EventHandler(this.bttModuloClientes_Click);
+            bttModuloClientes.Location = new Point(408, 181);
+            bttModuloClientes.Margin = new Padding(3, 4, 3, 4);
+            bttModuloClientes.Name = "bttModuloClientes";
+            bttModuloClientes.Size = new Size(145, 145);
+            bttModuloClientes.TabIndex = 1;
+            bttModuloClientes.Text = "MÓDULO DE CLIENTES";
+            bttModuloClientes.UseVisualStyleBackColor = true;
+            bttModuloClientes.Click += bttModuloClientes_Click;
             // 
             // bttModuloProveedores
             // 
-            this.bttModuloProveedores.Location = new System.Drawing.Point(596, 145);
-            this.bttModuloProveedores.Name = "bttModuloProveedores";
-            this.bttModuloProveedores.Size = new System.Drawing.Size(137, 116);
-            this.bttModuloProveedores.TabIndex = 2;
-            this.bttModuloProveedores.Text = "MÓDULO DE PROVEEDORES";
-            this.bttModuloProveedores.UseVisualStyleBackColor = true;
-            this.bttModuloProveedores.Click += new System.EventHandler(this.bttProveedores_Click);
+            bttModuloProveedores.Location = new Point(596, 181);
+            bttModuloProveedores.Margin = new Padding(3, 4, 3, 4);
+            bttModuloProveedores.Name = "bttModuloProveedores";
+            bttModuloProveedores.Size = new Size(137, 145);
+            bttModuloProveedores.TabIndex = 2;
+            bttModuloProveedores.Text = "MÓDULO DE PROVEEDORES";
+            bttModuloProveedores.UseVisualStyleBackColor = true;
+            bttModuloProveedores.Click += bttProveedores_Click;
             // 
             // bttModuloVentas
             // 
-            this.bttModuloVentas.Location = new System.Drawing.Point(408, 16);
-            this.bttModuloVentas.Name = "bttModuloVentas";
-            this.bttModuloVentas.Size = new System.Drawing.Size(145, 116);
-            this.bttModuloVentas.TabIndex = 3;
-            this.bttModuloVentas.Text = "MÓDULO DE VENTAS";
-            this.bttModuloVentas.UseVisualStyleBackColor = true;
-            this.bttModuloVentas.Click += new System.EventHandler(this.bttModuloVentas_Click);
+            bttModuloVentas.Location = new Point(408, 20);
+            bttModuloVentas.Margin = new Padding(3, 4, 3, 4);
+            bttModuloVentas.Name = "bttModuloVentas";
+            bttModuloVentas.Size = new Size(145, 145);
+            bttModuloVentas.TabIndex = 3;
+            bttModuloVentas.Text = "MÓDULO DE VENTAS";
+            bttModuloVentas.UseVisualStyleBackColor = true;
+            bttModuloVentas.Click += bttModuloVentas_Click;
             // 
             // bttModuloCompras
             // 
-            this.bttModuloCompras.Location = new System.Drawing.Point(596, 16);
-            this.bttModuloCompras.Name = "bttModuloCompras";
-            this.bttModuloCompras.Size = new System.Drawing.Size(137, 116);
-            this.bttModuloCompras.TabIndex = 4;
-            this.bttModuloCompras.Text = "MÓDULO DE COMPRAS";
-            this.bttModuloCompras.UseVisualStyleBackColor = true;
-            this.bttModuloCompras.Click += new System.EventHandler(this.bttModuloCompras_Click);
+            bttModuloCompras.Location = new Point(596, 20);
+            bttModuloCompras.Margin = new Padding(3, 4, 3, 4);
+            bttModuloCompras.Name = "bttModuloCompras";
+            bttModuloCompras.Size = new Size(137, 145);
+            bttModuloCompras.TabIndex = 4;
+            bttModuloCompras.Text = "MÓDULO DE COMPRAS";
+            bttModuloCompras.UseVisualStyleBackColor = true;
+            bttModuloCompras.Click += bttModuloCompras_Click;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.label1.Location = new System.Drawing.Point(36, 170);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(0, 39);
-            this.label1.TabIndex = 5;
+            label1.AutoSize = true;
+            label1.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(36, 212);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 39);
+            label1.TabIndex = 5;
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 34.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(319, 170);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 67);
-            this.label2.TabIndex = 6;
+            label2.AutoSize = true;
+            label2.Font = new Font("Microsoft Sans Serif", 34.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(319, 212);
+            label2.Name = "label2";
+            label2.Size = new Size(0, 67);
+            label2.TabIndex = 6;
             // 
             // BSalir
             // 
-            this.BSalir.Location = new System.Drawing.Point(844, 798);
-            this.BSalir.Name = "BSalir";
-            this.BSalir.Size = new System.Drawing.Size(88, 39);
-            this.BSalir.TabIndex = 9;
-            this.BSalir.Text = "SALIR";
-            this.BSalir.UseVisualStyleBackColor = true;
-            this.BSalir.Click += new System.EventHandler(this.BSalir_Click);
+            BSalir.Location = new Point(844, 998);
+            BSalir.Margin = new Padding(3, 4, 3, 4);
+            BSalir.Name = "BSalir";
+            BSalir.Size = new Size(88, 49);
+            BSalir.TabIndex = 9;
+            BSalir.Text = "SALIR";
+            BSalir.UseVisualStyleBackColor = true;
+            BSalir.Click += BSalir_Click;
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::ProyectoPrototipo_1._0.Properties.Resources.Logo_Sysmacy2;
-            this.pictureBox1.Location = new System.Drawing.Point(32, 3);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(320, 269);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Location = new Point(32, 4);
+            pictureBox1.Margin = new Padding(3, 4, 3, 4);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(320, 336);
+            pictureBox1.SizeMode = PictureBoxSizeMode.StretchImage;
+            pictureBox1.TabIndex = 11;
+            pictureBox1.TabStop = false;
             // 
             // panel1
             // 
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.bttModuloInventario);
-            this.panel1.Controls.Add(this.bttModuloClientes);
-            this.panel1.Controls.Add(this.bttModuloProveedores);
-            this.panel1.Controls.Add(this.bttModuloVentas);
-            this.panel1.Controls.Add(this.bttModuloCompras);
-            this.panel1.Location = new System.Drawing.Point(15, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(950, 278);
-            this.panel1.TabIndex = 13;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(pictureBox1);
+            panel1.Controls.Add(bttModuloInventario);
+            panel1.Controls.Add(bttModuloClientes);
+            panel1.Controls.Add(bttModuloProveedores);
+            panel1.Controls.Add(bttModuloVentas);
+            panel1.Controls.Add(bttModuloCompras);
+            panel1.Location = new Point(15, 2);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(917, 349);
+            panel1.TabIndex = 13;
             // 
             // Form_Menu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Window;
-            this.BackgroundImage = global::ProyectoPrototipo_1._0.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(980, 844);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.BSalir);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.IsMdiContainer = true;
-            this.Name = "Form_Menu";
-            this.Text = "SISTEMA DE GESTIÓN PARA “FARMACY ECUADOR”";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.Window;
+            ClientSize = new Size(980, 1055);
+            Controls.Add(panel1);
+            Controls.Add(BSalir);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            IsMdiContainer = true;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form_Menu";
+            Text = "SISTEMA DE GESTIÓN PARA “FARMACY ECUADOR”";
+            Load += Form1_Load;
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panel1.ResumeLayout(false);
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
-        private System.Windows.Forms.Button bttModuloInventario;
-        private System.Windows.Forms.Button bttModuloClientes;
-        private System.Windows.Forms.Button bttModuloProveedores;
-        private System.Windows.Forms.Button bttModuloVentas;
-        private System.Windows.Forms.Button bttModuloCompras;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Button BSalir;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Panel panel1;
+        private Button bttModuloInventario;
+        private Button bttModuloClientes;
+        private Button bttModuloProveedores;
+        private Button bttModuloVentas;
+        private Button bttModuloCompras;
+        private Label label1;
+        private Label label2;
+        private Button BSalir;
+        private PictureBox pictureBox1;
+        private Panel panel1;
     }
 }
 

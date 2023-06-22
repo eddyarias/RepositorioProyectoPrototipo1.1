@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {}
+    "C:\\sources\\Prototipo 1.1 Farmacia\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {}
   },
   "projects": {
-    "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {
+    "C:\\sources\\Prototipo 1.1 Farmacia\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
+        "projectUniqueName": "C:\\sources\\Prototipo 1.1 Farmacia\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
         "projectName": "ProyectoPrototipo_1.1",
-        "projectPath": "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
-        "packagesPath": "C:\\Users\\eddya\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\eddya\\Source\\Repos\\RepositorioProyectoPrototipo1.1\\ProyectoPrototipo_1.1\\obj\\",
+        "projectPath": "C:\\sources\\Prototipo 1.1 Farmacia\\ProyectoPrototipo_1.1\\ProyectoPrototipo_1.1.csproj",
+        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
+        "outputPath": "C:\\sources\\Prototipo 1.1 Farmacia\\ProyectoPrototipo_1.1\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\eddya\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -39,6 +39,20 @@
       "frameworks": {
         "net6.0-windows7.0": {
           "targetAlias": "net6.0-windows",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[7.0.7, )"
+            },
+            "System.Data.SqlClient": {
+              "target": "Package",
+              "version": "[4.8.5, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
@@ -58,7 +72,7 @@
               "privateAssets": "none"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.304\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.302\\RuntimeIdentifierGraph.json"
         }
       }
     }
