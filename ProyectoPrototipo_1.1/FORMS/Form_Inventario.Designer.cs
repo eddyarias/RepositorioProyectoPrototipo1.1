@@ -37,7 +37,6 @@
             label15 = new Label();
             textBox14 = new TextBox();
             label1 = new Label();
-            dataGridView3 = new DataGridView();
             textBox2 = new TextBox();
             textBox4 = new TextBox();
             textBox7 = new TextBox();
@@ -69,10 +68,10 @@
             tabPage5 = new TabPage();
             button6 = new Button();
             richTextBox1 = new RichTextBox();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl2.SuspendLayout();
             tabPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage5.SuspendLayout();
@@ -86,7 +85,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(616, 320);
+            dataGridView1.Size = new Size(616, 425);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -104,13 +103,13 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(button1);
             tabPage3.Controls.Add(label3);
             tabPage3.Controls.Add(textBox1);
             tabPage3.Controls.Add(textBox15);
             tabPage3.Controls.Add(label15);
             tabPage3.Controls.Add(textBox14);
             tabPage3.Controls.Add(label1);
-            tabPage3.Controls.Add(dataGridView3);
             tabPage3.Controls.Add(textBox2);
             tabPage3.Controls.Add(textBox4);
             tabPage3.Controls.Add(textBox7);
@@ -191,17 +190,6 @@
             label1.TabIndex = 68;
             label1.Text = "P.V.P:";
             // 
-            // dataGridView3
-            // 
-            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView3.Location = new Point(271, 345);
-            dataGridView3.Margin = new Padding(3, 4, 3, 4);
-            dataGridView3.Name = "dataGridView3";
-            dataGridView3.RowHeadersWidth = 51;
-            dataGridView3.RowTemplate.Height = 24;
-            dataGridView3.Size = new Size(616, 130);
-            dataGridView3.TabIndex = 67;
-            // 
             // textBox2
             // 
             textBox2.Location = new Point(113, 262);
@@ -264,7 +252,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(134, 391);
+            button3.Location = new Point(579, 456);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(84, 38);
@@ -274,7 +262,7 @@
             // 
             // button7
             // 
-            button7.Location = new Point(138, 437);
+            button7.Location = new Point(437, 456);
             button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
             button7.Size = new Size(80, 38);
@@ -480,6 +468,15 @@
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "Historial de operaciones realizadas en el inventario.";
             // 
+            // button1
+            // 
+            button1.Location = new Point(130, 400);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 74;
+            button1.Text = "Cancelar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // Form_Inventario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -494,7 +491,6 @@
             tabControl2.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
@@ -519,7 +515,6 @@
         private Label label15;
         private TextBox textBox14;
         private Label label1;
-        private DataGridView dataGridView3;
         private TextBox textBox2;
         private TextBox textBox4;
         private TextBox textBox7;
@@ -545,5 +540,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private Button button1;
     }
 }
