@@ -12,10 +12,8 @@ namespace ProyectoPrototipo_1._0
 {
     public partial class Form_Inventario : Form
     {
-        private FarmaciaDbContext dbContext;
         public Form_Inventario()
         {
-            dbContext = new FarmaciaDbContext();
             InitializeComponent();
         }
 
@@ -25,9 +23,26 @@ namespace ProyectoPrototipo_1._0
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
-            dbContext.Producto.Load();
-            dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
-            ///dbContext.SaveChanges();
+            //OBJETO TIPO INVENTARIO
+            Class_Inventario inventario = new Class_Inventario();
+
+            // Agregar productos al inventario
+            /*Class_Producto producto1 = new Class_Producto
+            {
+                codigo = 1,
+                cantidad = 10,
+                descripcion = "Producto 1",
+                lote = "Lote 123",
+                PVP = 19.99m,
+                precio_unitario = 15.99m,
+                fecha_cad = DateTime.Parse("2023-12-31"),
+                descuento = 0.1m,
+                iva = 0.16m
+            };
+            inventario.AgregarProducto(producto1);*/
+
+            // Mostrar el inventario en el dataGridView1
+            dataGridView1.DataSource = inventario.productos;
 
         }
 

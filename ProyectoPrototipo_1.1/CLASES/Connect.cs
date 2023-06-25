@@ -7,7 +7,6 @@ using System.Data.SqlClient;
 
 namespace ProyectoPrototipo_1._0
 {
-
     public class Connect
     {
         private string usuario;
