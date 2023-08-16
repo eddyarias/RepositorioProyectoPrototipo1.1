@@ -101,6 +101,7 @@
             textBox11 = new TextBox();
             label9 = new Label();
             dataGridView1 = new DataGridView();
+            button2 = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -633,7 +634,7 @@
             // 
             // button8
             // 
-            button8.Location = new Point(286, 19);
+            button8.Location = new Point(286, 30);
             button8.Margin = new Padding(3, 4, 3, 4);
             button8.Name = "button8";
             button8.Size = new Size(93, 35);
@@ -643,7 +644,7 @@
             // 
             // textBox17
             // 
-            textBox17.Location = new Point(101, 22);
+            textBox17.Location = new Point(101, 33);
             textBox17.Margin = new Padding(3, 4, 3, 4);
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(169, 27);
@@ -652,7 +653,7 @@
             // label35
             // 
             label35.AutoSize = true;
-            label35.Location = new Point(40, 26);
+            label35.Location = new Point(40, 37);
             label35.Name = "label35";
             label35.Size = new Size(60, 20);
             label35.TabIndex = 50;
@@ -660,6 +661,7 @@
             // 
             // tabPage5
             // 
+            tabPage5.Controls.Add(button2);
             tabPage5.Controls.Add(label36);
             tabPage5.Controls.Add(label16);
             tabPage5.Controls.Add(CBEvaluarProveedor);
@@ -719,7 +721,7 @@
             // 
             // textBox15
             // 
-            textBox15.Location = new Point(447, 108);
+            textBox15.Location = new Point(440, 47);
             textBox15.Margin = new Padding(3, 4, 3, 4);
             textBox15.Multiline = true;
             textBox15.Name = "textBox15";
@@ -729,7 +731,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(444, 84);
+            label15.Location = new Point(437, 23);
             label15.Name = "label15";
             label15.Size = new Size(108, 20);
             label15.TabIndex = 25;
@@ -835,6 +837,16 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // button2
+            // 
+            button2.Location = new Point(544, 170);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(104, 50);
+            button2.TabIndex = 34;
+            button2.Text = "Actualizar";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // Form_Proveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -939,5 +951,6 @@
         private Label label36;
         private DataGridView dataGridView2;
         private Label label10;
+        private Button button2;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPrototipo_1._1.FORMS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -82,7 +83,9 @@ namespace ProyectoPrototipo_1._0
 
         private void administraciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            Form_Administracion form_administracion = new Form_Administracion();
+            form_administracion.MdiParent = this;
+            form_administracion.Show();
         }
     }
 }
