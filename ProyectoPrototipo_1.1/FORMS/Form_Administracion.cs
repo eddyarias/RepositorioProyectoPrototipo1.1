@@ -23,5 +23,14 @@ namespace ProyectoPrototipo_1._1.FORMS
         {
 
         }
+
+        private void Form_Administracion_Load(object sender, EventArgs e)
+        {
+            this.StartPosition = FormStartPosition.Manual;
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
+                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+            // Cambiar el estado del formulario a maximizado
+            this.WindowState = FormWindowState.Maximized;
+        }
     }
 }

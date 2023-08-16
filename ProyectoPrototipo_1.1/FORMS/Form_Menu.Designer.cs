@@ -31,8 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menu));
             label1 = new Label();
             label2 = new Label();
-            BSalir = new Button();
-            pictureBox1 = new PictureBox();
             menuStrip1 = new MenuStrip();
             administraciónToolStripMenuItem = new ToolStripMenuItem();
             moduloProveedoresToolStripMenuItem = new ToolStripMenuItem();
@@ -40,7 +38,6 @@
             comprasToolStripMenuItem = new ToolStripMenuItem();
             proveedoresToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -62,35 +59,13 @@
             label2.Size = new Size(0, 67);
             label2.TabIndex = 6;
             // 
-            // BSalir
-            // 
-            BSalir.Location = new Point(12, 891);
-            BSalir.Margin = new Padding(3, 4, 3, 4);
-            BSalir.Name = "BSalir";
-            BSalir.Size = new Size(88, 49);
-            BSalir.TabIndex = 9;
-            BSalir.Text = "SALIR";
-            BSalir.UseVisualStyleBackColor = true;
-            BSalir.Click += BSalir_Click;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(1, 28);
-            pictureBox1.Margin = new Padding(3, 4, 3, 4);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(187, 180);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 11;
-            pictureBox1.TabStop = false;
-            // 
             // menuStrip1
             // 
             menuStrip1.ImageScalingSize = new Size(20, 20);
             menuStrip1.Items.AddRange(new ToolStripItem[] { administraciónToolStripMenuItem, moduloProveedoresToolStripMenuItem, ventasToolStripMenuItem, comprasToolStripMenuItem, proveedoresToolStripMenuItem, clientesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1510, 28);
+            menuStrip1.Size = new Size(1048, 28);
             menuStrip1.TabIndex = 15;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -142,9 +117,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1510, 953);
-            Controls.Add(pictureBox1);
-            Controls.Add(BSalir);
+            ClientSize = new Size(1048, 554);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
@@ -155,7 +128,6 @@
             Text = "SISTEMA DE GESTIÓN PARA “FARMACY ECUADOR”";
             FormClosing += Form_Menu_FormClosing;
             Load += Form1_Load;
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             menuStrip1.ResumeLayout(false);
             menuStrip1.PerformLayout();
             ResumeLayout(false);
@@ -165,8 +137,6 @@
         #endregion
         private Label label1;
         private Label label2;
-        private Button BSalir;
-        private PictureBox pictureBox1;
         private MenuStrip menuStrip1;
         private ToolStripMenuItem moduloProveedoresToolStripMenuItem;
         private ToolStripMenuItem ventasToolStripMenuItem;

@@ -27,6 +27,9 @@ namespace ProyectoPrototipo_1._0
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); ;
+            // Cambiar el estado del formulario a maximizado
+            this.WindowState = FormWindowState.Maximized;
+
             dbContext.Producto.Load();
             dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
             //dbContext.SaveChanges();
@@ -52,6 +55,11 @@ namespace ProyectoPrototipo_1._0
         private void button1_Click(object sender, EventArgs e)
         {
             this.AvanzarPestana();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

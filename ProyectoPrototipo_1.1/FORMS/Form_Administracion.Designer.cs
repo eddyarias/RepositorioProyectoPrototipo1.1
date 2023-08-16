@@ -30,6 +30,8 @@
         {
             TCProveedores = new TabControl();
             tabPage1 = new TabPage();
+            comboBox1 = new ComboBox();
+            label7 = new Label();
             label12 = new Label();
             button4 = new Button();
             textBox2 = new TextBox();
@@ -37,11 +39,6 @@
             textBox1 = new TextBox();
             label1 = new Label();
             tabPage7 = new TabPage();
-            tabPage8 = new TabPage();
-            button8 = new Button();
-            dataGridView1 = new DataGridView();
-            textBox5 = new TextBox();
-            label6 = new Label();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             label9 = new Label();
@@ -51,22 +48,25 @@
             textBox7 = new TextBox();
             label13 = new Label();
             tabPage3 = new TabPage();
-            button3 = new Button();
-            textBox9 = new TextBox();
-            label15 = new Label();
             comboBox2 = new ComboBox();
             label8 = new Label();
             label10 = new Label();
-            label7 = new Label();
-            comboBox1 = new ComboBox();
+            button3 = new Button();
+            textBox9 = new TextBox();
+            label15 = new Label();
+            tabPage8 = new TabPage();
+            textBox5 = new TextBox();
+            label6 = new Label();
+            button8 = new Button();
+            dataGridView1 = new DataGridView();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage7.SuspendLayout();
-            tabPage8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
+            tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // TCProveedores
@@ -78,7 +78,7 @@
             TCProveedores.Margin = new Padding(3, 4, 3, 4);
             TCProveedores.Name = "TCProveedores";
             TCProveedores.SelectedIndex = 0;
-            TCProveedores.Size = new Size(841, 289);
+            TCProveedores.Size = new Size(882, 317);
             TCProveedores.TabIndex = 1;
             // 
             // tabPage1
@@ -95,10 +95,28 @@
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(833, 256);
+            tabPage1.Size = new Size(874, 284);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Asignar credenciales";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Vendedor", "Administrador" });
+            comboBox1.Location = new Point(158, 140);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(169, 28);
+            comboBox1.TabIndex = 26;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(34, 141);
+            label7.Name = "label7";
+            label7.Size = new Size(115, 20);
+            label7.TabIndex = 25;
+            label7.Text = "Tipo de usuario:";
             // 
             // label12
             // 
@@ -159,60 +177,10 @@
             tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(833, 256);
+            tabPage7.Size = new Size(874, 284);
             tabPage7.TabIndex = 4;
             tabPage7.Text = "Actualizar";
             tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            tabPage8.Controls.Add(textBox5);
-            tabPage8.Controls.Add(label6);
-            tabPage8.Controls.Add(button8);
-            tabPage8.Location = new Point(4, 29);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(833, 256);
-            tabPage8.TabIndex = 5;
-            tabPage8.Text = "Eliminar";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // button8
-            // 
-            button8.Location = new Point(360, 33);
-            button8.Margin = new Padding(3, 4, 3, 4);
-            button8.Name = "button8";
-            button8.Size = new Size(93, 35);
-            button8.TabIndex = 52;
-            button8.Text = "Eliminar";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(10, 306);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(837, 218);
-            dataGridView1.TabIndex = 2;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(152, 37);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(169, 27);
-            textBox5.TabIndex = 54;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(69, 42);
-            label6.Name = "label6";
-            label6.Size = new Size(78, 20);
-            label6.TabIndex = 53;
-            label6.Text = "Username:";
             // 
             // tabControl1
             // 
@@ -310,6 +278,32 @@
             tabPage3.Text = "Privilegios";
             tabPage3.UseVisualStyleBackColor = true;
             // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Vendedor", "Administrador" });
+            comboBox2.Location = new Point(163, 92);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(169, 28);
+            comboBox2.TabIndex = 57;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(42, 97);
+            label8.Name = "label8";
+            label8.Size = new Size(115, 20);
+            label8.TabIndex = 56;
+            label8.Text = "Tipo de usuario:";
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(56, 177);
+            label10.Name = "label10";
+            label10.Size = new Size(0, 20);
+            label10.TabIndex = 55;
+            // 
             // button3
             // 
             button3.Location = new Point(361, 88);
@@ -337,71 +331,78 @@
             label15.TabIndex = 50;
             label15.Text = "Username:";
             // 
-            // comboBox2
+            // tabPage8
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Vendedor", "Administrador" });
-            comboBox2.Location = new Point(163, 92);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(169, 28);
-            comboBox2.TabIndex = 57;
+            tabPage8.Controls.Add(textBox5);
+            tabPage8.Controls.Add(label6);
+            tabPage8.Controls.Add(button8);
+            tabPage8.Location = new Point(4, 29);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Size = new Size(874, 284);
+            tabPage8.TabIndex = 5;
+            tabPage8.Text = "Eliminar";
+            tabPage8.UseVisualStyleBackColor = true;
             // 
-            // label8
+            // textBox5
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(42, 97);
-            label8.Name = "label8";
-            label8.Size = new Size(115, 20);
-            label8.TabIndex = 56;
-            label8.Text = "Tipo de usuario:";
+            textBox5.Location = new Point(152, 37);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(169, 27);
+            textBox5.TabIndex = 54;
             // 
-            // label10
+            // label6
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(56, 177);
-            label10.Name = "label10";
-            label10.Size = new Size(0, 20);
-            label10.TabIndex = 55;
+            label6.AutoSize = true;
+            label6.Location = new Point(69, 42);
+            label6.Name = "label6";
+            label6.Size = new Size(78, 20);
+            label6.TabIndex = 53;
+            label6.Text = "Username:";
             // 
-            // label7
+            // button8
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(34, 141);
-            label7.Name = "label7";
-            label7.Size = new Size(115, 20);
-            label7.TabIndex = 25;
-            label7.Text = "Tipo de usuario:";
+            button8.Location = new Point(360, 33);
+            button8.Margin = new Padding(3, 4, 3, 4);
+            button8.Name = "button8";
+            button8.Size = new Size(93, 35);
+            button8.TabIndex = 52;
+            button8.Text = "Eliminar";
+            button8.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // dataGridView1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Vendedor", "Administrador" });
-            comboBox1.Location = new Point(158, 140);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(169, 28);
-            comboBox1.TabIndex = 26;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(10, 306);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 24;
+            dataGridView1.Size = new Size(878, 246);
+            dataGridView1.TabIndex = 2;
             // 
-            // Form_Administración
+            // Form_Administracion
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(858, 547);
+            ClientSize = new Size(912, 591);
             Controls.Add(TCProveedores);
             Controls.Add(dataGridView1);
-            Name = "Form_Administración";
+            Name = "Form_Administracion";
             Text = "Form_Administración";
+            Load += Form_Administracion_Load;
             TCProveedores.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             tabPage7.ResumeLayout(false);
-            tabPage8.ResumeLayout(false);
-            tabPage8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
+            tabPage8.ResumeLayout(false);
+            tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
         }
 

@@ -27,6 +27,8 @@ namespace ProyectoPrototipo_1._0
             this.StartPosition = FormStartPosition.Manual;
             this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2);
+            // Cambiar el estado del formulario a maximizado
+            this.WindowState = FormWindowState.Maximized;
 
             // READ: inventario en el dataGridView1
             dataGridView1.DataSource = inventario.productos;

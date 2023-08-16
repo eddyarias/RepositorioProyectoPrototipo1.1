@@ -25,9 +25,9 @@ namespace ProyectoPrototipo_1._0
         private void BLogin_Click(object sender, EventArgs e)
         {
             //Para iniciar sin autenticaciòn
-           /* this.Hide();
-            Form_Menu form_Menu = new Form_Menu();
-            form_Menu.ShowDialog();*/
+            /* this.Hide();
+             Form_Menu form_Menu = new Form_Menu();
+             form_Menu.ShowDialog();*/
 
 
             //SI YA ESTA LISTO EL SQL SERVER, DESCOMENTEN ESTO Y MODIFIQUEN LA CLASE CONNECT:

@@ -25,25 +25,17 @@ namespace ProyectoPrototipo_1._0
             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
         }*/
 
+        //COLOCAR SU PROPIO SERVIDOR Y BASE DE DATOS
+
         public Connect(string usuario, string pass)
         {
             this.usuario = usuario;
             this.pass = pass;
-            server = "LAPTOP-VF0SV152\\SQLEXPRESS";
-            bd = "db_farmacia";
+            server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
+            bd = "db_farmacy";
 
             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
         }
-
-        //public Connect(string usuario, string pass)
-        //{
-        //    this.usuario = usuario;
-        //    this.pass = pass;
-        //    server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
-        //    bd = "db_farmacy";
-
-        //    con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
-        //}
 
         public SqlConnection? RealizarConexion()
         {

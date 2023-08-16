@@ -36,6 +36,8 @@
             TBPassword = new TextBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            comboBox1 = new ComboBox();
+            label7 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -44,7 +46,7 @@
             // 
             BLogin.BackColor = SystemColors.ButtonFace;
             BLogin.Image = (Image)resources.GetObject("BLogin.Image");
-            BLogin.Location = new Point(59, 190);
+            BLogin.Location = new Point(70, 190);
             BLogin.Margin = new Padding(3, 4, 3, 4);
             BLogin.Name = "BLogin";
             BLogin.Size = new Size(190, 69);
@@ -55,7 +57,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(15, 56);
+            label1.Location = new Point(53, 37);
             label1.Name = "label1";
             label1.Size = new Size(78, 20);
             label1.TabIndex = 1;
@@ -64,7 +66,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(15, 125);
+            label2.Location = new Point(58, 84);
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 2;
@@ -72,7 +74,7 @@
             // 
             // TBUsername
             // 
-            TBUsername.Location = new Point(114, 52);
+            TBUsername.Location = new Point(137, 30);
             TBUsername.Margin = new Padding(3, 4, 3, 4);
             TBUsername.Name = "TBUsername";
             TBUsername.Size = new Size(160, 27);
@@ -80,7 +82,7 @@
             // 
             // TBPassword
             // 
-            TBPassword.Location = new Point(114, 118);
+            TBPassword.Location = new Point(137, 77);
             TBPassword.Margin = new Padding(3, 4, 3, 4);
             TBPassword.Name = "TBPassword";
             TBPassword.PasswordChar = '*';
@@ -101,6 +103,8 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(label7);
             panel1.Controls.Add(TBUsername);
             panel1.Controls.Add(BLogin);
             panel1.Controls.Add(TBPassword);
@@ -109,15 +113,33 @@
             panel1.Location = new Point(274, 9);
             panel1.Margin = new Padding(3, 4, 3, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(297, 298);
+            panel1.Size = new Size(321, 298);
             panel1.TabIndex = 6;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Vendedor", "Administrador" });
+            comboBox1.Location = new Point(137, 132);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(160, 28);
+            comboBox1.TabIndex = 28;
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(16, 138);
+            label7.Name = "label7";
+            label7.Size = new Size(115, 20);
+            label7.TabIndex = 27;
+            label7.Text = "Tipo de usuario:";
             // 
             // Form_Login
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            ClientSize = new Size(578, 318);
+            ClientSize = new Size(607, 318);
             Controls.Add(panel1);
             Controls.Add(pictureBox1);
             Margin = new Padding(3, 4, 3, 4);
@@ -138,5 +160,7 @@
         private TextBox TBPassword;
         private PictureBox pictureBox1;
         private Panel panel1;
+        private ComboBox comboBox1;
+        private Label label7;
     }
 }
