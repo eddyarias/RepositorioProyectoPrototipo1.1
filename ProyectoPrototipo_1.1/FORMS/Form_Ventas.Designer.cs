@@ -30,6 +30,15 @@
         {
             TabSecuencialVentas = new TabControl();
             tabPage1 = new TabPage();
+            label29 = new Label();
+            label28 = new Label();
+            panel1 = new Panel();
+            button8 = new Button();
+            textBox4 = new TextBox();
+            label30 = new Label();
+            textBox3 = new TextBox();
+            textBox2 = new TextBox();
+            label27 = new Label();
             lbTotal = new Label();
             label15 = new Label();
             label14 = new Label();
@@ -79,17 +88,63 @@
             button4 = new Button();
             tabControl1 = new TabControl();
             tabPage5 = new TabPage();
-            tabPage6 = new TabPage();
-            tabPage7 = new TabPage();
             tabPage8 = new TabPage();
+            dataGridView2 = new DataGridView();
+            column1 = new DataGridViewTextBoxColumn();
+            Column2 = new DataGridViewTextBoxColumn();
+            Column6 = new DataGridViewTextBoxColumn();
+            Column3 = new DataGridViewTextBoxColumn();
+            Column4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            Total = new DataGridViewTextBoxColumn();
+            Column7 = new DataGridViewTextBoxColumn();
+            Estado = new DataGridViewTextBoxColumn();
+            label23 = new Label();
+            textBox1 = new TextBox();
+            label25 = new Label();
+            button7 = new Button();
+            tabPage6 = new TabPage();
+            dataGridView3 = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            label24 = new Label();
+            textBox20 = new TextBox();
+            label26 = new Label();
+            BBuscar = new Button();
+            tabPage7 = new TabPage();
+            label37 = new Label();
+            label36 = new Label();
+            label35 = new Label();
+            label34 = new Label();
+            button9 = new Button();
+            label31 = new Label();
+            dataGridView4 = new DataGridView();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            dateTimePicker1 = new DateTimePicker();
+            label32 = new Label();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
+            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage4.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage5.SuspendLayout();
+            tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            tabPage6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            tabPage7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
             SuspendLayout();
             // 
             // TabSecuencialVentas
@@ -107,6 +162,9 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(label29);
+            tabPage1.Controls.Add(label28);
+            tabPage1.Controls.Add(panel1);
             tabPage1.Controls.Add(lbTotal);
             tabPage1.Controls.Add(label15);
             tabPage1.Controls.Add(label14);
@@ -122,6 +180,91 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Seleccion Producto";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Location = new Point(33, 179);
+            label29.Name = "label29";
+            label29.Size = new Size(248, 17);
+            label29.TabIndex = 20;
+            label29.Text = "Seleccionar lista de productos";
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label28.Location = new Point(33, 26);
+            label28.Name = "label28";
+            label28.Size = new Size(320, 17);
+            label28.TabIndex = 19;
+            label28.Text = "Seleccionar por lector codigo de barras";
+            // 
+            // panel1
+            // 
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(button8);
+            panel1.Controls.Add(textBox4);
+            panel1.Controls.Add(label30);
+            panel1.Controls.Add(textBox3);
+            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(label27);
+            panel1.Location = new Point(33, 46);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(622, 66);
+            panel1.TabIndex = 19;
+            panel1.Tag = "Seleccionar por codigo de barras";
+            // 
+            // button8
+            // 
+            button8.Location = new Point(476, 11);
+            button8.Name = "button8";
+            button8.Size = new Size(118, 43);
+            button8.TabIndex = 24;
+            button8.Text = "Agregar";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(363, 19);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(69, 27);
+            textBox4.TabIndex = 23;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label30.Location = new Point(277, 24);
+            label30.Name = "label30";
+            label30.Size = new Size(80, 17);
+            label30.TabIndex = 22;
+            label30.Text = "Cantidad:";
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(91, 19);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(156, 27);
+            textBox3.TabIndex = 21;
+            // 
+            // textBox2
+            // 
+            textBox2.Location = new Point(1073, 340);
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(125, 27);
+            textBox2.TabIndex = 19;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label27.Location = new Point(21, 24);
+            label27.Name = "label27";
+            label27.Size = new Size(64, 17);
+            label27.TabIndex = 18;
+            label27.Text = "Codigo:";
             // 
             // lbTotal
             // 
@@ -176,12 +319,12 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad });
-            dataGridView1.Location = new Point(33, 134);
+            dataGridView1.Location = new Point(33, 200);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(541, 449);
+            dataGridView1.Size = new Size(541, 345);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
@@ -246,7 +389,7 @@
             // 
             // txtBcorreoCliente
             // 
-            txtBcorreoCliente.Location = new Point(226, 354);
+            txtBcorreoCliente.Location = new Point(391, 406);
             txtBcorreoCliente.Margin = new Padding(3, 4, 3, 4);
             txtBcorreoCliente.Name = "txtBcorreoCliente";
             txtBcorreoCliente.Size = new Size(309, 27);
@@ -255,7 +398,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(82, 358);
+            label10.Location = new Point(247, 410);
             label10.Name = "label10";
             label10.Size = new Size(135, 20);
             label10.TabIndex = 11;
@@ -263,7 +406,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(601, 400);
+            button2.Location = new Point(766, 452);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(156, 86);
@@ -274,7 +417,7 @@
             // 
             // txtBdireccionCliente
             // 
-            txtBdireccionCliente.Location = new Point(226, 296);
+            txtBdireccionCliente.Location = new Point(391, 348);
             txtBdireccionCliente.Margin = new Padding(3, 4, 3, 4);
             txtBdireccionCliente.Name = "txtBdireccionCliente";
             txtBdireccionCliente.Size = new Size(309, 27);
@@ -282,7 +425,7 @@
             // 
             // txtBtelefonoCliente
             // 
-            txtBtelefonoCliente.Location = new Point(226, 249);
+            txtBtelefonoCliente.Location = new Point(391, 301);
             txtBtelefonoCliente.Margin = new Padding(3, 4, 3, 4);
             txtBtelefonoCliente.Name = "txtBtelefonoCliente";
             txtBtelefonoCliente.Size = new Size(309, 27);
@@ -290,7 +433,7 @@
             // 
             // txtBapellidosClientes
             // 
-            txtBapellidosClientes.Location = new Point(226, 196);
+            txtBapellidosClientes.Location = new Point(391, 248);
             txtBapellidosClientes.Margin = new Padding(3, 4, 3, 4);
             txtBapellidosClientes.Name = "txtBapellidosClientes";
             txtBapellidosClientes.Size = new Size(309, 27);
@@ -298,7 +441,7 @@
             // 
             // txtBnombresCliente
             // 
-            txtBnombresCliente.Location = new Point(226, 138);
+            txtBnombresCliente.Location = new Point(391, 190);
             txtBnombresCliente.Margin = new Padding(3, 4, 3, 4);
             txtBnombresCliente.Name = "txtBnombresCliente";
             txtBnombresCliente.RightToLeft = RightToLeft.No;
@@ -307,7 +450,7 @@
             // 
             // txtBcedulaCliente
             // 
-            txtBcedulaCliente.Location = new Point(226, 85);
+            txtBcedulaCliente.Location = new Point(391, 137);
             txtBcedulaCliente.Margin = new Padding(3, 4, 3, 4);
             txtBcedulaCliente.Name = "txtBcedulaCliente";
             txtBcedulaCliente.Size = new Size(309, 27);
@@ -316,7 +459,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(82, 304);
+            label5.Location = new Point(247, 356);
             label5.Name = "label5";
             label5.Size = new Size(75, 20);
             label5.TabIndex = 4;
@@ -325,7 +468,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(82, 256);
+            label4.Location = new Point(247, 308);
             label4.Name = "label4";
             label4.Size = new Size(70, 20);
             label4.TabIndex = 3;
@@ -334,7 +477,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(82, 200);
+            label3.Location = new Point(247, 252);
             label3.Name = "label3";
             label3.Size = new Size(75, 20);
             label3.TabIndex = 2;
@@ -343,7 +486,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(82, 145);
+            label2.Location = new Point(247, 197);
             label2.Name = "label2";
             label2.Size = new Size(77, 20);
             label2.TabIndex = 1;
@@ -352,7 +495,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(82, 89);
+            label1.Location = new Point(247, 141);
             label1.Name = "label1";
             label1.Size = new Size(88, 20);
             label1.TabIndex = 0;
@@ -381,7 +524,7 @@
             // 
             // txtBDescripcionAdicional
             // 
-            txtBDescripcionAdicional.Location = new Point(73, 435);
+            txtBDescripcionAdicional.Location = new Point(214, 493);
             txtBDescripcionAdicional.Margin = new Padding(3, 4, 3, 4);
             txtBDescripcionAdicional.Name = "txtBDescripcionAdicional";
             txtBDescripcionAdicional.Size = new Size(302, 27);
@@ -390,7 +533,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(38, 382);
+            label11.Location = new Point(179, 440);
             label11.Name = "label11";
             label11.Size = new Size(211, 20);
             label11.TabIndex = 9;
@@ -399,7 +542,7 @@
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(484, 89);
+            label9.Location = new Point(625, 147);
             label9.Name = "label9";
             label9.Size = new Size(78, 20);
             label9.TabIndex = 8;
@@ -409,7 +552,7 @@
             // 
             comboBox2.FormattingEnabled = true;
             comboBox2.Items.AddRange(new object[] { "5%", "10%", "15%", "20%", "25%", "30%", "45%", "50%", "60%", "65%" });
-            comboBox2.Location = new Point(484, 116);
+            comboBox2.Location = new Point(625, 174);
             comboBox2.Margin = new Padding(3, 4, 3, 4);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(121, 28);
@@ -419,7 +562,7 @@
             // 
             checkedListBox2.FormattingEnabled = true;
             checkedListBox2.Items.AddRange(new object[] { "SI", "NO" });
-            checkedListBox2.Location = new Point(360, 105);
+            checkedListBox2.Location = new Point(501, 163);
             checkedListBox2.Margin = new Padding(3, 4, 3, 4);
             checkedListBox2.Name = "checkedListBox2";
             checkedListBox2.Size = new Size(103, 48);
@@ -428,7 +571,7 @@
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(365, 39);
+            label8.Location = new Point(506, 97);
             label8.Name = "label8";
             label8.Size = new Size(82, 20);
             label8.TabIndex = 5;
@@ -437,7 +580,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(38, 208);
+            label7.Location = new Point(179, 266);
             label7.Name = "label7";
             label7.Size = new Size(75, 20);
             label7.TabIndex = 4;
@@ -446,7 +589,7 @@
             // label6
             // 
             label6.AutoSize = true;
-            label6.Location = new Point(38, 40);
+            label6.Location = new Point(179, 98);
             label6.Name = "label6";
             label6.Size = new Size(114, 20);
             label6.TabIndex = 3;
@@ -456,7 +599,7 @@
             // 
             checkedListBox1.FormattingEnabled = true;
             checkedListBox1.Items.AddRange(new object[] { "Consumidor final", "Factura con datos" });
-            checkedListBox1.Location = new Point(73, 251);
+            checkedListBox1.Location = new Point(214, 309);
             checkedListBox1.Margin = new Padding(3, 4, 3, 4);
             checkedListBox1.Name = "checkedListBox1";
             checkedListBox1.Size = new Size(145, 48);
@@ -466,7 +609,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "Efectivo", "Tarjeta de credito", "Transferencia" });
-            comboBox1.Location = new Point(73, 105);
+            comboBox1.Location = new Point(214, 163);
             comboBox1.Margin = new Padding(3, 4, 3, 4);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(121, 28);
@@ -474,7 +617,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(518, 366);
+            button1.Location = new Point(659, 424);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(221, 100);
@@ -506,7 +649,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(178, 189);
+            label22.Location = new Point(304, 261);
             label22.Name = "label22";
             label22.Size = new Size(422, 20);
             label22.TabIndex = 20;
@@ -515,7 +658,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(414, 394);
+            label21.Location = new Point(540, 466);
             label21.Name = "label21";
             label21.Size = new Size(50, 20);
             label21.TabIndex = 19;
@@ -524,7 +667,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(504, 394);
+            label20.Location = new Point(630, 466);
             label20.Name = "label20";
             label20.Size = new Size(44, 20);
             label20.TabIndex = 18;
@@ -533,7 +676,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(200, 374);
+            label19.Location = new Point(326, 446);
             label19.Name = "label19";
             label19.Size = new Size(315, 20);
             label19.TabIndex = 17;
@@ -543,7 +686,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Consolas", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(178, 38);
+            label18.Location = new Point(304, 110);
             label18.Name = "label18";
             label18.Size = new Size(56, 15);
             label18.TabIndex = 5;
@@ -553,7 +696,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Consolas", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(178, 220);
+            label17.Location = new Point(304, 292);
             label17.Name = "label17";
             label17.Size = new Size(56, 15);
             label17.TabIndex = 4;
@@ -563,7 +706,7 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(301, 0);
+            label16.Location = new Point(427, 72);
             label16.Name = "label16";
             label16.Size = new Size(204, 25);
             label16.TabIndex = 3;
@@ -571,7 +714,7 @@
             // 
             // button6
             // 
-            button6.Location = new Point(296, 444);
+            button6.Location = new Point(422, 516);
             button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
             button6.Size = new Size(209, 56);
@@ -581,7 +724,7 @@
             // 
             // button5
             // 
-            button5.Location = new Point(570, 444);
+            button5.Location = new Point(696, 516);
             button5.Margin = new Padding(3, 4, 3, 4);
             button5.Name = "button5";
             button5.Size = new Size(209, 56);
@@ -591,7 +734,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(25, 444);
+            button4.Location = new Point(151, 516);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(209, 56);
@@ -602,9 +745,9 @@
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage5);
+            tabControl1.Controls.Add(tabPage8);
             tabControl1.Controls.Add(tabPage6);
             tabControl1.Controls.Add(tabPage7);
-            tabControl1.Controls.Add(tabPage8);
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
@@ -622,8 +765,136 @@
             tabPage5.Text = "Registrar Venta";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // tabPage8
+            // 
+            tabPage8.Controls.Add(dataGridView2);
+            tabPage8.Controls.Add(label23);
+            tabPage8.Controls.Add(textBox1);
+            tabPage8.Controls.Add(label25);
+            tabPage8.Controls.Add(button7);
+            tabPage8.Location = new Point(4, 29);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Size = new Size(1091, 696);
+            tabPage8.TabIndex = 3;
+            tabPage8.Text = "Consultar";
+            tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column6, Column3, Column4, Column5, Total, Column7, Estado });
+            dataGridView2.Location = new Point(16, 257);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 29;
+            dataGridView2.Size = new Size(1072, 359);
+            dataGridView2.TabIndex = 85;
+            // 
+            // column1
+            // 
+            column1.HeaderText = "#Factura";
+            column1.MinimumWidth = 6;
+            column1.Name = "column1";
+            column1.Width = 125;
+            // 
+            // Column2
+            // 
+            Column2.HeaderText = "Cliente";
+            Column2.MinimumWidth = 6;
+            Column2.Name = "Column2";
+            Column2.Width = 125;
+            // 
+            // Column6
+            // 
+            Column6.HeaderText = "Fecha";
+            Column6.MinimumWidth = 6;
+            Column6.Name = "Column6";
+            Column6.Width = 125;
+            // 
+            // Column3
+            // 
+            Column3.HeaderText = "Subtotal";
+            Column3.MinimumWidth = 6;
+            Column3.Name = "Column3";
+            Column3.Width = 125;
+            // 
+            // Column4
+            // 
+            Column4.HeaderText = "I.V.A.";
+            Column4.MinimumWidth = 6;
+            Column4.Name = "Column4";
+            Column4.Width = 125;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Descuento";
+            Column5.MinimumWidth = 6;
+            Column5.Name = "Column5";
+            Column5.Width = 125;
+            // 
+            // Total
+            // 
+            Total.HeaderText = "Total";
+            Total.MinimumWidth = 6;
+            Total.Name = "Total";
+            Total.Width = 125;
+            // 
+            // Column7
+            // 
+            Column7.HeaderText = "Forma de pago";
+            Column7.MinimumWidth = 6;
+            Column7.Name = "Column7";
+            Column7.Width = 125;
+            // 
+            // Estado
+            // 
+            Estado.HeaderText = "Estado";
+            Estado.MinimumWidth = 6;
+            Estado.Name = "Estado";
+            Estado.Width = 125;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(370, 86);
+            label23.Name = "label23";
+            label23.Size = new Size(157, 20);
+            label23.TabIndex = 84;
+            label23.Text = "Numero de factura: (*)";
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(544, 83);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(119, 27);
+            textBox1.TabIndex = 83;
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(442, 79);
+            label25.Name = "label25";
+            label25.Size = new Size(0, 20);
+            label25.TabIndex = 82;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(477, 154);
+            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Name = "button7";
+            button7.Size = new Size(88, 38);
+            button7.TabIndex = 81;
+            button7.Text = "Consultar";
+            button7.UseVisualStyleBackColor = true;
+            // 
             // tabPage6
             // 
+            tabPage6.Controls.Add(dataGridView3);
+            tabPage6.Controls.Add(label24);
+            tabPage6.Controls.Add(textBox20);
+            tabPage6.Controls.Add(label26);
+            tabPage6.Controls.Add(BBuscar);
             tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
@@ -632,8 +903,126 @@
             tabPage6.Text = "Anular";
             tabPage6.UseVisualStyleBackColor = true;
             // 
+            // dataGridView3
+            // 
+            dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
+            dataGridView3.Location = new Point(6, 278);
+            dataGridView3.Name = "dataGridView3";
+            dataGridView3.RowHeadersWidth = 51;
+            dataGridView3.RowTemplate.Height = 29;
+            dataGridView3.Size = new Size(1072, 359);
+            dataGridView3.TabIndex = 86;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "#Factura";
+            dataGridViewTextBoxColumn1.MinimumWidth = 6;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Cliente";
+            dataGridViewTextBoxColumn2.MinimumWidth = 6;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Fecha";
+            dataGridViewTextBoxColumn3.MinimumWidth = 6;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "Subtotal";
+            dataGridViewTextBoxColumn4.MinimumWidth = 6;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "I.V.A.";
+            dataGridViewTextBoxColumn5.MinimumWidth = 6;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "Descuento";
+            dataGridViewTextBoxColumn6.MinimumWidth = 6;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Total";
+            dataGridViewTextBoxColumn7.MinimumWidth = 6;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.HeaderText = "Forma de pago";
+            dataGridViewTextBoxColumn8.MinimumWidth = 6;
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.Width = 125;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.HeaderText = "Estado";
+            dataGridViewTextBoxColumn9.MinimumWidth = 6;
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.Width = 125;
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(405, 128);
+            label24.Name = "label24";
+            label24.Size = new Size(157, 20);
+            label24.TabIndex = 80;
+            label24.Text = "Numero de factura: (*)";
+            // 
+            // textBox20
+            // 
+            textBox20.Location = new Point(579, 125);
+            textBox20.Margin = new Padding(3, 4, 3, 4);
+            textBox20.Name = "textBox20";
+            textBox20.Size = new Size(119, 27);
+            textBox20.TabIndex = 76;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(477, 121);
+            label26.Name = "label26";
+            label26.Size = new Size(0, 20);
+            label26.TabIndex = 75;
+            // 
+            // BBuscar
+            // 
+            BBuscar.Location = new Point(512, 196);
+            BBuscar.Margin = new Padding(3, 4, 3, 4);
+            BBuscar.Name = "BBuscar";
+            BBuscar.Size = new Size(88, 38);
+            BBuscar.TabIndex = 74;
+            BBuscar.Text = "Anular";
+            BBuscar.UseVisualStyleBackColor = true;
+            // 
             // tabPage7
             // 
+            tabPage7.Controls.Add(label32);
+            tabPage7.Controls.Add(dateTimePicker1);
+            tabPage7.Controls.Add(dataGridView4);
+            tabPage7.Controls.Add(label31);
+            tabPage7.Controls.Add(button9);
+            tabPage7.Controls.Add(label37);
+            tabPage7.Controls.Add(label36);
+            tabPage7.Controls.Add(label35);
+            tabPage7.Controls.Add(label34);
             tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
@@ -642,14 +1031,106 @@
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
             // 
-            // tabPage8
+            // label37
             // 
-            tabPage8.Location = new Point(4, 29);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1091, 696);
-            tabPage8.TabIndex = 3;
-            tabPage8.Text = "Consultar";
-            tabPage8.UseVisualStyleBackColor = true;
+            label37.AutoSize = true;
+            label37.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label37.Location = new Point(262, 484);
+            label37.Name = "label37";
+            label37.Size = new Size(96, 17);
+            label37.TabIndex = 27;
+            label37.Text = "SALO FINAL:";
+            // 
+            // label36
+            // 
+            label36.AutoSize = true;
+            label36.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label36.Location = new Point(262, 439);
+            label36.Name = "label36";
+            label36.Size = new Size(120, 17);
+            label36.TabIndex = 26;
+            label36.Text = "Total egresos:";
+            // 
+            // label35
+            // 
+            label35.AutoSize = true;
+            label35.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label35.Location = new Point(262, 395);
+            label35.Name = "label35";
+            label35.Size = new Size(128, 17);
+            label35.TabIndex = 25;
+            label35.Text = "Total ingresos:";
+            // 
+            // label34
+            // 
+            label34.AutoSize = true;
+            label34.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label34.Location = new Point(262, 351);
+            label34.Name = "label34";
+            label34.Size = new Size(120, 17);
+            label34.TabIndex = 24;
+            label34.Text = "Saldo Inicial:";
+            // 
+            // button9
+            // 
+            button9.Location = new Point(460, 543);
+            button9.Name = "button9";
+            button9.Size = new Size(231, 85);
+            button9.TabIndex = 28;
+            button9.Text = "IMPRIMIR CIERRE DE CAJA";
+            button9.UseVisualStyleBackColor = true;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(701, 351);
+            label31.Name = "label31";
+            label31.Size = new Size(136, 17);
+            label31.TabIndex = 30;
+            label31.Text = "FECHA DE CIERRE:";
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9 });
+            dataGridView4.Location = new Point(262, 145);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 51;
+            dataGridView4.RowTemplate.Height = 29;
+            dataGridView4.Size = new Size(554, 188);
+            dataGridView4.TabIndex = 31;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Ingresos:";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.Width = 250;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Egresos:";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.Width = 250;
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(485, 51);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(312, 27);
+            dateTimePicker1.TabIndex = 32;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(307, 58);
+            label32.Name = "label32";
+            label32.Size = new Size(152, 17);
+            label32.TabIndex = 33;
+            label32.Text = "Seleccionar fecha:";
             // 
             // Form_Ventas
             // 
@@ -664,6 +1145,8 @@
             TabSecuencialVentas.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
@@ -673,6 +1156,15 @@
             tabPage4.PerformLayout();
             tabControl1.ResumeLayout(false);
             tabPage5.ResumeLayout(false);
+            tabPage8.ResumeLayout(false);
+            tabPage8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
         }
 
@@ -732,5 +1224,53 @@
         private TabPage tabPage6;
         private TabPage tabPage7;
         private TabPage tabPage8;
+        private Label label24;
+        private TextBox textBox20;
+        private Label label26;
+        private Button BBuscar;
+        private Label label27;
+        private Label label23;
+        private TextBox textBox1;
+        private Label label25;
+        private Button button7;
+        private Label label29;
+        private Label label28;
+        private Panel panel1;
+        private Button button8;
+        private TextBox textBox4;
+        private Label label30;
+        private TextBox textBox3;
+        private TextBox textBox2;
+        private DataGridView dataGridView2;
+        private DataGridViewTextBoxColumn column1;
+        private DataGridViewTextBoxColumn Column2;
+        private DataGridViewTextBoxColumn Column6;
+        private DataGridViewTextBoxColumn Column3;
+        private DataGridViewTextBoxColumn Column4;
+        private DataGridViewTextBoxColumn Column5;
+        private DataGridViewTextBoxColumn Total;
+        private DataGridViewTextBoxColumn Column7;
+        private DataGridViewTextBoxColumn Estado;
+        private DataGridView dataGridView3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private Label label37;
+        private Label label36;
+        private Label label35;
+        private Label label34;
+        private DataGridView dataGridView4;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
+        private Label label31;
+        private Button button9;
+        private Label label32;
+        private DateTimePicker dateTimePicker1;
     }
 }
