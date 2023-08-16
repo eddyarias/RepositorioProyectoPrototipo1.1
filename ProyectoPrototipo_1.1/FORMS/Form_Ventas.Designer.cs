@@ -91,11 +91,11 @@
             TabSecuencialVentas.Controls.Add(tabPage2);
             TabSecuencialVentas.Controls.Add(tabPage3);
             TabSecuencialVentas.Controls.Add(tabPage4);
-            TabSecuencialVentas.Location = new Point(22, 4);
+            TabSecuencialVentas.Location = new Point(39, 53);
             TabSecuencialVentas.Margin = new Padding(3, 4, 3, 4);
             TabSecuencialVentas.Name = "TabSecuencialVentas";
             TabSecuencialVentas.SelectedIndex = 0;
-            TabSecuencialVentas.Size = new Size(862, 558);
+            TabSecuencialVentas.Size = new Size(1080, 655);
             TabSecuencialVentas.TabIndex = 0;
             // 
             // tabPage1
@@ -111,7 +111,7 @@
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(854, 525);
+            tabPage1.Size = new Size(1072, 622);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Seleccion Producto";
             tabPage1.UseVisualStyleBackColor = true;
@@ -119,7 +119,7 @@
             // lbTotal
             // 
             lbTotal.AutoSize = true;
-            lbTotal.Location = new Point(736, 390);
+            lbTotal.Location = new Point(980, 491);
             lbTotal.Name = "lbTotal";
             lbTotal.Size = new Size(44, 20);
             lbTotal.TabIndex = 17;
@@ -128,7 +128,7 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(368, 358);
+            label15.Location = new Point(612, 459);
             label15.Name = "label15";
             label15.Size = new Size(351, 20);
             label15.TabIndex = 16;
@@ -137,7 +137,7 @@
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(656, 390);
+            label14.Location = new Point(900, 491);
             label14.Name = "label14";
             label14.Size = new Size(50, 20);
             label14.TabIndex = 15;
@@ -147,7 +147,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(368, 99);
+            label13.Location = new Point(612, 200);
             label13.Name = "label13";
             label13.Size = new Size(16, 17);
             label13.TabIndex = 14;
@@ -156,7 +156,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(368, 65);
+            label12.Location = new Point(612, 166);
             label12.Name = "label12";
             label12.Size = new Size(422, 20);
             label12.TabIndex = 13;
@@ -169,12 +169,12 @@
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad });
-            dataGridView1.Location = new Point(6, 50);
+            dataGridView1.Location = new Point(33, 134);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(336, 449);
+            dataGridView1.Size = new Size(541, 449);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
@@ -204,7 +204,7 @@
             // 
             // button3
             // 
-            button3.Location = new Point(659, 428);
+            button3.Location = new Point(903, 529);
             button3.Margin = new Padding(3, 4, 3, 4);
             button3.Name = "button3";
             button3.Size = new Size(150, 71);
@@ -596,7 +596,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 591);
+            ClientSize = new Size(1168, 721);
             Controls.Add(TabSecuencialVentas);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Ventas";

@@ -42,7 +42,7 @@ namespace ProyectoPrototipo_1._0
         {
             // Centrar el formulario en la pantalla
             this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2 ,
+            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
                                       (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); ;
             // Cambiar el estado del formulario a maximizado
             this.WindowState = FormWindowState.Maximized;
@@ -72,9 +72,9 @@ namespace ProyectoPrototipo_1._0
             dataGridView1.Columns[0].Width = 3;
 
             // Establecer el ancho de la columna "Producto"
-            dataGridView1.Columns["Producto"].Width = 100;
-            dataGridView1.Columns["Precio"].Width = 45;
-            dataGridView1.Columns["Cantidad"].Width = 50;
+            dataGridView1.Columns["Producto"].Width = 226;
+            dataGridView1.Columns["Precio"].Width = 65;
+            dataGridView1.Columns["Cantidad"].Width = 90;
             dataGridView1.Columns["Cantidad"].ReadOnly = false;
         }
 
@@ -98,7 +98,7 @@ namespace ProyectoPrototipo_1._0
         private void button3_Click(object sender, EventArgs e)
         {
             this.AvanzarPestana();
-        }  
+        }
 
         private void button2_Click(object sender, EventArgs e)
         {
@@ -122,9 +122,10 @@ namespace ProyectoPrototipo_1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (checkedListBox1.CheckedItems.Count>0 && checkedListBox2.CheckedItems.Count>0&&comboBox1.SelectedItem!=null)
+            if (checkedListBox1.CheckedItems.Count > 0 && checkedListBox2.CheckedItems.Count > 0 && comboBox1.SelectedItem != null)
             {
-                if (checkedListBox2.SelectedItem.ToString() == "SI") {
+                if (checkedListBox2.SelectedItem.ToString() == "SI")
+                {
                     if (comboBox2.SelectedItem != null)
                     {
                         this.AvanzarPestana();
@@ -132,7 +133,8 @@ namespace ProyectoPrototipo_1._0
                         this.imprimirCliente();
                         this.imprimirDetalle();
                     }
-                    else {
+                    else
+                    {
                         // Muestra un mensaje de error
                         MessageBox.Show("Debes seleccionar al menos una opción en el descuento.", "Error de validación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
@@ -264,20 +266,20 @@ namespace ProyectoPrototipo_1._0
         {
             String impresionCliente;
             impresionCliente =
-                "                   DATOS CLIENTE "+"\n"+
-                "CEDULA:                          ." + cedulaCLiente +"\n"+
-                "NOMBRE:                          ." + nombreCliente + "\n"+
-                "APELLIDO:                        ." + apellidoCliente + "\n"+
-                "TELEFONO:                        ." + telefonoCliente + "\n"+
-                "DIRECCION:                       ." + direccionCliente + "\n"+
-                "CORREO:                          ." + correoCliente + "\n"; 
-                this.label18.Text = impresionCliente;
+                "                   DATOS CLIENTE " + "\n" +
+                "CEDULA:                          ." + cedulaCLiente + "\n" +
+                "NOMBRE:                          ." + nombreCliente + "\n" +
+                "APELLIDO:                        ." + apellidoCliente + "\n" +
+                "TELEFONO:                        ." + telefonoCliente + "\n" +
+                "DIRECCION:                       ." + direccionCliente + "\n" +
+                "CORREO:                          ." + correoCliente + "\n";
+            this.label18.Text = impresionCliente;
         }
 
         public void imprimirDetalle()
         {
-            this.label17.Text=ImprimirInformacion(arregloPrecios,arregloCantidad,arregloProductos)+"\n" +
-                "Descripción adicional: "+descripcionAdicionalCobro;
+            this.label17.Text = ImprimirInformacion(arregloPrecios, arregloCantidad, arregloProductos) + "\n" +
+                "Descripción adicional: " + descripcionAdicionalCobro;
             this.label20.Text = TotalVenta.ToString();
         }
     }

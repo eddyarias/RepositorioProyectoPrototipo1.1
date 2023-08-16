@@ -30,11 +30,13 @@ namespace ProyectoPrototipo_1._0
         {
             this.usuario = usuario;
             this.pass = pass;
-            server = "DESKTOP-2H7CHF4";
-            bd = "db_farmacy";
+            server = "DESKTOP-OUHSBBV";
+            bd = "db_farmacia";
 
-            con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
-            //con = "Data Source="+server+";Initial Catalog="+bd+";Integrated Security = true";
+            con = "Data Source="+server+";Initial Catalog="+bd+";Integrated Security = true";
+
+           // con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+
             //con = "Server=" + server + ";Database=" + bd + ";Integrated Security = SSPI";
 
         }
