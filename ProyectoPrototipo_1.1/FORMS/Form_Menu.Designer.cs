@@ -29,74 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Menu));
-            bttModuloInventario = new Button();
-            bttModuloClientes = new Button();
-            bttModuloProveedores = new Button();
-            bttModuloVentas = new Button();
-            bttModuloCompras = new Button();
             label1 = new Label();
             label2 = new Label();
             BSalir = new Button();
             pictureBox1 = new PictureBox();
-            panel1 = new Panel();
+            menuStrip1 = new MenuStrip();
+            administraciónToolStripMenuItem = new ToolStripMenuItem();
+            moduloProveedoresToolStripMenuItem = new ToolStripMenuItem();
+            ventasToolStripMenuItem = new ToolStripMenuItem();
+            comprasToolStripMenuItem = new ToolStripMenuItem();
+            proveedoresToolStripMenuItem = new ToolStripMenuItem();
+            clientesToolStripMenuItem = new ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            panel1.SuspendLayout();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
-            // 
-            // bttModuloInventario
-            // 
-            bttModuloInventario.Location = new Point(118, 675);
-            bttModuloInventario.Margin = new Padding(3, 4, 3, 4);
-            bttModuloInventario.Name = "bttModuloInventario";
-            bttModuloInventario.Size = new Size(143, 145);
-            bttModuloInventario.TabIndex = 0;
-            bttModuloInventario.Text = "MÓDULO DE INVENTARIO";
-            bttModuloInventario.UseVisualStyleBackColor = true;
-            bttModuloInventario.Click += bttModuloInventario_Click;
-            // 
-            // bttModuloClientes
-            // 
-            bttModuloClientes.Location = new Point(207, 358);
-            bttModuloClientes.Margin = new Padding(3, 4, 3, 4);
-            bttModuloClientes.Name = "bttModuloClientes";
-            bttModuloClientes.Size = new Size(145, 145);
-            bttModuloClientes.TabIndex = 1;
-            bttModuloClientes.Text = "MÓDULO DE CLIENTES";
-            bttModuloClientes.UseVisualStyleBackColor = true;
-            bttModuloClientes.Click += bttModuloClientes_Click;
-            // 
-            // bttModuloProveedores
-            // 
-            bttModuloProveedores.Location = new Point(207, 522);
-            bttModuloProveedores.Margin = new Padding(3, 4, 3, 4);
-            bttModuloProveedores.Name = "bttModuloProveedores";
-            bttModuloProveedores.Size = new Size(137, 145);
-            bttModuloProveedores.TabIndex = 2;
-            bttModuloProveedores.Text = "MÓDULO DE PROVEEDORES";
-            bttModuloProveedores.UseVisualStyleBackColor = true;
-            bttModuloProveedores.Click += bttProveedores_Click;
-            // 
-            // bttModuloVentas
-            // 
-            bttModuloVentas.Location = new Point(32, 358);
-            bttModuloVentas.Margin = new Padding(3, 4, 3, 4);
-            bttModuloVentas.Name = "bttModuloVentas";
-            bttModuloVentas.Size = new Size(145, 145);
-            bttModuloVentas.TabIndex = 3;
-            bttModuloVentas.Text = "MÓDULO DE VENTAS";
-            bttModuloVentas.UseVisualStyleBackColor = true;
-            bttModuloVentas.Click += bttModuloVentas_Click;
-            // 
-            // bttModuloCompras
-            // 
-            bttModuloCompras.Location = new Point(32, 522);
-            bttModuloCompras.Margin = new Padding(3, 4, 3, 4);
-            bttModuloCompras.Name = "bttModuloCompras";
-            bttModuloCompras.Size = new Size(137, 145);
-            bttModuloCompras.TabIndex = 4;
-            bttModuloCompras.Text = "MÓDULO DE COMPRAS";
-            bttModuloCompras.UseVisualStyleBackColor = true;
-            bttModuloCompras.Click += bttModuloCompras_Click;
             // 
             // label1
             // 
@@ -130,7 +76,7 @@
             // pictureBox1
             // 
             pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(32, 4);
+            pictureBox1.Location = new Point(1, 28);
             pictureBox1.Margin = new Padding(3, 4, 3, 4);
             pictureBox1.Name = "pictureBox1";
             pictureBox1.Size = new Size(320, 336);
@@ -138,20 +84,57 @@
             pictureBox1.TabIndex = 11;
             pictureBox1.TabStop = false;
             // 
-            // panel1
+            // menuStrip1
             // 
-            panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(pictureBox1);
-            panel1.Controls.Add(bttModuloInventario);
-            panel1.Controls.Add(bttModuloClientes);
-            panel1.Controls.Add(bttModuloProveedores);
-            panel1.Controls.Add(bttModuloVentas);
-            panel1.Controls.Add(bttModuloCompras);
-            panel1.Location = new Point(12, 13);
-            panel1.Margin = new Padding(3, 4, 3, 4);
-            panel1.Name = "panel1";
-            panel1.Size = new Size(381, 861);
-            panel1.TabIndex = 13;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { administraciónToolStripMenuItem, moduloProveedoresToolStripMenuItem, ventasToolStripMenuItem, comprasToolStripMenuItem, proveedoresToolStripMenuItem, clientesToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1510, 28);
+            menuStrip1.TabIndex = 15;
+            menuStrip1.Text = "menuStrip1";
+            // 
+            // administraciónToolStripMenuItem
+            // 
+            administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
+            administraciónToolStripMenuItem.Size = new Size(123, 24);
+            administraciónToolStripMenuItem.Text = "Administración";
+            administraciónToolStripMenuItem.Click += administraciónToolStripMenuItem_Click;
+            // 
+            // moduloProveedoresToolStripMenuItem
+            // 
+            moduloProveedoresToolStripMenuItem.Name = "moduloProveedoresToolStripMenuItem";
+            moduloProveedoresToolStripMenuItem.Size = new Size(89, 24);
+            moduloProveedoresToolStripMenuItem.Text = "Inventario";
+            moduloProveedoresToolStripMenuItem.Click += moduloProveedoresToolStripMenuItem_Click;
+            // 
+            // ventasToolStripMenuItem
+            // 
+            ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
+            ventasToolStripMenuItem.Size = new Size(66, 24);
+            ventasToolStripMenuItem.Text = "Ventas";
+            ventasToolStripMenuItem.Click += ventasToolStripMenuItem_Click;
+            // 
+            // comprasToolStripMenuItem
+            // 
+            comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
+            comprasToolStripMenuItem.Size = new Size(82, 24);
+            comprasToolStripMenuItem.Text = "Compras";
+            comprasToolStripMenuItem.Click += comprasToolStripMenuItem_Click;
+            // 
+            // proveedoresToolStripMenuItem
+            // 
+            proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
+            proveedoresToolStripMenuItem.Size = new Size(105, 24);
+            proveedoresToolStripMenuItem.Text = "Proveedores";
+            proveedoresToolStripMenuItem.Click += proveedoresToolStripMenuItem_Click;
+            // 
+            // clientesToolStripMenuItem
+            // 
+            clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
+            clientesToolStripMenuItem.Size = new Size(75, 24);
+            clientesToolStripMenuItem.Text = "Clientes";
+            clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
             // Form_Menu
             // 
@@ -160,34 +143,37 @@
             BackColor = SystemColors.Window;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
             ClientSize = new Size(1510, 953);
-            Controls.Add(panel1);
+            Controls.Add(pictureBox1);
             Controls.Add(BSalir);
             Controls.Add(label2);
             Controls.Add(label1);
+            Controls.Add(menuStrip1);
             IsMdiContainer = true;
+            MainMenuStrip = menuStrip1;
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Menu";
             Text = "SISTEMA DE GESTIÓN PARA “FARMACY ECUADOR”";
             FormClosing += Form_Menu_FormClosing;
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            panel1.ResumeLayout(false);
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
-
-        private Button bttModuloInventario;
-        private Button bttModuloClientes;
-        private Button bttModuloProveedores;
-        private Button bttModuloVentas;
-        private Button bttModuloCompras;
         private Label label1;
         private Label label2;
         private Button BSalir;
         private PictureBox pictureBox1;
-        private Panel panel1;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem moduloProveedoresToolStripMenuItem;
+        private ToolStripMenuItem ventasToolStripMenuItem;
+        private ToolStripMenuItem comprasToolStripMenuItem;
+        private ToolStripMenuItem proveedoresToolStripMenuItem;
+        private ToolStripMenuItem clientesToolStripMenuItem;
+        private ToolStripMenuItem administraciónToolStripMenuItem;
     }
 }
 
