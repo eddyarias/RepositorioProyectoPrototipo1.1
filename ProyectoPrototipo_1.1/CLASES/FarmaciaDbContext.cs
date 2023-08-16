@@ -17,10 +17,7 @@ namespace ProyectoPrototipo_1._0.CLASES
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-
-            //CAMBIAR LA CADENA DE CONEXIÓN CON SUS DATOS
-            optionsBuilder.UseSqlServer("Server=LAPTOP-S7D8N62P\\MSSQLSERVER10;Database=db_farmacia;User=jonathan;Password=PJseverous75;TrustServerCertificate=true;");
-
+                optionsBuilder.UseSqlServer(Connect.connect);
         }
     }
 

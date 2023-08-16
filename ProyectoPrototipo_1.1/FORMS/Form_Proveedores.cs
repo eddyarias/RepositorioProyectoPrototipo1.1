@@ -456,5 +456,26 @@ namespace ProyectoPrototipo_1._0
                 ClearCreateControls();
             }
         }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+        }
     }
 }

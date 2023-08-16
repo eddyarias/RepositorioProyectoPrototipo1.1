@@ -31,6 +31,8 @@
             dataGridView1 = new DataGridView();
             tabControl2 = new TabControl();
             tabPage3 = new TabPage();
+            BAgregar = new Button();
+            button1 = new Button();
             label3 = new Label();
             textBox1 = new TextBox();
             textBox15 = new TextBox();
@@ -43,9 +45,9 @@
             textBox8 = new TextBox();
             label8 = new Label();
             label7 = new Label();
-            button4 = new Button();
-            button3 = new Button();
-            button7 = new Button();
+            BBuscar = new Button();
+            BActualizar = new Button();
+            BEliminar = new Button();
             label2 = new Label();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
@@ -68,7 +70,6 @@
             tabPage5 = new TabPage();
             button6 = new Button();
             richTextBox1 = new RichTextBox();
-            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl2.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -87,7 +88,7 @@
             dataGridView1.RowTemplate.Height = 24;
             dataGridView1.Size = new Size(616, 425);
             dataGridView1.TabIndex = 0;
-            dataGridView1.CellContentClick += dataGridView1_CellContentClick;
+            dataGridView1.CellClick += dataGridView1_CellClick;
             // 
             // tabControl2
             // 
@@ -103,6 +104,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.Controls.Add(BAgregar);
             tabPage3.Controls.Add(button1);
             tabPage3.Controls.Add(label3);
             tabPage3.Controls.Add(textBox1);
@@ -116,9 +118,9 @@
             tabPage3.Controls.Add(textBox8);
             tabPage3.Controls.Add(label8);
             tabPage3.Controls.Add(label7);
-            tabPage3.Controls.Add(button4);
-            tabPage3.Controls.Add(button3);
-            tabPage3.Controls.Add(button7);
+            tabPage3.Controls.Add(BBuscar);
+            tabPage3.Controls.Add(BActualizar);
+            tabPage3.Controls.Add(BEliminar);
             tabPage3.Controls.Add(label2);
             tabPage3.Controls.Add(textBox9);
             tabPage3.Controls.Add(textBox10);
@@ -137,7 +139,25 @@
             tabPage3.TabIndex = 0;
             tabPage3.Text = "Inventario";
             tabPage3.UseVisualStyleBackColor = true;
-            tabPage3.Click += tabPage3_Click;
+            // 
+            // BAgregar
+            // 
+            BAgregar.Location = new Point(25, 345);
+            BAgregar.Name = "BAgregar";
+            BAgregar.Size = new Size(94, 38);
+            BAgregar.TabIndex = 75;
+            BAgregar.Text = "Agregar";
+            BAgregar.UseVisualStyleBackColor = true;
+            BAgregar.Click += BAgregar_Click;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(130, 400);
+            button1.Name = "button1";
+            button1.Size = new Size(94, 29);
+            button1.TabIndex = 74;
+            button1.Text = "Cancelar";
+            button1.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -240,35 +260,37 @@
             label7.TabIndex = 61;
             label7.Text = "Fec. cad.:";
             // 
-            // button4
+            // BBuscar
             // 
-            button4.Location = new Point(130, 345);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(88, 38);
-            button4.TabIndex = 60;
-            button4.Text = "Buscar";
-            button4.UseVisualStyleBackColor = true;
+            BBuscar.Location = new Point(130, 345);
+            BBuscar.Margin = new Padding(3, 4, 3, 4);
+            BBuscar.Name = "BBuscar";
+            BBuscar.Size = new Size(88, 38);
+            BBuscar.TabIndex = 60;
+            BBuscar.Text = "Buscar";
+            BBuscar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // BActualizar
             // 
-            button3.Location = new Point(579, 456);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(84, 38);
-            button3.TabIndex = 59;
-            button3.Text = "Actualizar";
-            button3.UseVisualStyleBackColor = true;
+            BActualizar.Location = new Point(579, 456);
+            BActualizar.Margin = new Padding(3, 4, 3, 4);
+            BActualizar.Name = "BActualizar";
+            BActualizar.Size = new Size(84, 38);
+            BActualizar.TabIndex = 59;
+            BActualizar.Text = "Actualizar";
+            BActualizar.UseVisualStyleBackColor = true;
+            BActualizar.Click += BActualizar_Click;
             // 
-            // button7
+            // BEliminar
             // 
-            button7.Location = new Point(437, 456);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(80, 38);
-            button7.TabIndex = 58;
-            button7.Text = "Eliminar";
-            button7.UseVisualStyleBackColor = true;
+            BEliminar.Location = new Point(437, 456);
+            BEliminar.Margin = new Padding(3, 4, 3, 4);
+            BEliminar.Name = "BEliminar";
+            BEliminar.Size = new Size(80, 38);
+            BEliminar.TabIndex = 58;
+            BEliminar.Text = "Eliminar";
+            BEliminar.UseVisualStyleBackColor = true;
+            BEliminar.Click += BEliminar_Click;
             // 
             // label2
             // 
@@ -468,15 +490,6 @@
             richTextBox1.TabIndex = 0;
             richTextBox1.Text = "Historial de operaciones realizadas en el inventario.";
             // 
-            // button1
-            // 
-            button1.Location = new Point(130, 400);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 74;
-            button1.Text = "Cancelar";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // Form_Inventario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -521,9 +534,9 @@
         private TextBox textBox8;
         private Label label8;
         private Label label7;
-        private Button button4;
-        private Button button3;
-        private Button button7;
+        private Button BBuscar;
+        private Button BActualizar;
+        private Button BEliminar;
         private Label label2;
         private TextBox textBox9;
         private TextBox textBox10;
@@ -541,5 +554,6 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private Button button1;
+        private Button BAgregar;
     }
 }

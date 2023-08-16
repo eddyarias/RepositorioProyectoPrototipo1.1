@@ -25,18 +25,18 @@ namespace ProyectoPrototipo_1._0
         private void BLogin_Click(object sender, EventArgs e)
         {
             //Para iniciar sin autenticaciòn
-            this.Hide();
+           /* this.Hide();
             Form_Menu form_Menu = new Form_Menu();
-            form_Menu.ShowDialog();
+            form_Menu.ShowDialog();*/
 
 
             //SI YA ESTA LISTO EL SQL SERVER, DESCOMENTEN ESTO Y MODIFIQUEN LA CLASE CONNECT:
 
-           /* string usuario = TBUsername.Text;
+            string usuario = TBUsername.Text;
             string pass = TBPassword.Text;
 
             Connect conexion = new Connect(usuario, pass);
-            SqlConnection connection = conexion.RealizarConexion();
+            SqlConnection? connection = conexion.RealizarConexion();
 
             if (connection != null)
             {
@@ -50,7 +50,7 @@ namespace ProyectoPrototipo_1._0
             {
                 // La conexión falló, muestra un mensaje de error
                 MessageBox.Show("Error al conectar a la base de datos.");
-            }*/
+            }
         }
     }
 }
