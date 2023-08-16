@@ -52,29 +52,32 @@ namespace ProyectoPrototipo_1._0
             this.TabSecuencialVentas.TabPages[3].Enabled = false;
 
 
-            dataGridView1.Rows.Add("Pasta dental       .  ", 3.99);
-            dataGridView1.Rows.Add("Paños húmedos      .  ", 2.99);
-            dataGridView1.Rows.Add("Analgesia en crema .  ", 4.99);
-            dataGridView1.Rows.Add("Antiséptico bucal  .  ", 5.99);
-            dataGridView1.Rows.Add("Protector solar    .  ", 9.99);
-            dataGridView1.Rows.Add("Jarabe para la tos .  ", 6.99);
-            dataGridView1.Rows.Add("Vendas adhesivas   .  ", 2.49);
-            dataGridView1.Rows.Add("Antidiarreico      .  ", 7.99);
-            dataGridView1.Rows.Add("Repelente insecto  .  ", 8.99);
-            dataGridView1.Rows.Add("Jabón antibacterial.  ", 1.99);
-            dataGridView1.Rows.Add("Suplemento         .  ", 1.99);
-            dataGridView1.Rows.Add("Descongestionante  .  ", 4.99);
-            dataGridView1.Rows.Add("Gotas para los ojos.  ", 6.99);
-            dataGridView1.Rows.Add("Analgésico en gel  .  ", 5.99);
-            dataGridView1.Rows.Add("Antihistamínico    .  ", 3.99);
-            dataGridView1.Rows.Add("Desodorante        .  ", 7.99);
+            dataGridView1.Rows.Add("1", "Pasta dental       .", 3.99);
+            dataGridView1.Rows.Add("2", "Paños húmedos      .", 2.99);
+            dataGridView1.Rows.Add("3", "Analgesia en crema .", 4.99);
+            dataGridView1.Rows.Add("4", "Antiséptico bucal  .", 5.99);
+            dataGridView1.Rows.Add("5", "Protector solar    .", 9.99);
+            dataGridView1.Rows.Add("6", "Jarabe para la tos .", 6.99);
+            dataGridView1.Rows.Add("7", "Vendas adhesivas   .", 2.49);
+            dataGridView1.Rows.Add("8", "Antidiarreico      .", 7.99);
+            dataGridView1.Rows.Add("9", "Repelente insecto  .", 8.99);
+            dataGridView1.Rows.Add("10", "Jabón antibacterial.", 1.99);
+            dataGridView1.Rows.Add("11", "Suplemento         .", 1.99);
+            dataGridView1.Rows.Add("12", "Descongestionante  .", 4.99);
+            dataGridView1.Rows.Add("13", "Gotas para los ojos.", 6.99);
+            dataGridView1.Rows.Add("14", "Analgésico en gel  .", 5.99);
+            dataGridView1.Rows.Add("15", "Antihistamínico    .", 3.99);
+            dataGridView1.Rows.Add("16", "Desodorante        .", 7.99);
 
-            dataGridView1.Columns[0].Width = 3;
+
+
+            dataGridView1.Columns[0].Width = 4;
 
             // Establecer el ancho de la columna "Producto"
+            dataGridView1.Columns["Codigo"].Width = 60;
             dataGridView1.Columns["Producto"].Width = 226;
-            dataGridView1.Columns["Precio"].Width = 120;
-            dataGridView1.Columns["Cantidad"].Width = 120;
+            dataGridView1.Columns["Precio"].Width = 90;
+            dataGridView1.Columns["Cantidad"].Width = 90;
             dataGridView1.Columns["Cantidad"].ReadOnly = false;
         }
 

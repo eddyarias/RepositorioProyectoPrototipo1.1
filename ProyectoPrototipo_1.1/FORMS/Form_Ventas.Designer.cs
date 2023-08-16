@@ -45,9 +45,6 @@
             label13 = new Label();
             label12 = new Label();
             dataGridView1 = new DataGridView();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
             button3 = new Button();
             tabPage2 = new TabPage();
             txtBcorreoCliente = new TextBox();
@@ -130,6 +127,10 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
+            Codigo = new DataGridViewTextBoxColumn();
+            Producto = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -187,9 +188,9 @@
             label29.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             label29.Location = new Point(33, 179);
             label29.Name = "label29";
-            label29.Size = new Size(248, 17);
+            label29.Size = new Size(320, 17);
             label29.TabIndex = 20;
-            label29.Text = "Seleccionar lista de productos";
+            label29.Text = "Seleccionar mediante lista de productos";
             // 
             // label28
             // 
@@ -197,9 +198,9 @@
             label28.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             label28.Location = new Point(33, 26);
             label28.Name = "label28";
-            label28.Size = new Size(320, 17);
+            label28.Size = new Size(360, 17);
             label28.TabIndex = 19;
-            label28.Text = "Seleccionar por lector codigo de barras";
+            label28.Text = "Seleccionar mediante lector código de barras";
             // 
             // panel1
             // 
@@ -264,7 +265,7 @@
             label27.Name = "label27";
             label27.Size = new Size(64, 17);
             label27.TabIndex = 18;
-            label27.Text = "Codigo:";
+            label27.Text = "Código:";
             // 
             // lbTotal
             // 
@@ -318,7 +319,7 @@
             dataGridView1.AllowUserToDeleteRows = false;
             dataGridView1.AllowUserToOrderColumns = true;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Producto, Precio, Cantidad });
+            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, Precio, Cantidad });
             dataGridView1.Location = new Point(33, 200);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
@@ -327,30 +328,6 @@
             dataGridView1.Size = new Size(541, 345);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.ReadOnly = true;
-            Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.MinimumWidth = 6;
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            Cantidad.Width = 125;
             // 
             // button3
             // 
@@ -1132,6 +1109,37 @@
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
             // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Código";
+            Codigo.MinimumWidth = 6;
+            Codigo.Name = "Codigo";
+            Codigo.Width = 125;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 6;
+            Producto.Name = "Producto";
+            Producto.ReadOnly = true;
+            Producto.Width = 125;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.MinimumWidth = 6;
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            Precio.Width = 125;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
+            Cantidad.Width = 125;
+            // 
             // Form_Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1206,9 +1214,6 @@
         private DataGridView dataGridView1;
         private Label label12;
         private Label label13;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
         private Label lbTotal;
         private Label label15;
         private Label label14;
@@ -1272,5 +1277,10 @@
         private Button button9;
         private Label label32;
         private DateTimePicker dateTimePicker1;
+        private DataGridViewTextBoxColumn Column10;
+        private DataGridViewTextBoxColumn Codigo;
+        private DataGridViewTextBoxColumn Producto;
+        private DataGridViewTextBoxColumn Precio;
+        private DataGridViewTextBoxColumn Cantidad;
     }
 }
