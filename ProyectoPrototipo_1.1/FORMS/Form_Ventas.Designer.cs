@@ -45,6 +45,10 @@
             label13 = new Label();
             label12 = new Label();
             dataGridView1 = new DataGridView();
+            Codigo = new DataGridViewTextBoxColumn();
+            Producto = new DataGridViewTextBoxColumn();
+            Precio = new DataGridViewTextBoxColumn();
+            Cantidad = new DataGridViewTextBoxColumn();
             button3 = new Button();
             tabPage2 = new TabPage();
             txtBcorreoCliente = new TextBox();
@@ -127,10 +131,6 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            Codigo = new DataGridViewTextBoxColumn();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -225,6 +225,7 @@
             button8.TabIndex = 24;
             button8.Text = "Agregar";
             button8.UseVisualStyleBackColor = true;
+            button8.Click += button8_Click;
             // 
             // textBox4
             // 
@@ -328,6 +329,37 @@
             dataGridView1.Size = new Size(541, 345);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            // 
+            // Codigo
+            // 
+            Codigo.HeaderText = "Código";
+            Codigo.MinimumWidth = 6;
+            Codigo.Name = "Codigo";
+            Codigo.Width = 125;
+            // 
+            // Producto
+            // 
+            Producto.HeaderText = "Producto";
+            Producto.MinimumWidth = 6;
+            Producto.Name = "Producto";
+            Producto.ReadOnly = true;
+            Producto.Width = 125;
+            // 
+            // Precio
+            // 
+            Precio.HeaderText = "Precio";
+            Precio.MinimumWidth = 6;
+            Precio.Name = "Precio";
+            Precio.ReadOnly = true;
+            Precio.Width = 125;
+            // 
+            // Cantidad
+            // 
+            Cantidad.HeaderText = "Cantidad";
+            Cantidad.MinimumWidth = 6;
+            Cantidad.Name = "Cantidad";
+            Cantidad.ReadOnly = true;
+            Cantidad.Width = 125;
             // 
             // button3
             // 
@@ -1108,37 +1140,6 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
-            // 
-            // Codigo
-            // 
-            Codigo.HeaderText = "Código";
-            Codigo.MinimumWidth = 6;
-            Codigo.Name = "Codigo";
-            Codigo.Width = 125;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.ReadOnly = true;
-            Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.MinimumWidth = 6;
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            Cantidad.Width = 125;
             // 
             // Form_Ventas
             // 

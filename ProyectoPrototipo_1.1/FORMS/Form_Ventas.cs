@@ -285,5 +285,10 @@ namespace ProyectoPrototipo_1._0
                 "Descripción adicional: " + descripcionAdicionalCobro;
             this.label20.Text = TotalVenta.ToString();
         }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

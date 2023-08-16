@@ -65,7 +65,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { administraciónToolStripMenuItem, moduloProveedoresToolStripMenuItem, ventasToolStripMenuItem, comprasToolStripMenuItem, proveedoresToolStripMenuItem, clientesToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1048, 28);
+            menuStrip1.Size = new Size(1132, 28);
             menuStrip1.TabIndex = 15;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -117,7 +117,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.Window;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(1048, 554);
+            ClientSize = new Size(1132, 763);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);

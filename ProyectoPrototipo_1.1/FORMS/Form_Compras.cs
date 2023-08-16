@@ -30,8 +30,8 @@ namespace ProyectoPrototipo_1._0
             // Cambiar el estado del formulario a maximizado
             this.WindowState = FormWindowState.Maximized;
 
-            dbContext.Producto.Load();
-            dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
+            //dbContext.Producto.Load();
+            //dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
             //dbContext.SaveChanges();
         }
 

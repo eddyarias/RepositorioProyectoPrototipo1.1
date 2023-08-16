@@ -85,6 +85,7 @@
             textBox17 = new TextBox();
             label35 = new Label();
             tabPage5 = new TabPage();
+            button2 = new Button();
             label36 = new Label();
             label16 = new Label();
             CBEvaluarProveedor = new ComboBox();
@@ -101,7 +102,6 @@
             textBox11 = new TextBox();
             label9 = new Label();
             dataGridView1 = new DataGridView();
-            button2 = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -466,6 +466,7 @@
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
+            comboBox5.Items.AddRange(new object[] { "Quito", "Guayaquil", "Cuenca", "Santo Domingo de los Colorados", "Machala", "Manta", "Portoviejo", "Loja", "Ambato", "Riobamba", "Esmeraldas", "Ibarra", "Quevedo", "Tulcán", "Latacunga", "Babahoyo", "Otavalo", "Santa Elena", "La Libertad", "San Lorenzo" });
             comboBox5.Location = new Point(124, 163);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(163, 28);
@@ -680,6 +681,16 @@
             tabPage5.Text = "Evaluación";
             tabPage5.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            button2.Location = new Point(544, 170);
+            button2.Margin = new Padding(3, 4, 3, 4);
+            button2.Name = "button2";
+            button2.Size = new Size(104, 50);
+            button2.TabIndex = 34;
+            button2.Text = "Actualizar";
+            button2.UseVisualStyleBackColor = true;
+            // 
             // label36
             // 
             label36.AutoSize = true;
@@ -836,16 +847,6 @@
             dataGridView1.Size = new Size(837, 218);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(544, 170);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(104, 50);
-            button2.TabIndex = 34;
-            button2.Text = "Actualizar";
-            button2.UseVisualStyleBackColor = true;
             // 
             // Form_Proveedores
             // 

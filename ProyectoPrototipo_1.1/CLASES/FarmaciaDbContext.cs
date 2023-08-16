@@ -15,10 +15,10 @@ namespace ProyectoPrototipo_1._0.CLASES
         public DbSet<Class_Producto> Producto { get; set; }
         public DbSet<Class_Cliente> Cliente { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-        {
-                optionsBuilder.UseSqlServer(Connect.connect);
-        }
+        //protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        //{
+        //        optionsBuilder.UseSqlServer(Connect.connect);
+        //}
     }
 
 }

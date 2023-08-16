@@ -38,7 +38,7 @@ namespace ProyectoPrototipo_1._0
             Connect conexion = new Connect(usuario, pass);
             SqlConnection? connection = conexion.RealizarConexion();
 
-            if (connection != null)
+            if (connection == null)
             {
                 // La conexión fue exitosa
                 MessageBox.Show("Conexión exitosa.");

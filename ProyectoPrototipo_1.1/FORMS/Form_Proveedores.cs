@@ -19,9 +19,6 @@ namespace ProyectoPrototipo_1._0
         {
             dbContext = new FarmaciaDbContext();
             InitializeComponent();
-            textBox11.Enabled = false;
-            textBox13.Enabled = false;
-
         }
 
         private void Form_Proveedores_Load(object sender, EventArgs e)
@@ -33,8 +30,8 @@ namespace ProyectoPrototipo_1._0
             // Cambiar el estado del formulario a maximizado
             this.WindowState = FormWindowState.Maximized;
 
-            dbContext.Proveedor.Load();
-            dataGridView1.DataSource = dbContext.Proveedor.Local.ToBindingList();
+            //dbContext.Proveedor.Load();
+            //dataGridView1.DataSource = dbContext.Proveedor.Local.ToBindingList();
             //dbContext.SaveChanges();
         }
         // Variable para almacenar el índice de la pestaña actual
