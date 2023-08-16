@@ -32,7 +32,6 @@
             tabPage1 = new TabPage();
             comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
-            BInfoProveedor = new Button();
             label12 = new Label();
             label11 = new Label();
             textBox8 = new TextBox();
@@ -101,10 +100,7 @@
             BEvaluacion = new Button();
             textBox11 = new TextBox();
             label9 = new Label();
-            button3 = new Button();
-            button2 = new Button();
             dataGridView1 = new DataGridView();
-            button5 = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -135,7 +131,6 @@
             // 
             tabPage1.Controls.Add(comboBox2);
             tabPage1.Controls.Add(comboBox1);
-            tabPage1.Controls.Add(BInfoProveedor);
             tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(label11);
             tabPage1.Controls.Add(textBox8);
@@ -176,17 +171,6 @@
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(163, 28);
             comboBox1.TabIndex = 30;
-            // 
-            // BInfoProveedor
-            // 
-            BInfoProveedor.Location = new Point(661, 212);
-            BInfoProveedor.Margin = new Padding(3, 4, 3, 4);
-            BInfoProveedor.Name = "BInfoProveedor";
-            BInfoProveedor.Size = new Size(117, 35);
-            BInfoProveedor.TabIndex = 29;
-            BInfoProveedor.Text = "Ver proveedor";
-            BInfoProveedor.UseVisualStyleBackColor = true;
-            BInfoProveedor.Click += BInfoProveedor_Click;
             // 
             // label12
             // 
@@ -839,28 +823,6 @@
             label9.Size = new Size(0, 20);
             label9.TabIndex = 3;
             // 
-            // button3
-            // 
-            button3.Location = new Point(178, 540);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(84, 38);
-            button3.TabIndex = 15;
-            button3.Text = "Actualizar";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
-            // 
-            // button2
-            // 
-            button2.Location = new Point(290, 540);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(80, 38);
-            button2.TabIndex = 14;
-            button2.Text = "Eliminar";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
-            // 
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -873,26 +835,13 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
-            // button5
-            // 
-            button5.Location = new Point(416, 540);
-            button5.Name = "button5";
-            button5.Size = new Size(94, 38);
-            button5.TabIndex = 16;
-            button5.Text = "Cancelar";
-            button5.UseVisualStyleBackColor = true;
-            button5.Click += button5_Click;
-            // 
             // Form_Proveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(912, 591);
-            Controls.Add(button5);
             Controls.Add(TCProveedores);
             Controls.Add(dataGridView1);
-            Controls.Add(button3);
-            Controls.Add(button2);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Proveedores";
             Text = "Proveedores";
@@ -931,15 +880,12 @@
         private TextBox textBox1;
         private Label label1;
         private Button button4;
-        private Button button3;
-        private Button button2;
         private TextBox textBox8;
         private TextBox textBox7;
         private Label label8;
         private Label label7;
         private Label label12;
         private Label label11;
-        private Button BInfoProveedor;
         private Button BEvaluacion;
         private TextBox textBox11;
         private Label label9;
@@ -949,7 +895,6 @@
         private Button BEvaluarProveedor;
         private ComboBox CBEvaluarProveedor;
         private Label label16;
-        private Button button5;
         private ComboBox comboBox1;
         private ComboBox comboBox2;
         private TabPage tabPage6;
