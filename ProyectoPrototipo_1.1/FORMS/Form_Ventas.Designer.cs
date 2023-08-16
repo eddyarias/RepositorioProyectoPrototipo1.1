@@ -77,12 +77,19 @@
             button6 = new Button();
             button5 = new Button();
             button4 = new Button();
+            tabControl1 = new TabControl();
+            tabPage5 = new TabPage();
+            tabPage6 = new TabPage();
+            tabPage7 = new TabPage();
+            tabPage8 = new TabPage();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage4.SuspendLayout();
+            tabControl1.SuspendLayout();
+            tabPage5.SuspendLayout();
             SuspendLayout();
             // 
             // TabSecuencialVentas
@@ -91,7 +98,7 @@
             TabSecuencialVentas.Controls.Add(tabPage2);
             TabSecuencialVentas.Controls.Add(tabPage3);
             TabSecuencialVentas.Controls.Add(tabPage4);
-            TabSecuencialVentas.Location = new Point(39, 53);
+            TabSecuencialVentas.Location = new Point(3, 22);
             TabSecuencialVentas.Margin = new Padding(3, 4, 3, 4);
             TabSecuencialVentas.Name = "TabSecuencialVentas";
             TabSecuencialVentas.SelectedIndex = 0;
@@ -232,7 +239,7 @@
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(854, 525);
+            tabPage2.Size = new Size(1072, 622);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
@@ -367,7 +374,7 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(854, 525);
+            tabPage3.Size = new Size(1072, 622);
             tabPage3.TabIndex = 2;
             tabPage3.Text = "Cobro";
             tabPage3.UseVisualStyleBackColor = true;
@@ -491,7 +498,7 @@
             tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(854, 525);
+            tabPage4.Size = new Size(1072, 622);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;
@@ -592,12 +599,64 @@
             button4.Text = "Enviar al correo electronico cliente";
             button4.UseVisualStyleBackColor = true;
             // 
+            // tabControl1
+            // 
+            tabControl1.Controls.Add(tabPage5);
+            tabControl1.Controls.Add(tabPage6);
+            tabControl1.Controls.Add(tabPage7);
+            tabControl1.Controls.Add(tabPage8);
+            tabControl1.Location = new Point(12, 12);
+            tabControl1.Name = "tabControl1";
+            tabControl1.SelectedIndex = 0;
+            tabControl1.Size = new Size(1099, 729);
+            tabControl1.TabIndex = 1;
+            // 
+            // tabPage5
+            // 
+            tabPage5.Controls.Add(TabSecuencialVentas);
+            tabPage5.Location = new Point(4, 29);
+            tabPage5.Name = "tabPage5";
+            tabPage5.Padding = new Padding(3);
+            tabPage5.Size = new Size(1091, 696);
+            tabPage5.TabIndex = 0;
+            tabPage5.Text = "Registrar Venta";
+            tabPage5.UseVisualStyleBackColor = true;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Location = new Point(4, 29);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(1091, 696);
+            tabPage6.TabIndex = 1;
+            tabPage6.Text = "Anular";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // tabPage7
+            // 
+            tabPage7.Location = new Point(4, 29);
+            tabPage7.Name = "tabPage7";
+            tabPage7.Padding = new Padding(3);
+            tabPage7.Size = new Size(1091, 696);
+            tabPage7.TabIndex = 2;
+            tabPage7.Text = "Cerrar caja";
+            tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // tabPage8
+            // 
+            tabPage8.Location = new Point(4, 29);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Size = new Size(1091, 696);
+            tabPage8.TabIndex = 3;
+            tabPage8.Text = "Consultar";
+            tabPage8.UseVisualStyleBackColor = true;
+            // 
             // Form_Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1168, 721);
-            Controls.Add(TabSecuencialVentas);
+            ClientSize = new Size(1129, 757);
+            Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Ventas";
             Text = "Ventas";
@@ -612,6 +671,8 @@
             tabPage3.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
+            tabControl1.ResumeLayout(false);
+            tabPage5.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -666,5 +727,10 @@
         private Label label19;
         private Label label21;
         private Label label22;
+        private TabControl tabControl1;
+        private TabPage tabPage5;
+        private TabPage tabPage6;
+        private TabPage tabPage7;
+        private TabPage tabPage8;
     }
 }
