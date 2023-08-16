@@ -31,17 +31,18 @@ namespace ProyectoPrototipo_1._0
         {
             this.usuario = usuario;
             this.pass = pass;
-            /* server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
+             server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
              bd = "db_farmacy";
 
-             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;*/
-
+             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+            /*
             this.usuario = usuario;
             this.pass = pass;
             server = "DESKTOP-OUHSBBV";
             bd = "db_farmacia";
 
             con = "Data Source=" + server + ";Initial Catalog=" + bd + ";Integrated Security = true";
+            */
         }
 
         public SqlConnection? RealizarConexion()
