@@ -83,6 +83,7 @@
             button3 = new Button();
             dataGridView2 = new DataGridView();
             dataGridView1 = new DataGridView();
+            label37 = new Label();
             TCCompras.SuspendLayout();
             tabPage2.SuspendLayout();
             tabControl2.SuspendLayout();
@@ -106,7 +107,7 @@
             TCCompras.Controls.Add(tabPage2);
             TCCompras.Controls.Add(tabPage5);
             TCCompras.Controls.Add(tabPage1);
-            TCCompras.Location = new Point(12, 9);
+            TCCompras.Location = new Point(12, 36);
             TCCompras.Margin = new Padding(3, 4, 3, 4);
             TCCompras.Name = "TCCompras";
             TCCompras.SelectedIndex = 0;
@@ -662,7 +663,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(488, 40);
+            dataGridView1.Location = new Point(488, 67);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -670,11 +671,22 @@
             dataGridView1.Size = new Size(412, 511);
             dataGridView1.TabIndex = 1;
             // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label37.Location = new Point(16, 9);
+            label37.Name = "label37";
+            label37.Size = new Size(81, 20);
+            label37.TabIndex = 5;
+            label37.Text = "COMPRAS";
+            // 
             // Form_Compras
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(912, 591);
+            Controls.Add(label37);
             Controls.Add(dataGridView1);
             Controls.Add(TCCompras);
             Margin = new Padding(3, 4, 3, 4);
@@ -706,6 +718,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -765,5 +778,6 @@
         private Button button9;
         private Button button3;
         private DataGridView dataGridView2;
+        private Label label37;
     }
 }

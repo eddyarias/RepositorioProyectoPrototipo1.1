@@ -102,6 +102,7 @@
             textBox11 = new TextBox();
             label9 = new Label();
             dataGridView1 = new DataGridView();
+            label37 = new Label();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -121,7 +122,7 @@
             TCProveedores.Controls.Add(tabPage8);
             TCProveedores.Controls.Add(tabPage5);
             TCProveedores.Controls.Add(tabPage2);
-            TCProveedores.Location = new Point(27, 10);
+            TCProveedores.Location = new Point(32, 42);
             TCProveedores.Margin = new Padding(3, 4, 3, 4);
             TCProveedores.Name = "TCProveedores";
             TCProveedores.SelectedIndex = 0;
@@ -160,6 +161,7 @@
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "Efectivo", "Transferencia Bancaria", "Tarjeta de Crédito" });
             comboBox2.Location = new Point(423, 62);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(151, 28);
@@ -168,6 +170,7 @@
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Quito", "Guayaquil", "Cuenca", "Santo Domingo de los Colorados", "Machala", "Manta", "Portoviejo", "Loja", "Ambato", "Riobamba", "Esmeraldas", "Ibarra", "Quevedo", "Tulcán", "Latacunga", "Babahoyo", "Otavalo", "Santa Elena", "La Libertad", "San Lorenzo" });
             comboBox1.Location = new Point(122, 168);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(163, 28);
@@ -334,6 +337,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
+            comboBox3.Items.AddRange(new object[] { "Toda la información", "Razón social", "Email", "Ciudad", "Dirección", "N. Celular", "Forma de pago" });
             comboBox3.Location = new Point(54, 85);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 28);
@@ -457,6 +461,7 @@
             // comboBox4
             // 
             comboBox4.FormattingEnabled = true;
+            comboBox4.Items.AddRange(new object[] { "Efectivo", "Transferencia Bancaria", "Tarjeta de Crédito" });
             comboBox4.Location = new Point(423, 112);
             comboBox4.Name = "comboBox4";
             comboBox4.Size = new Size(151, 28);
@@ -839,7 +844,7 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(31, 307);
+            dataGridView1.Location = new Point(36, 339);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -848,11 +853,22 @@
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label37.Location = new Point(12, 9);
+            label37.Name = "label37";
+            label37.Size = new Size(113, 20);
+            label37.TabIndex = 1;
+            label37.Text = "PROVEEDORES";
+            // 
             // Form_Proveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(912, 591);
+            Controls.Add(label37);
             Controls.Add(TCProveedores);
             Controls.Add(dataGridView1);
             Margin = new Padding(3, 4, 3, 4);
@@ -875,6 +891,7 @@
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -953,5 +970,6 @@
         private DataGridView dataGridView2;
         private Label label10;
         private Button button2;
+        private Label label37;
     }
 }

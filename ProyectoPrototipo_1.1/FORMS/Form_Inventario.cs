@@ -201,31 +201,31 @@ namespace ProyectoPrototipo_1._0
         private void BEliminar_Click(object sender, EventArgs e)
         {
             //// Obtener el código del producto desde el TextBox
-        //    int codigo = Convert.ToInt32(textBox11.Text);
+            //    int codigo = Convert.ToInt32(textBox11.Text);
 
-        //    // Verificar si el código de producto existe en el inventario
-        //    bool codigoExists = inventario.productos.Any(p => p.codigo == codigo);
+            //    // Verificar si el código de producto existe en el inventario
+            //    bool codigoExists = inventario.productos.Any(p => p.codigo == codigo);
 
-        //    if (codigoExists)
-        //    {
-        //        // Mostrar el diálogo de confirmación
-        //        DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar el producto?", "Confirmación", MessageBoxButtons.YesNo);
-        //        if (result == DialogResult.Yes)
-        //        {
-        //            // Eliminar el producto del inventario
-        //            inventario.EliminarProducto(codigo);
-        //            MessageBox.Show("Producto eliminado exitosamente");
+            //    if (codigoExists)
+            //    {
+            //        // Mostrar el diálogo de confirmación
+            //        DialogResult result = MessageBox.Show("¿Está seguro de que desea eliminar el producto?", "Confirmación", MessageBoxButtons.YesNo);
+            //        if (result == DialogResult.Yes)
+            //        {
+            //            // Eliminar el producto del inventario
+            //            inventario.EliminarProducto(codigo);
+            //            MessageBox.Show("Producto eliminado exitosamente");
 
-        //            // Actualizar el DataGridView con la lista de productos del inventario
-        //            dataGridView1.DataSource = inventario.productos.ToList();
-        //            ClearTextFields();
-        //        }
-        //    }
-        //    else
-        //    {
-        //        MessageBox.Show("No se encontró el producto");
-        //        ClearTextFields();
-        //    }
+            //            // Actualizar el DataGridView con la lista de productos del inventario
+            //            dataGridView1.DataSource = inventario.productos.ToList();
+            //            ClearTextFields();
+            //        }
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("No se encontró el producto");
+            //        ClearTextFields();
+            //    }
         }
     }
 }

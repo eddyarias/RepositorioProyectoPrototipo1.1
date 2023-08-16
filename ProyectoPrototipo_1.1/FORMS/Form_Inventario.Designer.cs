@@ -99,6 +99,7 @@
             dateTimePicker1 = new DateTimePicker();
             dataGridView4 = new DataGridView();
             button2 = new Button();
+            label37 = new Label();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl2.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -133,7 +134,7 @@
             tabControl2.Controls.Add(tabPage8);
             tabControl2.Controls.Add(tabPage4);
             tabControl2.Controls.Add(tabPage5);
-            tabControl2.Location = new Point(1, 2);
+            tabControl2.Location = new Point(1, 38);
             tabControl2.Margin = new Padding(3, 4, 3, 4);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
@@ -819,11 +820,22 @@
             button2.Text = "Generar";
             button2.UseVisualStyleBackColor = true;
             // 
+            // label37
+            // 
+            label37.AutoSize = true;
+            label37.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            label37.Location = new Point(12, 9);
+            label37.Name = "label37";
+            label37.Size = new Size(101, 20);
+            label37.TabIndex = 4;
+            label37.Text = "INVENTARIO";
+            // 
             // Form_Inventario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(912, 591);
+            Controls.Add(label37);
             Controls.Add(tabControl2);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Inventario";
@@ -851,6 +863,7 @@
             tabPage5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -926,5 +939,6 @@
         private Label label26;
         private DateTimePicker dateTimePicker2;
         private DateTimePicker dateTimePicker1;
+        private Label label37;
     }
 }
