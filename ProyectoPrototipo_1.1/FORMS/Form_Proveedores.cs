@@ -19,10 +19,8 @@ namespace ProyectoPrototipo_1._0
         {
             dbContext = new FarmaciaDbContext();
             InitializeComponent();
-            textBox10.Enabled = false;
             textBox11.Enabled = false;
             textBox13.Enabled = false;
-            textBox14.Enabled = false;
 
         }
 
@@ -81,8 +79,7 @@ namespace ProyectoPrototipo_1._0
                     textBox11.Text = proveedorToUpdate.ruc.ToString();
                     textBox13.Text = proveedorToUpdate.ruc.ToString();
                     textBox2.Text = proveedorToUpdate.razon_social;
-                    textBox10.Text = proveedorToUpdate.razon_social;
-                    textBox14.Text = proveedorToUpdate.razon_social;
+
                     textBox3.Text = proveedorToUpdate.nombre;
                     textBox4.Text = proveedorToUpdate.apellido;
                     textBox5.Text = proveedorToUpdate.email;
@@ -92,7 +89,6 @@ namespace ProyectoPrototipo_1._0
                     textBox12.Text = proveedorToUpdate.rubro;
                     textBox9.Text = proveedorToUpdate.observaciones;
                     textBox15.Text = proveedorToUpdate.observaciones;
-                    tabPage4.Text = proveedorToUpdate.informacion_bancaria;
                     CBEvaluarProveedor.Text = proveedorToUpdate.calificacion;
                 }
             }
@@ -166,7 +162,6 @@ namespace ProyectoPrototipo_1._0
             }
 
             string observaciones = textBox9.Text;
-            string informacionBancaria = tabPage4.Text;
             string calificacion = CBEvaluarProveedor.Text;
 
             // Verificar si el RUC ya existe en la base de datos
@@ -191,7 +186,6 @@ namespace ProyectoPrototipo_1._0
                 telefono = telefono,
                 rubro = rubro,
                 observaciones = observaciones,
-                informacion_bancaria = informacionBancaria,
                 calificacion = calificacion
             };
 
@@ -215,13 +209,10 @@ namespace ProyectoPrototipo_1._0
             textBox7.Clear();
             textBox8.Clear();
             textBox9.Clear();
-            textBox10.Clear();
             textBox11.Clear();
             textBox12.Clear();
             textBox13.Clear();
-            textBox14.Clear();
             textBox15.Clear();
-            tabPage4.Text = string.Empty;
             CBEvaluarProveedor.Text = string.Empty;
         }
 
@@ -245,7 +236,6 @@ namespace ProyectoPrototipo_1._0
                 string telefono = textBox8.Text;
                 string rubro = textBox12.Text;
                 string observaciones = textBox9.Text;
-                string informacionBancaria = tabPage4.Text;
                 string calificacion = CBEvaluarProveedor.Text;
 
                 // Actualizar los datos del proveedor existente
@@ -258,7 +248,6 @@ namespace ProyectoPrototipo_1._0
                 existingProveedor.telefono = telefono;
                 existingProveedor.rubro = rubro;
                 existingProveedor.observaciones = observaciones;
-                existingProveedor.informacion_bancaria = informacionBancaria;
                 existingProveedor.calificacion = calificacion;
 
                 // Guardar los cambios en la base de datos
@@ -338,7 +327,6 @@ namespace ProyectoPrototipo_1._0
 
             string observaciones = textBox9.Text.Trim();
 
-            string informacionBancaria = tabPage4.Text.Trim();
 
             string calificacion = CBEvaluarProveedor.Text.Trim();
 
@@ -395,10 +383,6 @@ namespace ProyectoPrototipo_1._0
                 filteredProveedores = filteredProveedores.Where(p => p.observaciones.Contains(observaciones));
             }
 
-            if (!string.IsNullOrEmpty(informacionBancaria))
-            {
-                filteredProveedores = filteredProveedores.Where(p => p.informacion_bancaria.Contains(informacionBancaria));
-            }
 
             if (!string.IsNullOrEmpty(calificacion))
             {
@@ -430,7 +414,6 @@ namespace ProyectoPrototipo_1._0
                 string telefono = textBox8.Text;
                 string rubro = textBox12.Text;
                 string observaciones = textBox15.Text;
-                string informacionBancaria = tabPage4.Text;
                 string calificacion = CBEvaluarProveedor.Text;
 
                 // Actualizar los datos del proveedor existente
@@ -443,7 +426,6 @@ namespace ProyectoPrototipo_1._0
                 existingProveedor.telefono = telefono;
                 existingProveedor.rubro = rubro;
                 existingProveedor.observaciones = observaciones;
-                existingProveedor.informacion_bancaria = informacionBancaria;
                 existingProveedor.calificacion = calificacion;
 
                 // Guardar los cambios en la base de datos
