@@ -73,8 +73,8 @@ namespace ProyectoPrototipo_1._0
 
             // Establecer el ancho de la columna "Producto"
             dataGridView1.Columns["Producto"].Width = 226;
-            dataGridView1.Columns["Precio"].Width = 65;
-            dataGridView1.Columns["Cantidad"].Width = 90;
+            dataGridView1.Columns["Precio"].Width = 120;
+            dataGridView1.Columns["Cantidad"].Width = 120;
             dataGridView1.Columns["Cantidad"].ReadOnly = false;
         }
 

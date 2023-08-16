@@ -119,17 +119,17 @@
             label26 = new Label();
             BBuscar = new Button();
             tabPage7 = new TabPage();
+            label32 = new Label();
+            dateTimePicker1 = new DateTimePicker();
+            dataGridView4 = new DataGridView();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
+            label31 = new Label();
+            button9 = new Button();
             label37 = new Label();
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            button9 = new Button();
-            label31 = new Label();
-            dataGridView4 = new DataGridView();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
-            dateTimePicker1 = new DateTimePicker();
-            label32 = new Label();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -880,10 +880,10 @@
             // 
             // button7
             // 
-            button7.Location = new Point(477, 154);
+            button7.Location = new Point(463, 144);
             button7.Margin = new Padding(3, 4, 3, 4);
             button7.Name = "button7";
-            button7.Size = new Size(88, 38);
+            button7.Size = new Size(151, 70);
             button7.TabIndex = 81;
             button7.Text = "Consultar";
             button7.UseVisualStyleBackColor = true;
@@ -907,7 +907,7 @@
             // 
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
-            dataGridView3.Location = new Point(6, 278);
+            dataGridView3.Location = new Point(16, 257);
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.RowTemplate.Height = 29;
@@ -980,7 +980,7 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(405, 128);
+            label24.Location = new Point(370, 86);
             label24.Name = "label24";
             label24.Size = new Size(157, 20);
             label24.TabIndex = 80;
@@ -988,7 +988,7 @@
             // 
             // textBox20
             // 
-            textBox20.Location = new Point(579, 125);
+            textBox20.Location = new Point(544, 83);
             textBox20.Margin = new Padding(3, 4, 3, 4);
             textBox20.Name = "textBox20";
             textBox20.Size = new Size(119, 27);
@@ -1004,10 +1004,10 @@
             // 
             // BBuscar
             // 
-            BBuscar.Location = new Point(512, 196);
+            BBuscar.Location = new Point(463, 144);
             BBuscar.Margin = new Padding(3, 4, 3, 4);
             BBuscar.Name = "BBuscar";
-            BBuscar.Size = new Size(88, 38);
+            BBuscar.Size = new Size(151, 70);
             BBuscar.TabIndex = 74;
             BBuscar.Text = "Anular";
             BBuscar.UseVisualStyleBackColor = true;
@@ -1030,6 +1030,67 @@
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label32.Location = new Point(307, 58);
+            label32.Name = "label32";
+            label32.Size = new Size(152, 17);
+            label32.TabIndex = 33;
+            label32.Text = "Seleccionar fecha:";
+            // 
+            // dateTimePicker1
+            // 
+            dateTimePicker1.Location = new Point(485, 51);
+            dateTimePicker1.Name = "dateTimePicker1";
+            dateTimePicker1.Size = new Size(312, 27);
+            dateTimePicker1.TabIndex = 32;
+            // 
+            // dataGridView4
+            // 
+            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9 });
+            dataGridView4.Location = new Point(262, 145);
+            dataGridView4.Name = "dataGridView4";
+            dataGridView4.RowHeadersWidth = 51;
+            dataGridView4.RowTemplate.Height = 29;
+            dataGridView4.Size = new Size(554, 188);
+            dataGridView4.TabIndex = 31;
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Ingresos:";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.Width = 250;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Egresos:";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.Width = 250;
+            // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label31.Location = new Point(701, 351);
+            label31.Name = "label31";
+            label31.Size = new Size(136, 17);
+            label31.TabIndex = 30;
+            label31.Text = "FECHA DE CIERRE:";
+            // 
+            // button9
+            // 
+            button9.Location = new Point(460, 543);
+            button9.Name = "button9";
+            button9.Size = new Size(231, 85);
+            button9.TabIndex = 28;
+            button9.Text = "IMPRIMIR CIERRE DE CAJA";
+            button9.UseVisualStyleBackColor = true;
             // 
             // label37
             // 
@@ -1070,67 +1131,6 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
-            // 
-            // button9
-            // 
-            button9.Location = new Point(460, 543);
-            button9.Name = "button9";
-            button9.Size = new Size(231, 85);
-            button9.TabIndex = 28;
-            button9.Text = "IMPRIMIR CIERRE DE CAJA";
-            button9.UseVisualStyleBackColor = true;
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label31.Location = new Point(701, 351);
-            label31.Name = "label31";
-            label31.Size = new Size(136, 17);
-            label31.TabIndex = 30;
-            label31.Text = "FECHA DE CIERRE:";
-            // 
-            // dataGridView4
-            // 
-            dataGridView4.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView4.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9 });
-            dataGridView4.Location = new Point(262, 145);
-            dataGridView4.Name = "dataGridView4";
-            dataGridView4.RowHeadersWidth = 51;
-            dataGridView4.RowTemplate.Height = 29;
-            dataGridView4.Size = new Size(554, 188);
-            dataGridView4.TabIndex = 31;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Ingresos:";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.Width = 250;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Egresos:";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.Width = 250;
-            // 
-            // dateTimePicker1
-            // 
-            dateTimePicker1.Location = new Point(485, 51);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(312, 27);
-            dateTimePicker1.TabIndex = 32;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label32.Location = new Point(307, 58);
-            label32.Name = "label32";
-            label32.Size = new Size(152, 17);
-            label32.TabIndex = 33;
-            label32.Text = "Seleccionar fecha:";
             // 
             // Form_Ventas
             // 
