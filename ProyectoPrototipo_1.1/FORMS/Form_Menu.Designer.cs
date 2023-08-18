@@ -38,6 +38,8 @@
             comprasToolStripMenuItem = new ToolStripMenuItem();
             proveedoresToolStripMenuItem = new ToolStripMenuItem();
             clientesToolStripMenuItem = new ToolStripMenuItem();
+            administraciónDeUsuariosToolStripMenuItem = new ToolStripMenuItem();
+            administraciónDeParámetrosToolStripMenuItem = new ToolStripMenuItem();
             menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
@@ -71,10 +73,10 @@
             // 
             // administraciónToolStripMenuItem
             // 
+            administraciónToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { administraciónDeUsuariosToolStripMenuItem, administraciónDeParámetrosToolStripMenuItem });
             administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
             administraciónToolStripMenuItem.Size = new Size(123, 24);
             administraciónToolStripMenuItem.Text = "Administración";
-            administraciónToolStripMenuItem.Click += administraciónToolStripMenuItem_Click;
             // 
             // moduloProveedoresToolStripMenuItem
             // 
@@ -111,6 +113,20 @@
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
+            // administraciónDeUsuariosToolStripMenuItem
+            // 
+            administraciónDeUsuariosToolStripMenuItem.Name = "administraciónDeUsuariosToolStripMenuItem";
+            administraciónDeUsuariosToolStripMenuItem.Size = new Size(291, 26);
+            administraciónDeUsuariosToolStripMenuItem.Text = "Administración de Usuarios";
+            administraciónDeUsuariosToolStripMenuItem.Click += administraciónDeUsuariosToolStripMenuItem_Click;
+            // 
+            // administraciónDeParámetrosToolStripMenuItem
+            // 
+            administraciónDeParámetrosToolStripMenuItem.Name = "administraciónDeParámetrosToolStripMenuItem";
+            administraciónDeParámetrosToolStripMenuItem.Size = new Size(291, 26);
+            administraciónDeParámetrosToolStripMenuItem.Text = "Administración de Parámetros";
+            administraciónDeParámetrosToolStripMenuItem.Click += administraciónDeParámetrosToolStripMenuItem_Click;
+            // 
             // Form_Menu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -144,6 +160,8 @@
         private ToolStripMenuItem proveedoresToolStripMenuItem;
         private ToolStripMenuItem clientesToolStripMenuItem;
         private ToolStripMenuItem administraciónToolStripMenuItem;
+        private ToolStripMenuItem administraciónDeUsuariosToolStripMenuItem;
+        private ToolStripMenuItem administraciónDeParámetrosToolStripMenuItem;
     }
 }
 

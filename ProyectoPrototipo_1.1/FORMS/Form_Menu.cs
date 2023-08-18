@@ -83,11 +83,18 @@ namespace ProyectoPrototipo_1._0
             form_Clientes.Show();
         }
 
-        private void administraciónToolStripMenuItem_Click(object sender, EventArgs e)
+        private void administraciónDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Administracion form_administracion = new Form_Administracion();
-            form_administracion.MdiParent = this;
-            form_administracion.Show();
+            Form_AdministracionDeUsuarios form_AdminUsuarios = new Form_AdministracionDeUsuarios();
+            form_AdminUsuarios.MdiParent = this;
+            form_AdminUsuarios.Show();
+        }
+
+        private void administraciónDeParámetrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form_AdministracionDeParametros form_AdminParametros = new Form_AdministracionDeParametros();
+            form_AdminParametros.MdiParent = this;
+            form_AdminParametros.Show();
         }
     }
 }

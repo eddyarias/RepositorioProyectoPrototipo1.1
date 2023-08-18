@@ -1,6 +1,6 @@
 ﻿namespace ProyectoPrototipo_1._1.FORMS
 {
-    partial class Form_Administracion
+    partial class Form_AdministracionDeUsuarios
     {
         /// <summary>
         /// Required designer variable.

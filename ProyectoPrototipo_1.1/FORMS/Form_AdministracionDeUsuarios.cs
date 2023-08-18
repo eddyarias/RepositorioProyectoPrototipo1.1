@@ -12,9 +12,9 @@ using System.Windows.Forms;
 
 namespace ProyectoPrototipo_1._1.FORMS
 {
-    public partial class Form_Administracion : Form
+    public partial class Form_AdministracionDeUsuarios : Form
     {
-        public Form_Administracion()
+        public Form_AdministracionDeUsuarios()
         {
             InitializeComponent();
         }
