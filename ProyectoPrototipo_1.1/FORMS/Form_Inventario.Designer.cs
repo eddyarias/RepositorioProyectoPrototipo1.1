@@ -63,22 +63,14 @@
             tabPage6 = new TabPage();
             button1 = new Button();
             label3 = new Label();
-            textBox1 = new TextBox();
-            label5 = new Label();
-            label6 = new Label();
             label12 = new Label();
             textBox3 = new TextBox();
-            label14 = new Label();
             label16 = new Label();
             textBox5 = new TextBox();
             textBox6 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            textBox16 = new TextBox();
             textBox17 = new TextBox();
             label17 = new Label();
             textBox18 = new TextBox();
-            label18 = new Label();
             label19 = new Label();
             BActualizar = new Button();
             tabPage7 = new TabPage();
@@ -439,22 +431,14 @@
             // 
             tabPage6.Controls.Add(button1);
             tabPage6.Controls.Add(label3);
-            tabPage6.Controls.Add(textBox1);
-            tabPage6.Controls.Add(label5);
-            tabPage6.Controls.Add(label6);
             tabPage6.Controls.Add(label12);
             tabPage6.Controls.Add(textBox3);
-            tabPage6.Controls.Add(label14);
             tabPage6.Controls.Add(label16);
             tabPage6.Controls.Add(textBox5);
             tabPage6.Controls.Add(textBox6);
-            tabPage6.Controls.Add(textBox12);
-            tabPage6.Controls.Add(textBox13);
-            tabPage6.Controls.Add(textBox16);
             tabPage6.Controls.Add(textBox17);
             tabPage6.Controls.Add(label17);
             tabPage6.Controls.Add(textBox18);
-            tabPage6.Controls.Add(label18);
             tabPage6.Controls.Add(label19);
             tabPage6.Controls.Add(BActualizar);
             tabPage6.Location = new Point(4, 29);
@@ -483,36 +467,10 @@
             label3.TabIndex = 72;
             label3.Text = "Código de barras: (*)";
             // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(222, 302);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(119, 27);
-            textBox1.TabIndex = 89;
-            // 
-            // label5
-            // 
-            label5.AutoSize = true;
-            label5.Location = new Point(95, 96);
-            label5.Name = "label5";
-            label5.Size = new Size(90, 20);
-            label5.TabIndex = 73;
-            label5.Text = "Descripción:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(141, 310);
-            label6.Name = "label6";
-            label6.Size = new Size(34, 20);
-            label6.TabIndex = 88;
-            label6.Text = "IVA:";
-            // 
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(141, 135);
+            label12.Location = new Point(141, 66);
             label12.Name = "label12";
             label12.Size = new Size(41, 20);
             label12.TabIndex = 74;
@@ -520,25 +478,16 @@
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(222, 158);
+            textBox3.Location = new Point(222, 89);
             textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(119, 27);
             textBox3.TabIndex = 87;
             // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(113, 61);
-            label14.Name = "label14";
-            label14.Size = new Size(72, 20);
-            label14.TabIndex = 75;
-            label14.Text = "Cantidad:";
-            // 
             // label16
             // 
             label16.AutoSize = true;
-            label16.Location = new Point(134, 169);
+            label16.Location = new Point(134, 100);
             label16.Name = "label16";
             label16.Size = new Size(43, 20);
             label16.TabIndex = 86;
@@ -554,39 +503,15 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(222, 267);
+            textBox6.Location = new Point(222, 165);
             textBox6.Margin = new Padding(3, 4, 3, 4);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(119, 27);
             textBox6.TabIndex = 85;
             // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(222, 54);
-            textBox12.Margin = new Padding(3, 4, 3, 4);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(119, 27);
-            textBox12.TabIndex = 77;
-            // 
-            // textBox13
-            // 
-            textBox13.Location = new Point(222, 232);
-            textBox13.Margin = new Padding(3, 4, 3, 4);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(119, 27);
-            textBox13.TabIndex = 84;
-            // 
-            // textBox16
-            // 
-            textBox16.Location = new Point(222, 88);
-            textBox16.Margin = new Padding(3, 4, 3, 4);
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(119, 27);
-            textBox16.TabIndex = 78;
-            // 
             // textBox17
             // 
-            textBox17.Location = new Point(222, 197);
+            textBox17.Location = new Point(222, 128);
             textBox17.Margin = new Padding(3, 4, 3, 4);
             textBox17.Name = "textBox17";
             textBox17.Size = new Size(119, 27);
@@ -595,7 +520,7 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(83, 201);
+            label17.Location = new Point(83, 132);
             label17.Name = "label17";
             label17.Size = new Size(105, 20);
             label17.TabIndex = 79;
@@ -603,25 +528,16 @@
             // 
             // textBox18
             // 
-            textBox18.Location = new Point(222, 123);
+            textBox18.Location = new Point(222, 54);
             textBox18.Margin = new Padding(3, 4, 3, 4);
             textBox18.Name = "textBox18";
             textBox18.Size = new Size(119, 27);
             textBox18.TabIndex = 82;
             // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(112, 236);
-            label18.Name = "label18";
-            label18.Size = new Size(68, 20);
-            label18.TabIndex = 80;
-            label18.Text = "Fec. cad.:";
-            // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(90, 271);
+            label19.Location = new Point(90, 169);
             label19.Name = "label19";
             label19.Size = new Size(94, 20);
             label19.TabIndex = 81;
@@ -629,7 +545,7 @@
             // 
             // BActualizar
             // 
-            BActualizar.Location = new Point(192, 359);
+            BActualizar.Location = new Point(194, 217);
             BActualizar.Margin = new Padding(3, 4, 3, 4);
             BActualizar.Name = "BActualizar";
             BActualizar.Size = new Size(84, 38);
@@ -902,22 +818,14 @@
         private TabPage tabPage2;
         private TabPage tabPage6;
         private Label label3;
-        private TextBox textBox1;
-        private Label label5;
-        private Label label6;
         private Label label12;
         private TextBox textBox3;
-        private Label label14;
         private Label label16;
         private TextBox textBox5;
         private TextBox textBox6;
-        private TextBox textBox12;
-        private TextBox textBox13;
-        private TextBox textBox16;
         private TextBox textBox17;
         private Label label17;
         private TextBox textBox18;
-        private Label label18;
         private Label label19;
         private TabPage tabPage7;
         private TabPage tabPage8;
