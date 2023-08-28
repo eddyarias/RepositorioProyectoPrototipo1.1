@@ -110,8 +110,9 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(506, 32);
+            dataGridView1.Location = new Point(431, 32);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -155,7 +156,7 @@
             tabControl1.Location = new Point(3, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(497, 496);
+            tabControl1.Size = new Size(422, 496);
             tabControl1.TabIndex = 76;
             // 
             // tabPage1
@@ -362,7 +363,7 @@
             tabPage2.Location = new Point(4, 29);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(489, 463);
+            tabPage2.Size = new Size(414, 463);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Consultar";
             tabPage2.UseVisualStyleBackColor = true;
@@ -616,6 +617,7 @@
             // 
             // dataGridView3
             // 
+            dataGridView3.BackgroundColor = Color.White;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(53, 65);
             dataGridView3.Margin = new Padding(3, 4, 3, 4);
@@ -649,6 +651,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.BackgroundColor = Color.White;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(52, 73);
             dataGridView2.Margin = new Padding(3, 4, 3, 4);

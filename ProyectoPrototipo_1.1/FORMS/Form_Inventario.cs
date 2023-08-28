@@ -36,7 +36,7 @@ namespace ProyectoPrototipo_1._0
 
         private void ClearTextFields()
         {
-            textBox1.Clear();
+            //textBox1.Clear();
             textBox2.Clear();
             textBox4.Clear();
             textBox7.Clear();

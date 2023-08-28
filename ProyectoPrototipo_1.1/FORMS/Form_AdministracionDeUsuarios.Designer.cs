@@ -357,9 +357,9 @@
             label6.AutoSize = true;
             label6.Location = new Point(50, 50);
             label6.Name = "label6";
-            label6.Size = new Size(78, 20);
+            label6.Size = new Size(81, 20);
             label6.TabIndex = 53;
-            label6.Text = "Username:";
+            label6.Text = "CI-Usuario:";
             // 
             // button8
             // 
@@ -368,13 +368,14 @@
             button8.Name = "button8";
             button8.Size = new Size(93, 35);
             button8.TabIndex = 52;
-            button8.Text = "Eliminar";
+            button8.Text = "Consultar";
             button8.UseVisualStyleBackColor = true;
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(507, 38);
+            dataGridView1.Location = new Point(503, 58);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -385,7 +386,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(507, 18);
+            label3.Location = new Point(503, 38);
             label3.Name = "label3";
             label3.Size = new Size(125, 20);
             label3.TabIndex = 3;

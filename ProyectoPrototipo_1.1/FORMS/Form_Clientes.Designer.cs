@@ -258,6 +258,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.WhiteSmoke;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(466, 51);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);

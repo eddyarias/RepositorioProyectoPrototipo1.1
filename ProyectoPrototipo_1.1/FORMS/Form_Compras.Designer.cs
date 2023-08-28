@@ -69,8 +69,6 @@
             label1 = new Label();
             tabPage4 = new TabPage();
             button8 = new Button();
-            label13 = new Label();
-            BBuscarFactura = new Button();
             label5 = new Label();
             textBox6 = new TextBox();
             label6 = new Label();
@@ -232,11 +230,11 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(52, 46);
+            label2.Location = new Point(33, 45);
             label2.Name = "label2";
-            label2.Size = new Size(90, 20);
+            label2.Size = new Size(110, 20);
             label2.TabIndex = 31;
-            label2.Text = "Descripción:";
+            label2.Text = "Ruc-Proveedor:";
             // 
             // textBox2
             // 
@@ -251,9 +249,9 @@
             button11.Location = new Point(166, 86);
             button11.Margin = new Padding(3, 4, 3, 4);
             button11.Name = "button11";
-            button11.Size = new Size(93, 41);
+            button11.Size = new Size(112, 66);
             button11.TabIndex = 20;
-            button11.Text = "Consultar";
+            button11.Text = "Consultar pedido";
             button11.UseVisualStyleBackColor = true;
             // 
             // label11
@@ -340,6 +338,7 @@
             // 
             // dataGridView3
             // 
+            dataGridView3.BackgroundColor = Color.White;
             dataGridView3.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView3.Location = new Point(11, 232);
             dataGridView3.Margin = new Padding(3, 4, 3, 4);
@@ -509,8 +508,6 @@
             // tabPage4
             // 
             tabPage4.Controls.Add(button8);
-            tabPage4.Controls.Add(label13);
-            tabPage4.Controls.Add(BBuscarFactura);
             tabPage4.Controls.Add(label5);
             tabPage4.Controls.Add(textBox6);
             tabPage4.Controls.Add(label6);
@@ -532,25 +529,6 @@
             button8.TabIndex = 23;
             button8.Text = "Consultar";
             button8.UseVisualStyleBackColor = true;
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(24, 96);
-            label13.Name = "label13";
-            label13.Size = new Size(127, 20);
-            label13.TabIndex = 22;
-            label13.Text = "Fecha de emisión:";
-            // 
-            // BBuscarFactura
-            // 
-            BBuscarFactura.Location = new Point(157, 86);
-            BBuscarFactura.Margin = new Padding(3, 4, 3, 4);
-            BBuscarFactura.Name = "BBuscarFactura";
-            BBuscarFactura.Size = new Size(93, 41);
-            BBuscarFactura.TabIndex = 20;
-            BBuscarFactura.Text = "Consultar";
-            BBuscarFactura.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -662,6 +640,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(488, 67);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
@@ -734,11 +713,9 @@
         private TabControl tabControl1;
         private TabPage tabPage3;
         private TabPage tabPage4;
-        private Button BBuscarFactura;
         private Label label5;
         private TextBox textBox6;
         private Label label6;
-        private Label label13;
         private Button button4;
         private TextBox textBox9;
         private TextBox textBox10;

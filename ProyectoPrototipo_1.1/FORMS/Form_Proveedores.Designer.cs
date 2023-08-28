@@ -795,6 +795,7 @@
             // 
             // dataGridView2
             // 
+            dataGridView2.BackgroundColor = Color.White;
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView2.Location = new Point(238, 19);
             dataGridView2.Margin = new Padding(3, 4, 3, 4);
@@ -843,6 +844,7 @@
             // 
             // dataGridView1
             // 
+            dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Location = new Point(36, 339);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);

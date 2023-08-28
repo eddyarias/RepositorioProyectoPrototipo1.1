@@ -290,5 +290,10 @@ namespace ProyectoPrototipo_1._0
         {
 
         }
+
+        private void tabPage8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

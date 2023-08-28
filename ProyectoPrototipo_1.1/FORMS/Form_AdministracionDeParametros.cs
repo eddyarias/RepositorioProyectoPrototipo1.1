@@ -16,5 +16,10 @@ namespace ProyectoPrototipo_1._1.FORMS
         {
             InitializeComponent();
         }
+
+        private void Form_AdministracionDeParametros_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

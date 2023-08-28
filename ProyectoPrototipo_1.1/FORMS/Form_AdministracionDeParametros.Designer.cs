@@ -36,28 +36,28 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label1 = new Label();
+            tabPage2 = new TabPage();
+            textBox3 = new TextBox();
+            label4 = new Label();
+            button1 = new Button();
             tabPage7 = new TabPage();
+            button2 = new Button();
+            textBox6 = new TextBox();
+            label7 = new Label();
+            textBox7 = new TextBox();
+            label8 = new Label();
             tabPage8 = new TabPage();
             textBox5 = new TextBox();
             label6 = new Label();
             button8 = new Button();
             label3 = new Label();
             dataGridView1 = new DataGridView();
-            tabPage2 = new TabPage();
-            button2 = new Button();
-            textBox6 = new TextBox();
-            label7 = new Label();
-            textBox7 = new TextBox();
-            label8 = new Label();
-            textBox3 = new TextBox();
-            label4 = new Label();
-            button1 = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage2.SuspendLayout();
             tabPage7.SuspendLayout();
             tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage2.SuspendLayout();
             SuspendLayout();
             // 
             // TCProveedores
@@ -142,6 +142,46 @@
             label1.TabIndex = 2;
             label1.Text = "Parámetro:";
             // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(textBox3);
+            tabPage2.Controls.Add(label4);
+            tabPage2.Controls.Add(button1);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3);
+            tabPage2.Size = new Size(485, 275);
+            tabPage2.TabIndex = 6;
+            tabPage2.Text = "Consultar";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // textBox3
+            // 
+            textBox3.Location = new Point(140, 44);
+            textBox3.Margin = new Padding(3, 4, 3, 4);
+            textBox3.Name = "textBox3";
+            textBox3.Size = new Size(169, 27);
+            textBox3.TabIndex = 57;
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(54, 47);
+            label4.Name = "label4";
+            label4.Size = new Size(80, 20);
+            label4.TabIndex = 56;
+            label4.Text = "Parámetro:";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(336, 40);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(93, 35);
+            button1.TabIndex = 55;
+            button1.Text = "Consultar";
+            button1.UseVisualStyleBackColor = true;
+            // 
             // tabPage7
             // 
             tabPage7.Controls.Add(button2);
@@ -156,78 +196,6 @@
             tabPage7.TabIndex = 4;
             tabPage7.Text = "Actualizar";
             tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // tabPage8
-            // 
-            tabPage8.Controls.Add(textBox5);
-            tabPage8.Controls.Add(label6);
-            tabPage8.Controls.Add(button8);
-            tabPage8.Location = new Point(4, 29);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(485, 275);
-            tabPage8.TabIndex = 5;
-            tabPage8.Text = "Eliminar";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(140, 44);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(169, 27);
-            textBox5.TabIndex = 54;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(54, 47);
-            label6.Name = "label6";
-            label6.Size = new Size(80, 20);
-            label6.TabIndex = 53;
-            label6.Text = "Parámetro:";
-            // 
-            // button8
-            // 
-            button8.Location = new Point(336, 40);
-            button8.Margin = new Padding(3, 4, 3, 4);
-            button8.Name = "button8";
-            button8.Size = new Size(93, 35);
-            button8.TabIndex = 52;
-            button8.Text = "Eliminar";
-            button8.UseVisualStyleBackColor = true;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Location = new Point(511, 11);
-            label3.Name = "label3";
-            label3.Size = new Size(143, 20);
-            label3.TabIndex = 5;
-            label3.Text = "Tabla de Parámetros";
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(509, 35);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(381, 431);
-            dataGridView1.TabIndex = 4;
-            // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(textBox3);
-            tabPage2.Controls.Add(label4);
-            tabPage2.Controls.Add(button1);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(485, 275);
-            tabPage2.TabIndex = 6;
-            tabPage2.Text = "Consultar";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -273,32 +241,65 @@
             label8.TabIndex = 17;
             label8.Text = "Parámetro:";
             // 
-            // textBox3
+            // tabPage8
             // 
-            textBox3.Location = new Point(140, 44);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(169, 27);
-            textBox3.TabIndex = 57;
+            tabPage8.Controls.Add(textBox5);
+            tabPage8.Controls.Add(label6);
+            tabPage8.Controls.Add(button8);
+            tabPage8.Location = new Point(4, 29);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Size = new Size(485, 275);
+            tabPage8.TabIndex = 5;
+            tabPage8.Text = "Eliminar";
+            tabPage8.UseVisualStyleBackColor = true;
             // 
-            // label4
+            // textBox5
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(54, 47);
-            label4.Name = "label4";
-            label4.Size = new Size(80, 20);
-            label4.TabIndex = 56;
-            label4.Text = "Parámetro:";
+            textBox5.Location = new Point(140, 44);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(169, 27);
+            textBox5.TabIndex = 54;
             // 
-            // button1
+            // label6
             // 
-            button1.Location = new Point(336, 40);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(93, 35);
-            button1.TabIndex = 55;
-            button1.Text = "Consultar";
-            button1.UseVisualStyleBackColor = true;
+            label6.AutoSize = true;
+            label6.Location = new Point(54, 47);
+            label6.Name = "label6";
+            label6.Size = new Size(80, 20);
+            label6.TabIndex = 53;
+            label6.Text = "Parámetro:";
+            // 
+            // button8
+            // 
+            button8.Location = new Point(336, 40);
+            button8.Margin = new Padding(3, 4, 3, 4);
+            button8.Name = "button8";
+            button8.Size = new Size(93, 35);
+            button8.TabIndex = 52;
+            button8.Text = "Eliminar";
+            button8.UseVisualStyleBackColor = true;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(511, 42);
+            label3.Name = "label3";
+            label3.Size = new Size(143, 20);
+            label3.TabIndex = 5;
+            label3.Text = "Tabla de Parámetros";
+            // 
+            // dataGridView1
+            // 
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(507, 66);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 24;
+            dataGridView1.Size = new Size(381, 431);
+            dataGridView1.TabIndex = 4;
             // 
             // Form_AdministracionDeParametros
             // 
@@ -310,16 +311,17 @@
             Controls.Add(TCProveedores);
             Name = "Form_AdministracionDeParametros";
             Text = "Administración de Parámetros";
+            Load += Form_AdministracionDeParametros_Load;
             TCProveedores.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             tabPage7.ResumeLayout(false);
             tabPage7.PerformLayout();
             tabPage8.ResumeLayout(false);
             tabPage8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
