@@ -183,7 +183,7 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(489, 463);
+            tabPage1.Size = new Size(414, 463);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar";
             tabPage1.UseVisualStyleBackColor = true;
@@ -444,7 +444,7 @@
             tabPage6.Controls.Add(BActualizar);
             tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
-            tabPage6.Size = new Size(489, 463);
+            tabPage6.Size = new Size(414, 463);
             tabPage6.TabIndex = 2;
             tabPage6.Text = "Actualizar";
             tabPage6.UseVisualStyleBackColor = true;
@@ -563,7 +563,7 @@
             tabPage7.Controls.Add(label35);
             tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
-            tabPage7.Size = new Size(489, 463);
+            tabPage7.Size = new Size(414, 463);
             tabPage7.TabIndex = 3;
             tabPage7.Text = "Eliminar";
             tabPage7.UseVisualStyleBackColor = true;
@@ -754,6 +754,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(912, 591);
+            ControlBox = false;
             Controls.Add(label37);
             Controls.Add(tabControl2);
             Margin = new Padding(3, 4, 3, 4);

@@ -36,17 +36,11 @@ namespace ProyectoPrototipo_1._0
         public Form_Ventas()
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Form_Ventas_Load(object sender, EventArgs e)
         {
-            // Centrar el formulario en la pantalla
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
-                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); ;
-            // Cambiar el estado del formulario a maximizado
-            this.WindowState = FormWindowState.Maximized;
-
             this.TabSecuencialVentas.TabPages[1].Enabled = false;
             this.TabSecuencialVentas.TabPages[2].Enabled = false;
             this.TabSecuencialVentas.TabPages[3].Enabled = false;

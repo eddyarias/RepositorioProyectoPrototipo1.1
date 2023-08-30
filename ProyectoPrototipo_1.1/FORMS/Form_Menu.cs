@@ -14,24 +14,32 @@ namespace ProyectoPrototipo_1._0
 {
     public partial class Form_Menu : Form
     {
+        private Form_Inventario form_Inventario;
+        private Form_Ventas form_Ventas;
+        private Form_Compras form_Compras;
+        private Form_Proveedores form_Proveedores;
+        private Form_Clientes form_Clientes;
+        private Form_AdministracionDelSistema form_AdminSistema;
+        private Form_Login form_Login;
         public Form_Menu()
         {
             InitializeComponent();
+            // Instanciar todos los formularios
+            form_Inventario = new Form_Inventario();
+            form_Ventas = new Form_Ventas();
+            form_Compras = new Form_Compras();
+            form_Proveedores = new Form_Proveedores();
+            form_Clientes = new Form_Clientes();
+            form_AdminSistema = new Form_AdministracionDelSistema();
+            form_Login=new Form_Login();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            //Ajustar el tamaño del formulario
-            //this.Width = 1600; // Ancho del formulario
-            //this.Height = 1000; // Altura del formulario 930; 638
-
-            // Centrar el formulario en la pantalla un poco hacia arriba
-            //this.StartPosition = FormStartPosition.Manual;
-            //this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
-            //                          (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2 - 40); ;
             // Cambiar el estado del formulario a maximizado
             this.WindowState = FormWindowState.Maximized;
-
+            form_Login.MdiParent = this;
+            form_Login.Show();
         }
 
 
@@ -48,7 +56,7 @@ namespace ProyectoPrototipo_1._0
 
         private void moduloProveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Inventario form_Inventario = new Form_Inventario();
+            HideAllForms();
             form_Inventario.MdiParent = this;
             form_Inventario.Show();
         }
@@ -57,44 +65,53 @@ namespace ProyectoPrototipo_1._0
 
         private void ventasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Ventas form_Ventas = new Form_Ventas();
+            HideAllForms();
             form_Ventas.MdiParent = this;
             form_Ventas.Show();
         }
 
         private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Compras form_Compras = new Form_Compras();
+            HideAllForms();
             form_Compras.MdiParent = this;
             form_Compras.Show();
         }
 
         private void proveedoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Proveedores form_Proveedores = new Form_Proveedores();
+            HideAllForms();
             form_Proveedores.MdiParent = this;
             form_Proveedores.Show();
         }
 
         private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_Clientes form_Clientes = new Form_Clientes();
+            HideAllForms();
             form_Clientes.MdiParent = this;
             form_Clientes.Show();
         }
-
-        private void administraciónDeUsuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void administraciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form_AdministracionDeUsuarios form_AdminUsuarios = new Form_AdministracionDeUsuarios();
-            form_AdminUsuarios.MdiParent = this;
-            form_AdminUsuarios.Show();
+            HideAllForms();
+            form_AdminSistema.MdiParent = this;
+            form_AdminSistema.Show();
+        }
+        private void cerrarSesiónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            HideAllForms();
+            form_Login.MdiParent = this;
+            form_Login.Show();
         }
 
-        private void administraciónDeParámetrosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void HideAllForms()
         {
-            Form_AdministracionDeParametros form_AdminParametros = new Form_AdministracionDeParametros();
-            form_AdminParametros.MdiParent = this;
-            form_AdminParametros.Show();
+            form_Inventario.Hide();
+            form_Ventas.Hide();
+            form_Compras.Hide();
+            form_Proveedores.Hide();
+            form_Clientes.Hide();
+            form_AdminSistema.Hide();
+            form_Login.Hide();
         }
     }
 }

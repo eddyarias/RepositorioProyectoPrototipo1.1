@@ -103,6 +103,7 @@
             label9 = new Label();
             dataGridView1 = new DataGridView();
             label37 = new Label();
+            button3 = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -846,7 +847,7 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(36, 339);
+            dataGridView1.Location = new Point(669, 71);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
@@ -865,11 +866,22 @@
             label37.TabIndex = 1;
             label37.Text = "PROVEEDORES";
             // 
+            // button3
+            // 
+            button3.Location = new Point(1776, 912);
+            button3.Name = "button3";
+            button3.Size = new Size(94, 29);
+            button3.TabIndex = 2;
+            button3.Text = "button3";
+            button3.UseVisualStyleBackColor = true;
+            // 
             // Form_Proveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 591);
+            ClientSize = new Size(1882, 953);
+            ControlBox = false;
+            Controls.Add(button3);
             Controls.Add(label37);
             Controls.Add(TCProveedores);
             Controls.Add(dataGridView1);
@@ -973,5 +985,6 @@
         private Label label10;
         private Button button2;
         private Label label37;
+        private Button button3;
     }
 }

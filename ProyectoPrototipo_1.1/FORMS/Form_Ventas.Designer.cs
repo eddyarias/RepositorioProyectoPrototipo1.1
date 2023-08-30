@@ -90,6 +90,21 @@
             tabControl1 = new TabControl();
             tabPage5 = new TabPage();
             tabPage8 = new TabPage();
+            dataGridView5 = new DataGridView();
+            tabControl2 = new TabControl();
+            tabPage9 = new TabPage();
+            label40 = new Label();
+            dateTimePicker3 = new DateTimePicker();
+            label33 = new Label();
+            dateTimePicker2 = new DateTimePicker();
+            tabPage10 = new TabPage();
+            label23 = new Label();
+            label25 = new Label();
+            textBox1 = new TextBox();
+            tabPage11 = new TabPage();
+            label38 = new Label();
+            label39 = new Label();
+            textBox5 = new TextBox();
             dataGridView2 = new DataGridView();
             column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -100,9 +115,6 @@
             Total = new DataGridViewTextBoxColumn();
             Column7 = new DataGridViewTextBoxColumn();
             Estado = new DataGridViewTextBoxColumn();
-            label23 = new Label();
-            textBox1 = new TextBox();
-            label25 = new Label();
             button7 = new Button();
             tabPage6 = new TabPage();
             dataGridView3 = new DataGridView();
@@ -120,6 +132,8 @@
             label26 = new Label();
             BBuscar = new Button();
             tabPage7 = new TabPage();
+            dateTimePicker4 = new DateTimePicker();
+            button10 = new Button();
             label32 = new Label();
             dateTimePicker1 = new DateTimePicker();
             dataGridView4 = new DataGridView();
@@ -131,20 +145,6 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            label33 = new Label();
-            dateTimePicker2 = new DateTimePicker();
-            tabControl2 = new TabControl();
-            tabPage9 = new TabPage();
-            tabPage10 = new TabPage();
-            tabPage11 = new TabPage();
-            label38 = new Label();
-            label39 = new Label();
-            textBox5 = new TextBox();
-            label40 = new Label();
-            dateTimePicker3 = new DateTimePicker();
-            dataGridView5 = new DataGridView();
-            button10 = new Button();
-            dateTimePicker4 = new DateTimePicker();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
@@ -155,16 +155,16 @@
             tabControl1.SuspendLayout();
             tabPage5.SuspendLayout();
             tabPage8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
+            tabControl2.SuspendLayout();
+            tabPage9.SuspendLayout();
+            tabPage10.SuspendLayout();
+            tabPage11.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
             tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
-            tabControl2.SuspendLayout();
-            tabPage9.SuspendLayout();
-            tabPage10.SuspendLayout();
-            tabPage11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).BeginInit();
             SuspendLayout();
             // 
             // TabSecuencialVentas
@@ -807,6 +807,152 @@
             tabPage8.UseVisualStyleBackColor = true;
             tabPage8.Click += tabPage8_Click;
             // 
+            // dataGridView5
+            // 
+            dataGridView5.BackgroundColor = Color.White;
+            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView5.Location = new Point(7, 174);
+            dataGridView5.Name = "dataGridView5";
+            dataGridView5.RowHeadersWidth = 51;
+            dataGridView5.RowTemplate.Height = 29;
+            dataGridView5.Size = new Size(841, 146);
+            dataGridView5.TabIndex = 91;
+            // 
+            // tabControl2
+            // 
+            tabControl2.Controls.Add(tabPage9);
+            tabControl2.Controls.Add(tabPage10);
+            tabControl2.Controls.Add(tabPage11);
+            tabControl2.Location = new Point(3, 3);
+            tabControl2.Name = "tabControl2";
+            tabControl2.SelectedIndex = 0;
+            tabControl2.Size = new Size(673, 155);
+            tabControl2.TabIndex = 90;
+            // 
+            // tabPage9
+            // 
+            tabPage9.Controls.Add(label40);
+            tabPage9.Controls.Add(dateTimePicker3);
+            tabPage9.Controls.Add(label33);
+            tabPage9.Controls.Add(dateTimePicker2);
+            tabPage9.Location = new Point(4, 29);
+            tabPage9.Name = "tabPage9";
+            tabPage9.Padding = new Padding(3);
+            tabPage9.Size = new Size(665, 122);
+            tabPage9.TabIndex = 0;
+            tabPage9.Text = "tabPage9";
+            tabPage9.UseVisualStyleBackColor = true;
+            // 
+            // label40
+            // 
+            label40.AutoSize = true;
+            label40.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label40.Location = new Point(44, 83);
+            label40.Name = "label40";
+            label40.Size = new Size(184, 17);
+            label40.TabIndex = 89;
+            label40.Text = "Seleccionar fecha-fin:";
+            // 
+            // dateTimePicker3
+            // 
+            dateTimePicker3.Location = new Point(234, 73);
+            dateTimePicker3.Name = "dateTimePicker3";
+            dateTimePicker3.Size = new Size(312, 27);
+            dateTimePicker3.TabIndex = 88;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label33.Location = new Point(20, 30);
+            label33.Name = "label33";
+            label33.Size = new Size(208, 17);
+            label33.TabIndex = 87;
+            label33.Text = "Seleccionar fecha-inicio:";
+            // 
+            // dateTimePicker2
+            // 
+            dateTimePicker2.Location = new Point(234, 23);
+            dateTimePicker2.Name = "dateTimePicker2";
+            dateTimePicker2.Size = new Size(312, 27);
+            dateTimePicker2.TabIndex = 86;
+            // 
+            // tabPage10
+            // 
+            tabPage10.Controls.Add(label23);
+            tabPage10.Controls.Add(label25);
+            tabPage10.Controls.Add(textBox1);
+            tabPage10.Location = new Point(4, 29);
+            tabPage10.Name = "tabPage10";
+            tabPage10.Padding = new Padding(3);
+            tabPage10.Size = new Size(665, 122);
+            tabPage10.TabIndex = 1;
+            tabPage10.Text = "tabPage10";
+            tabPage10.UseVisualStyleBackColor = true;
+            // 
+            // label23
+            // 
+            label23.AutoSize = true;
+            label23.Location = new Point(180, 37);
+            label23.Name = "label23";
+            label23.Size = new Size(157, 20);
+            label23.TabIndex = 84;
+            label23.Text = "Numero de factura: (*)";
+            // 
+            // label25
+            // 
+            label25.AutoSize = true;
+            label25.Location = new Point(252, 30);
+            label25.Name = "label25";
+            label25.Size = new Size(0, 20);
+            label25.TabIndex = 82;
+            // 
+            // textBox1
+            // 
+            textBox1.Location = new Point(354, 34);
+            textBox1.Margin = new Padding(3, 4, 3, 4);
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(119, 27);
+            textBox1.TabIndex = 83;
+            // 
+            // tabPage11
+            // 
+            tabPage11.Controls.Add(label38);
+            tabPage11.Controls.Add(label39);
+            tabPage11.Controls.Add(textBox5);
+            tabPage11.Location = new Point(4, 29);
+            tabPage11.Name = "tabPage11";
+            tabPage11.Padding = new Padding(3);
+            tabPage11.Size = new Size(665, 122);
+            tabPage11.TabIndex = 2;
+            tabPage11.Text = "tabPage11";
+            tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // label38
+            // 
+            label38.AutoSize = true;
+            label38.Location = new Point(160, 46);
+            label38.Name = "label38";
+            label38.Size = new Size(155, 20);
+            label38.TabIndex = 87;
+            label38.Text = "Número de cédula: (*)";
+            // 
+            // label39
+            // 
+            label39.AutoSize = true;
+            label39.Location = new Point(232, 39);
+            label39.Name = "label39";
+            label39.Size = new Size(0, 20);
+            label39.TabIndex = 85;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(334, 43);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(119, 27);
+            textBox5.TabIndex = 86;
+            // 
             // dataGridView2
             // 
             dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -880,31 +1026,6 @@
             Estado.MinimumWidth = 6;
             Estado.Name = "Estado";
             Estado.Width = 125;
-            // 
-            // label23
-            // 
-            label23.AutoSize = true;
-            label23.Location = new Point(180, 37);
-            label23.Name = "label23";
-            label23.Size = new Size(157, 20);
-            label23.TabIndex = 84;
-            label23.Text = "Numero de factura: (*)";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(354, 34);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(119, 27);
-            textBox1.TabIndex = 83;
-            // 
-            // label25
-            // 
-            label25.AutoSize = true;
-            label25.Location = new Point(252, 30);
-            label25.Name = "label25";
-            label25.Size = new Size(0, 20);
-            label25.TabIndex = 82;
             // 
             // button7
             // 
@@ -1061,6 +1182,23 @@
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
             // 
+            // dateTimePicker4
+            // 
+            dateTimePicker4.Location = new Point(476, 102);
+            dateTimePicker4.Name = "dateTimePicker4";
+            dateTimePicker4.Size = new Size(312, 27);
+            dateTimePicker4.TabIndex = 85;
+            // 
+            // button10
+            // 
+            button10.Location = new Point(829, 51);
+            button10.Margin = new Padding(3, 4, 3, 4);
+            button10.Name = "button10";
+            button10.Size = new Size(151, 70);
+            button10.TabIndex = 82;
+            button10.Text = "Consultar";
+            button10.UseVisualStyleBackColor = true;
+            // 
             // label32
             // 
             label32.AutoSize = true;
@@ -1162,149 +1300,12 @@
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
             // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(20, 30);
-            label33.Name = "label33";
-            label33.Size = new Size(208, 17);
-            label33.TabIndex = 87;
-            label33.Text = "Seleccionar fecha-inicio:";
-            // 
-            // dateTimePicker2
-            // 
-            dateTimePicker2.Location = new Point(234, 23);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(312, 27);
-            dateTimePicker2.TabIndex = 86;
-            // 
-            // tabControl2
-            // 
-            tabControl2.Controls.Add(tabPage9);
-            tabControl2.Controls.Add(tabPage10);
-            tabControl2.Controls.Add(tabPage11);
-            tabControl2.Location = new Point(3, 3);
-            tabControl2.Name = "tabControl2";
-            tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(673, 155);
-            tabControl2.TabIndex = 90;
-            // 
-            // tabPage9
-            // 
-            tabPage9.Controls.Add(label40);
-            tabPage9.Controls.Add(dateTimePicker3);
-            tabPage9.Controls.Add(label33);
-            tabPage9.Controls.Add(dateTimePicker2);
-            tabPage9.Location = new Point(4, 29);
-            tabPage9.Name = "tabPage9";
-            tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(665, 91);
-            tabPage9.TabIndex = 0;
-            tabPage9.Text = "tabPage9";
-            tabPage9.UseVisualStyleBackColor = true;
-            // 
-            // tabPage10
-            // 
-            tabPage10.Controls.Add(label23);
-            tabPage10.Controls.Add(label25);
-            tabPage10.Controls.Add(textBox1);
-            tabPage10.Location = new Point(4, 29);
-            tabPage10.Name = "tabPage10";
-            tabPage10.Padding = new Padding(3);
-            tabPage10.Size = new Size(665, 122);
-            tabPage10.TabIndex = 1;
-            tabPage10.Text = "tabPage10";
-            tabPage10.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            tabPage11.Controls.Add(label38);
-            tabPage11.Controls.Add(label39);
-            tabPage11.Controls.Add(textBox5);
-            tabPage11.Location = new Point(4, 29);
-            tabPage11.Name = "tabPage11";
-            tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(665, 122);
-            tabPage11.TabIndex = 2;
-            tabPage11.Text = "tabPage11";
-            tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // label38
-            // 
-            label38.AutoSize = true;
-            label38.Location = new Point(160, 46);
-            label38.Name = "label38";
-            label38.Size = new Size(155, 20);
-            label38.TabIndex = 87;
-            label38.Text = "Número de cédula: (*)";
-            // 
-            // label39
-            // 
-            label39.AutoSize = true;
-            label39.Location = new Point(232, 39);
-            label39.Name = "label39";
-            label39.Size = new Size(0, 20);
-            label39.TabIndex = 85;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(334, 43);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(119, 27);
-            textBox5.TabIndex = 86;
-            // 
-            // label40
-            // 
-            label40.AutoSize = true;
-            label40.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label40.Location = new Point(44, 83);
-            label40.Name = "label40";
-            label40.Size = new Size(184, 17);
-            label40.TabIndex = 89;
-            label40.Text = "Seleccionar fecha-fin:";
-            // 
-            // dateTimePicker3
-            // 
-            dateTimePicker3.Location = new Point(234, 73);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(312, 27);
-            dateTimePicker3.TabIndex = 88;
-            // 
-            // dataGridView5
-            // 
-            dataGridView5.BackgroundColor = Color.White;
-            dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(7, 174);
-            dataGridView5.Name = "dataGridView5";
-            dataGridView5.RowHeadersWidth = 51;
-            dataGridView5.RowTemplate.Height = 29;
-            dataGridView5.Size = new Size(841, 146);
-            dataGridView5.TabIndex = 91;
-            // 
-            // button10
-            // 
-            button10.Location = new Point(829, 51);
-            button10.Margin = new Padding(3, 4, 3, 4);
-            button10.Name = "button10";
-            button10.Size = new Size(151, 70);
-            button10.TabIndex = 82;
-            button10.Text = "Consultar";
-            button10.UseVisualStyleBackColor = true;
-            // 
-            // dateTimePicker4
-            // 
-            dateTimePicker4.Location = new Point(476, 102);
-            dateTimePicker4.Name = "dateTimePicker4";
-            dateTimePicker4.Size = new Size(312, 27);
-            dateTimePicker4.TabIndex = 85;
-            // 
             // Form_Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1129, 757);
+            ControlBox = false;
             Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Ventas";
@@ -1325,13 +1326,7 @@
             tabControl1.ResumeLayout(false);
             tabPage5.ResumeLayout(false);
             tabPage8.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            tabPage6.ResumeLayout(false);
-            tabPage6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
-            tabPage7.ResumeLayout(false);
-            tabPage7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
             tabControl2.ResumeLayout(false);
             tabPage9.ResumeLayout(false);
             tabPage9.PerformLayout();
@@ -1339,7 +1334,13 @@
             tabPage10.PerformLayout();
             tabPage11.ResumeLayout(false);
             tabPage11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            tabPage7.ResumeLayout(false);
+            tabPage7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
             ResumeLayout(false);
         }
 

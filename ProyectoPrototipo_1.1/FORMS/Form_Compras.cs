@@ -19,16 +19,11 @@ namespace ProyectoPrototipo_1._0
         {
             dbContext = new FarmaciaDbContext();
             InitializeComponent();
+            this.WindowState = FormWindowState.Maximized;
         }
 
         private void Form_Compras_Load(object sender, EventArgs e)
         {
-            // Centrar el formulario en la pantalla
-            this.StartPosition = FormStartPosition.Manual;
-            this.Location = new Point((Screen.PrimaryScreen.Bounds.Width - this.Width) / 2,
-                                      (Screen.PrimaryScreen.Bounds.Height - this.Height) / 2); ;
-            // Cambiar el estado del formulario a maximizado
-            this.WindowState = FormWindowState.Maximized;
 
             //dbContext.Producto.Load();
             //dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
