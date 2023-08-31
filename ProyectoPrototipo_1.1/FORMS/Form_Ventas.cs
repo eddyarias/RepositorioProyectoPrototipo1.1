@@ -322,6 +322,7 @@ namespace ProyectoPrototipo_1._0
         {
 
         }
+        
 
         private void bttAgregarProdCodBarr_Click(object sender, EventArgs e)
         {
@@ -345,7 +346,14 @@ namespace ProyectoPrototipo_1._0
                     // El usuario hizo clic en "Aceptar" en el formulario de cuadro de diálogo
                     int cantidad = agregarProductoForm.CantidadIngresada;
 
-                    // Ahora puedes usar la cantidad ingresada por el usuario
+                    // Crear un objeto ProductoCarrito para el producto seleccionado
+                    ProductoCarrito productoSeleccionado = new ProductoCarrito(this.codigoProducto, productoInfo.Descripcion, productoInfo.Precio, cantidad);
+
+
+                    // Agregar el producto al carrito
+                    carritoDeCompras.Add(productoSeleccionado);
+
+                    // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
                 }
                 else
                 {
@@ -357,6 +365,8 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Producto no encontrado.");
             }
         }
+
+
 
         private ProductoInfo ObtenerPrecioYDescripcionProducto(int codigoProducto)
         {
@@ -399,11 +409,7 @@ namespace ProyectoPrototipo_1._0
         }
 
         // Define una clase ProductoInfo para almacenar la descripción y el precio del producto
-        public class ProductoInfo
-        {
-            public string Descripcion { get; set; }
-            public decimal Precio { get; set; }
-        }
+
 
 
 
@@ -454,33 +460,6 @@ namespace ProyectoPrototipo_1._0
         }
 
 
-        private void AgregarProductoAlCarrito(int codigoProducto)
-        {
-            string cantidadStr = Microsoft.VisualBasic.Interaction.InputBox("Ingresa la cantidad:", "Agregar Producto al Carrito", "1");
-
-            if (int.TryParse(cantidadStr, out int cantidad) && cantidad > 0)
-            {
-                ProductoCarrito producto = new ProductoCarrito(codigoProducto, cantidad);
-                carritoDeCompras.Add(producto);
-                MessageBox.Show($"Producto agregado al carrito: {producto.Cantidad} x Código {producto.Codigo}");
-            }
-            else
-            {
-                MessageBox.Show("Cantidad no válida. Por favor, ingresa un número entero mayor que 0.");
-            }
-        }
-
-        public class ProductoCarrito
-        {
-            public int Codigo { get; set; }
-            public int Cantidad { get; set; }
-
-            public ProductoCarrito(int codigo, int cantidad)
-            {
-                Codigo = codigo;
-                Cantidad = cantidad;
-            }
-        }
         private void dataGridViewProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (this.dataGridViewProductos.Columns[e.ColumnIndex].Name == "Agregar")
@@ -646,7 +625,27 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Por favor, ingrese un número de cédula válido.");
             }
         }
-       
+        public class ProductoInfo
+        {
+            public string Descripcion { get; set; }
+            public decimal Precio { get; set; }
+        }
+        public class ProductoCarrito
+        {
+            public int CodigoProducto { get; set; }
+            public string Descripcion { get; set; }
+            public decimal PrecioUnitario { get; set; }
+            public int Cantidad { get; set; }
+
+            public ProductoCarrito(int codigo, string descripcion, decimal precio, int cantidad)
+            {
+                CodigoProducto = codigo;
+                Descripcion = descripcion;
+                PrecioUnitario = precio;
+                Cantidad = cantidad;
+            }
+        }
+
     }
 }
 

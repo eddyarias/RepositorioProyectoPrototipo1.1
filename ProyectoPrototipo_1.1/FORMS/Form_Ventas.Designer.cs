@@ -34,11 +34,7 @@
             this.label29 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtBPrecio = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
             this.bttAgregarProdCodBarr = new System.Windows.Forms.Button();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.label30 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
@@ -225,11 +221,7 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.txtBPrecio);
-            this.panel1.Controls.Add(this.label41);
             this.panel1.Controls.Add(this.bttAgregarProdCodBarr);
-            this.panel1.Controls.Add(this.txtCantidad);
-            this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.txtCodigo);
             this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label27);
@@ -239,50 +231,15 @@
             this.panel1.TabIndex = 19;
             this.panel1.Tag = "Seleccionar por codigo de barras";
             // 
-            // txtBPrecio
-            // 
-            this.txtBPrecio.Location = new System.Drawing.Point(386, 19);
-            this.txtBPrecio.Name = "txtBPrecio";
-            this.txtBPrecio.ReadOnly = true;
-            this.txtBPrecio.Size = new System.Drawing.Size(69, 27);
-            this.txtBPrecio.TabIndex = 26;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Cascadia Mono", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label41.Location = new System.Drawing.Point(316, 24);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(64, 17);
-            this.label41.TabIndex = 25;
-            this.label41.Text = "Precio:";
-            // 
             // bttAgregarProdCodBarr
             // 
-            this.bttAgregarProdCodBarr.Location = new System.Drawing.Point(841, 11);
+            this.bttAgregarProdCodBarr.Location = new System.Drawing.Point(839, 11);
             this.bttAgregarProdCodBarr.Name = "bttAgregarProdCodBarr";
             this.bttAgregarProdCodBarr.Size = new System.Drawing.Size(166, 43);
             this.bttAgregarProdCodBarr.TabIndex = 24;
             this.bttAgregarProdCodBarr.Text = "Agregar";
             this.bttAgregarProdCodBarr.UseVisualStyleBackColor = true;
             this.bttAgregarProdCodBarr.Click += new System.EventHandler(this.bttAgregarProdCodBarr_Click);
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Location = new System.Drawing.Point(664, 19);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(69, 27);
-            this.txtCantidad.TabIndex = 23;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Cascadia Mono", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label30.Location = new System.Drawing.Point(578, 24);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(80, 17);
-            this.label30.TabIndex = 22;
-            this.label30.Text = "Cantidad:";
             // 
             // txtCodigo
             // 
@@ -1346,8 +1303,6 @@
         private Label label28;
         private Panel panel1;
         private Button bttAgregarProdCodBarr;
-        private TextBox txtCantidad;
-        private Label label30;
         private TextBox txtCodigo;
         private TextBox textBox2;
         private DataGridView dataGridView3;
@@ -1387,8 +1342,6 @@
         private DateTimePicker dateTimePicker4;
         private Button bttBuscarClienteBaseDatos;
         private BindingSource classVentaBindingSource;
-        private TextBox txtBPrecio;
-        private Label label41;
         private DataGridView dataGridViewFactura;
         private DataGridView dataGridViewProductos;
     }
