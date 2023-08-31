@@ -803,7 +803,7 @@
             tabPage8.Controls.Add(button7);
             tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1091, 696);
+            tabPage8.Size = new Size(1289, 814);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Consultar";
             tabPage8.UseVisualStyleBackColor = true;
@@ -963,7 +963,7 @@
             dataGridView2.Name = "dataGridView2";
             dataGridView2.RowHeadersWidth = 51;
             dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(1072, 359);
+            dataGridView2.Size = new Size(1188, 359);
             dataGridView2.TabIndex = 85;
             // 
             // column1
@@ -1049,7 +1049,7 @@
             tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(1091, 696);
+            tabPage6.Size = new Size(1289, 814);
             tabPage6.TabIndex = 1;
             tabPage6.Text = "Anular";
             tabPage6.UseVisualStyleBackColor = true;
@@ -1062,7 +1062,7 @@
             dataGridView3.Name = "dataGridView3";
             dataGridView3.RowHeadersWidth = 51;
             dataGridView3.RowTemplate.Height = 29;
-            dataGridView3.Size = new Size(1072, 359);
+            dataGridView3.Size = new Size(1217, 359);
             dataGridView3.TabIndex = 86;
             // 
             // dataGridViewTextBoxColumn1
@@ -1179,7 +1179,7 @@
             tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1091, 696);
+            tabPage7.Size = new Size(1289, 814);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;

@@ -84,3 +84,61 @@ END
 select * from Proveedor;
 select * from Producto;
 select * from Cliente;
+
+
+
+/*TablaFactura*/
+
+
+-- Crear la tabla ListaProductosFactura
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'ListaProductosFactura')
+BEGIN
+    CREATE TABLE ListaProductosSeleccionados (
+        idListaProducSelec INT PRIMARY KEY IDENTITY(1,1),
+
+        idProducto INT,
+        cantidad INT,
+        precio DECIMAL(18, 2),
+        subtotal DECIMAL(18, 2),
+        descuentoDolares DECIMAL(18, 2),
+        
+    );
+END
+
+-- Crear la tabla Factura
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Factura')
+BEGIN
+    CREATE TABLE Factura (
+        idFactura INT PRIMARY KEY IDENTITY(1,1),
+        fechaEmision DATE,
+        idCliente INT,
+        idListaProducSelec INT,
+        subtotal DECIMAL(18, 2),
+        iva DECIMAL(18, 2),
+        descuentoTotalDolares DECIMAL(18, 2),
+        total DECIMAL(18, 2),
+        formaPago NVARCHAR(50),
+        estado NVARCHAR(50) CHECK (estado IN ('Anulada', 'Vigente')), -- Se añade la restricción CHECK
+        FOREIGN KEY (idListaProducSelec) REFERENCES ListaProductosSeleccionados(idListaProducSelec) -- Clave foránea
+    );
+END
+
+
+-- Insertar datos en la tabla ListaProductosSeleccionados
+INSERT INTO ListaProductosSeleccionados (idProducto, cantidad, precio, subtotal, descuentoDolares)
+VALUES
+    (1, 3, 9.99, 29.97, 2.00),
+    (2, 2, 19.99, 39.98, 0.00),
+    (3, 5, 5.99, 29.95, 1.50),
+    (4, 4, 14.99, 59.96, 3.00),
+    (5, 1, 7.99, 7.99, 0.25);
+
+-- Insertar datos en la tabla Factura
+INSERT INTO Factura (fechaEmision, idCliente, idListaProducSelec, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
+VALUES
+    ('2023-08-30', 1, 1, 159.85, 28.77, 5.75, 183.87, 'Tarjeta de crédito', 'Vigente'),
+    ('2023-08-31', 2, 2, 69.93, 12.59, 0.00, 82.52, 'Efectivo', 'Anulada'),
+    ('2023-08-31', 3, 3, 129.75, 23.36, 7.50, 145.61, 'Transferencia bancaria', 'Vigente'),
+    ('2023-09-01', 4, 4, 239.84, 43.17, 12.00, 271.01, 'Tarjeta de débito', 'Anulada'),
+    ('2023-09-01', 5, 5, 7.99, 1.44, 0.25, 9.18, 'Efectivo', 'Vigente');
+
