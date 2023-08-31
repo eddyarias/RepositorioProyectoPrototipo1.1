@@ -24,7 +24,7 @@ namespace ProyectoPrototipo_1._0
 
         private void Form_Proveedores_Load(object sender, EventArgs e)
         {
-           
+
 
             //dbContext.Proveedor.Load();
             //dataGridView1.DataSource = dbContext.Proveedor.Local.ToBindingList();
@@ -454,6 +454,11 @@ namespace ProyectoPrototipo_1._0
 
         private void label27_Click(object sender, EventArgs e)
         {
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
