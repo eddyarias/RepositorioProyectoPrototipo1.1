@@ -1,4 +1,5 @@
 ﻿using ProyectoPrototipo_1._0.CLASES;
+using ProyectoPrototipo_1._1.FORMS;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,8 +20,9 @@ namespace ProyectoPrototipo_1._0
     {
 
 
-        string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
-
+       // string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
+        
+        string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
 
         public Connect connect;
 
@@ -30,6 +32,9 @@ namespace ProyectoPrototipo_1._0
 
         public int tabSeleccionado;
         public int tabRegistrarFacturaSeleccionado;
+
+        // Variable para controlar si el formulario está bloqueado
+        private bool formularioBloqueado = false;
 
         public List<ProductoCarrito> carritoDeCompras = new List<ProductoCarrito>();
 
@@ -448,7 +453,17 @@ namespace ProyectoPrototipo_1._0
 
         Class_Cliente clienteEncontrado;
 
-        private void bttBuscarClienteBaseDatos_Click(object sender, EventArgs e)
+        private void tabControlConsultar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           //  LlenarDataGridViewFacturas(dataGridViewFactura);
+         }
+
+        private void bttAgregarProdCodBarr_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
             string cedula = txtBcedulaCliente.Text.Trim();
 
@@ -497,7 +512,29 @@ namespace ProyectoPrototipo_1._0
                             }
                             else
                             {
-                                MessageBox.Show("Cliente no encontrado en la base de datos.");
+                                // Cliente no encontrado en la base de datos. Pregunta si se desea registrar.
+                                DialogResult result = MessageBox.Show("Cliente no encontrado en la base de datos. ¿Desea registrarlo?", "Cliente no encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (result == DialogResult.Yes)
+                                {
+                                    // Bloquea el formulario deshabilitando todos los controles
+                                    BloquearFormulario(true);
+
+
+                                    // Muestra el botón de "Desbloquear" para permitir al usuario desbloquear el formulario
+
+                                    Form_AgregarCliente formAgregarCliente = new Form_AgregarCliente(connect, this);
+                                    formAgregarCliente.ShowDialog();
+
+                                    // Después de que se complete el registro del cliente, puedes obtener la cédula así:
+                                    string cedulaRegistrada = formAgregarCliente.CedulaClienteRegistrada;
+
+                                    // Haz algo con la cédula registrada, por ejemplo, mostrarla en un TextBox
+                                    string cedulaRecientementeRegistrada= cedulaRegistrada;
+                                    txtBcedulaCliente.Text = cedulaRegistrada;
+                                    BuscarCliente(cedulaRecientementeRegistrada);
+
+                                }
                             }
                         }
                     }
@@ -509,10 +546,91 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
-        private void tabControlConsultar_SelectedIndexChanged(object sender, EventArgs e)
+        private void BuscarCliente(string cedula)
         {
-           //  LlenarDataGridViewFacturas(dataGridViewFactura);
-         }
+            if (!string.IsNullOrEmpty(cedula))
+            {
+                // Define la consulta SQL
+                string connectionString = con;
+                string query = "SELECT * FROM Cliente WHERE cedula = @Cedula";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Cedula", cedula);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read()) // Verifica si se encontraron resultados
+                            {
+                                // Crea una instancia de Class_Cliente y asigna los valores desde el SqlDataReader
+                                Class_Cliente clienteEncontrado = new Class_Cliente
+                                {
+                                    cedula = Convert.ToInt64(reader["cedula"]),
+                                    tipo_persona = reader["tipo_persona"].ToString(),
+                                    nombres_c = reader["nombres_c"].ToString(),
+                                    apellidos_c = reader["apellidos_c"].ToString(),
+                                    parroquia = reader["parroquia"].ToString(),
+                                    direccion_c = reader["direccion_c"].ToString(),
+                                    email_c = reader["email_c"].ToString(),
+                                    telefono_c = reader["telefono_c"].ToString(),
+                                    fecha_nac = Convert.ToDateTime(reader["fecha_nac"]),
+                                    observaciones_c = reader["observaciones_c"].ToString()
+                                };
+
+                                // Puedes usar clienteEncontrado en tu aplicación
+                                // Por ejemplo, mostrar los datos en controles TextBox
+                                txtBnombresCliente.Text = clienteEncontrado.nombres_c;
+                                txtBapellidosClientes.Text = clienteEncontrado.apellidos_c;
+                                txtBtelefonoCliente.Text = clienteEncontrado.telefono_c;
+                                txtBdireccionCliente.Text = clienteEncontrado.direccion_c;
+                                txtBcorreoCliente.Text = clienteEncontrado.email_c;
+
+                                // ...
+                            }
+                            else
+                            {
+                                // Cliente no encontrado en la base de datos. Pregunta si se desea registrar.
+                                DialogResult result = MessageBox.Show("Cliente no encontrado en la base de datos. ¿Desea registrarlo?", "Cliente no encontrado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                                if (result == DialogResult.Yes)
+                                {
+                                    // Bloquea el formulario deshabilitando todos los controles
+                                    BloquearFormulario(true);
+
+                                    // Muestra el formulario de registro del cliente
+                                    Form_AgregarCliente formAgregarCliente = new Form_AgregarCliente(connect, this);
+                                    formAgregarCliente.ShowDialog();
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un número de cédula válido.");
+            }
+        }
+
+        // Método para bloquear o desbloquear el formulario
+        private void BloquearFormulario(bool bloquear)
+        {
+            formularioBloqueado = bloquear;
+
+            foreach (Control control in this.Controls)
+            {
+                control.Enabled = !bloquear;
+            }
+        }
+        public event EventHandler FormularioDesbloqueado;
+        public virtual void OnFormularioDesbloqueado(EventArgs e)
+        {
+            FormularioDesbloqueado?.Invoke(this, e);
+        }
     }
 }
 

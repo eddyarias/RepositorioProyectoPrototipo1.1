@@ -28,732 +28,749 @@
         /// </summary>
         private void InitializeComponent()
         {
-            findClientButton = new Button();
-            codeLabel = new Label();
-            textBox2 = new TextBox();
-            personNameLabel = new Label();
-            comercialNameLabel = new Label();
-            label6 = new Label();
-            label7 = new Label();
-            label8 = new Label();
-            textBox3 = new TextBox();
-            textBox4 = new TextBox();
-            textBox5 = new TextBox();
-            textBox6 = new TextBox();
-            label1 = new Label();
-            textBox7 = new TextBox();
-            label3 = new Label();
-            textBox9 = new TextBox();
-            textBox10 = new TextBox();
-            dataGridView1 = new DataGridView();
-            button4 = new Button();
-            clientesTabControl = new TabControl();
-            registrarTabPage = new TabPage();
-            consultarTabPage = new TabPage();
-            tabControl1 = new TabControl();
-            tabPage2 = new TabPage();
-            textBox1 = new TextBox();
-            comboBox1 = new ComboBox();
-            label2 = new Label();
-            tabPage3 = new TabPage();
-            textBox28 = new TextBox();
-            label25 = new Label();
-            button8 = new Button();
-            actualizarTabPage = new TabPage();
-            button5 = new Button();
-            label4 = new Label();
-            textBox8 = new TextBox();
-            button1 = new Button();
-            label5 = new Label();
-            label9 = new Label();
-            textBox11 = new TextBox();
-            textBox12 = new TextBox();
-            textBox13 = new TextBox();
-            label10 = new Label();
-            label11 = new Label();
-            textBox14 = new TextBox();
-            label12 = new Label();
-            textBox15 = new TextBox();
-            textBox16 = new TextBox();
-            label13 = new Label();
-            label14 = new Label();
-            textBox17 = new TextBox();
-            eliminarTabPage = new TabPage();
-            button2 = new Button();
-            label15 = new Label();
-            textBox18 = new TextBox();
-            button3 = new Button();
-            tabPage1 = new TabPage();
-            comboBox2 = new ComboBox();
-            label16 = new Label();
-            textBox19 = new TextBox();
-            button7 = new Button();
-            label37 = new Label();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            clientesTabControl.SuspendLayout();
-            registrarTabPage.SuspendLayout();
-            consultarTabPage.SuspendLayout();
-            tabControl1.SuspendLayout();
-            tabPage2.SuspendLayout();
-            tabPage3.SuspendLayout();
-            actualizarTabPage.SuspendLayout();
-            eliminarTabPage.SuspendLayout();
-            tabPage1.SuspendLayout();
-            SuspendLayout();
+            this.findClientButton = new System.Windows.Forms.Button();
+            this.codeLabel = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.personNameLabel = new System.Windows.Forms.Label();
+            this.comercialNameLabel = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button4 = new System.Windows.Forms.Button();
+            this.clientesTabControl = new System.Windows.Forms.TabControl();
+            this.registrarTabPage = new System.Windows.Forms.TabPage();
+            this.consultarTabPage = new System.Windows.Forms.TabPage();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.textBox28 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.button8 = new System.Windows.Forms.Button();
+            this.actualizarTabPage = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.textBox12 = new System.Windows.Forms.TextBox();
+            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
+            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.label14 = new System.Windows.Forms.Label();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.eliminarTabPage = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.label15 = new System.Windows.Forms.Label();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.button7 = new System.Windows.Forms.Button();
+            this.label37 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.clientesTabControl.SuspendLayout();
+            this.registrarTabPage.SuspendLayout();
+            this.consultarTabPage.SuspendLayout();
+            this.tabControl1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            this.tabPage3.SuspendLayout();
+            this.actualizarTabPage.SuspendLayout();
+            this.eliminarTabPage.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            this.SuspendLayout();
             // 
             // findClientButton
             // 
-            findClientButton.Location = new Point(137, 162);
-            findClientButton.Margin = new Padding(3, 4, 3, 4);
-            findClientButton.Name = "findClientButton";
-            findClientButton.Size = new Size(114, 40);
-            findClientButton.TabIndex = 2;
-            findClientButton.Text = "Consultar";
-            findClientButton.UseVisualStyleBackColor = true;
-            findClientButton.Click += findClientButton_Click;
+            this.findClientButton.Location = new System.Drawing.Point(137, 162);
+            this.findClientButton.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.findClientButton.Name = "findClientButton";
+            this.findClientButton.Size = new System.Drawing.Size(114, 40);
+            this.findClientButton.TabIndex = 2;
+            this.findClientButton.Text = "Consultar";
+            this.findClientButton.UseVisualStyleBackColor = true;
             // 
             // codeLabel
             // 
-            codeLabel.AutoSize = true;
-            codeLabel.Location = new Point(60, 36);
-            codeLabel.Name = "codeLabel";
-            codeLabel.Size = new Size(45, 20);
-            codeLabel.TabIndex = 3;
-            codeLabel.Text = "CI: (*)";
+            this.codeLabel.AutoSize = true;
+            this.codeLabel.Location = new System.Drawing.Point(60, 36);
+            this.codeLabel.Name = "codeLabel";
+            this.codeLabel.Size = new System.Drawing.Size(45, 20);
+            this.codeLabel.TabIndex = 3;
+            this.codeLabel.Text = "CI: (*)";
             // 
             // textBox2
             // 
-            textBox2.Location = new Point(112, 31);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(90, 29);
-            textBox2.TabIndex = 4;
+            this.textBox2.Location = new System.Drawing.Point(112, 31);
+            this.textBox2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox2.Multiline = true;
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(90, 29);
+            this.textBox2.TabIndex = 4;
             // 
             // personNameLabel
             // 
-            personNameLabel.AutoSize = true;
-            personNameLabel.Location = new Point(12, 76);
-            personNameLabel.Name = "personNameLabel";
-            personNameLabel.Size = new Size(93, 20);
-            personNameLabel.TabIndex = 6;
-            personNameLabel.Text = "Nombres: (*)";
+            this.personNameLabel.AutoSize = true;
+            this.personNameLabel.Location = new System.Drawing.Point(12, 76);
+            this.personNameLabel.Name = "personNameLabel";
+            this.personNameLabel.Size = new System.Drawing.Size(93, 20);
+            this.personNameLabel.TabIndex = 6;
+            this.personNameLabel.Text = "Nombres: (*)";
             // 
             // comercialNameLabel
             // 
-            comercialNameLabel.AutoSize = true;
-            comercialNameLabel.Location = new Point(11, 116);
-            comercialNameLabel.Name = "comercialNameLabel";
-            comercialNameLabel.Size = new Size(95, 20);
-            comercialNameLabel.TabIndex = 7;
-            comercialNameLabel.Text = "Apellidos: (*)";
+            this.comercialNameLabel.AutoSize = true;
+            this.comercialNameLabel.Location = new System.Drawing.Point(11, 116);
+            this.comercialNameLabel.Name = "comercialNameLabel";
+            this.comercialNameLabel.Size = new System.Drawing.Size(95, 20);
+            this.comercialNameLabel.TabIndex = 7;
+            this.comercialNameLabel.Text = "Apellidos: (*)";
             // 
             // label6
             // 
-            label6.AutoSize = true;
-            label6.Location = new Point(16, 276);
-            label6.Name = "label6";
-            label6.Size = new Size(89, 20);
-            label6.TabIndex = 8;
-            label6.Text = "Estado Civil:";
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(16, 276);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(89, 20);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Estado Civil:";
             // 
             // label7
             // 
-            label7.AutoSize = true;
-            label7.Location = new Point(32, 156);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 20);
-            label7.TabIndex = 9;
-            label7.Text = "Dirección:";
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(32, 156);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(75, 20);
+            this.label7.TabIndex = 9;
+            this.label7.Text = "Dirección:";
             // 
             // label8
             // 
-            label8.AutoSize = true;
-            label8.Location = new Point(55, 236);
-            label8.Name = "label8";
-            label8.Size = new Size(49, 20);
-            label8.TabIndex = 10;
-            label8.Text = "Email:";
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(55, 236);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(49, 20);
+            this.label8.TabIndex = 10;
+            this.label8.Text = "Email:";
             // 
             // textBox3
             // 
-            textBox3.Location = new Point(112, 71);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Multiline = true;
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(285, 29);
-            textBox3.TabIndex = 15;
+            this.textBox3.Location = new System.Drawing.Point(112, 71);
+            this.textBox3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox3.Multiline = true;
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(285, 29);
+            this.textBox3.TabIndex = 15;
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(112, 111);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Multiline = true;
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(285, 29);
-            textBox4.TabIndex = 16;
+            this.textBox4.Location = new System.Drawing.Point(112, 111);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox4.Multiline = true;
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(285, 29);
+            this.textBox4.TabIndex = 16;
             // 
             // textBox5
             // 
-            textBox5.Location = new Point(112, 271);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Multiline = true;
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(285, 29);
-            textBox5.TabIndex = 17;
+            this.textBox5.Location = new System.Drawing.Point(112, 271);
+            this.textBox5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox5.Multiline = true;
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(285, 29);
+            this.textBox5.TabIndex = 17;
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(112, 151);
-            textBox6.Margin = new Padding(3, 4, 3, 4);
-            textBox6.Multiline = true;
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(285, 29);
-            textBox6.TabIndex = 18;
+            this.textBox6.Location = new System.Drawing.Point(112, 151);
+            this.textBox6.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox6.Multiline = true;
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(285, 29);
+            this.textBox6.TabIndex = 18;
             // 
             // label1
             // 
-            label1.AutoSize = true;
-            label1.Location = new Point(49, 196);
-            label1.Name = "label1";
-            label1.Size = new Size(58, 20);
-            label1.TabIndex = 19;
-            label1.Text = "Celular:";
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(49, 196);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(58, 20);
+            this.label1.TabIndex = 19;
+            this.label1.Text = "Celular:";
             // 
             // textBox7
             // 
-            textBox7.Location = new Point(112, 191);
-            textBox7.Margin = new Padding(3, 4, 3, 4);
-            textBox7.Multiline = true;
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(285, 29);
-            textBox7.TabIndex = 20;
+            this.textBox7.Location = new System.Drawing.Point(112, 191);
+            this.textBox7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox7.Multiline = true;
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(285, 29);
+            this.textBox7.TabIndex = 20;
             // 
             // label3
             // 
-            label3.AutoSize = true;
-            label3.Location = new Point(8, 316);
-            label3.Name = "label3";
-            label3.Size = new Size(103, 20);
-            label3.TabIndex = 23;
-            label3.Text = "F. Nacimiento:";
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(8, 316);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(103, 20);
+            this.label3.TabIndex = 23;
+            this.label3.Text = "F. Nacimiento:";
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(112, 311);
-            textBox9.Margin = new Padding(3, 4, 3, 4);
-            textBox9.Multiline = true;
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(231, 29);
-            textBox9.TabIndex = 24;
+            this.textBox9.Location = new System.Drawing.Point(112, 311);
+            this.textBox9.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox9.Multiline = true;
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(231, 29);
+            this.textBox9.TabIndex = 24;
             // 
             // textBox10
             // 
-            textBox10.Location = new Point(112, 231);
-            textBox10.Margin = new Padding(3, 4, 3, 4);
-            textBox10.Multiline = true;
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(285, 29);
-            textBox10.TabIndex = 25;
+            this.textBox10.Location = new System.Drawing.Point(112, 231);
+            this.textBox10.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox10.Multiline = true;
+            this.textBox10.Name = "textBox10";
+            this.textBox10.Size = new System.Drawing.Size(285, 29);
+            this.textBox10.TabIndex = 25;
             // 
             // dataGridView1
             // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(466, 51);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(424, 511);
-            dataGridView1.TabIndex = 28;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(466, 51);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(424, 511);
+            this.dataGridView1.TabIndex = 28;
             // 
             // button4
             // 
-            button4.Location = new Point(142, 370);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(114, 38);
-            button4.TabIndex = 39;
-            button4.Text = "Registrar";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            this.button4.Location = new System.Drawing.Point(142, 370);
+            this.button4.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(114, 38);
+            this.button4.TabIndex = 39;
+            this.button4.Text = "Registrar";
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // clientesTabControl
             // 
-            clientesTabControl.Controls.Add(registrarTabPage);
-            clientesTabControl.Controls.Add(consultarTabPage);
-            clientesTabControl.Controls.Add(actualizarTabPage);
-            clientesTabControl.Controls.Add(eliminarTabPage);
-            clientesTabControl.Controls.Add(tabPage1);
-            clientesTabControl.Location = new Point(12, 51);
-            clientesTabControl.Name = "clientesTabControl";
-            clientesTabControl.SelectedIndex = 0;
-            clientesTabControl.Size = new Size(426, 511);
-            clientesTabControl.TabIndex = 41;
+            this.clientesTabControl.Controls.Add(this.registrarTabPage);
+            this.clientesTabControl.Controls.Add(this.consultarTabPage);
+            this.clientesTabControl.Controls.Add(this.actualizarTabPage);
+            this.clientesTabControl.Controls.Add(this.eliminarTabPage);
+            this.clientesTabControl.Controls.Add(this.tabPage1);
+            this.clientesTabControl.Location = new System.Drawing.Point(12, 51);
+            this.clientesTabControl.Name = "clientesTabControl";
+            this.clientesTabControl.SelectedIndex = 0;
+            this.clientesTabControl.Size = new System.Drawing.Size(426, 511);
+            this.clientesTabControl.TabIndex = 41;
             // 
             // registrarTabPage
             // 
-            registrarTabPage.Controls.Add(codeLabel);
-            registrarTabPage.Controls.Add(textBox2);
-            registrarTabPage.Controls.Add(button4);
-            registrarTabPage.Controls.Add(personNameLabel);
-            registrarTabPage.Controls.Add(comercialNameLabel);
-            registrarTabPage.Controls.Add(textBox3);
-            registrarTabPage.Controls.Add(textBox4);
-            registrarTabPage.Controls.Add(textBox10);
-            registrarTabPage.Controls.Add(label8);
-            registrarTabPage.Controls.Add(label7);
-            registrarTabPage.Controls.Add(textBox6);
-            registrarTabPage.Controls.Add(label1);
-            registrarTabPage.Controls.Add(textBox9);
-            registrarTabPage.Controls.Add(textBox7);
-            registrarTabPage.Controls.Add(label3);
-            registrarTabPage.Controls.Add(label6);
-            registrarTabPage.Controls.Add(textBox5);
-            registrarTabPage.Location = new Point(4, 29);
-            registrarTabPage.Name = "registrarTabPage";
-            registrarTabPage.Padding = new Padding(3);
-            registrarTabPage.Size = new Size(418, 478);
-            registrarTabPage.TabIndex = 0;
-            registrarTabPage.Text = "Registrar";
-            registrarTabPage.UseVisualStyleBackColor = true;
+            this.registrarTabPage.Controls.Add(this.codeLabel);
+            this.registrarTabPage.Controls.Add(this.textBox2);
+            this.registrarTabPage.Controls.Add(this.button4);
+            this.registrarTabPage.Controls.Add(this.personNameLabel);
+            this.registrarTabPage.Controls.Add(this.comercialNameLabel);
+            this.registrarTabPage.Controls.Add(this.textBox3);
+            this.registrarTabPage.Controls.Add(this.textBox4);
+            this.registrarTabPage.Controls.Add(this.textBox10);
+            this.registrarTabPage.Controls.Add(this.label8);
+            this.registrarTabPage.Controls.Add(this.label7);
+            this.registrarTabPage.Controls.Add(this.textBox6);
+            this.registrarTabPage.Controls.Add(this.label1);
+            this.registrarTabPage.Controls.Add(this.textBox9);
+            this.registrarTabPage.Controls.Add(this.textBox7);
+            this.registrarTabPage.Controls.Add(this.label3);
+            this.registrarTabPage.Controls.Add(this.label6);
+            this.registrarTabPage.Controls.Add(this.textBox5);
+            this.registrarTabPage.Location = new System.Drawing.Point(4, 29);
+            this.registrarTabPage.Name = "registrarTabPage";
+            this.registrarTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.registrarTabPage.Size = new System.Drawing.Size(418, 478);
+            this.registrarTabPage.TabIndex = 0;
+            this.registrarTabPage.Text = "Registrar";
+            this.registrarTabPage.UseVisualStyleBackColor = true;
+            this.registrarTabPage.Click += new System.EventHandler(this.registrarTabPage_Click);
             // 
             // consultarTabPage
             // 
-            consultarTabPage.Controls.Add(tabControl1);
-            consultarTabPage.Location = new Point(4, 29);
-            consultarTabPage.Name = "consultarTabPage";
-            consultarTabPage.Padding = new Padding(3);
-            consultarTabPage.Size = new Size(418, 478);
-            consultarTabPage.TabIndex = 1;
-            consultarTabPage.Text = "Consultar";
-            consultarTabPage.UseVisualStyleBackColor = true;
+            this.consultarTabPage.Controls.Add(this.tabControl1);
+            this.consultarTabPage.Location = new System.Drawing.Point(4, 29);
+            this.consultarTabPage.Name = "consultarTabPage";
+            this.consultarTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.consultarTabPage.Size = new System.Drawing.Size(418, 478);
+            this.consultarTabPage.TabIndex = 1;
+            this.consultarTabPage.Text = "Consultar";
+            this.consultarTabPage.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
-            tabControl1.Controls.Add(tabPage2);
-            tabControl1.Controls.Add(tabPage3);
-            tabControl1.Location = new Point(0, 3);
-            tabControl1.Name = "tabControl1";
-            tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(412, 469);
-            tabControl1.TabIndex = 42;
+            this.tabControl1.Controls.Add(this.tabPage2);
+            this.tabControl1.Controls.Add(this.tabPage3);
+            this.tabControl1.Location = new System.Drawing.Point(0, 3);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(412, 469);
+            this.tabControl1.TabIndex = 42;
             // 
             // tabPage2
             // 
-            tabPage2.Controls.Add(textBox1);
-            tabPage2.Controls.Add(comboBox1);
-            tabPage2.Controls.Add(findClientButton);
-            tabPage2.Controls.Add(label2);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3);
-            tabPage2.Size = new Size(404, 436);
-            tabPage2.TabIndex = 0;
-            tabPage2.Text = "Datos";
-            tabPage2.UseVisualStyleBackColor = true;
+            this.tabPage2.Controls.Add(this.textBox1);
+            this.tabPage2.Controls.Add(this.comboBox1);
+            this.tabPage2.Controls.Add(this.findClientButton);
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 29);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(404, 436);
+            this.tabPage2.TabIndex = 0;
+            this.tabPage2.Text = "Datos";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
-            textBox1.Location = new Point(91, 22);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(233, 27);
-            textBox1.TabIndex = 1;
+            this.textBox1.Location = new System.Drawing.Point(91, 22);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(233, 27);
+            this.textBox1.TabIndex = 1;
             // 
             // comboBox1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Toda la información", "Nombres", "Apellidos", "Dirección", "N. Celular", "Email", "Estado civil", "Fecha de nacimiento" });
-            comboBox1.Location = new Point(80, 82);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(233, 28);
-            comboBox1.TabIndex = 2;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Toda la información",
+            "Nombres",
+            "Apellidos",
+            "Dirección",
+            "N. Celular",
+            "Email",
+            "Estado civil",
+            "Fecha de nacimiento"});
+            this.comboBox1.Location = new System.Drawing.Point(80, 82);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 28);
+            this.comboBox1.TabIndex = 2;
             // 
             // label2
             // 
-            label2.AutoSize = true;
-            label2.Location = new Point(60, 27);
-            label2.Name = "label2";
-            label2.Size = new Size(25, 20);
-            label2.TabIndex = 0;
-            label2.Text = "CI:";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(60, 27);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(25, 20);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "CI:";
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(textBox28);
-            tabPage3.Controls.Add(label25);
-            tabPage3.Controls.Add(button8);
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(404, 436);
-            tabPage3.TabIndex = 1;
-            tabPage3.Text = "Compras";
-            tabPage3.UseVisualStyleBackColor = true;
+            this.tabPage3.Controls.Add(this.textBox28);
+            this.tabPage3.Controls.Add(this.label25);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Location = new System.Drawing.Point(4, 29);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(404, 436);
+            this.tabPage3.TabIndex = 1;
+            this.tabPage3.Text = "Compras";
+            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBox28
             // 
-            textBox28.Location = new Point(93, 50);
-            textBox28.Name = "textBox28";
-            textBox28.Size = new Size(233, 27);
-            textBox28.TabIndex = 1;
+            this.textBox28.Location = new System.Drawing.Point(93, 50);
+            this.textBox28.Name = "textBox28";
+            this.textBox28.Size = new System.Drawing.Size(233, 27);
+            this.textBox28.TabIndex = 1;
             // 
             // label25
             // 
-            label25.AutoSize = true;
-            label25.Location = new Point(65, 58);
-            label25.Name = "label25";
-            label25.Size = new Size(25, 20);
-            label25.TabIndex = 0;
-            label25.Text = "CI:";
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(65, 58);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(25, 20);
+            this.label25.TabIndex = 0;
+            this.label25.Text = "CI:";
             // 
             // button8
             // 
-            button8.Location = new Point(134, 102);
-            button8.Margin = new Padding(3, 4, 3, 4);
-            button8.Name = "button8";
-            button8.Size = new Size(114, 40);
-            button8.TabIndex = 2;
-            button8.Text = "Consultar";
-            button8.UseVisualStyleBackColor = true;
+            this.button8.Location = new System.Drawing.Point(134, 102);
+            this.button8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(114, 40);
+            this.button8.TabIndex = 2;
+            this.button8.Text = "Consultar";
+            this.button8.UseVisualStyleBackColor = true;
             // 
             // actualizarTabPage
             // 
-            actualizarTabPage.Controls.Add(button5);
-            actualizarTabPage.Controls.Add(label4);
-            actualizarTabPage.Controls.Add(textBox8);
-            actualizarTabPage.Controls.Add(button1);
-            actualizarTabPage.Controls.Add(label5);
-            actualizarTabPage.Controls.Add(label9);
-            actualizarTabPage.Controls.Add(textBox11);
-            actualizarTabPage.Controls.Add(textBox12);
-            actualizarTabPage.Controls.Add(textBox13);
-            actualizarTabPage.Controls.Add(label10);
-            actualizarTabPage.Controls.Add(label11);
-            actualizarTabPage.Controls.Add(textBox14);
-            actualizarTabPage.Controls.Add(label12);
-            actualizarTabPage.Controls.Add(textBox15);
-            actualizarTabPage.Controls.Add(textBox16);
-            actualizarTabPage.Controls.Add(label13);
-            actualizarTabPage.Controls.Add(label14);
-            actualizarTabPage.Controls.Add(textBox17);
-            actualizarTabPage.Location = new Point(4, 29);
-            actualizarTabPage.Name = "actualizarTabPage";
-            actualizarTabPage.Padding = new Padding(3);
-            actualizarTabPage.Size = new Size(418, 478);
-            actualizarTabPage.TabIndex = 2;
-            actualizarTabPage.Text = "Actualizar";
-            actualizarTabPage.UseVisualStyleBackColor = true;
+            this.actualizarTabPage.Controls.Add(this.button5);
+            this.actualizarTabPage.Controls.Add(this.label4);
+            this.actualizarTabPage.Controls.Add(this.textBox8);
+            this.actualizarTabPage.Controls.Add(this.button1);
+            this.actualizarTabPage.Controls.Add(this.label5);
+            this.actualizarTabPage.Controls.Add(this.label9);
+            this.actualizarTabPage.Controls.Add(this.textBox11);
+            this.actualizarTabPage.Controls.Add(this.textBox12);
+            this.actualizarTabPage.Controls.Add(this.textBox13);
+            this.actualizarTabPage.Controls.Add(this.label10);
+            this.actualizarTabPage.Controls.Add(this.label11);
+            this.actualizarTabPage.Controls.Add(this.textBox14);
+            this.actualizarTabPage.Controls.Add(this.label12);
+            this.actualizarTabPage.Controls.Add(this.textBox15);
+            this.actualizarTabPage.Controls.Add(this.textBox16);
+            this.actualizarTabPage.Controls.Add(this.label13);
+            this.actualizarTabPage.Controls.Add(this.label14);
+            this.actualizarTabPage.Controls.Add(this.textBox17);
+            this.actualizarTabPage.Location = new System.Drawing.Point(4, 29);
+            this.actualizarTabPage.Name = "actualizarTabPage";
+            this.actualizarTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.actualizarTabPage.Size = new System.Drawing.Size(418, 478);
+            this.actualizarTabPage.TabIndex = 2;
+            this.actualizarTabPage.Text = "Actualizar";
+            this.actualizarTabPage.UseVisualStyleBackColor = true;
             // 
             // button5
             // 
-            button5.Location = new Point(245, 30);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(114, 32);
-            button5.TabIndex = 57;
-            button5.Text = "Buscar";
-            button5.UseVisualStyleBackColor = true;
+            this.button5.Location = new System.Drawing.Point(245, 30);
+            this.button5.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(114, 32);
+            this.button5.TabIndex = 57;
+            this.button5.Text = "Buscar";
+            this.button5.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
-            label4.AutoSize = true;
-            label4.Location = new Point(67, 35);
-            label4.Name = "label4";
-            label4.Size = new Size(25, 20);
-            label4.TabIndex = 40;
-            label4.Text = "CI:";
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(67, 35);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(25, 20);
+            this.label4.TabIndex = 40;
+            this.label4.Text = "CI:";
             // 
             // textBox8
             // 
-            textBox8.Location = new Point(119, 30);
-            textBox8.Margin = new Padding(3, 4, 3, 4);
-            textBox8.Multiline = true;
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(120, 29);
-            textBox8.TabIndex = 41;
+            this.textBox8.Location = new System.Drawing.Point(119, 30);
+            this.textBox8.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox8.Multiline = true;
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(120, 29);
+            this.textBox8.TabIndex = 41;
             // 
             // button1
             // 
-            button1.Location = new Point(149, 369);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(114, 38);
-            button1.TabIndex = 56;
-            button1.Text = "Actualizar";
-            button1.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(149, 369);
+            this.button1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 38);
+            this.button1.TabIndex = 56;
+            this.button1.Text = "Actualizar";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(31, 75);
-            label5.Name = "label5";
-            label5.Size = new Size(73, 20);
-            label5.TabIndex = 42;
-            label5.Text = "Nombres:";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(31, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(73, 20);
+            this.label5.TabIndex = 42;
+            this.label5.Text = "Nombres:";
             // 
             // label9
             // 
-            label9.AutoSize = true;
-            label9.Location = new Point(30, 115);
-            label9.Name = "label9";
-            label9.Size = new Size(75, 20);
-            label9.TabIndex = 43;
-            label9.Text = "Apellidos:";
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(30, 115);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(75, 20);
+            this.label9.TabIndex = 43;
+            this.label9.Text = "Apellidos:";
             // 
             // textBox11
             // 
-            textBox11.Location = new Point(119, 70);
-            textBox11.Margin = new Padding(3, 4, 3, 4);
-            textBox11.Multiline = true;
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(285, 29);
-            textBox11.TabIndex = 47;
+            this.textBox11.Location = new System.Drawing.Point(119, 70);
+            this.textBox11.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox11.Multiline = true;
+            this.textBox11.Name = "textBox11";
+            this.textBox11.Size = new System.Drawing.Size(285, 29);
+            this.textBox11.TabIndex = 47;
             // 
             // textBox12
             // 
-            textBox12.Location = new Point(119, 110);
-            textBox12.Margin = new Padding(3, 4, 3, 4);
-            textBox12.Multiline = true;
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(285, 29);
-            textBox12.TabIndex = 48;
+            this.textBox12.Location = new System.Drawing.Point(119, 110);
+            this.textBox12.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox12.Multiline = true;
+            this.textBox12.Name = "textBox12";
+            this.textBox12.Size = new System.Drawing.Size(285, 29);
+            this.textBox12.TabIndex = 48;
             // 
             // textBox13
             // 
-            textBox13.Location = new Point(119, 230);
-            textBox13.Margin = new Padding(3, 4, 3, 4);
-            textBox13.Multiline = true;
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(285, 29);
-            textBox13.TabIndex = 55;
+            this.textBox13.Location = new System.Drawing.Point(119, 230);
+            this.textBox13.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox13.Multiline = true;
+            this.textBox13.Name = "textBox13";
+            this.textBox13.Size = new System.Drawing.Size(285, 29);
+            this.textBox13.TabIndex = 55;
             // 
             // label10
             // 
-            label10.AutoSize = true;
-            label10.Location = new Point(62, 235);
-            label10.Name = "label10";
-            label10.Size = new Size(49, 20);
-            label10.TabIndex = 46;
-            label10.Text = "Email:";
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(62, 235);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(49, 20);
+            this.label10.TabIndex = 46;
+            this.label10.Text = "Email:";
             // 
             // label11
             // 
-            label11.AutoSize = true;
-            label11.Location = new Point(39, 155);
-            label11.Name = "label11";
-            label11.Size = new Size(75, 20);
-            label11.TabIndex = 45;
-            label11.Text = "Dirección:";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(39, 155);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(75, 20);
+            this.label11.TabIndex = 45;
+            this.label11.Text = "Dirección:";
             // 
             // textBox14
             // 
-            textBox14.Location = new Point(119, 150);
-            textBox14.Margin = new Padding(3, 4, 3, 4);
-            textBox14.Multiline = true;
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(285, 29);
-            textBox14.TabIndex = 50;
+            this.textBox14.Location = new System.Drawing.Point(119, 150);
+            this.textBox14.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox14.Multiline = true;
+            this.textBox14.Name = "textBox14";
+            this.textBox14.Size = new System.Drawing.Size(285, 29);
+            this.textBox14.TabIndex = 50;
             // 
             // label12
             // 
-            label12.AutoSize = true;
-            label12.Location = new Point(56, 195);
-            label12.Name = "label12";
-            label12.Size = new Size(58, 20);
-            label12.TabIndex = 51;
-            label12.Text = "Celular:";
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(56, 195);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(58, 20);
+            this.label12.TabIndex = 51;
+            this.label12.Text = "Celular:";
             // 
             // textBox15
             // 
-            textBox15.Location = new Point(119, 310);
-            textBox15.Margin = new Padding(3, 4, 3, 4);
-            textBox15.Multiline = true;
-            textBox15.Name = "textBox15";
-            textBox15.Size = new Size(231, 29);
-            textBox15.TabIndex = 54;
+            this.textBox15.Location = new System.Drawing.Point(119, 310);
+            this.textBox15.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox15.Multiline = true;
+            this.textBox15.Name = "textBox15";
+            this.textBox15.Size = new System.Drawing.Size(231, 29);
+            this.textBox15.TabIndex = 54;
             // 
             // textBox16
             // 
-            textBox16.Location = new Point(119, 190);
-            textBox16.Margin = new Padding(3, 4, 3, 4);
-            textBox16.Multiline = true;
-            textBox16.Name = "textBox16";
-            textBox16.Size = new Size(285, 29);
-            textBox16.TabIndex = 52;
+            this.textBox16.Location = new System.Drawing.Point(119, 190);
+            this.textBox16.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox16.Multiline = true;
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(285, 29);
+            this.textBox16.TabIndex = 52;
             // 
             // label13
             // 
-            label13.AutoSize = true;
-            label13.Location = new Point(15, 315);
-            label13.Name = "label13";
-            label13.Size = new Size(103, 20);
-            label13.TabIndex = 53;
-            label13.Text = "F. Nacimiento:";
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(15, 315);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(103, 20);
+            this.label13.TabIndex = 53;
+            this.label13.Text = "F. Nacimiento:";
             // 
             // label14
             // 
-            label14.AutoSize = true;
-            label14.Location = new Point(23, 275);
-            label14.Name = "label14";
-            label14.Size = new Size(89, 20);
-            label14.TabIndex = 44;
-            label14.Text = "Estado Civil:";
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(23, 275);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(89, 20);
+            this.label14.TabIndex = 44;
+            this.label14.Text = "Estado Civil:";
             // 
             // textBox17
             // 
-            textBox17.Location = new Point(119, 270);
-            textBox17.Margin = new Padding(3, 4, 3, 4);
-            textBox17.Multiline = true;
-            textBox17.Name = "textBox17";
-            textBox17.Size = new Size(285, 29);
-            textBox17.TabIndex = 49;
+            this.textBox17.Location = new System.Drawing.Point(119, 270);
+            this.textBox17.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox17.Multiline = true;
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(285, 29);
+            this.textBox17.TabIndex = 49;
             // 
             // eliminarTabPage
             // 
-            eliminarTabPage.Controls.Add(button2);
-            eliminarTabPage.Controls.Add(label15);
-            eliminarTabPage.Controls.Add(textBox18);
-            eliminarTabPage.Controls.Add(button3);
-            eliminarTabPage.Location = new Point(4, 29);
-            eliminarTabPage.Name = "eliminarTabPage";
-            eliminarTabPage.Padding = new Padding(3);
-            eliminarTabPage.Size = new Size(418, 478);
-            eliminarTabPage.TabIndex = 3;
-            eliminarTabPage.Text = "Eliminar";
-            eliminarTabPage.UseVisualStyleBackColor = true;
+            this.eliminarTabPage.Controls.Add(this.button2);
+            this.eliminarTabPage.Controls.Add(this.label15);
+            this.eliminarTabPage.Controls.Add(this.textBox18);
+            this.eliminarTabPage.Controls.Add(this.button3);
+            this.eliminarTabPage.Location = new System.Drawing.Point(4, 29);
+            this.eliminarTabPage.Name = "eliminarTabPage";
+            this.eliminarTabPage.Padding = new System.Windows.Forms.Padding(3);
+            this.eliminarTabPage.Size = new System.Drawing.Size(418, 478);
+            this.eliminarTabPage.TabIndex = 3;
+            this.eliminarTabPage.Text = "Eliminar";
+            this.eliminarTabPage.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
-            button2.Location = new Point(234, 48);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(114, 32);
-            button2.TabIndex = 60;
-            button2.Text = "Buscar";
-            button2.UseVisualStyleBackColor = true;
+            this.button2.Location = new System.Drawing.Point(234, 48);
+            this.button2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(114, 32);
+            this.button2.TabIndex = 60;
+            this.button2.Text = "Buscar";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // label15
             // 
-            label15.AutoSize = true;
-            label15.Location = new Point(54, 54);
-            label15.Name = "label15";
-            label15.Size = new Size(25, 20);
-            label15.TabIndex = 58;
-            label15.Text = "CI:";
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(54, 54);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(25, 20);
+            this.label15.TabIndex = 58;
+            this.label15.Text = "CI:";
             // 
             // textBox18
             // 
-            textBox18.Location = new Point(85, 48);
-            textBox18.Margin = new Padding(3, 4, 3, 4);
-            textBox18.Multiline = true;
-            textBox18.Name = "textBox18";
-            textBox18.Size = new Size(135, 29);
-            textBox18.TabIndex = 59;
+            this.textBox18.Location = new System.Drawing.Point(85, 48);
+            this.textBox18.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox18.Multiline = true;
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(135, 29);
+            this.textBox18.TabIndex = 59;
             // 
             // button3
             // 
-            button3.Location = new Point(139, 122);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(114, 40);
-            button3.TabIndex = 5;
-            button3.Text = "Eliminar";
-            button3.UseVisualStyleBackColor = true;
+            this.button3.Location = new System.Drawing.Point(139, 122);
+            this.button3.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(114, 40);
+            this.button3.TabIndex = 5;
+            this.button3.Text = "Eliminar";
+            this.button3.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(comboBox2);
-            tabPage1.Controls.Add(label16);
-            tabPage1.Controls.Add(textBox19);
-            tabPage1.Controls.Add(button7);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(418, 478);
-            tabPage1.TabIndex = 4;
-            tabPage1.Text = "Descuentos";
-            tabPage1.UseVisualStyleBackColor = true;
+            this.tabPage1.Controls.Add(this.comboBox2);
+            this.tabPage1.Controls.Add(this.label16);
+            this.tabPage1.Controls.Add(this.textBox19);
+            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Location = new System.Drawing.Point(4, 29);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(418, 478);
+            this.tabPage1.TabIndex = 4;
+            this.tabPage1.Text = "Descuentos";
+            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%" });
-            comboBox2.Location = new Point(103, 121);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(135, 28);
-            comboBox2.TabIndex = 64;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "5%",
+            "10%",
+            "15%",
+            "20%",
+            "25%",
+            "30%",
+            "35%",
+            "40%",
+            "45%",
+            "50%"});
+            this.comboBox2.Location = new System.Drawing.Point(103, 121);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(135, 28);
+            this.comboBox2.TabIndex = 64;
             // 
             // label16
             // 
-            label16.AutoSize = true;
-            label16.Location = new Point(72, 60);
-            label16.Name = "label16";
-            label16.Size = new Size(25, 20);
-            label16.TabIndex = 62;
-            label16.Text = "CI:";
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(72, 60);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(25, 20);
+            this.label16.TabIndex = 62;
+            this.label16.Text = "CI:";
             // 
             // textBox19
             // 
-            textBox19.Location = new Point(103, 54);
-            textBox19.Margin = new Padding(3, 4, 3, 4);
-            textBox19.Multiline = true;
-            textBox19.Name = "textBox19";
-            textBox19.Size = new Size(135, 29);
-            textBox19.TabIndex = 63;
+            this.textBox19.Location = new System.Drawing.Point(103, 54);
+            this.textBox19.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.textBox19.Multiline = true;
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(135, 29);
+            this.textBox19.TabIndex = 63;
             // 
             // button7
             // 
-            button7.Location = new Point(252, 114);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(114, 40);
-            button7.TabIndex = 61;
-            button7.Text = "Dar descuento";
-            button7.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(252, 114);
+            this.button7.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(114, 40);
+            this.button7.TabIndex = 61;
+            this.button7.Text = "Dar descuento";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // label37
             // 
-            label37.AutoSize = true;
-            label37.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            label37.Location = new Point(11, 9);
-            label37.Name = "label37";
-            label37.Size = new Size(76, 20);
-            label37.TabIndex = 42;
-            label37.Text = "CLIENTES";
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label37.Location = new System.Drawing.Point(11, 9);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(76, 20);
+            this.label37.TabIndex = 42;
+            this.label37.Text = "CLIENTES";
             // 
             // Form_Clientes
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
-            AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 591);
-            ControlBox = false;
-            Controls.Add(label37);
-            Controls.Add(clientesTabControl);
-            Controls.Add(dataGridView1);
-            Margin = new Padding(3, 4, 3, 4);
-            Name = "Form_Clientes";
-            Text = "Clientes";
-            Load += Form_Clientes_Load;
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            clientesTabControl.ResumeLayout(false);
-            registrarTabPage.ResumeLayout(false);
-            registrarTabPage.PerformLayout();
-            consultarTabPage.ResumeLayout(false);
-            tabControl1.ResumeLayout(false);
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
-            actualizarTabPage.ResumeLayout(false);
-            actualizarTabPage.PerformLayout();
-            eliminarTabPage.ResumeLayout(false);
-            eliminarTabPage.PerformLayout();
-            tabPage1.ResumeLayout(false);
-            tabPage1.PerformLayout();
-            ResumeLayout(false);
-            PerformLayout();
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(912, 591);
+            this.ControlBox = false;
+            this.Controls.Add(this.label37);
+            this.Controls.Add(this.clientesTabControl);
+            this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.Name = "Form_Clientes";
+            this.Text = "Clientes";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.clientesTabControl.ResumeLayout(false);
+            this.registrarTabPage.ResumeLayout(false);
+            this.registrarTabPage.PerformLayout();
+            this.consultarTabPage.ResumeLayout(false);
+            this.tabControl1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            this.actualizarTabPage.ResumeLayout(false);
+            this.actualizarTabPage.PerformLayout();
+            this.eliminarTabPage.ResumeLayout(false);
+            this.eliminarTabPage.PerformLayout();
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
