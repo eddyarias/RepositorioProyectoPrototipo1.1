@@ -33,7 +33,7 @@
             label29 = new Label();
             label28 = new Label();
             panel1 = new Panel();
-            button8 = new Button();
+            bttAgregarProdCodBarr = new Button();
             textBox4 = new TextBox();
             label30 = new Label();
             textBox3 = new TextBox();
@@ -49,7 +49,19 @@
             Producto = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
             Cantidad = new DataGridViewTextBoxColumn();
-            button3 = new Button();
+            bttContinuarSelecProd = new Button();
+            tabPage3 = new TabPage();
+            txtBDescripcionAdicional = new TextBox();
+            label11 = new Label();
+            label9 = new Label();
+            comboBox2 = new ComboBox();
+            checkedListBox2 = new CheckedListBox();
+            label8 = new Label();
+            label7 = new Label();
+            label6 = new Label();
+            checkedListBox1 = new CheckedListBox();
+            comboBox1 = new ComboBox();
+            bttGenerarFac = new Button();
             tabPage2 = new TabPage();
             txtBcorreoCliente = new TextBox();
             label10 = new Label();
@@ -64,18 +76,6 @@
             label3 = new Label();
             label2 = new Label();
             label1 = new Label();
-            tabPage3 = new TabPage();
-            txtBDescripcionAdicional = new TextBox();
-            label11 = new Label();
-            label9 = new Label();
-            comboBox2 = new ComboBox();
-            checkedListBox2 = new CheckedListBox();
-            label8 = new Label();
-            label7 = new Label();
-            label6 = new Label();
-            checkedListBox1 = new CheckedListBox();
-            comboBox1 = new ComboBox();
-            button1 = new Button();
             tabPage4 = new TabPage();
             label22 = new Label();
             label21 = new Label();
@@ -84,9 +84,9 @@
             label18 = new Label();
             label17 = new Label();
             label16 = new Label();
-            button6 = new Button();
-            button5 = new Button();
-            button4 = new Button();
+            bttAnular = new Button();
+            bttImprimir = new Button();
+            bttEnviarCorreo = new Button();
             tabControl1 = new TabControl();
             tabPage5 = new TabPage();
             tabPage8 = new TabPage();
@@ -145,12 +145,13 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
+            bttBuscarClienteBaseDatos = new Button();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
+            tabPage2.SuspendLayout();
             tabPage4.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage5.SuspendLayout();
@@ -170,14 +171,14 @@
             // TabSecuencialVentas
             // 
             TabSecuencialVentas.Controls.Add(tabPage1);
-            TabSecuencialVentas.Controls.Add(tabPage2);
             TabSecuencialVentas.Controls.Add(tabPage3);
+            TabSecuencialVentas.Controls.Add(tabPage2);
             TabSecuencialVentas.Controls.Add(tabPage4);
             TabSecuencialVentas.Location = new Point(3, 22);
             TabSecuencialVentas.Margin = new Padding(3, 4, 3, 4);
             TabSecuencialVentas.Name = "TabSecuencialVentas";
             TabSecuencialVentas.SelectedIndex = 0;
-            TabSecuencialVentas.Size = new Size(1080, 655);
+            TabSecuencialVentas.Size = new Size(1265, 785);
             TabSecuencialVentas.TabIndex = 0;
             // 
             // tabPage1
@@ -191,12 +192,12 @@
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(dataGridView1);
-            tabPage1.Controls.Add(button3);
+            tabPage1.Controls.Add(bttContinuarSelecProd);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(1072, 622);
+            tabPage1.Size = new Size(1257, 752);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Seleccion Producto";
             tabPage1.UseVisualStyleBackColor = true;
@@ -224,7 +225,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(button8);
+            panel1.Controls.Add(bttAgregarProdCodBarr);
             panel1.Controls.Add(textBox4);
             panel1.Controls.Add(label30);
             panel1.Controls.Add(textBox3);
@@ -236,15 +237,15 @@
             panel1.TabIndex = 19;
             panel1.Tag = "Seleccionar por codigo de barras";
             // 
-            // button8
+            // bttAgregarProdCodBarr
             // 
-            button8.Location = new Point(476, 11);
-            button8.Name = "button8";
-            button8.Size = new Size(118, 43);
-            button8.TabIndex = 24;
-            button8.Text = "Agregar";
-            button8.UseVisualStyleBackColor = true;
-            button8.Click += button8_Click;
+            bttAgregarProdCodBarr.Location = new Point(476, 11);
+            bttAgregarProdCodBarr.Name = "bttAgregarProdCodBarr";
+            bttAgregarProdCodBarr.Size = new Size(118, 43);
+            bttAgregarProdCodBarr.TabIndex = 24;
+            bttAgregarProdCodBarr.Text = "Agregar";
+            bttAgregarProdCodBarr.UseVisualStyleBackColor = true;
+            bttAgregarProdCodBarr.Click += button8_Click;
             // 
             // textBox4
             // 
@@ -290,7 +291,7 @@
             // lbTotal
             // 
             lbTotal.AutoSize = true;
-            lbTotal.Location = new Point(980, 491);
+            lbTotal.Location = new Point(1153, 612);
             lbTotal.Name = "lbTotal";
             lbTotal.Size = new Size(44, 20);
             lbTotal.TabIndex = 17;
@@ -299,16 +300,16 @@
             // label15
             // 
             label15.AutoSize = true;
-            label15.Location = new Point(612, 459);
+            label15.Location = new Point(789, 581);
             label15.Name = "label15";
-            label15.Size = new Size(351, 20);
+            label15.Size = new Size(429, 20);
             label15.TabIndex = 16;
-            label15.Text = "_________________________________________________________";
+            label15.Text = "______________________________________________________________________";
             // 
             // label14
             // 
             label14.AutoSize = true;
-            label14.Location = new Point(900, 491);
+            label14.Location = new Point(1073, 612);
             label14.Name = "label14";
             label14.Size = new Size(50, 20);
             label14.TabIndex = 15;
@@ -318,7 +319,7 @@
             // 
             label13.AutoSize = true;
             label13.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label13.Location = new Point(612, 200);
+            label13.Location = new Point(775, 189);
             label13.Name = "label13";
             label13.Size = new Size(16, 17);
             label13.TabIndex = 14;
@@ -327,7 +328,7 @@
             // label12
             // 
             label12.AutoSize = true;
-            label12.Location = new Point(612, 166);
+            label12.Location = new Point(775, 155);
             label12.Name = "label12";
             label12.Size = new Size(422, 20);
             label12.TabIndex = 13;
@@ -345,7 +346,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(541, 345);
+            dataGridView1.Size = new Size(541, 455);
             dataGridView1.TabIndex = 12;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
             // 
@@ -380,19 +381,145 @@
             Cantidad.ReadOnly = true;
             Cantidad.Width = 125;
             // 
-            // button3
+            // bttContinuarSelecProd
             // 
-            button3.Location = new Point(903, 529);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(150, 71);
-            button3.TabIndex = 11;
-            button3.Text = "CONTINUAR";
-            button3.UseVisualStyleBackColor = true;
-            button3.Click += button3_Click;
+            bttContinuarSelecProd.Location = new Point(1076, 650);
+            bttContinuarSelecProd.Margin = new Padding(3, 4, 3, 4);
+            bttContinuarSelecProd.Name = "bttContinuarSelecProd";
+            bttContinuarSelecProd.Size = new Size(150, 71);
+            bttContinuarSelecProd.TabIndex = 11;
+            bttContinuarSelecProd.Text = "CONTINUAR";
+            bttContinuarSelecProd.UseVisualStyleBackColor = true;
+            bttContinuarSelecProd.Click += button3_Click;
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(txtBDescripcionAdicional);
+            tabPage3.Controls.Add(label11);
+            tabPage3.Controls.Add(label9);
+            tabPage3.Controls.Add(comboBox2);
+            tabPage3.Controls.Add(checkedListBox2);
+            tabPage3.Controls.Add(label8);
+            tabPage3.Controls.Add(label7);
+            tabPage3.Controls.Add(label6);
+            tabPage3.Controls.Add(checkedListBox1);
+            tabPage3.Controls.Add(comboBox1);
+            tabPage3.Controls.Add(bttGenerarFac);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Margin = new Padding(3, 4, 3, 4);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Size = new Size(1257, 752);
+            tabPage3.TabIndex = 2;
+            tabPage3.Text = "Cobro";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // txtBDescripcionAdicional
+            // 
+            txtBDescripcionAdicional.Location = new Point(338, 572);
+            txtBDescripcionAdicional.Margin = new Padding(3, 4, 3, 4);
+            txtBDescripcionAdicional.Name = "txtBDescripcionAdicional";
+            txtBDescripcionAdicional.Size = new Size(302, 27);
+            txtBDescripcionAdicional.TabIndex = 10;
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(303, 519);
+            label11.Name = "label11";
+            label11.Size = new Size(211, 20);
+            label11.TabIndex = 9;
+            label11.Text = "Agregar descripción adicional:";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(749, 226);
+            label9.Name = "label9";
+            label9.Size = new Size(78, 20);
+            label9.TabIndex = 8;
+            label9.Text = "Porcentaje";
+            // 
+            // comboBox2
+            // 
+            comboBox2.FormattingEnabled = true;
+            comboBox2.Items.AddRange(new object[] { "5%", "10%", "15%", "20%", "25%", "30%", "45%", "50%", "60%", "65%" });
+            comboBox2.Location = new Point(749, 253);
+            comboBox2.Margin = new Padding(3, 4, 3, 4);
+            comboBox2.Name = "comboBox2";
+            comboBox2.Size = new Size(121, 28);
+            comboBox2.TabIndex = 7;
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "SI", "NO" });
+            checkedListBox2.Location = new Point(625, 242);
+            checkedListBox2.Margin = new Padding(3, 4, 3, 4);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(103, 48);
+            checkedListBox2.TabIndex = 6;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(630, 176);
+            label8.Name = "label8";
+            label8.Size = new Size(82, 20);
+            label8.TabIndex = 5;
+            label8.Text = "Descuento:";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(303, 345);
+            label7.Name = "label7";
+            label7.Size = new Size(75, 20);
+            label7.TabIndex = 4;
+            label7.Text = "Selección:";
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(303, 177);
+            label6.Name = "label6";
+            label6.Size = new Size(114, 20);
+            label6.TabIndex = 3;
+            label6.Text = "Forma de pago:";
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "Consumidor final", "Factura con datos" });
+            checkedListBox1.Location = new Point(338, 388);
+            checkedListBox1.Margin = new Padding(3, 4, 3, 4);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(145, 48);
+            checkedListBox1.TabIndex = 2;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Efectivo", "Tarjeta de credito", "Transferencia" });
+            comboBox1.Location = new Point(338, 242);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(121, 28);
+            comboBox1.TabIndex = 1;
+            // 
+            // bttGenerarFac
+            // 
+            bttGenerarFac.Location = new Point(783, 503);
+            bttGenerarFac.Margin = new Padding(3, 4, 3, 4);
+            bttGenerarFac.Name = "bttGenerarFac";
+            bttGenerarFac.Size = new Size(221, 100);
+            bttGenerarFac.TabIndex = 0;
+            bttGenerarFac.Text = "GENERAR FACTURA";
+            bttGenerarFac.UseVisualStyleBackColor = true;
+            bttGenerarFac.Click += button1_Click;
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(bttBuscarClienteBaseDatos);
             tabPage2.Controls.Add(txtBcorreoCliente);
             tabPage2.Controls.Add(label10);
             tabPage2.Controls.Add(button2);
@@ -410,14 +537,14 @@
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1072, 622);
+            tabPage2.Size = new Size(1257, 752);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
             // 
             // txtBcorreoCliente
             // 
-            txtBcorreoCliente.Location = new Point(391, 406);
+            txtBcorreoCliente.Location = new Point(463, 454);
             txtBcorreoCliente.Margin = new Padding(3, 4, 3, 4);
             txtBcorreoCliente.Name = "txtBcorreoCliente";
             txtBcorreoCliente.Size = new Size(309, 27);
@@ -426,7 +553,7 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(247, 410);
+            label10.Location = new Point(319, 458);
             label10.Name = "label10";
             label10.Size = new Size(135, 20);
             label10.TabIndex = 11;
@@ -434,7 +561,7 @@
             // 
             // button2
             // 
-            button2.Location = new Point(766, 452);
+            button2.Location = new Point(873, 527);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(156, 86);
@@ -445,7 +572,7 @@
             // 
             // txtBdireccionCliente
             // 
-            txtBdireccionCliente.Location = new Point(391, 348);
+            txtBdireccionCliente.Location = new Point(463, 396);
             txtBdireccionCliente.Margin = new Padding(3, 4, 3, 4);
             txtBdireccionCliente.Name = "txtBdireccionCliente";
             txtBdireccionCliente.Size = new Size(309, 27);
@@ -453,7 +580,7 @@
             // 
             // txtBtelefonoCliente
             // 
-            txtBtelefonoCliente.Location = new Point(391, 301);
+            txtBtelefonoCliente.Location = new Point(463, 349);
             txtBtelefonoCliente.Margin = new Padding(3, 4, 3, 4);
             txtBtelefonoCliente.Name = "txtBtelefonoCliente";
             txtBtelefonoCliente.Size = new Size(309, 27);
@@ -461,7 +588,7 @@
             // 
             // txtBapellidosClientes
             // 
-            txtBapellidosClientes.Location = new Point(391, 248);
+            txtBapellidosClientes.Location = new Point(463, 296);
             txtBapellidosClientes.Margin = new Padding(3, 4, 3, 4);
             txtBapellidosClientes.Name = "txtBapellidosClientes";
             txtBapellidosClientes.Size = new Size(309, 27);
@@ -469,7 +596,7 @@
             // 
             // txtBnombresCliente
             // 
-            txtBnombresCliente.Location = new Point(391, 190);
+            txtBnombresCliente.Location = new Point(463, 238);
             txtBnombresCliente.Margin = new Padding(3, 4, 3, 4);
             txtBnombresCliente.Name = "txtBnombresCliente";
             txtBnombresCliente.RightToLeft = RightToLeft.No;
@@ -478,7 +605,7 @@
             // 
             // txtBcedulaCliente
             // 
-            txtBcedulaCliente.Location = new Point(391, 137);
+            txtBcedulaCliente.Location = new Point(463, 185);
             txtBcedulaCliente.Margin = new Padding(3, 4, 3, 4);
             txtBcedulaCliente.Name = "txtBcedulaCliente";
             txtBcedulaCliente.Size = new Size(309, 27);
@@ -487,7 +614,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(247, 356);
+            label5.Location = new Point(319, 404);
             label5.Name = "label5";
             label5.Size = new Size(75, 20);
             label5.TabIndex = 4;
@@ -496,7 +623,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(247, 308);
+            label4.Location = new Point(319, 356);
             label4.Name = "label4";
             label4.Size = new Size(70, 20);
             label4.TabIndex = 3;
@@ -505,7 +632,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(247, 252);
+            label3.Location = new Point(319, 300);
             label3.Name = "label3";
             label3.Size = new Size(75, 20);
             label3.TabIndex = 2;
@@ -514,7 +641,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(247, 197);
+            label2.Location = new Point(319, 245);
             label2.Name = "label2";
             label2.Size = new Size(77, 20);
             label2.TabIndex = 1;
@@ -523,136 +650,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(247, 141);
+            label1.Location = new Point(319, 189);
             label1.Name = "label1";
             label1.Size = new Size(88, 20);
             label1.TabIndex = 0;
             label1.Text = "Cedula/Ruc:";
-            // 
-            // tabPage3
-            // 
-            tabPage3.Controls.Add(txtBDescripcionAdicional);
-            tabPage3.Controls.Add(label11);
-            tabPage3.Controls.Add(label9);
-            tabPage3.Controls.Add(comboBox2);
-            tabPage3.Controls.Add(checkedListBox2);
-            tabPage3.Controls.Add(label8);
-            tabPage3.Controls.Add(label7);
-            tabPage3.Controls.Add(label6);
-            tabPage3.Controls.Add(checkedListBox1);
-            tabPage3.Controls.Add(comboBox1);
-            tabPage3.Controls.Add(button1);
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Margin = new Padding(3, 4, 3, 4);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Size = new Size(1072, 622);
-            tabPage3.TabIndex = 2;
-            tabPage3.Text = "Cobro";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // txtBDescripcionAdicional
-            // 
-            txtBDescripcionAdicional.Location = new Point(214, 493);
-            txtBDescripcionAdicional.Margin = new Padding(3, 4, 3, 4);
-            txtBDescripcionAdicional.Name = "txtBDescripcionAdicional";
-            txtBDescripcionAdicional.Size = new Size(302, 27);
-            txtBDescripcionAdicional.TabIndex = 10;
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(179, 440);
-            label11.Name = "label11";
-            label11.Size = new Size(211, 20);
-            label11.TabIndex = 9;
-            label11.Text = "Agregar descripción adicional:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(625, 147);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 20);
-            label9.TabIndex = 8;
-            label9.Text = "Porcentaje";
-            // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "5%", "10%", "15%", "20%", "25%", "30%", "45%", "50%", "60%", "65%" });
-            comboBox2.Location = new Point(625, 174);
-            comboBox2.Margin = new Padding(3, 4, 3, 4);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 28);
-            comboBox2.TabIndex = 7;
-            // 
-            // checkedListBox2
-            // 
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Items.AddRange(new object[] { "SI", "NO" });
-            checkedListBox2.Location = new Point(501, 163);
-            checkedListBox2.Margin = new Padding(3, 4, 3, 4);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(103, 48);
-            checkedListBox2.TabIndex = 6;
-            // 
-            // label8
-            // 
-            label8.AutoSize = true;
-            label8.Location = new Point(506, 97);
-            label8.Name = "label8";
-            label8.Size = new Size(82, 20);
-            label8.TabIndex = 5;
-            label8.Text = "Descuento:";
-            // 
-            // label7
-            // 
-            label7.AutoSize = true;
-            label7.Location = new Point(179, 266);
-            label7.Name = "label7";
-            label7.Size = new Size(75, 20);
-            label7.TabIndex = 4;
-            label7.Text = "Selección:";
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(179, 98);
-            label6.Name = "label6";
-            label6.Size = new Size(114, 20);
-            label6.TabIndex = 3;
-            label6.Text = "Forma de pago:";
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Consumidor final", "Factura con datos" });
-            checkedListBox1.Location = new Point(214, 309);
-            checkedListBox1.Margin = new Padding(3, 4, 3, 4);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(145, 48);
-            checkedListBox1.TabIndex = 2;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Efectivo", "Tarjeta de credito", "Transferencia" });
-            comboBox1.Location = new Point(214, 163);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 28);
-            comboBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(659, 424);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(221, 100);
-            button1.TabIndex = 0;
-            button1.Text = "GENERAR FACTURA";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // tabPage4
             // 
@@ -663,13 +665,13 @@
             tabPage4.Controls.Add(label18);
             tabPage4.Controls.Add(label17);
             tabPage4.Controls.Add(label16);
-            tabPage4.Controls.Add(button6);
-            tabPage4.Controls.Add(button5);
-            tabPage4.Controls.Add(button4);
+            tabPage4.Controls.Add(bttAnular);
+            tabPage4.Controls.Add(bttImprimir);
+            tabPage4.Controls.Add(bttEnviarCorreo);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1072, 622);
+            tabPage4.Size = new Size(1257, 752);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;
@@ -677,7 +679,7 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(304, 261);
+            label22.Location = new Point(412, 375);
             label22.Name = "label22";
             label22.Size = new Size(422, 20);
             label22.TabIndex = 20;
@@ -686,7 +688,7 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(540, 466);
+            label21.Location = new Point(648, 580);
             label21.Name = "label21";
             label21.Size = new Size(50, 20);
             label21.TabIndex = 19;
@@ -695,7 +697,7 @@
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(630, 466);
+            label20.Location = new Point(738, 580);
             label20.Name = "label20";
             label20.Size = new Size(44, 20);
             label20.TabIndex = 18;
@@ -704,7 +706,7 @@
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(326, 446);
+            label19.Location = new Point(434, 560);
             label19.Name = "label19";
             label19.Size = new Size(315, 20);
             label19.TabIndex = 17;
@@ -714,7 +716,7 @@
             // 
             label18.AutoSize = true;
             label18.Font = new Font("Consolas", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label18.Location = new Point(304, 110);
+            label18.Location = new Point(412, 138);
             label18.Name = "label18";
             label18.Size = new Size(56, 15);
             label18.TabIndex = 5;
@@ -724,7 +726,7 @@
             // 
             label17.AutoSize = true;
             label17.Font = new Font("Consolas", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label17.Location = new Point(304, 292);
+            label17.Location = new Point(412, 406);
             label17.Name = "label17";
             label17.Size = new Size(56, 15);
             label17.TabIndex = 4;
@@ -734,41 +736,41 @@
             // 
             label16.AutoSize = true;
             label16.Font = new Font("Microsoft Sans Serif", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label16.Location = new Point(427, 72);
+            label16.Location = new Point(530, 64);
             label16.Name = "label16";
             label16.Size = new Size(204, 25);
             label16.TabIndex = 3;
             label16.Text = "FACTURA N°   00001";
             // 
-            // button6
+            // bttAnular
             // 
-            button6.Location = new Point(422, 516);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(209, 56);
-            button6.TabIndex = 2;
-            button6.Text = "Anular";
-            button6.UseVisualStyleBackColor = true;
+            bttAnular.Location = new Point(530, 630);
+            bttAnular.Margin = new Padding(3, 4, 3, 4);
+            bttAnular.Name = "bttAnular";
+            bttAnular.Size = new Size(209, 56);
+            bttAnular.TabIndex = 2;
+            bttAnular.Text = "Anular";
+            bttAnular.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // bttImprimir
             // 
-            button5.Location = new Point(696, 516);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(209, 56);
-            button5.TabIndex = 1;
-            button5.Text = "Imprimir";
-            button5.UseVisualStyleBackColor = true;
+            bttImprimir.Location = new Point(804, 630);
+            bttImprimir.Margin = new Padding(3, 4, 3, 4);
+            bttImprimir.Name = "bttImprimir";
+            bttImprimir.Size = new Size(209, 56);
+            bttImprimir.TabIndex = 1;
+            bttImprimir.Text = "Imprimir";
+            bttImprimir.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // bttEnviarCorreo
             // 
-            button4.Location = new Point(151, 516);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(209, 56);
-            button4.TabIndex = 0;
-            button4.Text = "Enviar al correo electronico cliente";
-            button4.UseVisualStyleBackColor = true;
+            bttEnviarCorreo.Location = new Point(259, 630);
+            bttEnviarCorreo.Margin = new Padding(3, 4, 3, 4);
+            bttEnviarCorreo.Name = "bttEnviarCorreo";
+            bttEnviarCorreo.Size = new Size(209, 56);
+            bttEnviarCorreo.TabIndex = 0;
+            bttEnviarCorreo.Text = "Enviar al correo electronico cliente";
+            bttEnviarCorreo.UseVisualStyleBackColor = true;
             // 
             // tabControl1
             // 
@@ -779,7 +781,7 @@
             tabControl1.Location = new Point(12, 12);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(1099, 729);
+            tabControl1.Size = new Size(1297, 847);
             tabControl1.TabIndex = 1;
             // 
             // tabPage5
@@ -788,7 +790,7 @@
             tabPage5.Location = new Point(4, 29);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3);
-            tabPage5.Size = new Size(1091, 696);
+            tabPage5.Size = new Size(1289, 814);
             tabPage5.TabIndex = 0;
             tabPage5.Text = "Registrar Venta";
             tabPage5.UseVisualStyleBackColor = true;
@@ -840,7 +842,7 @@
             tabPage9.Padding = new Padding(3);
             tabPage9.Size = new Size(665, 122);
             tabPage9.TabIndex = 0;
-            tabPage9.Text = "tabPage9";
+            tabPage9.Text = "Fecha";
             tabPage9.UseVisualStyleBackColor = true;
             // 
             // label40
@@ -887,7 +889,7 @@
             tabPage10.Padding = new Padding(3);
             tabPage10.Size = new Size(665, 122);
             tabPage10.TabIndex = 1;
-            tabPage10.Text = "tabPage10";
+            tabPage10.Text = "#Factura";
             tabPage10.UseVisualStyleBackColor = true;
             // 
             // label23
@@ -925,7 +927,7 @@
             tabPage11.Padding = new Padding(3);
             tabPage11.Size = new Size(665, 122);
             tabPage11.TabIndex = 2;
-            tabPage11.Text = "tabPage11";
+            tabPage11.Text = "#Cedula cliente";
             tabPage11.UseVisualStyleBackColor = true;
             // 
             // label38
@@ -1300,11 +1302,20 @@
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
             // 
+            // bttBuscarClienteBaseDatos
+            // 
+            bttBuscarClienteBaseDatos.Location = new Point(793, 177);
+            bttBuscarClienteBaseDatos.Name = "bttBuscarClienteBaseDatos";
+            bttBuscarClienteBaseDatos.Size = new Size(107, 35);
+            bttBuscarClienteBaseDatos.TabIndex = 13;
+            bttBuscarClienteBaseDatos.Text = "Buscar";
+            bttBuscarClienteBaseDatos.UseVisualStyleBackColor = true;
+            // 
             // Form_Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1129, 757);
+            ClientSize = new Size(1321, 871);
             ControlBox = false;
             Controls.Add(tabControl1);
             Margin = new Padding(3, 4, 3, 4);
@@ -1317,10 +1328,10 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage2.ResumeLayout(false);
-            tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
+            tabPage2.ResumeLayout(false);
+            tabPage2.PerformLayout();
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             tabControl1.ResumeLayout(false);
@@ -1352,7 +1363,7 @@
         private Label label2;
         private Label label1;
         private TabPage tabPage3;
-        private Button button1;
+        private Button bttGenerarFac;
         private TabPage tabPage4;
         private Label label3;
         private Button button2;
@@ -1365,7 +1376,7 @@
         private Label label4;
         private CheckedListBox checkedListBox1;
         private ComboBox comboBox1;
-        private Button button3;
+        private Button bttContinuarSelecProd;
         private Label label9;
         private ComboBox comboBox2;
         private CheckedListBox checkedListBox2;
@@ -1374,9 +1385,9 @@
         private Label label6;
         private TextBox txtBcorreoCliente;
         private Label label10;
-        private Button button4;
-        private Button button6;
-        private Button button5;
+        private Button bttEnviarCorreo;
+        private Button bttAnular;
+        private Button bttImprimir;
         private Label label11;
         private TextBox txtBDescripcionAdicional;
         private DataGridView dataGridView1;
@@ -1409,7 +1420,7 @@
         private Label label29;
         private Label label28;
         private Panel panel1;
-        private Button button8;
+        private Button bttAgregarProdCodBarr;
         private TextBox textBox4;
         private Label label30;
         private TextBox textBox3;
@@ -1464,5 +1475,6 @@
         private DataGridView dataGridView5;
         private Button button10;
         private DateTimePicker dateTimePicker4;
+        private Button bttBuscarClienteBaseDatos;
     }
 }
