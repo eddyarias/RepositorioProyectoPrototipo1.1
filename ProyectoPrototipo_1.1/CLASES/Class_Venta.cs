@@ -13,7 +13,7 @@ namespace ProyectoPrototipo_1._0
             this.connect = connect;
         }
 
-        public bool InsertarVenta(DateTime fechaEmision, int idCliente, int idListaProductos, decimal subtotal, decimal iva, decimal descuentoTotalDolares, decimal total, string formaPago, string estado)
+        public bool InsertarVenta(int idFactura, DateTime fechaEmision, long cedula, int idListaProducSelec, decimal subtotal, decimal iva, decimal descuentoTotalDolares, decimal total, string formaPago, string estado)
         {
             try
             {
@@ -25,13 +25,14 @@ namespace ProyectoPrototipo_1._0
                         return false;
                     }
 
-                    string insertQuery = "INSERT INTO Venta (fechaEmision, idCliente, idListaProductos, subtotal, iva, descuentoTotalDolares, total, formaPago, estado) " +
-                        "VALUES (@fechaEmision, @idCliente, @idListaProductos, @subtotal, @iva, @descuentoTotalDolares, @total, @formaPago, @estado)";
+                    string insertQuery = "INSERT INTO Factura (idFactura, fechaEmision, cedula, idListaProducSelec, subtotal, iva, descuentoTotalDolares, total, formaPago, estado) " +
+                        "VALUES (@idFactura, @fechaEmision, @cedula, @idListaProducSelec, @subtotal, @iva, @descuentoTotalDolares, @total, @formaPago, @estado)";
 
                     SqlCommand insertCommand = new SqlCommand(insertQuery, connection);
+                    insertCommand.Parameters.AddWithValue("@idFactura", idFactura);
                     insertCommand.Parameters.AddWithValue("@fechaEmision", fechaEmision);
-                    insertCommand.Parameters.AddWithValue("@idCliente", idCliente);
-                    insertCommand.Parameters.AddWithValue("@idListaProductos", idListaProductos);
+                    insertCommand.Parameters.AddWithValue("@cedula", cedula);
+                    insertCommand.Parameters.AddWithValue("@idListaProducSelec", idListaProducSelec);
                     insertCommand.Parameters.AddWithValue("@subtotal", subtotal);
                     insertCommand.Parameters.AddWithValue("@iva", iva);
                     insertCommand.Parameters.AddWithValue("@descuentoTotalDolares", descuentoTotalDolares);
@@ -129,45 +130,6 @@ namespace ProyectoPrototipo_1._0
                     transaction.Rollback(); // En caso de error, se revierte la transacción.
                     Console.WriteLine("Error al actualizar el estado de la factura: " + ex.Message);
                     return false; // Actualización fallida.
-                }
-            }
-        }
-
-        public bool EliminarFactura(int idFactura)
-        {
-            string connectionString = connect.CadenaConexion; // Reemplaza con tu cadena de conexión.
-
-            using (SqlConnection connection = new SqlConnection(connectionString))
-            {
-                connection.Open();
-                SqlTransaction transaction = connection.BeginTransaction(); // Inicia una transacción.
-
-                try
-                {
-                    // Eliminar la factura
-                    string deleteFacturaQuery = "DELETE FROM Factura WHERE idFactura = @idFactura;";
-                    SqlCommand deleteFacturaCommand = new SqlCommand(deleteFacturaQuery, connection, transaction);
-
-                    deleteFacturaCommand.Parameters.AddWithValue("@idFactura", idFactura);
-
-                    int rowsAffected = deleteFacturaCommand.ExecuteNonQuery();
-
-                    if (rowsAffected == 1)
-                    {
-                        transaction.Commit(); // Confirmar la transacción, la eliminación se guarda en la base de datos.
-                        return true; // Eliminación exitosa.
-                    }
-                    else
-                    {
-                        transaction.Rollback(); // Revertir la transacción si no se eliminó ninguna fila.
-                        return false; // La factura con el ID especificado no se encontró.
-                    }
-                }
-                catch (Exception ex)
-                {
-                    transaction.Rollback(); // En caso de error, se revierte la transacción.
-                    Console.WriteLine("Error al eliminar la factura: " + ex.Message);
-                    return false; // Eliminación fallida.
                 }
             }
         }
