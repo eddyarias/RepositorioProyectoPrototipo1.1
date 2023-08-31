@@ -46,18 +46,18 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Microsoft Sans Serif", 20F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(32, 159);
+            label1.Location = new Point(37, 212);
             label1.Name = "label1";
-            label1.Size = new Size(0, 31);
+            label1.Size = new Size(0, 39);
             label1.TabIndex = 5;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Microsoft Sans Serif", 34.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(279, 159);
+            label2.Location = new Point(319, 212);
             label2.Name = "label2";
-            label2.Size = new Size(0, 54);
+            label2.Size = new Size(0, 67);
             label2.TabIndex = 6;
             // 
             // menuStrip1
@@ -66,50 +66,50 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { administraciónToolStripMenuItem, moduloProveedoresToolStripMenuItem, ventasToolStripMenuItem, comprasToolStripMenuItem, proveedoresToolStripMenuItem, clientesToolStripMenuItem, cerrarSesiónToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Padding = new Padding(5, 2, 0, 2);
-            menuStrip1.Size = new Size(990, 24);
+            menuStrip1.Padding = new Padding(6, 3, 0, 3);
+            menuStrip1.Size = new Size(1131, 30);
             menuStrip1.TabIndex = 15;
             menuStrip1.Text = "menuStrip1";
             // 
             // administraciónToolStripMenuItem
             // 
             administraciónToolStripMenuItem.Name = "administraciónToolStripMenuItem";
-            administraciónToolStripMenuItem.Size = new Size(100, 20);
+            administraciónToolStripMenuItem.Size = new Size(123, 24);
             administraciónToolStripMenuItem.Text = "Administración";
             administraciónToolStripMenuItem.Click += administraciónToolStripMenuItem_Click;
             // 
             // moduloProveedoresToolStripMenuItem
             // 
             moduloProveedoresToolStripMenuItem.Name = "moduloProveedoresToolStripMenuItem";
-            moduloProveedoresToolStripMenuItem.Size = new Size(72, 20);
+            moduloProveedoresToolStripMenuItem.Size = new Size(89, 24);
             moduloProveedoresToolStripMenuItem.Text = "Inventario";
             moduloProveedoresToolStripMenuItem.Click += moduloProveedoresToolStripMenuItem_Click;
             // 
             // ventasToolStripMenuItem
             // 
             ventasToolStripMenuItem.Name = "ventasToolStripMenuItem";
-            ventasToolStripMenuItem.Size = new Size(53, 20);
+            ventasToolStripMenuItem.Size = new Size(66, 24);
             ventasToolStripMenuItem.Text = "Ventas";
             ventasToolStripMenuItem.Click += ventasToolStripMenuItem_Click;
             // 
             // comprasToolStripMenuItem
             // 
             comprasToolStripMenuItem.Name = "comprasToolStripMenuItem";
-            comprasToolStripMenuItem.Size = new Size(67, 20);
+            comprasToolStripMenuItem.Size = new Size(82, 24);
             comprasToolStripMenuItem.Text = "Compras";
             comprasToolStripMenuItem.Click += comprasToolStripMenuItem_Click;
             // 
             // proveedoresToolStripMenuItem
             // 
             proveedoresToolStripMenuItem.Name = "proveedoresToolStripMenuItem";
-            proveedoresToolStripMenuItem.Size = new Size(84, 20);
+            proveedoresToolStripMenuItem.Size = new Size(105, 24);
             proveedoresToolStripMenuItem.Text = "Proveedores";
             proveedoresToolStripMenuItem.Click += proveedoresToolStripMenuItem_Click;
             // 
             // clientesToolStripMenuItem
             // 
             clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
-            clientesToolStripMenuItem.Size = new Size(61, 20);
+            clientesToolStripMenuItem.Size = new Size(75, 24);
             clientesToolStripMenuItem.Text = "Clientes";
             clientesToolStripMenuItem.Click += clientesToolStripMenuItem_Click;
             // 
@@ -117,22 +117,24 @@
             // 
             cerrarSesiónToolStripMenuItem.Alignment = ToolStripItemAlignment.Right;
             cerrarSesiónToolStripMenuItem.Name = "cerrarSesiónToolStripMenuItem";
-            cerrarSesiónToolStripMenuItem.Size = new Size(87, 20);
+            cerrarSesiónToolStripMenuItem.Size = new Size(108, 24);
             cerrarSesiónToolStripMenuItem.Text = "Cerrar sesión";
             cerrarSesiónToolStripMenuItem.Click += cerrarSesiónToolStripMenuItem_Click;
             // 
             // Form_Menu
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackColor = SystemColors.Window;
+            BackColor = SystemColors.MenuHighlight;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(990, 572);
+            ClientSize = new Size(1131, 763);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(menuStrip1);
+            ForeColor = SystemColors.ControlText;
             IsMdiContainer = true;
             MainMenuStrip = menuStrip1;
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Menu";
             Text = "SISTEMA DE GESTIÓN PARA “FARMACY ECUADOR”";
             FormClosing += Form_Menu_FormClosing;

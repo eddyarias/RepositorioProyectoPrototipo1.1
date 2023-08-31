@@ -21,17 +21,17 @@ namespace ProyectoPrototipo_1._0
         private Form_Clientes form_Clientes;
         private Form_AdministracionDelSistema form_AdminSistema;
         private Form_Login form_Login;
-        public Form_Menu(Connect conexion)
+        public Form_Menu(Connect connect)
         {
             InitializeComponent();
             // Instanciar todos los formularios
             form_Inventario = new Form_Inventario();
-            form_Ventas = new Form_Ventas(conexion);
+            form_Ventas = new Form_Ventas(connect);
             form_Compras = new Form_Compras();
             form_Proveedores = new Form_Proveedores();
             form_Clientes = new Form_Clientes();
             form_AdminSistema = new Form_AdministracionDelSistema();
-            form_Login=new Form_Login();
+            form_Login = new Form_Login();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace ProyectoPrototipo_1._0
             // Cambiar el estado del formulario a maximizado
             this.WindowState = FormWindowState.Maximized;
             form_Login.MdiParent = this;
-            form_Login.Show();
+
         }
 
 

@@ -5,8 +5,8 @@ namespace ProyectoPrototipo_1._0
 {
     public class Connect
     {
-        private string usuario;
-        private string pass;
+        public string usuario;
+        public string pass;
         public string server;
         private string bd;
         public string con;
@@ -17,18 +17,24 @@ namespace ProyectoPrototipo_1._0
             this.usuario = usuario;
             this.pass = pass;
 
+
             /*
             server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
             bd = "db_farmacy";
-
-            con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
             */
-
-
             server = "DESKTOP-OUHSBBV";
             bd = "db_farmacia";
 
-            con = "Data Source=" + server + ";Initial Catalog=" + bd + ";Integrated Security = true";
+            // con = "Server=" + server + ";Database=" + bd + ";Integrated Security = SSPI";
+
+            con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+
+            //con = "Data Source=" + server + ";Initial Catalog=" + bd + ";Integrated Security = true";
+
+
+            
+
+           
 
         }
 

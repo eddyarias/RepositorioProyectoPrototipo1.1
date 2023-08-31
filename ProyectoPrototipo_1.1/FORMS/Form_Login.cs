@@ -35,8 +35,10 @@ namespace ProyectoPrototipo_1._0
             if (connection == null)
             {
                 // La conexión fue exitosa
-                this.Hide();
+                
                 Form_Menu form_menu = new Form_Menu(conexion);
+                form_menu.Show();
+                this.Hide();
             }
             else
             {
