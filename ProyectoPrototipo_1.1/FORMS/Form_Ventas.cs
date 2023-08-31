@@ -517,9 +517,6 @@ namespace ProyectoPrototipo_1._0
 
                                 if (result == DialogResult.Yes)
                                 {
-                                    // Bloquea el formulario deshabilitando todos los controles
-                                    BloquearFormulario(true);
-
 
                                     // Muestra el botón de "Desbloquear" para permitir al usuario desbloquear el formulario
 
@@ -598,11 +595,10 @@ namespace ProyectoPrototipo_1._0
 
                                 if (result == DialogResult.Yes)
                                 {
-                                    // Bloquea el formulario deshabilitando todos los controles
-                                    BloquearFormulario(true);
-
+                                    
                                     // Muestra el formulario de registro del cliente
                                     Form_AgregarCliente formAgregarCliente = new Form_AgregarCliente(connect, this);
+
                                     formAgregarCliente.ShowDialog();
                                 }
                             }
@@ -615,22 +611,7 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Por favor, ingrese un número de cédula válido.");
             }
         }
-
-        // Método para bloquear o desbloquear el formulario
-        private void BloquearFormulario(bool bloquear)
-        {
-            formularioBloqueado = bloquear;
-
-            foreach (Control control in this.Controls)
-            {
-                control.Enabled = !bloquear;
-            }
-        }
-        public event EventHandler FormularioDesbloqueado;
-        public virtual void OnFormularioDesbloqueado(EventArgs e)
-        {
-            FormularioDesbloqueado?.Invoke(this, e);
-        }
+       
     }
 }
 

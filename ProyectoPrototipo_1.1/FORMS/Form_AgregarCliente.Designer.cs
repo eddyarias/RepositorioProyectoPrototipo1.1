@@ -461,7 +461,7 @@
             this.Controls.Add(this.clientesTabControl);
             this.Name = "Form_AgregarCliente";
             this.Text = "Form_AgregarCliente";
-            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Form_AgregarCliente_FormClosed);
+
             this.Load += new System.EventHandler(this.Form_AgregarCliente_Load);
             this.clientesTabControl.ResumeLayout(false);
             this.registrarTabPage.ResumeLayout(false);

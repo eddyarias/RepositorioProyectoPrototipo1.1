@@ -117,14 +117,6 @@ namespace ProyectoPrototipo_1._1.FORMS
             this.formVentas = formVentas; // Asigna la referencia de Form_Ventas al campo privado formVentas
         }
 
-        private void Form_AgregarCliente_FormClosed(object sender, FormClosedEventArgs e)
-        {
-            // Desbloquea el formulario principal Form_Ventas
-            formVentas?.OnFormularioDesbloqueado(EventArgs.Empty);
-
-            // Cierra el formulario actual
-            this.Close();
-        }
 
     }
 
