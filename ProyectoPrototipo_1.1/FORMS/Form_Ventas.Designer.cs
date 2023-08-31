@@ -41,7 +41,7 @@
             this.lbTotal = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.labelDetalle = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.bttContinuarSelecProd = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -173,7 +173,7 @@
             this.tabPage1.Controls.Add(this.lbTotal);
             this.tabPage1.Controls.Add(this.label15);
             this.tabPage1.Controls.Add(this.label14);
-            this.tabPage1.Controls.Add(this.label13);
+            this.tabPage1.Controls.Add(this.labelDetalle);
             this.tabPage1.Controls.Add(this.label12);
             this.tabPage1.Controls.Add(this.bttContinuarSelecProd);
             this.tabPage1.Location = new System.Drawing.Point(4, 29);
@@ -292,15 +292,15 @@
             this.label14.TabIndex = 15;
             this.label14.Text = "TOTAL";
             // 
-            // label13
+            // labelDetalle
             // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Cascadia Mono", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label13.Location = new System.Drawing.Point(1161, 182);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(16, 17);
-            this.label13.TabIndex = 14;
-            this.label13.Text = ".";
+            this.labelDetalle.AutoSize = true;
+            this.labelDetalle.Font = new System.Drawing.Font("Cascadia Mono", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.labelDetalle.Location = new System.Drawing.Point(1161, 182);
+            this.labelDetalle.Name = "labelDetalle";
+            this.labelDetalle.Size = new System.Drawing.Size(16, 17);
+            this.labelDetalle.TabIndex = 14;
+            this.labelDetalle.Text = ".";
             // 
             // label12
             // 
@@ -1274,7 +1274,7 @@
         private Label label11;
         private TextBox txtBDescripcionAdicional;
         private Label label12;
-        private Label label13;
+        private Label labelDetalle;
         private Label lbTotal;
         private Label label15;
         private Label label14;

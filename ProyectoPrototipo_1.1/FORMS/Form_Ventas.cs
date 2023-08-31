@@ -354,6 +354,7 @@ namespace ProyectoPrototipo_1._0
                     carritoDeCompras.Add(productoSeleccionado);
 
                     // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
+                    ActualizarResumenCarrito();
                 }
                 else
                 {
@@ -365,6 +366,28 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Producto no encontrado.");
             }
         }
+
+        private void ActualizarResumenCarrito()
+        {
+            decimal total = 0;
+            StringBuilder resumen = new StringBuilder();
+
+            foreach (ProductoCarrito producto in carritoDeCompras)
+            {
+                decimal subtotal = producto.PrecioUnitario * producto.Cantidad;
+                total += subtotal;
+
+                // Agrega la información del producto al resumen en el formato deseado
+                resumen.AppendLine($"{producto.CodigoProducto,-10} {producto.Descripcion,-20} {producto.PrecioUnitario,-10:C2} {producto.Cantidad,-10} {subtotal,-10:C2}");
+            }
+
+            // Actualiza el texto del Label con el resumen
+            labelDetalle.Text = resumen.ToString();
+
+            // Actualiza el total en el Label lbTotal
+            lbTotal.Text = $"Total {total:C2}";
+        }
+
 
 
 
