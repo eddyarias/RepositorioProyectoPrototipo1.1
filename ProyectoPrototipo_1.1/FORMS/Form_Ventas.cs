@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -10,39 +11,54 @@ using System.Windows.Forms;
 
 namespace ProyectoPrototipo_1._0
 {
+
+
+
     public partial class Form_Ventas : Form
     {
 
-        //// Variable para almacenar el índice de la pestaña actual
-        //private int indicePestanaActual = 0;
+        private Connect connect;
 
-        //List<float> arregloPrecios = new List<float>();
-        //List<int> arregloCantidad = new List<int>();
-        //List<String> arregloProductos = new List<String>();
-
-        //bool seRealizaronEdiciones = false;
-
-        //int cedulaCLiente;
-        //String nombreCliente;
-        //String apellidoCliente;
-        //String telefonoCliente;
-        //String direccionCliente;
-        //String correoCliente;
-
-        //String descripcionAdicionalCobro;
-
-        //float TotalVenta = 0;
-
-        public Form_Ventas()
+        public Form_Ventas(Connect connect)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
+            this.connect = connect;
+        }
+
+        public void LlenarDataGridViewFacturas(DataGridView dataGridView)
+        {
+            try
+            {
+                using (SqlConnection connection = connect.RealizarConexion())
+                {
+                    if (connection == null)
+                    {
+                        Console.WriteLine("No se pudo establecer la conexión.");
+                        return;
+                    }
+
+                    // Aquí puedes escribir tu consulta SQL para obtener los datos de las facturas
+                    string selectQuery = "SELECT * FROM Factura";
+
+                    SqlDataAdapter dataAdapter = new SqlDataAdapter(selectQuery, connection);
+                    DataTable dataTable = new DataTable();
+                    dataAdapter.Fill(dataTable);
+
+                    // Asigna los datos al DataGridView
+                    dataGridView.DataSource = dataTable;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al llenar el DataGridView: " + ex.Message);
+            }
         }
 
         private void Form_Ventas_Load(object sender, EventArgs e)
         {
-            //Implementar carga de productos en dataGridView
 
+            LlenarDataGridViewFacturas(dataGridViewProductos);
 
             //this.TabSecuencialVentas.TabPages[1].Enabled = false;
             //this.TabSecuencialVentas.TabPages[2].Enabled = false;
@@ -294,6 +310,13 @@ namespace ProyectoPrototipo_1._0
         {
 
         }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+
     }
 }
 

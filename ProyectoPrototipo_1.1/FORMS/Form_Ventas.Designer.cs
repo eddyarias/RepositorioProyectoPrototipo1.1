@@ -44,7 +44,7 @@
             label14 = new Label();
             label13 = new Label();
             label12 = new Label();
-            dataGridView1 = new DataGridView();
+            dataGridViewProductos = new DataGridView();
             Codigo = new DataGridViewTextBoxColumn();
             Producto = new DataGridViewTextBoxColumn();
             Precio = new DataGridViewTextBoxColumn();
@@ -63,6 +63,7 @@
             comboBox1 = new ComboBox();
             bttGenerarFac = new Button();
             tabPage2 = new TabPage();
+            bttBuscarClienteBaseDatos = new Button();
             txtBcorreoCliente = new TextBox();
             label10 = new Label();
             button2 = new Button();
@@ -105,7 +106,7 @@
             label38 = new Label();
             label39 = new Label();
             textBox5 = new TextBox();
-            dataGridView2 = new DataGridView();
+            dataGridViewFactura = new DataGridView();
             column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
             Column6 = new DataGridViewTextBoxColumn();
@@ -145,11 +146,10 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            bttBuscarClienteBaseDatos = new Button();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
             tabPage3.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -161,7 +161,7 @@
             tabPage9.SuspendLayout();
             tabPage10.SuspendLayout();
             tabPage11.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
             tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage7.SuspendLayout();
@@ -191,7 +191,7 @@
             tabPage1.Controls.Add(label14);
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(label12);
-            tabPage1.Controls.Add(dataGridView1);
+            tabPage1.Controls.Add(dataGridViewProductos);
             tabPage1.Controls.Add(bttContinuarSelecProd);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
@@ -334,21 +334,21 @@
             label12.TabIndex = 13;
             label12.Text = "PRODUCTO              PRECIO UNI.            CANT.           SUBTOTAL";
             // 
-            // dataGridView1
+            // dataGridViewProductos
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToOrderColumns = true;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, Precio, Cantidad });
-            dataGridView1.Location = new Point(33, 200);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(541, 455);
-            dataGridView1.TabIndex = 12;
-            dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
+            dataGridViewProductos.AllowUserToAddRows = false;
+            dataGridViewProductos.AllowUserToDeleteRows = false;
+            dataGridViewProductos.AllowUserToOrderColumns = true;
+            dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, Precio, Cantidad });
+            dataGridViewProductos.Location = new Point(33, 200);
+            dataGridViewProductos.Margin = new Padding(3, 4, 3, 4);
+            dataGridViewProductos.Name = "dataGridViewProductos";
+            dataGridViewProductos.RowHeadersWidth = 51;
+            dataGridViewProductos.RowTemplate.Height = 24;
+            dataGridViewProductos.Size = new Size(541, 455);
+            dataGridViewProductos.TabIndex = 12;
+            dataGridViewProductos.CellEndEdit += dataGridView1_CellEndEdit;
             // 
             // Codigo
             // 
@@ -541,6 +541,15 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // bttBuscarClienteBaseDatos
+            // 
+            bttBuscarClienteBaseDatos.Location = new Point(793, 177);
+            bttBuscarClienteBaseDatos.Name = "bttBuscarClienteBaseDatos";
+            bttBuscarClienteBaseDatos.Size = new Size(107, 35);
+            bttBuscarClienteBaseDatos.TabIndex = 13;
+            bttBuscarClienteBaseDatos.Text = "Buscar";
+            bttBuscarClienteBaseDatos.UseVisualStyleBackColor = true;
             // 
             // txtBcorreoCliente
             // 
@@ -799,7 +808,7 @@
             // 
             tabPage8.Controls.Add(dataGridView5);
             tabPage8.Controls.Add(tabControl2);
-            tabPage8.Controls.Add(dataGridView2);
+            tabPage8.Controls.Add(dataGridViewFactura);
             tabPage8.Controls.Add(button7);
             tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
@@ -813,7 +822,7 @@
             // 
             dataGridView5.BackgroundColor = Color.White;
             dataGridView5.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView5.Location = new Point(7, 174);
+            dataGridView5.Location = new Point(7, 173);
             dataGridView5.Name = "dataGridView5";
             dataGridView5.RowHeadersWidth = 51;
             dataGridView5.RowTemplate.Height = 29;
@@ -955,16 +964,17 @@
             textBox5.Size = new Size(119, 27);
             textBox5.TabIndex = 86;
             // 
-            // dataGridView2
+            // dataGridViewFactura
             // 
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column6, Column3, Column4, Column5, Total, Column7, Estado });
-            dataGridView2.Location = new Point(7, 345);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 29;
-            dataGridView2.Size = new Size(1188, 359);
-            dataGridView2.TabIndex = 85;
+            dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewFactura.Columns.AddRange(new DataGridViewColumn[] { column1, Column2, Column6, Column3, Column4, Column5, Total, Column7, Estado });
+            dataGridViewFactura.Location = new Point(7, 345);
+            dataGridViewFactura.Name = "dataGridViewFactura";
+            dataGridViewFactura.RowHeadersWidth = 51;
+            dataGridViewFactura.RowTemplate.Height = 29;
+            dataGridViewFactura.Size = new Size(1188, 359);
+            dataGridViewFactura.TabIndex = 85;
+            dataGridViewFactura.CellContentClick += dataGridView2_CellContentClick;
             // 
             // column1
             // 
@@ -1226,7 +1236,7 @@
             dataGridView4.Name = "dataGridView4";
             dataGridView4.RowHeadersWidth = 51;
             dataGridView4.RowTemplate.Height = 29;
-            dataGridView4.Size = new Size(554, 59);
+            dataGridView4.Size = new Size(554, 126);
             dataGridView4.TabIndex = 31;
             // 
             // Column8
@@ -1302,15 +1312,6 @@
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
             // 
-            // bttBuscarClienteBaseDatos
-            // 
-            bttBuscarClienteBaseDatos.Location = new Point(793, 177);
-            bttBuscarClienteBaseDatos.Name = "bttBuscarClienteBaseDatos";
-            bttBuscarClienteBaseDatos.Size = new Size(107, 35);
-            bttBuscarClienteBaseDatos.TabIndex = 13;
-            bttBuscarClienteBaseDatos.Text = "Buscar";
-            bttBuscarClienteBaseDatos.UseVisualStyleBackColor = true;
-            // 
             // Form_Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -1327,7 +1328,7 @@
             tabPage1.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             tabPage2.ResumeLayout(false);
@@ -1345,7 +1346,7 @@
             tabPage10.PerformLayout();
             tabPage11.ResumeLayout(false);
             tabPage11.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).EndInit();
             tabPage6.ResumeLayout(false);
             tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
@@ -1390,7 +1391,7 @@
         private Button bttImprimir;
         private Label label11;
         private TextBox txtBDescripcionAdicional;
-        private DataGridView dataGridView1;
+        private DataGridView dataGridViewProductos;
         private Label label12;
         private Label label13;
         private Label lbTotal;
@@ -1425,7 +1426,7 @@
         private Label label30;
         private TextBox textBox3;
         private TextBox textBox2;
-        private DataGridView dataGridView2;
+        private DataGridView dataGridViewFactura;
         private DataGridViewTextBoxColumn column1;
         private DataGridViewTextBoxColumn Column2;
         private DataGridViewTextBoxColumn Column6;

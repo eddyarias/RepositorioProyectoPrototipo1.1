@@ -1,11 +1,16 @@
---drop database db_farmacia;
+drop database db_farmacia;
+go
+
 --drop table Class_Proveedor
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'db_farmacia')
 BEGIN
     CREATE DATABASE db_farmacia;
 END
+go
 
 USE db_farmacia; --para usar la base de datos
+go
+
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Proveedor')
 BEGIN
@@ -33,6 +38,8 @@ VALUES
     (5, 'Proveedor5', 'Pedro', 'Sánchez', 'proveedor5@example.com', 'Ciudad5', 'Dirección5', '999999999', 'Farmacia', 'Observaciones5', 'Información bancaria5', 'Regular');
 END
 
+go
+
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Producto')
 BEGIN
     CREATE TABLE Producto (
@@ -55,11 +62,13 @@ VALUES
     (5, 3, 'Producto 5', 'Lote E', 7.99, 6.99, '2023-06-28', 0.3, 0.18);
 END
 
+go
+
+
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Cliente')
 BEGIN
     CREATE TABLE Cliente (
-        codigo_c INT PRIMARY KEY,
-        ruc_c BIGINT,
+        cedula BIGINT PRIMARY KEY,
         tipo_persona NVARCHAR(50),
         nombres_c NVARCHAR(100),
         apellidos_c NVARCHAR(100),
@@ -70,48 +79,26 @@ BEGIN
         fecha_nac DATE,
         observaciones_c VARCHAR(200)
     );
-	INSERT INTO Cliente (codigo_c, ruc_c, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
+	INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
 VALUES
-    (1, 1234567890, 'Persona Natural', 'Juan', 'Pérez', 'Parroquia 1', 'Dirección 1', 'juan@example.com', '1234567890', '1990-01-01', 'Observaciones 1'),
-    (2, 9876543210, 'Persona Jurídica', 'Empresa A', 'S.A.', 'Parroquia 2', 'Dirección 2', 'empresaA@example.com', '0987654321', '1995-05-10', 'Observaciones 2'),
-    (3, 5678901234, 'Persona Natural', 'María', 'Gómez', 'Parroquia 3', 'Dirección 3', 'maria@example.com', '5678901234', '1988-12-15', 'Observaciones 3'),
-    (4, 4321098765, 'Persona Jurídica', 'Empresa B', 'C.A.', 'Parroquia 4', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 'Observaciones 4'),
-    (5, 9999999999, 'Persona Natural', 'Pedro', 'López', 'Parroquia 5', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 'Observaciones 5');
+    ( 1234567890, 'Persona Natural', 'Juan', 'Pérez', 'Parroquia 1', 'Dirección 1', 'juan@example.com', '1234567890', '1990-01-01', 'Observaciones 1'),
+    ( 9876543210, 'Persona Jurídica', 'Empresa A', 'S.A.', 'Parroquia 2', 'Dirección 2', 'empresaA@example.com', '0987654321', '1995-05-10', 'Observaciones 2'),
+    ( 5678901234, 'Persona Natural', 'María', 'Gómez', 'Parroquia 3', 'Dirección 3', 'maria@example.com', '5678901234', '1988-12-15', 'Observaciones 3'),
+    ( 4321098765, 'Persona Jurídica', 'Empresa B', 'C.A.', 'Parroquia 4', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 'Observaciones 4'),
+    ( 9999999999, 'Persona Natural', 'Pedro', 'López', 'Parroquia 5', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 'Observaciones 5');
 END
 
 
+go
 
-select * from Proveedor;
-select * from Producto;
-select * from Cliente;
-
-
-
-/*TablaFactura*/
-
-
--- Crear la tabla ListaProductosFactura
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'ListaProductosFactura')
-BEGIN
-    CREATE TABLE ListaProductosSeleccionados (
-        idListaProducSelec INT PRIMARY KEY IDENTITY(1,1),
-
-        idProducto INT,
-        cantidad INT,
-        precio DECIMAL(18, 2),
-        subtotal DECIMAL(18, 2),
-        descuentoDolares DECIMAL(18, 2),
-        
-    );
-END
 
 -- Crear la tabla Factura
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Factura')
 BEGIN
     CREATE TABLE Factura (
-        idFactura INT PRIMARY KEY IDENTITY(1,1),
+        idFactura INT PRIMARY KEY,
         fechaEmision DATE,
-        idCliente INT,
+        cedula bigINT,
         idListaProducSelec INT,
         subtotal DECIMAL(18, 2),
         iva DECIMAL(18, 2),
@@ -119,26 +106,49 @@ BEGIN
         total DECIMAL(18, 2),
         formaPago NVARCHAR(50),
         estado NVARCHAR(50) CHECK (estado IN ('Anulada', 'Vigente')), -- Se añade la restricción CHECK
-        FOREIGN KEY (idListaProducSelec) REFERENCES ListaProductosSeleccionados(idListaProducSelec) -- Clave foránea
+        FOREIGN KEY (cedula) REFERENCES Cliente(cedula) -- Clave foránea
     );
 END
+go
 
+-- Crear la tabla ListaProductosFactura
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'ListaProductosFactura')
+BEGIN
+    CREATE TABLE ListaProductosSeleccionados (
+        idListaProducSelec INT primary key,
+		idFactura INT,
+        idProducto INT,
+        cantidad INT,
+        precio DECIMAL(18, 2),
+        subtotal DECIMAL(18, 2),
+        descuentoDolares DECIMAL(18, 2),
+		FOREIGN KEY (idFactura) REFERENCES Factura(idFactura), -- Clave foránea
+    );
+END
+go
 
--- Insertar datos en la tabla ListaProductosSeleccionados
-INSERT INTO ListaProductosSeleccionados (idProducto, cantidad, precio, subtotal, descuentoDolares)
+-- Añadir datos a la tabla Factura
+INSERT INTO Factura (idFactura, fechaEmision, cedula, idListaProducSelec, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
 VALUES
-    (1, 3, 9.99, 29.97, 2.00),
-    (2, 2, 19.99, 39.98, 0.00),
-    (3, 5, 5.99, 29.95, 1.50),
-    (4, 4, 14.99, 59.96, 3.00),
-    (5, 1, 7.99, 7.99, 0.25);
+    (1, '2023-08-30', 1234567890, 1, 100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
+    (2, '2023-08-31', 9876543210, 2, 150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
 
--- Insertar datos en la tabla Factura
-INSERT INTO Factura (fechaEmision, idCliente, idListaProducSelec, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
+-- Añadir datos a la tabla ListaProductosSeleccionados
+INSERT INTO ListaProductosSeleccionados (idListaProducSelec, idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares)
 VALUES
-    ('2023-08-30', 1, 1, 159.85, 28.77, 5.75, 183.87, 'Tarjeta de crédito', 'Vigente'),
-    ('2023-08-31', 2, 2, 69.93, 12.59, 0.00, 82.52, 'Efectivo', 'Anulada'),
-    ('2023-08-31', 3, 3, 129.75, 23.36, 7.50, 145.61, 'Transferencia bancaria', 'Vigente'),
-    ('2023-09-01', 4, 4, 239.84, 43.17, 12.00, 271.01, 'Tarjeta de débito', 'Anulada'),
-    ('2023-09-01', 5, 5, 7.99, 1.44, 0.25, 9.18, 'Efectivo', 'Vigente');
+    (1, 1, 101, 2, 50.00, 100.00, 0.00),
+    (2, 1, 102, 3, 20.00, 60.00, 5.00),
+    (3, 2, 103, 1, 80.00, 80.00, 2.50),
+    (4, 2, 104, 2, 35.00, 70.00, 0.00);
 
+
+
+
+	
+select * from Proveedor;
+select * from Producto;
+select * from Cliente;
+select * from Factura;
+select * from ListaProductosSeleccionados;
+
+go

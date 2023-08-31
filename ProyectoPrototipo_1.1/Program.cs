@@ -8,7 +8,7 @@ namespace ProyectoPrototipo_1._1
         static void Main()
         {
             ApplicationConfiguration.Initialize();
-            Application.Run(new Form_Menu());
+            Application.Run(new Form_Login());
         }
     }
 }

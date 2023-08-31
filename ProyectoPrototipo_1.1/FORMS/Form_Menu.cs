@@ -21,12 +21,12 @@ namespace ProyectoPrototipo_1._0
         private Form_Clientes form_Clientes;
         private Form_AdministracionDelSistema form_AdminSistema;
         private Form_Login form_Login;
-        public Form_Menu()
+        public Form_Menu(Connect conexion)
         {
             InitializeComponent();
             // Instanciar todos los formularios
             form_Inventario = new Form_Inventario();
-            form_Ventas = new Form_Ventas();
+            form_Ventas = new Form_Ventas(conexion);
             form_Compras = new Form_Compras();
             form_Proveedores = new Form_Proveedores();
             form_Clientes = new Form_Clientes();
