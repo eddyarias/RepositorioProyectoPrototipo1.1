@@ -30,7 +30,6 @@
         {
             TCProveedores = new TabControl();
             tabPage1 = new TabPage();
-            comboBox2 = new ComboBox();
             comboBox1 = new ComboBox();
             label12 = new Label();
             label11 = new Label();
@@ -61,7 +60,6 @@
             label17 = new Label();
             tabPage7 = new TabPage();
             button6 = new Button();
-            comboBox4 = new ComboBox();
             comboBox5 = new ComboBox();
             label26 = new Label();
             textBox4 = new TextBox();
@@ -104,6 +102,8 @@
             dataGridView1 = new DataGridView();
             label37 = new Label();
             button3 = new Button();
+            checkedListBox1 = new CheckedListBox();
+            checkedListBox2 = new CheckedListBox();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -132,7 +132,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(comboBox2);
+            tabPage1.Controls.Add(checkedListBox2);
             tabPage1.Controls.Add(comboBox1);
             tabPage1.Controls.Add(label12);
             tabPage1.Controls.Add(label11);
@@ -159,15 +159,6 @@
             tabPage1.Text = "Registrar";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
-            // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Efectivo", "Transferencia Bancaria", "Tarjeta de Crédito" });
-            comboBox2.Location = new Point(423, 62);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(151, 28);
-            comboBox2.TabIndex = 31;
-            // 
             // comboBox1
             // 
             comboBox1.FormattingEnabled = true;
@@ -190,9 +181,10 @@
             label11.AutoSize = true;
             label11.Location = new Point(303, 65);
             label11.Name = "label11";
-            label11.Size = new Size(114, 20);
+            label11.Size = new Size(120, 20);
             label11.TabIndex = 23;
-            label11.Text = "Forma de pago:";
+            label11.Text = "Formas de pago:";
+            label11.Click += label11_Click;
             // 
             // textBox8
             // 
@@ -230,7 +222,7 @@
             // 
             // button4
             // 
-            button4.Location = new Point(423, 116);
+            button4.Location = new Point(423, 172);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(88, 35);
@@ -338,7 +330,7 @@
             // comboBox3
             // 
             comboBox3.FormattingEnabled = true;
-            comboBox3.Items.AddRange(new object[] { "Toda la información", "Razón social", "Email", "Ciudad", "Dirección", "N. Celular", "Forma de pago" });
+            comboBox3.Items.AddRange(new object[] { "Toda la información", "Razón social", "Email", "Ciudad", "Dirección", "N. Celular", "Formas de pago" });
             comboBox3.Location = new Point(54, 85);
             comboBox3.Name = "comboBox3";
             comboBox3.Size = new Size(151, 28);
@@ -421,8 +413,8 @@
             // 
             // tabPage7
             // 
+            tabPage7.Controls.Add(checkedListBox1);
             tabPage7.Controls.Add(button6);
-            tabPage7.Controls.Add(comboBox4);
             tabPage7.Controls.Add(comboBox5);
             tabPage7.Controls.Add(label26);
             tabPage7.Controls.Add(textBox4);
@@ -459,16 +451,6 @@
             button6.Text = "Buscar";
             button6.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
-            // 
-            comboBox4.FormattingEnabled = true;
-            comboBox4.Items.AddRange(new object[] { "Efectivo", "Transferencia Bancaria", "Tarjeta de Crédito" });
-            comboBox4.Location = new Point(423, 112);
-            comboBox4.Name = "comboBox4";
-            comboBox4.Size = new Size(151, 28);
-            comboBox4.TabIndex = 48;
-            comboBox4.SelectedIndexChanged += comboBox4_SelectedIndexChanged;
-            // 
             // comboBox5
             // 
             comboBox5.FormattingEnabled = true;
@@ -483,9 +465,9 @@
             label26.AutoSize = true;
             label26.Location = new Point(303, 115);
             label26.Name = "label26";
-            label26.Size = new Size(114, 20);
+            label26.Size = new Size(120, 20);
             label26.TabIndex = 46;
-            label26.Text = "Forma de pago:";
+            label26.Text = "Formas de pago:";
             label26.Click += label26_Click;
             // 
             // textBox4
@@ -526,7 +508,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(423, 166);
+            button1.Location = new Point(423, 200);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(88, 35);
@@ -875,6 +857,24 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox1.Location = new Point(423, 115);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(193, 70);
+            checkedListBox1.TabIndex = 50;
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox2.Location = new Point(434, 66);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(193, 70);
+            checkedListBox2.TabIndex = 51;
+            // 
             // Form_Proveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -940,7 +940,6 @@
         private ComboBox CBEvaluarProveedor;
         private Label label16;
         private ComboBox comboBox1;
-        private ComboBox comboBox2;
         private TabPage tabPage6;
         private TextBox textBox3;
         private Label label17;
@@ -955,7 +954,6 @@
         private TabPage tabPage7;
         private Label label24;
         private Label label25;
-        private ComboBox comboBox4;
         private ComboBox comboBox5;
         private Label label26;
         private TextBox textBox4;
@@ -986,5 +984,7 @@
         private Button button2;
         private Label label37;
         private Button button3;
+        private CheckedListBox checkedListBox2;
+        private CheckedListBox checkedListBox1;
     }
 }
