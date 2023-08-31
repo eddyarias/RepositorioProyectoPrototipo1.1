@@ -20,9 +20,9 @@ namespace ProyectoPrototipo_1._0
     {
 
 
-       // string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
-        
-        string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
+        string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
+
+        //string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
 
         public Connect connect;
 
@@ -245,7 +245,7 @@ namespace ProyectoPrototipo_1._0
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
 
-                    
+
 
                     connection.Open();
 
@@ -302,9 +302,9 @@ namespace ProyectoPrototipo_1._0
             //switch (tabControlConsultar.SelectedIndex)
             //{
             //    case 1:
-                    DateTime fechaInicio = dateTimeInicio.Value;
-                    DateTime fechaFin = dateTimeFin.Value;
-                    ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
+            DateTime fechaInicio = dateTimeInicio.Value;
+            DateTime fechaFin = dateTimeFin.Value;
+            ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
 
             //        break;
             //    case 2:
@@ -322,7 +322,7 @@ namespace ProyectoPrototipo_1._0
         {
 
         }
-        
+
 
         private void bttAgregarProdCodBarr_Click(object sender, EventArgs e)
         {
@@ -378,14 +378,14 @@ namespace ProyectoPrototipo_1._0
                 total += subtotal;
 
                 // Agrega la información del producto al resumen en el formato deseado
-                resumen.AppendLine($"{producto.CodigoProducto,-10} {producto.Descripcion,-20} {producto.PrecioUnitario,-10:C2} {producto.Cantidad,-10} {subtotal,-10:C2}");
+                resumen.AppendLine($"{producto.CodigoProducto,-10} {producto.Descripcion,-45} {producto.PrecioUnitario,-20:C2} {producto.Cantidad,-15} {subtotal,-10:C2}");
             }
 
             // Actualiza el texto del Label con el resumen
             labelDetalle.Text = resumen.ToString();
 
             // Actualiza el total en el Label lbTotal
-            lbTotal.Text = $"Total {total:C2}";
+            lbTotal.Text = $"{total:C2}";
         }
 
 
@@ -495,10 +495,10 @@ namespace ProyectoPrototipo_1._0
 
         private void tabControlConsultar_SelectedIndexChanged(object sender, EventArgs e)
         {
-           //  LlenarDataGridViewFacturas(dataGridViewFactura);
-         }
+            //  LlenarDataGridViewFacturas(dataGridViewFactura);
+        }
 
- 
+
 
         private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
@@ -564,7 +564,7 @@ namespace ProyectoPrototipo_1._0
                                     string cedulaRegistrada = formAgregarCliente.CedulaClienteRegistrada;
 
                                     // Haz algo con la cédula registrada, por ejemplo, mostrarla en un TextBox
-                                    string cedulaRecientementeRegistrada= cedulaRegistrada;
+                                    string cedulaRecientementeRegistrada = cedulaRegistrada;
                                     txtBcedulaCliente.Text = cedulaRegistrada;
                                     BuscarCliente(cedulaRecientementeRegistrada);
 
@@ -632,7 +632,7 @@ namespace ProyectoPrototipo_1._0
 
                                 if (result == DialogResult.Yes)
                                 {
-                                    
+
                                     // Muestra el formulario de registro del cliente
                                     Form_AgregarCliente formAgregarCliente = new Form_AgregarCliente(connect, this);
 

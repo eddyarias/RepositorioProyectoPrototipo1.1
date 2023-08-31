@@ -23,8 +23,9 @@ namespace ProyectoPrototipo_1._0
             bd = "db_farmacy";
             */
 
-            //server = " DESKTOP-OUHSBBV";
-            server = "DESKTOP-0BLRF7R\\MSSQLSERVER01";
+            server = " DESKTOP-OUHSBBV";
+            //server = "DESKTOP-0BLRF7R\\MSSQLSERVER01";
+
             bd = "db_farmacia";
 
             // con = "Server=" + server + ";Database=" + bd + ";Integrated Security = SSPI";

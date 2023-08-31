@@ -18,13 +18,16 @@ namespace ProyectoPrototipo_1._1.FORMS
         public string CedulaClienteRegistrada { get; private set; }
 
 
-        // string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
+        string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
 
-        public string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
+        //public string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
         public Form_AgregarCliente(Connect connect)
         {
             InitializeComponent();
             this.connect = connect;
+            // Configurar el DateTimePicker para mostrar solo el año
+            dateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Custom;
+            dateTimePickerFechaNacimiento.CustomFormat = "yyyy";
         }
 
         private void Form_AgregarCliente_Load(object sender, EventArgs e)
