@@ -323,20 +323,44 @@ namespace ProyectoPrototipo_1._0
 
         }
 
-
-        private void button8_Click(object sender, EventArgs e)
+        private void bttAgregarProdCodBarr_Click(object sender, EventArgs e)
         {
             this.codigoProducto = int.Parse(txtCodigo.Text);
-            decimal precio = ObtenerPrecioProducto(codigoProducto);
-            txtBPrecio.Text = precio.ToString();
+            ProductoInfo productoInfo = ObtenerPrecioYDescripcionProducto(codigoProducto);
 
-            this.cantidad = int.Parse(txtCantidad.Text);
+            if (productoInfo != null)
+            {
+                // Crear una instancia del formulario de cuadro de diálogo personalizado
+                AgregarProductoForm agregarProductoForm = new AgregarProductoForm();
 
+                // Configurar las propiedades del formulario de acuerdo con los datos del producto
+                agregarProductoForm.Descripcion = productoInfo.Descripcion;
+                agregarProductoForm.Precio = productoInfo.Precio;
+
+                // Mostrar el formulario de cuadro de diálogo personalizado
+                DialogResult result = agregarProductoForm.ShowDialog();
+
+                if (result == DialogResult.OK)
+                {
+                    // El usuario hizo clic en "Aceptar" en el formulario de cuadro de diálogo
+                    int cantidad = agregarProductoForm.CantidadIngresada;
+
+                    // Ahora puedes usar la cantidad ingresada por el usuario
+                }
+                else
+                {
+                    // El usuario hizo clic en "Cancelar" o cerró el cuadro de diálogo sin aceptar
+                }
+            }
+            else
+            {
+                MessageBox.Show("Producto no encontrado.");
+            }
         }
 
-        private decimal ObtenerPrecioProducto(int codigoProducto)
+        private ProductoInfo ObtenerPrecioYDescripcionProducto(int codigoProducto)
         {
-            decimal precio = -1; // Valor predeterminado en caso de que el producto no se encuentre
+            ProductoInfo productoInfo = null; // Valor predeterminado en caso de que el producto no se encuentre
 
             using (SqlConnection connection = new SqlConnection(con))
             {
@@ -344,29 +368,43 @@ namespace ProyectoPrototipo_1._0
                 {
                     connection.Open();
 
-                    // Consulta SQL para obtener el precio del producto por su código
-                    string sqlQuery = "SELECT precio_unitario FROM Producto WHERE codigo = @CodigoProducto";
+                    // Consulta SQL para obtener la descripción y el precio del producto por su código
+                    string sqlQuery = "SELECT descripcion, precio_unitario FROM Producto WHERE codigo = @CodigoProducto";
 
                     using (SqlCommand cmd = new SqlCommand(sqlQuery, connection))
                     {
                         cmd.Parameters.AddWithValue("@CodigoProducto", codigoProducto);
 
-                        object result = cmd.ExecuteScalar();
-
-                        if (result != null && result != DBNull.Value)
+                        using (SqlDataReader reader = cmd.ExecuteReader())
                         {
-                            precio = Convert.ToDecimal(result);
+                            if (reader.Read())
+                            {
+                                // Se encontró el producto, crea un objeto ProductoInfo para almacenar los datos
+                                productoInfo = new ProductoInfo
+                                {
+                                    Descripcion = reader["descripcion"].ToString(),
+                                    Precio = Convert.ToDecimal(reader["precio_unitario"])
+                                };
+                            }
                         }
                     }
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show($"Error al obtener el precio del producto: {ex.Message}");
+                    MessageBox.Show($"Error al obtener la información del producto: {ex.Message}");
                 }
             }
 
-            return precio;
+            return productoInfo;
         }
+
+        // Define una clase ProductoInfo para almacenar la descripción y el precio del producto
+        public class ProductoInfo
+        {
+            public string Descripcion { get; set; }
+            public decimal Precio { get; set; }
+        }
+
 
 
         private void button3_Click(object sender, EventArgs e)
@@ -458,10 +496,7 @@ namespace ProyectoPrototipo_1._0
            //  LlenarDataGridViewFacturas(dataGridViewFactura);
          }
 
-        private void bttAgregarProdCodBarr_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
         private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
