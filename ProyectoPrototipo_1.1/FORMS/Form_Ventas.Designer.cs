@@ -30,6 +30,7 @@
         {
             TabSecuencialVentas = new TabControl();
             tabPage1 = new TabPage();
+            dataGridViewProductos = new DataGridView();
             label29 = new Label();
             label28 = new Label();
             panel1 = new Panel();
@@ -46,11 +47,6 @@
             label14 = new Label();
             label13 = new Label();
             label12 = new Label();
-            dataGridViewProductos = new DataGridView();
-            Codigo = new DataGridViewTextBoxColumn();
-            Producto = new DataGridViewTextBoxColumn();
-            Precio = new DataGridViewTextBoxColumn();
-            Cantidad = new DataGridViewTextBoxColumn();
             bttContinuarSelecProd = new Button();
             tabPage3 = new TabPage();
             txtBDescripcionAdicional = new TextBox();
@@ -97,9 +93,9 @@
             tabControl2 = new TabControl();
             tabPage9 = new TabPage();
             label40 = new Label();
-            dateTimePicker3 = new DateTimePicker();
+            dateTimeFin = new DateTimePicker();
             label33 = new Label();
-            dateTimePicker2 = new DateTimePicker();
+            dateTimeInicio = new DateTimePicker();
             tabPage10 = new TabPage();
             label23 = new Label();
             label25 = new Label();
@@ -107,7 +103,7 @@
             tabPage11 = new TabPage();
             label38 = new Label();
             label39 = new Label();
-            textBox5 = new TextBox();
+            txtBoxConsultarNumeroCedula = new TextBox();
             button7 = new Button();
             tabPage6 = new TabPage();
             dataGridView3 = new DataGridView();
@@ -140,8 +136,8 @@
             label34 = new Label();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
-            panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
+            panel1.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage4.SuspendLayout();
@@ -174,6 +170,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(dataGridViewProductos);
             tabPage1.Controls.Add(label29);
             tabPage1.Controls.Add(label28);
             tabPage1.Controls.Add(panel1);
@@ -182,7 +179,6 @@
             tabPage1.Controls.Add(label14);
             tabPage1.Controls.Add(label13);
             tabPage1.Controls.Add(label12);
-            tabPage1.Controls.Add(dataGridViewProductos);
             tabPage1.Controls.Add(bttContinuarSelecProd);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
@@ -192,6 +188,20 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Seleccion Producto";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewProductos
+            // 
+            dataGridViewProductos.AllowUserToAddRows = false;
+            dataGridViewProductos.AllowUserToDeleteRows = false;
+            dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewProductos.Location = new Point(68, 226);
+            dataGridViewProductos.Name = "dataGridViewProductos";
+            dataGridViewProductos.ReadOnly = true;
+            dataGridViewProductos.RowHeadersWidth = 51;
+            dataGridViewProductos.RowTemplate.Height = 29;
+            dataGridViewProductos.Size = new Size(583, 399);
+            dataGridViewProductos.TabIndex = 21;
+            dataGridViewProductos.CellContentClick += dataGridViewProductos_CellContentClick;
             // 
             // label29
             // 
@@ -344,53 +354,6 @@
             label12.Size = new Size(422, 20);
             label12.TabIndex = 13;
             label12.Text = "PRODUCTO              PRECIO UNI.            CANT.           SUBTOTAL";
-            // 
-            // dataGridViewProductos
-            // 
-            dataGridViewProductos.AllowUserToAddRows = false;
-            dataGridViewProductos.AllowUserToDeleteRows = false;
-            dataGridViewProductos.AllowUserToOrderColumns = true;
-            dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProductos.Columns.AddRange(new DataGridViewColumn[] { Codigo, Producto, Precio, Cantidad });
-            dataGridViewProductos.Location = new Point(33, 200);
-            dataGridViewProductos.Margin = new Padding(3, 4, 3, 4);
-            dataGridViewProductos.Name = "dataGridViewProductos";
-            dataGridViewProductos.RowHeadersWidth = 51;
-            dataGridViewProductos.RowTemplate.Height = 24;
-            dataGridViewProductos.Size = new Size(541, 455);
-            dataGridViewProductos.TabIndex = 12;
-            dataGridViewProductos.CellEndEdit += dataGridView1_CellEndEdit;
-            // 
-            // Codigo
-            // 
-            Codigo.HeaderText = "Código";
-            Codigo.MinimumWidth = 6;
-            Codigo.Name = "Codigo";
-            Codigo.Width = 125;
-            // 
-            // Producto
-            // 
-            Producto.HeaderText = "Producto";
-            Producto.MinimumWidth = 6;
-            Producto.Name = "Producto";
-            Producto.ReadOnly = true;
-            Producto.Width = 125;
-            // 
-            // Precio
-            // 
-            Precio.HeaderText = "Precio";
-            Precio.MinimumWidth = 6;
-            Precio.Name = "Precio";
-            Precio.ReadOnly = true;
-            Precio.Width = 125;
-            // 
-            // Cantidad
-            // 
-            Cantidad.HeaderText = "Cantidad";
-            Cantidad.MinimumWidth = 6;
-            Cantidad.Name = "Cantidad";
-            Cantidad.ReadOnly = true;
-            Cantidad.Width = 125;
             // 
             // bttContinuarSelecProd
             // 
@@ -852,9 +815,9 @@
             // tabPage9
             // 
             tabPage9.Controls.Add(label40);
-            tabPage9.Controls.Add(dateTimePicker3);
+            tabPage9.Controls.Add(dateTimeFin);
             tabPage9.Controls.Add(label33);
-            tabPage9.Controls.Add(dateTimePicker2);
+            tabPage9.Controls.Add(dateTimeInicio);
             tabPage9.Location = new Point(4, 29);
             tabPage9.Name = "tabPage9";
             tabPage9.Padding = new Padding(3);
@@ -867,18 +830,18 @@
             // 
             label40.AutoSize = true;
             label40.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label40.Location = new Point(44, 83);
+            label40.Location = new Point(44, 80);
             label40.Name = "label40";
             label40.Size = new Size(184, 17);
             label40.TabIndex = 89;
             label40.Text = "Seleccionar fecha-fin:";
             // 
-            // dateTimePicker3
+            // dateTimeFin
             // 
-            dateTimePicker3.Location = new Point(234, 73);
-            dateTimePicker3.Name = "dateTimePicker3";
-            dateTimePicker3.Size = new Size(312, 27);
-            dateTimePicker3.TabIndex = 88;
+            dateTimeFin.Location = new Point(234, 73);
+            dateTimeFin.Name = "dateTimeFin";
+            dateTimeFin.Size = new Size(312, 27);
+            dateTimeFin.TabIndex = 88;
             // 
             // label33
             // 
@@ -890,12 +853,12 @@
             label33.TabIndex = 87;
             label33.Text = "Seleccionar fecha-inicio:";
             // 
-            // dateTimePicker2
+            // dateTimeInicio
             // 
-            dateTimePicker2.Location = new Point(234, 23);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(312, 27);
-            dateTimePicker2.TabIndex = 86;
+            dateTimeInicio.Location = new Point(234, 23);
+            dateTimeInicio.Name = "dateTimeInicio";
+            dateTimeInicio.Size = new Size(312, 27);
+            dateTimeInicio.TabIndex = 86;
             // 
             // tabPage10
             // 
@@ -939,7 +902,7 @@
             // 
             tabPage11.Controls.Add(label38);
             tabPage11.Controls.Add(label39);
-            tabPage11.Controls.Add(textBox5);
+            tabPage11.Controls.Add(txtBoxConsultarNumeroCedula);
             tabPage11.Location = new Point(4, 29);
             tabPage11.Name = "tabPage11";
             tabPage11.Padding = new Padding(3);
@@ -965,13 +928,13 @@
             label39.Size = new Size(0, 20);
             label39.TabIndex = 85;
             // 
-            // textBox5
+            // txtBoxConsultarNumeroCedula
             // 
-            textBox5.Location = new Point(353, 43);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(119, 27);
-            textBox5.TabIndex = 86;
+            txtBoxConsultarNumeroCedula.Location = new Point(353, 43);
+            txtBoxConsultarNumeroCedula.Margin = new Padding(3, 4, 3, 4);
+            txtBoxConsultarNumeroCedula.Name = "txtBoxConsultarNumeroCedula";
+            txtBoxConsultarNumeroCedula.Size = new Size(119, 27);
+            txtBoxConsultarNumeroCedula.TabIndex = 86;
             // 
             // button7
             // 
@@ -1261,9 +1224,9 @@
             TabSecuencialVentas.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).EndInit();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             tabPage2.ResumeLayout(false);
@@ -1325,7 +1288,6 @@
         private Button bttImprimir;
         private Label label11;
         private TextBox txtBDescripcionAdicional;
-        private DataGridView dataGridViewProductos;
         private Label label12;
         private Label label13;
         private Label lbTotal;
@@ -1382,21 +1344,17 @@
         private Label label32;
         private DateTimePicker dateTimePicker1;
         private DataGridViewTextBoxColumn Column10;
-        private DataGridViewTextBoxColumn Codigo;
-        private DataGridViewTextBoxColumn Producto;
-        private DataGridViewTextBoxColumn Precio;
-        private DataGridViewTextBoxColumn Cantidad;
         private TabControl tabControl2;
         private TabPage tabPage9;
         private TabPage tabPage10;
         private Label label33;
-        private DateTimePicker dateTimePicker2;
+        private DateTimePicker dateTimeInicio;
         private Label label40;
-        private DateTimePicker dateTimePicker3;
+        private DateTimePicker dateTimeFin;
         private TabPage tabPage11;
         private Label label38;
         private Label label39;
-        private TextBox textBox5;
+        private TextBox txtBoxConsultarNumeroCedula;
         private Button button10;
         private DateTimePicker dateTimePicker4;
         private Button bttBuscarClienteBaseDatos;
@@ -1404,5 +1362,6 @@
         private TextBox txtBPrecio;
         private Label label41;
         private DataGridView dataGridViewFactura;
+        private DataGridView dataGridViewProductos;
     }
 }

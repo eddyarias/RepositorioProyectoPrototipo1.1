@@ -32,7 +32,60 @@ namespace ProyectoPrototipo_1._0
             this.WindowState = FormWindowState.Maximized;
             this.connect = connect;
             LlenarDataGridViewFacturas(dataGridViewFactura);
+            MostrarProductos(dataGridViewProductos);
         }
+
+        private void MostrarProductos(DataGridView dataGridView)
+        {
+            try
+            {
+                // Configura la cadena de conexión con autenticación de Windows
+                string connectionString = con;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Consulta SQL para obtener la información de los productos
+                    string selectQuery = @"SELECT
+                            codigo AS 'Código',
+                            descripcion AS 'Descripción',
+                            precio_unitario AS 'Precio'
+                        FROM
+                            Producto;";
+
+                    using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
+                    {
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+
+                        // Agrega las columnas al DataGridView
+                        dataGridView.DataSource = dataTable;
+
+                        // Configura el modo de ajuste automático del ancho de las columnas
+                        dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                        // Agrega una columna de botones "Agregar" al final
+                        DataGridViewButtonColumn buttonAgregar = new DataGridViewButtonColumn();
+                        buttonAgregar.HeaderText = "Acción";
+                        buttonAgregar.Text = "Agregar";
+                        buttonAgregar.UseColumnTextForButtonValue = true;
+
+                        // Agrega la columna de botones al final
+                        dataGridView.Columns.Add(buttonAgregar);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener la información de productos: " + ex.Message);
+            }
+        }
+
+        // Llama a este método para mostrar la información de productos en un DataGridView
+        // Pasar el DataGridView como argumento.
+
 
         public void LlenarDataGridViewFacturas(DataGridView dataGridView)
         {
@@ -132,9 +185,134 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        private void ConsultarFacturaPorCedulaCliente(string numeroCedula, DataGridView dataGridView)
+        {
+            try
+            {
+                // Configura la cadena de conexión con autenticación de Windows
+                string connectionString = con;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Consulta SQL para obtener las facturas por número de cédula del cliente
+                    string selectQuery = @"SELECT
+                                    F.idFactura AS '#Factura',
+                                    F.fechaEmision AS 'Fecha emisión',
+                                    F.cedula AS 'Cédula cliente',
+                                    CONCAT(C.nombres_c, ' ', C.apellidos_c) AS 'Nombres y Apellido cliente',
+                                    F.subtotal AS 'Subtotal',
+                                    F.iva AS 'I.V.A',
+                                    F.descuentoTotalDolares AS 'Descuento',
+                                    F.total AS 'Total',
+                                    F.formaPago AS 'Forma de pago',
+                                    F.estado AS 'Estado'
+                                FROM
+                                    Factura AS F
+                                INNER JOIN
+                                    Cliente AS C ON F.cedula = C.cedula
+                                WHERE
+                                    C.cedula = @NumeroCedula;";
+
+                    using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@NumeroCedula", numeroCedula);
+
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+
+                        // Asigna los datos al DataGridView proporcionado
+                        dataGridView.DataSource = dataTable;
+
+                        // Configura el modo de ajuste automático del ancho de las columnas
+                        dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener los detalles de la factura: " + ex.Message);
+            }
+        }
+
+        private void ConsultarFacturasPorFechas(DateTime fechaInicio, DateTime fechaFin, DataGridView dataGridView)
+        {
+            try
+            {
+                // Configura la cadena de conexión con autenticación de Windows
+                string connectionString = con;
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    // Consulta SQL para obtener las facturas dentro del intervalo de fechas
+                    string selectQuery = @"SELECT
+                            F.idFactura AS '#Factura',
+                            F.fechaEmision AS 'Fecha emisión',
+                            F.cedula AS 'Cédula cliente',
+                            CONCAT(C.nombres_c, ' ', C.apellidos_c) AS 'Nombres y Apellido cliente',
+                            F.subtotal AS 'Subtotal',
+                            F.iva AS 'I.V.A',
+                            F.descuentoTotalDolares AS 'Descuento',
+                            F.total AS 'Total',
+                            F.formaPago AS 'Forma de pago',
+                            F.estado AS 'Estado'
+                        FROM
+                            Factura AS F
+                        INNER JOIN
+                            Cliente AS C ON F.cedula = C.cedula
+                        WHERE
+                            F.fechaEmision >= @FechaInicio
+                            AND F.fechaEmision <= DATEADD(day, 1, @FechaFin);";
+
+                    using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@FechaInicio", fechaInicio);
+                        cmd.Parameters.AddWithValue("@FechaFin", fechaFin);
+
+                        SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        dataAdapter.Fill(dataTable);
+
+                        // Asigna los datos al DataGridView proporcionado
+                        dataGridView.DataSource = dataTable;
+
+                        // Configura el modo de ajuste automático del ancho de las columnas
+                        dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al obtener los detalles de la factura: " + ex.Message);
+            }
+        }
+
+
+
         private void button7_Click(object sender, EventArgs e)
         {
-            ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
+            //switch ()
+            //{
+            //    case 1:
+            DateTime fechaInicio = dateTimeInicio.Value;
+            DateTime fechaFin = dateTimeFin.Value;
+            ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
+
+            //        break;
+            //    case 2:
+            //     ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
+            //        break;
+            //    case 3:
+            //    ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
+            //        break;
+            //    default:
+            //        break;
+            //}
+            //ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
         }
 
         private void Form_Ventas_Load(object sender, EventArgs e)
@@ -187,10 +365,6 @@ namespace ProyectoPrototipo_1._0
             return precio;
         }
 
-        private void AvanzarPestana()
-        {
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -238,7 +412,20 @@ namespace ProyectoPrototipo_1._0
 
         }
 
+        private void dataGridViewProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verifica si el clic se hizo en una celda de botón "Agregar" (columna 3 en este caso)
+            if (e.ColumnIndex == 4 && e.RowIndex >= 0) // Asegúrate de que el índice de fila sea válido
+            {
+                // Obtiene el valor de la celda en la fila actual (puedes usar esto para identificar el producto)
+                string codigoProducto = dataGridViewProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
 
+                // Realiza la acción que desees, por ejemplo, agregar el producto al carrito
+                // Puedes usar el código del producto (codigoProducto) para realizar la acción deseada.
+                // Por ejemplo, puedes mostrar un mensaje, agregarlo a una lista, etc.
+                MessageBox.Show("Producto agregado: " + codigoProducto);
+            }
+        }
     }
 }
 
