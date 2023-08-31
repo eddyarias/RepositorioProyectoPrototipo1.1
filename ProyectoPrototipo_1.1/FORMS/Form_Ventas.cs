@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoPrototipo_1._0.CLASES;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -21,10 +22,16 @@ namespace ProyectoPrototipo_1._0
         string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
 
 
-        private Connect connect;
+        public Connect connect;
+
 
         public int codigoProducto;
         public int cantidad;
+
+        public int tabSeleccionado;
+        public int tabRegistrarFacturaSeleccionado;
+
+        public List<ProductoCarrito> carritoDeCompras = new List<ProductoCarrito>();
 
         public Form_Ventas(Connect connect)
         {
@@ -48,11 +55,11 @@ namespace ProyectoPrototipo_1._0
 
                     // Consulta SQL para obtener la información de los productos
                     string selectQuery = @"SELECT
-                            codigo AS 'Código',
-                            descripcion AS 'Descripción',
-                            precio_unitario AS 'Precio'
-                        FROM
-                            Producto;";
+                    codigo AS 'Código',
+                    descripcion AS 'Descripción',
+                    precio_unitario AS 'Precio'
+                FROM
+                    Producto;";
 
                     using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
                     {
@@ -67,13 +74,16 @@ namespace ProyectoPrototipo_1._0
                         dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
                         // Agrega una columna de botones "Agregar" al final
-                        DataGridViewButtonColumn buttonAgregar = new DataGridViewButtonColumn();
-                        buttonAgregar.HeaderText = "Acción";
-                        buttonAgregar.Text = "Agregar";
-                        buttonAgregar.UseColumnTextForButtonValue = true;
+                        if (!dataGridView.Columns.Contains("Agregar"))
+                        {
+                            DataGridViewButtonColumn buttonAgregar = new DataGridViewButtonColumn();
+                            buttonAgregar.HeaderText = "Agregar";
+                            buttonAgregar.Text = "Agregar";
+                            buttonAgregar.UseColumnTextForButtonValue = true;
 
-                        // Agrega la columna de botones al final
-                        dataGridView.Columns.Add(buttonAgregar);
+                            // Agrega la columna de botones al final
+                            dataGridView.Columns.Add(buttonAgregar);
+                        }
                     }
                 }
             }
@@ -82,9 +92,6 @@ namespace ProyectoPrototipo_1._0
                 Console.WriteLine("Error al obtener la información de productos: " + ex.Message);
             }
         }
-
-        // Llama a este método para mostrar la información de productos en un DataGridView
-        // Pasar el DataGridView como argumento.
 
 
         public void LlenarDataGridViewFacturas(DataGridView dataGridView)
@@ -105,20 +112,6 @@ namespace ProyectoPrototipo_1._0
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
-                    // Agrega las columnas de botones "Ver" y "Anular"
-                    DataGridViewButtonColumn buttonVer = new DataGridViewButtonColumn();
-                    buttonVer.HeaderText = "Ver";
-                    buttonVer.Text = "Ver";
-                    buttonVer.UseColumnTextForButtonValue = true;
-
-                    DataGridViewButtonColumn buttonAnular = new DataGridViewButtonColumn();
-                    buttonAnular.HeaderText = "Anular";
-                    buttonAnular.Text = "Anular";
-                    buttonAnular.UseColumnTextForButtonValue = true;
-
-                    // Agrega las columnas de botones al DataGridView
-                    dataGridView.Columns.Add(buttonVer);
-                    dataGridView.Columns.Add(buttonAnular);
 
                     // Asigna los datos al DataGridView
                     dataGridView.DataSource = dataTable;
@@ -246,7 +239,13 @@ namespace ProyectoPrototipo_1._0
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
+
+                    
+
                     connection.Open();
+
+                    // Resta un día a la fecha de inicio
+                    fechaInicio = fechaInicio.AddDays(-1);
 
                     // Consulta SQL para obtener las facturas dentro del intervalo de fechas
                     string selectQuery = @"SELECT
@@ -266,7 +265,7 @@ namespace ProyectoPrototipo_1._0
                             Cliente AS C ON F.cedula = C.cedula
                         WHERE
                             F.fechaEmision >= @FechaInicio
-                            AND F.fechaEmision <= DATEADD(day, 1, @FechaFin);";
+                            AND F.fechaEmision <= @FechaFin;";
 
                     using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
                     {
@@ -295,24 +294,23 @@ namespace ProyectoPrototipo_1._0
 
         private void button7_Click(object sender, EventArgs e)
         {
-            //switch ()
+            //switch (tabControlConsultar.SelectedIndex)
             //{
             //    case 1:
-            DateTime fechaInicio = dateTimeInicio.Value;
-            DateTime fechaFin = dateTimeFin.Value;
-            ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
+                    DateTime fechaInicio = dateTimeInicio.Value;
+                    DateTime fechaFin = dateTimeFin.Value;
+                    ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
 
             //        break;
             //    case 2:
-            //     ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
+            //        ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
             //        break;
             //    case 3:
-            //    ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
+            //        ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
             //        break;
             //    default:
             //        break;
             //}
-            //ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
         }
 
         private void Form_Ventas_Load(object sender, EventArgs e)
@@ -412,20 +410,109 @@ namespace ProyectoPrototipo_1._0
 
         }
 
-        private void dataGridViewProductos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            // Verifica si el clic se hizo en una celda de botón "Agregar" (columna 3 en este caso)
-            if (e.ColumnIndex == 4 && e.RowIndex >= 0) // Asegúrate de que el índice de fila sea válido
-            {
-                // Obtiene el valor de la celda en la fila actual (puedes usar esto para identificar el producto)
-                string codigoProducto = dataGridViewProductos.Rows[e.RowIndex].Cells[1].Value.ToString();
 
-                // Realiza la acción que desees, por ejemplo, agregar el producto al carrito
-                // Puedes usar el código del producto (codigoProducto) para realizar la acción deseada.
-                // Por ejemplo, puedes mostrar un mensaje, agregarlo a una lista, etc.
-                MessageBox.Show("Producto agregado: " + codigoProducto);
+        private void AgregarProductoAlCarrito(int codigoProducto)
+        {
+            string cantidadStr = Microsoft.VisualBasic.Interaction.InputBox("Ingresa la cantidad:", "Agregar Producto al Carrito", "1");
+
+            if (int.TryParse(cantidadStr, out int cantidad) && cantidad > 0)
+            {
+                ProductoCarrito producto = new ProductoCarrito(codigoProducto, cantidad);
+                carritoDeCompras.Add(producto);
+                MessageBox.Show($"Producto agregado al carrito: {producto.Cantidad} x Código {producto.Codigo}");
+            }
+            else
+            {
+                MessageBox.Show("Cantidad no válida. Por favor, ingresa un número entero mayor que 0.");
             }
         }
+
+        public class ProductoCarrito
+        {
+            public int Codigo { get; set; }
+            public int Cantidad { get; set; }
+
+            public ProductoCarrito(int codigo, int cantidad)
+            {
+                Codigo = codigo;
+                Cantidad = cantidad;
+            }
+        }
+        private void dataGridViewProductos_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.dataGridViewProductos.Columns[e.ColumnIndex].Name == "Agregar")
+            {
+                MessageBox.Show("HOla");
+            }
+        }
+
+        Class_Cliente clienteEncontrado;
+
+        private void bttBuscarClienteBaseDatos_Click(object sender, EventArgs e)
+        {
+            string cedula = txtBcedulaCliente.Text.Trim();
+
+            if (!string.IsNullOrEmpty(cedula))
+            {
+                // Define la consulta SQL
+                string connectionString = con;
+                string query = "SELECT * FROM Cliente WHERE cedula = @Cedula";
+
+                using (SqlConnection connection = new SqlConnection(connectionString))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@Cedula", cedula);
+
+                        using (SqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            if (reader.Read()) // Verifica si se encontraron resultados
+                            {
+                                // Crea una instancia de Class_Cliente y asigna los valores desde el SqlDataReader
+                                Class_Cliente clienteEncontrado = new Class_Cliente
+                                {
+                                    cedula = Convert.ToInt64(reader["cedula"]),
+                                    tipo_persona = reader["tipo_persona"].ToString(),
+                                    nombres_c = reader["nombres_c"].ToString(),
+                                    apellidos_c = reader["apellidos_c"].ToString(),
+                                    parroquia = reader["parroquia"].ToString(),
+                                    direccion_c = reader["direccion_c"].ToString(),
+                                    email_c = reader["email_c"].ToString(),
+                                    telefono_c = reader["telefono_c"].ToString(),
+                                    fecha_nac = Convert.ToDateTime(reader["fecha_nac"]),
+                                    observaciones_c = reader["observaciones_c"].ToString()
+                                };
+
+                                // Puedes usar clienteEncontrado en tu aplicación
+                                // Por ejemplo, mostrar los datos en controles TextBox
+                                txtBnombresCliente.Text = clienteEncontrado.nombres_c;
+                                txtBapellidosClientes.Text = clienteEncontrado.apellidos_c;
+                                txtBtelefonoCliente.Text = clienteEncontrado.telefono_c;
+                                txtBdireccionCliente.Text = clienteEncontrado.direccion_c;
+                                txtBcorreoCliente.Text = clienteEncontrado.email_c;
+
+                                // ...
+                            }
+                            else
+                            {
+                                MessageBox.Show("Cliente no encontrado en la base de datos.");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                MessageBox.Show("Por favor, ingrese un número de cédula válido.");
+            }
+        }
+
+        private void tabControlConsultar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+           //  LlenarDataGridViewFacturas(dataGridViewFactura);
+         }
     }
 }
 

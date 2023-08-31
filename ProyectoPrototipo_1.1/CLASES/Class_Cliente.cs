@@ -10,9 +10,8 @@ namespace ProyectoPrototipo_1._0.CLASES
     public class Class_Cliente
     {
         [Key]
-        public int codigo_c { get; set; }
 
-        public long ruc_c { get; set; }
+        public long cedula { get; set; }
 
         public string tipo_persona { get; set; }
 
