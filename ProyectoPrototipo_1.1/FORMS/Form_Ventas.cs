@@ -80,7 +80,7 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
-        private void MostrarDetallesFactura(int numeroFactura, DataGridView dataGridView)
+        private void ConsultarFacturaPorNumeroFactura(int numeroFactura, DataGridView dataGridView)
         {
             try
             {
@@ -92,7 +92,23 @@ namespace ProyectoPrototipo_1._0
                     connection.Open();
 
                     // Consulta SQL para obtener los detalles de la factura específica
-                    string selectQuery = "SELECT\r\n    LP.idListaProducSelec AS 'ID',\r\n    P.codigo AS 'Código de Producto',\r\n    P.descripcion AS 'Descripción',\r\n    LP.cantidad AS 'Cantidad',\r\n    LP.precio AS 'Precio',\r\n    LP.subtotal AS 'Subtotal',\r\n    LP.descuentoDolares AS 'Descuento'\r\nFROM\r\n    ListaProductosSeleccionados AS LP\r\nINNER JOIN\r\n    Producto AS P ON LP.idProducto = P.codigo\r\nWHERE\r\n    LP.idFactura = @NumeroFactura;";
+                    string selectQuery = @"SELECT
+                                            F.idFactura AS '#Factura',
+                                            F.fechaEmision AS 'Fecha emisión',
+                                            F.cedula AS 'Cédula cliente',
+                                            CONCAT(C.nombres_c, ' ', C.apellidos_c) AS 'Nombres y Apellido cliente',
+                                            F.subtotal AS 'Subtotal',
+                                            F.iva AS 'I.V.A',
+                                            F.descuentoTotalDolares AS 'Descuento',
+                                            F.total AS 'Total',
+                                            F.formaPago AS 'Forma de pago',
+                                            F.estado AS 'Estado'
+                                        FROM
+                                            Factura AS F
+                                        INNER JOIN
+                                            Cliente AS C ON F.cedula = C.cedula
+                                        WHERE
+                                            F.idFactura = @NumeroFactura;";
 
                     using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
                     {
@@ -101,21 +117,6 @@ namespace ProyectoPrototipo_1._0
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
-
-                        // Agrega las columnas de botones "Ver" y "Anular"
-                        DataGridViewButtonColumn buttonVer = new DataGridViewButtonColumn();
-                        buttonVer.HeaderText = "Ver";
-                        buttonVer.Text = "Ver";
-                        buttonVer.UseColumnTextForButtonValue = true;
-
-                        DataGridViewButtonColumn buttonAnular = new DataGridViewButtonColumn();
-                        buttonAnular.HeaderText = "Anular";
-                        buttonAnular.Text = "Anular";
-                        buttonAnular.UseColumnTextForButtonValue = true;
-
-                        // Agrega las columnas de botones al DataGridView
-                        dataGridView.Columns.Add(buttonVer);
-                        dataGridView.Columns.Add(buttonAnular);
 
                         // Asigna los datos al DataGridView proporcionado
                         dataGridView.DataSource = dataTable;
@@ -131,6 +132,10 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        private void button7_Click(object sender, EventArgs e)
+        {
+            ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
+        }
 
         private void Form_Ventas_Load(object sender, EventArgs e)
         {
@@ -233,10 +238,7 @@ namespace ProyectoPrototipo_1._0
 
         }
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            MostrarDetallesFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
-        }
+
     }
 }
 
