@@ -30,6 +30,7 @@
         {
             TCProveedores = new TabControl();
             tabPage1 = new TabPage();
+            checkedListBox2 = new CheckedListBox();
             comboBox1 = new ComboBox();
             label12 = new Label();
             label11 = new Label();
@@ -59,6 +60,7 @@
             textBox3 = new TextBox();
             label17 = new Label();
             tabPage7 = new TabPage();
+            checkedListBox1 = new CheckedListBox();
             button6 = new Button();
             comboBox5 = new ComboBox();
             label26 = new Label();
@@ -102,8 +104,6 @@
             dataGridView1 = new DataGridView();
             label37 = new Label();
             button3 = new Button();
-            checkedListBox1 = new CheckedListBox();
-            checkedListBox2 = new CheckedListBox();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -158,6 +158,15 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox2.Location = new Point(434, 66);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(193, 70);
+            checkedListBox2.TabIndex = 51;
             // 
             // comboBox1
             // 
@@ -440,6 +449,15 @@
             tabPage7.TabIndex = 4;
             tabPage7.Text = "Actualizar";
             tabPage7.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox1.Location = new Point(423, 115);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(193, 70);
+            checkedListBox1.TabIndex = 50;
             // 
             // button6
             // 
@@ -829,12 +847,12 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(669, 71);
+            dataGridView1.Location = new Point(897, 71);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(837, 218);
+            dataGridView1.Size = new Size(837, 256);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             // 
@@ -856,24 +874,6 @@
             button3.TabIndex = 2;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
-            checkedListBox1.Location = new Point(423, 115);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(193, 70);
-            checkedListBox1.TabIndex = 50;
-            // 
-            // checkedListBox2
-            // 
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
-            checkedListBox2.Location = new Point(434, 66);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(193, 70);
-            checkedListBox2.TabIndex = 51;
             // 
             // Form_Proveedores
             // 

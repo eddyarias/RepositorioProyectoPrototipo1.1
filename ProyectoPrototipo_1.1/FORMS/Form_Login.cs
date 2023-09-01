@@ -24,7 +24,6 @@ namespace ProyectoPrototipo_1._0
 
         private void BLogin_Click(object sender, EventArgs e)
         {
-            //SI YA ESTA LISTO EL SQL SERVER, DESCOMENTEN ESTO Y MODIFIQUEN LA CLASE CONNECT:
 
             string usuario = TBUsername.Text;
             string pass = TBPassword.Text;
@@ -32,10 +31,10 @@ namespace ProyectoPrototipo_1._0
             Connect conexion = new Connect(usuario, pass);
             SqlConnection? connection = conexion.RealizarConexion();
 
-            if (connection == null)
+            if (connection != null)
             {
                 // La conexión fue exitosa
-                
+
                 Form_Menu form_menu = new Form_Menu(conexion);
                 form_menu.Show();
                 this.Hide();

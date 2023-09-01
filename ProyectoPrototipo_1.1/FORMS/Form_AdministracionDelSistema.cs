@@ -27,7 +27,7 @@ namespace ProyectoPrototipo_1._1.FORMS
 
         private void Form_Administracion_Load(object sender, EventArgs e)
         {
-        
+
         }
     }
 }
