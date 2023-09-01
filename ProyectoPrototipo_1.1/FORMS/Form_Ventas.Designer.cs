@@ -30,6 +30,7 @@
         {
             TabSecuencialVentas = new TabControl();
             tabPage1 = new TabPage();
+            label26 = new Label();
             label44 = new Label();
             label45 = new Label();
             label42 = new Label();
@@ -41,8 +42,10 @@
             label9 = new Label();
             label11 = new Label();
             dataGridViewProductos = new DataGridView();
+            label29 = new Label();
             label28 = new Label();
             panel1 = new Panel();
+            lblMensaje = new Label();
             bttAgregarProdCodBarr = new Button();
             txtCodigo = new TextBox();
             textBox2 = new TextBox();
@@ -133,6 +136,7 @@
             label26 = new Label();
             button4 = new Button();
             button3 = new Button();
+            lblMensaje2 = new Label();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -199,6 +203,16 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Selección Producto";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label26.Location = new Point(291, 575);
+            label26.Name = "label26";
+            label26.Size = new Size(360, 17);
+            label26.TabIndex = 32;
+            label26.Text = "* Doble click en el producto para selecionar";
             // 
             // label44
             // 
@@ -304,6 +318,16 @@
             dataGridViewProductos.TabIndex = 21;
             dataGridViewProductos.CellContentDoubleClick += dataGridViewProductos_CellContentDoubleClick;
             // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            label29.Location = new Point(33, 183);
+            label29.Name = "label29";
+            label29.Size = new Size(320, 17);
+            label29.TabIndex = 20;
+            label29.Text = "Seleccionar mediante lista de productos";
+            // 
             // label28
             // 
             label28.AutoSize = true;
@@ -317,19 +341,30 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(lblMensaje);
             panel1.Controls.Add(bttAgregarProdCodBarr);
             panel1.Controls.Add(txtCodigo);
             panel1.Controls.Add(textBox2);
             panel1.Controls.Add(label27);
             panel1.Location = new Point(33, 41);
             panel1.Name = "panel1";
-            panel1.Size = new Size(618, 60);
+            panel1.Size = new Size(618, 77);
             panel1.TabIndex = 19;
             panel1.Tag = "Seleccionar por codigo de barras";
             // 
+            // lblMensaje
+            // 
+            lblMensaje.AutoSize = true;
+            lblMensaje.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
+            lblMensaje.Location = new Point(89, 14);
+            lblMensaje.Name = "lblMensaje";
+            lblMensaje.Size = new Size(16, 17);
+            lblMensaje.TabIndex = 33;
+            lblMensaje.Text = ".";
+            // 
             // bttAgregarProdCodBarr
             // 
-            bttAgregarProdCodBarr.Location = new Point(434, 10);
+            bttAgregarProdCodBarr.Location = new Point(438, 20);
             bttAgregarProdCodBarr.Name = "bttAgregarProdCodBarr";
             bttAgregarProdCodBarr.Size = new Size(166, 39);
             bttAgregarProdCodBarr.TabIndex = 24;
@@ -339,10 +374,11 @@
             // 
             // txtCodigo
             // 
-            txtCodigo.Location = new Point(91, 17);
+            txtCodigo.Location = new Point(89, 34);
             txtCodigo.Name = "txtCodigo";
             txtCodigo.Size = new Size(156, 25);
             txtCodigo.TabIndex = 21;
+            txtCodigo.KeyPress += txtCodigo_KeyPress;
             // 
             // textBox2
             // 
@@ -355,7 +391,7 @@
             // 
             label27.AutoSize = true;
             label27.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label27.Location = new Point(21, 22);
+            label27.Location = new Point(19, 39);
             label27.Name = "label27";
             label27.Size = new Size(64, 17);
             label27.TabIndex = 18;
@@ -438,6 +474,7 @@
             // panel8
             // 
             panel8.BorderStyle = BorderStyle.Fixed3D;
+            panel8.Controls.Add(lblMensaje2);
             panel8.Controls.Add(txtBcedulaCliente);
             panel8.Controls.Add(label1);
             panel8.Controls.Add(label2);
@@ -463,6 +500,7 @@
             txtBcedulaCliente.Name = "txtBcedulaCliente";
             txtBcedulaCliente.Size = new Size(309, 25);
             txtBcedulaCliente.TabIndex = 5;
+            txtBcedulaCliente.KeyPress += txtBcedulaCliente_KeyPress;
             // 
             // label1
             // 
@@ -1212,25 +1250,14 @@
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
             // 
-            // label29
+            // lblMensaje2
             // 
-            label29.AutoSize = true;
-            label29.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label29.Location = new Point(33, 152);
-            label29.Name = "label29";
-            label29.Size = new Size(320, 17);
-            label29.TabIndex = 20;
-            label29.Text = "Seleccionar mediante lista de productos";
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label26.Location = new Point(291, 575);
-            label26.Name = "label26";
-            label26.Size = new Size(360, 17);
-            label26.TabIndex = 32;
-            label26.Text = "* Doble click en el producto para selecionar";
+            lblMensaje2.AutoSize = true;
+            lblMensaje2.Location = new Point(193, 85);
+            lblMensaje2.Name = "lblMensaje2";
+            lblMensaje2.Size = new Size(16, 18);
+            lblMensaje2.TabIndex = 14;
+            lblMensaje2.Text = ".";
             // 
             // button4
             // 
@@ -1410,5 +1437,7 @@
         private Label label29;
         private Button button3;
         private Button button4;
+        private Label lblMensaje;
+        private Label lblMensaje2;
     }
 }

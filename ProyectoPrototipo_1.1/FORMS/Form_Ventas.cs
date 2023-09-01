@@ -1371,6 +1371,46 @@ namespace ProyectoPrototipo_1._0
 
             }
         }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada es un número o la tecla BackSpace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número ni BackSpace, cancela la entrada
+                e.Handled = true;
+
+                // Configura el color de fuente del Label en rojo
+                lblMensaje.ForeColor = Color.Red;
+                lblMensaje.Text = "Solo se aceptan números";
+            }
+            else
+            {
+                // Si la entrada es válida, borra el mensaje y restaura el color de fuente
+                lblMensaje.Text = "";
+                lblMensaje.ForeColor = Color.Black; // O el color que desees para el texto regular
+            }
+        }
+
+        private void txtBcedulaCliente_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Verifica si la tecla presionada es un número o la tecla BackSpace
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)Keys.Back)
+            {
+                // Si no es un número ni BackSpace, cancela la entrada
+                e.Handled = true;
+
+                // Configura el color de fuente del Label en rojo
+                lblMensaje2.ForeColor = Color.Red;
+                lblMensaje2.Text = "Solo se aceptan números";
+            }
+            else
+            {
+                // Si la entrada es válida, borra el mensaje y restaura el color de fuente
+                lblMensaje2.Text = "";
+                lblMensaje2.ForeColor = Color.Black; // O el color que desees para el texto regular
+            }
+        }
     }
 }
 
