@@ -57,12 +57,27 @@ BEGIN
     );
 	INSERT INTO Producto (codigo, cantidad, descripcion, lote, PVP, precio_unitario, fecha_cad, descuento, iva)
 VALUES
-    (1, 10, 'Producto 1', 'Lote A', 9.99, 8.99, '2023-06-30', 0.5, 0.18),
-    (2, 5, 'Producto 2', 'Lote B', 19.99, 17.99, '2023-07-15', 1.0, 0.18),
-    (3, 2, 'Producto 3', 'Lote C', 5.99, 4.99, '2023-06-25', 0.2, 0.18),
-    (4, 8, 'Producto 4', 'Lote D', 14.99, 12.99, '2023-07-10', 0.75, 0.18),
-    (5, 3, 'Producto 5', 'Lote E', 7.99, 6.99, '2023-06-28', 0.3, 0.18);
-END
+    (1, 100, 'Paracetamol Tableta 200 mg (Lote A)', 'Lote A', 4.99, 3.99, '2023-12-31', 0.0, 0.12),
+    (2, 80, 'Ibuprofeno Tableta 400 mg (Lote B)', 'Lote B', 7.99, 6.49, '2023-11-15', 0.0, 0.12),
+    (3, 50, 'Amoxicilina Suspensión Oral 250 mg/5ml (Lote C)', 'Lote C', 12.99, 10.99, '2023-12-25', 0.0, 0.12),
+    (4, 120, 'Omeprazol Cápsula 20 mg (Lote D)', 'Lote D', 14.99, 12.99, '2023-11-30', 0.0, 0.12),
+    (5, 60, 'Dipirona Jarabe 500 mg/5ml (Lote E)', 'Lote E', 8.99, 7.49, '2023-10-28', 0.0, 0.12),
+	(6, 75, 'Aspirina Tableta 500 mg (Lote F)', 'Lote F', 3.99, 2.99, '2023-11-30', 0.0, 0.12),
+    (7, 40, 'Cetirizina Tableta 10 mg (Lote G)', 'Lote G', 9.99, 8.49, '2023-12-15', 0.0, 0.12),
+    (8, 90, 'Vitamina C Tableta Efervescente 1000 mg (Lote H)', 'Lote H', 7.49, 6.99, '2023-10-31', 0.0, 0.12),
+    (9, 60, 'Loratadina Tableta 10 mg (Lote I)', 'Lote I', 6.99, 5.99, '2023-12-20', 0.0, 0.12),
+    (10, 120, 'Dextrometorfano Jarabe 15 mg/5ml (Lote J)', 'Lote J', 5.49, 4.99, '2023-11-25', 0.0, 0.12),
+    (11, 70, 'Vitamina D Cápsula 1000 UI (Lote K)', 'Lote K', 12.99, 11.49, '2023-11-30', 0.0, 0.12),
+    (12, 50, 'Ranitidina Tableta 150 mg (Lote L)', 'Lote L', 8.49, 7.99, '2023-12-31', 0.0, 0.12),
+    (13, 35, 'Salbutamol Inhalador 100 mcg (Lote M)', 'Lote M', 14.99, 13.49, '2023-11-15', 0.0, 0.12),
+    (14, 85, 'Ciprofloxacino Tableta 500 mg (Lote N)', 'Lote N', 15.99, 14.49, '2023-12-25', 0.0, 0.12),
+    (15, 55, 'Metamizol Tableta 500 mg (Lote O)', 'Lote O', 6.99, 5.99, '2023-11-30', 0.0, 0.12),
+	(16, 25, 'Lansoprazol Cápsula 30 mg (Lote P)', 'Lote P', 10.99, 9.49, '2023-12-20', 0.0, 0.12),
+    (17, 60, 'Diazepam Tableta 5 mg (Lote Q)', 'Lote Q', 6.99, 5.99, '2023-11-15', 0.0, 0.12),
+    (18, 40, 'Sertralina Tableta 50 mg (Lote R)', 'Lote R', 8.49, 7.99, '2023-12-31', 0.0, 0.12),
+    (19, 80, 'Acetaminofén Jarabe Infantil 120 mg/5ml (Lote S)', 'Lote S', 5.99, 4.99, '2023-11-30', 0.0, 0.12),
+    (20, 50, 'Amlodipino Tableta 5 mg (Lote T)', 'Lote T', 12.99, 11.49, '2023-12-25', 0.0, 0.12);
+
 
 go
 

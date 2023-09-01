@@ -116,17 +116,7 @@ namespace ProyectoPrototipo_1._0
                         // Configura el modo de ajuste automático del ancho de las columnas
                         dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
 
-                        // Agrega una columna de botones "Agregar" al final
-                        if (!dataGridView.Columns.Contains("Agregar"))
-                        {
-                            DataGridViewButtonColumn buttonAgregar = new DataGridViewButtonColumn();
-                            buttonAgregar.HeaderText = "Agregar";
-                            buttonAgregar.Text = "Agregar";
-                            buttonAgregar.UseColumnTextForButtonValue = true;
 
-                            // Agrega la columna de botones al final
-                            dataGridView.Columns.Add(buttonAgregar);
-                        }
                     }
                 }
             }
@@ -169,8 +159,9 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
-        private void ConsultarFacturaPorNumeroFactura(int numeroFactura, DataGridView dataGridView)
+        private void ConsultarFacturaPorNumeroFactura(BigInteger numeroFactura, DataGridView dataGridView)
         {
+            string numeroFac = numeroFactura.ToString();
             try
             {
                 // Configura la cadena de conexión con autenticación de Windows
@@ -201,7 +192,7 @@ namespace ProyectoPrototipo_1._0
 
                     using (SqlCommand cmd = new SqlCommand(selectQuery, connection))
                     {
-                        cmd.Parameters.AddWithValue("@NumeroFactura", numeroFactura);
+                        cmd.Parameters.AddWithValue("@NumeroFactura", numeroFac);
 
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
@@ -863,21 +854,21 @@ namespace ProyectoPrototipo_1._0
             string facturaText = "Fecha emisión:       " + DateTime.Now.ToShortDateString() + "\n" +
                                  "Datos del cliente\n" +
                                 "Cedula:           " + cedulaCliente + "\n\n" +
-                                 BuscarCliente2(cedulaCliente)+"\n"+
+                                 BuscarCliente2(cedulaCliente) + "\n" +
                                  "Forma de pago:            " + formaPago + "\n\n" +
                                  "Detalle\n" +
-                                 "Codigo     \tDescripcion         \tPrecio     \tCantidad     \tDescuento    \tSubtotal\n";
+                                 "Codigo     \tDescripcion                                    \tPrecio               \tCantidad              \tSubtotal\n";
 
             foreach (ProductoCarrito producto in carritoDeCompras)
             {
-                facturaText += "  "+producto.CodigoProducto+"                  "+producto.Descripcion+"          "+producto.PrecioUnitario+"          "+producto.Cantidad+"         "+producto.PrecioUnitario * producto.Cantidad+"\n";
+                facturaText += $" {producto.CodigoProducto,-10} {producto.Descripcion,-47} {producto.PrecioUnitario,-20:F2} {producto.Cantidad,-20} {(producto.PrecioUnitario * producto.Cantidad),-20:F2}\n";
             }
 
-            facturaText += "\nSubtotal:           " + subtotal1 + "\n" +
-                           "IVA 12%:            " + iva + "\n" +
+            facturaText += "\n                                                                                 Subtotal:             " + subtotal1.ToString("F2") + "\n" +
+                           "                                                                                  IVA 12%:             " + iva.ToString("F2") + "\n" +
 
-                           "________________________________\n"+
-                           "Total:              " + total;
+                           "                                                                                 _____________________________\n" +
+                           "                                                                                    Total:             " + total.ToString("F2");
 
             // Mostrar la factura en el control Label
             labelFactura.Text = facturaText;
@@ -1036,62 +1027,248 @@ namespace ProyectoPrototipo_1._0
 
         private void bttConsultarFactura_Click(object sender, EventArgs e)
         {
-            switch (atencion)
+            DateTime fechaInicio = dateTimeInicio.Value;
+            DateTime fechaFin = dateTimeFin.Value;
+
+            ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
+            this.txtBoxConsultarNumeroCedula.Text = "";
+            this.txtBoxNumeroFacturaConsultar.Text = "";
+        }
+
+
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Intenta convertir el contenido de txtBoxNumeroFacturaConsultar en un número entero
+            if (BigInteger.TryParse(txtBoxNumeroFacturaConsultar.Text, out BigInteger numeroFactura))
             {
-                case 1:
-                    LlenarDataGridViewFacturas(dataGridViewFactura);
-
-                    DateTime fechaInicio = dateTimeInicio.Value;
-                    DateTime fechaFin = dateTimeFin.Value;
-                    ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
-
-                    break;
-                case 2:
-                    LlenarDataGridViewFacturas(dataGridViewFactura);
-
-                    ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
-                    break;
-                case 3:
-                    LlenarDataGridViewFacturas(dataGridViewFactura);
-
-                    ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
-                    break;
-                default:
-                    break;
+                // La conversión fue exitosa, aquí puedes realizar la consulta con "numeroFactura"
+                ConsultarFacturaPorNumeroFactura(numeroFactura, dataGridViewFactura);
+                this.txtBoxConsultarNumeroCedula.Text = "";
+                dateTimeFin.Value = DateTime.Now;
+                dateTimeInicio.Value = DateTime.Now;
+            }
+            else
+            {
+                // Mostrar un mensaje de error si no se ingresaron números
+                MessageBox.Show("Por favor, ingrese un número de factura válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        int atencion;
-        private void txtBoxNumeroFacturaConsultar_MouseClick(object sender, MouseEventArgs e)
+
+
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            atencion = 1;
+            // Intenta convertir el contenido de txtBoxConsultarNumeroCedula en un número de cédula válido
+            if (ValidateCedula(txtBoxConsultarNumeroCedula.Text))
+            {
+                // La cédula es válida, aquí puedes realizar la consulta con "txtBoxConsultarNumeroCedula.Text"
+                ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
+                this.txtBoxNumeroFacturaConsultar.Text = "";
+                dateTimeFin.Value = DateTime.Now;
+                dateTimeInicio.Value = DateTime.Now;
+            }
+            else
+            {
+                // Mostrar un mensaje de error si no se ingresó una cédula válida
+                MessageBox.Show("Por favor, ingrese un número de cédula válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
-        private void txtBoxConsultarNumeroCedula_MouseClick(object sender, MouseEventArgs e)
+
+        private void dateTimeInicio_Leave(object sender, EventArgs e)
         {
-            atencion = 2;
+            DateTime fechaInicio = dateTimeInicio.Value;
+            DateTime fechaFin = dateTimeFin.Value;
+            if (fechaInicio > fechaFin)
+            {
+                label17.Text = "La fecha de inicio debe ser anterior a la fecha de fin.";
+                label17.ForeColor = Color.Red;
+            }
+            else
+            {
+                label17.Text = ""; // Borrar el mensaje de error 
+            }
         }
 
-        private void dateTimeInicio_MouseLeave(object sender, EventArgs e)
+        private void dateTimeFin_Leave(object sender, EventArgs e)
         {
-            atencion = 3;
+            DateTime fechaInicio = dateTimeInicio.Value;
+            DateTime fechaFin = dateTimeFin.Value;
+            if (fechaInicio > fechaFin)
+            {
+                label17.Text = "La fecha de inicio debe ser anterior a la fecha de fin.";
+                label17.ForeColor = Color.Red;
+            }
+            else
+            {
+                label17.Text = ""; // Borrar el mensaje de error 
+            }
         }
 
-        private void dateTimeFin_MouseLeave(object sender, EventArgs e)
+        private void bttAnular_Click(object sender, EventArgs e)
         {
-            atencion = 3;
+
+            DialogResult result = MessageBox.Show($"¿Estás seguro de que deseas anular la factura con ID {idFacturaManejable}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            // Si el usuario confirma la acción, procede a anular la factura
+            if (result == DialogResult.Yes)
+            {
+                // Llama a un método para anular la factura y pasa el ID de la factura como argumento
+                AnularFactura(idFacturaManejable);
+            }
         }
 
-        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+
+        public void AnularFactura(String idFactura)
         {
-            LlenarDataGridViewFacturas(dataGridViewFactura);
+            // Cadena de conexión a la base de datos (reemplaza con tu propia cadena de conexión)
+            string connectionString = con;
+
+            // Query SQL para actualizar el estado de la factura a 'Anulada'
+            string updateQuery = "UPDATE Factura SET estado = 'Anulada' WHERE idFactura = @idFactura";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                try
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(updateQuery, connection))
+                    {
+                        // Asigna el valor del parámetro
+                        cmd.Parameters.AddWithValue("@idFactura", idFactura);
+
+                        // Ejecuta la consulta SQL para actualizar el estado
+                        int rowsAffected = cmd.ExecuteNonQuery();
+
+                        if (rowsAffected > 0)
+                        {
+                            MessageBox.Show($"Factura con ID {idFactura} ha sido anulada.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            MessageBox.Show($"No se encontró una factura con ID {idFactura}.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Error al anular la factura: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void bttNuevaVenta_Click(object sender, EventArgs e)
+        {
+
+            // Cierra el formulario actual
+            this.Close();
+
+            // Crea una nueva instancia del formulario actual
+            Form_Ventas nuevoFormulario = new Form_Ventas(connect); // Reemplaza "Form1" con el nombre de tu formulario
+            nuevoFormulario.Show();
+
 
         }
 
-        private void tabControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        private void button10_Click(object sender, EventArgs e)
         {
-            LlenarDataGridViewFacturas(dataGridViewFactura);
+            // Obtén la fecha de cierre de algún lugar, por ejemplo, un DateTimePicker
+            DateTime diacierre = diaCierre.Value;
 
+            // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
+            decimal ingresos = ObtenerTotalIngresos(diacierre);
+
+            // Establece el saldo inicial como $10
+            decimal saldoInicial = 10.0m;
+
+            // El egreso es 0 según tus requerimientos
+            decimal egresos = 0.0m;
+
+            // Calcula el saldo final
+            decimal saldoFinal = ingresos + saldoInicial - egresos;
+
+            // Actualiza las etiquetas en el formulario
+            lblIngresos.Text = ingresos.ToString("C"); // "C" formatea como moneda
+            lblEgresos.Text = egresos.ToString("C");
+            lblSaldoInicial.Text = saldoInicial.ToString("C");
+            lblSaldoFinal.Text = saldoFinal.ToString("C");
+
+            // Llena la primera columna del DataGridViewCierreCaja
+            LlenarDataGridViewCierreCaja(diacierre);
         }
+
+        private decimal ObtenerTotalIngresos(DateTime diacierre)
+        {
+            decimal totalIngresos = 0.0m;
+
+            // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
+            // Reemplaza esto con tu código real de consulta a la base de datos
+            // Supongamos que tienes una conexión de base de datos llamada "connection"
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
+
+                // Define tu consulta SQL aquí
+                string consultaSQL = "SELECT SUM(total) FROM Factura WHERE fechaEmision = @diacierre AND estado = 'Vigente';";
+
+                using (SqlCommand cmd = new SqlCommand(consultaSQL, connection))
+                {
+                    cmd.Parameters.AddWithValue("@diacierre", diacierre);
+
+                    // Ejecuta la consulta y obtén el resultado
+                    object resultado = cmd.ExecuteScalar();
+
+                    if (resultado != null && resultado != DBNull.Value)
+                    {
+                        totalIngresos = Convert.ToDecimal(resultado);
+                    }
+                }
+            }
+
+            return totalIngresos;
+        }
+
+        private void LlenarDataGridViewCierreCaja(DateTime diacierre)
+        {
+            // Limpia el DataGridView antes de llenarlo
+            dataGridViewCierreCaja.Rows.Clear();
+
+            // Realiza una consulta SQL para obtener los detalles de las facturas vigentes
+            // Reemplaza esto con tu código real de consulta a la base de datos
+            // Supongamos que tienes una conexión de base de datos llamada "connection"
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
+
+                // Define tu consulta SQL aquí
+                string consultaSQL = "SELECT idFactura, total, formaPago FROM Factura WHERE fechaEmision = @diacierre AND estado = 'Vigente';";
+
+                using (SqlCommand cmd = new SqlCommand(consultaSQL, connection))
+                {
+                    cmd.Parameters.AddWithValue("@diacierre", diacierre);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            int idFactura = reader.GetInt32(0);
+                            decimal totalFactura = reader.GetDecimal(1);
+                            string formaPago = reader.GetString(2);
+
+                            string descripcion = $"Factura #{idFactura} por la cantidad de {totalFactura:C}. Total factura recibido por {formaPago}";
+
+                            // Agrega una fila al DataGridView con la descripción
+                            dataGridViewCierreCaja.Rows.Add(descripcion);
+                        }
+                    }
+                }
+            }
+        }
+
     }
 }
 
