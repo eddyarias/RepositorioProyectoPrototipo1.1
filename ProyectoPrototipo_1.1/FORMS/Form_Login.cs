@@ -33,7 +33,7 @@ namespace ProyectoPrototipo_1._0
             if (connection != null)
             {
                 // La conexión fue exitosa, ahora verifica las credenciales
-                string query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @usuario AND contrasenia = @contrasenia";
+                string query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @usuario AND contrasenia = @contrasenia AND tipo";
 
                 using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
