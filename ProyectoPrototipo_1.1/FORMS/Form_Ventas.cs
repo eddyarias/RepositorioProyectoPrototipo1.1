@@ -26,6 +26,7 @@ namespace ProyectoPrototipo_1._0
 
         public Connect connect;
 
+        double iva = 0.12;
 
         public int codigoProducto;
         public int cantidad;
@@ -370,25 +371,36 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        decimal descuento=0;
+
         private void ActualizarResumenCarrito()
         {
+
+            decimal iva = 0;
+            decimal subtotal1 = 0;
             decimal total = 0;
+
             StringBuilder resumen = new StringBuilder();
 
             foreach (ProductoCarrito producto in carritoDeCompras)
             {
                 decimal subtotal = producto.PrecioUnitario * producto.Cantidad;
-                total += subtotal;
+                subtotal1 += subtotal;
 
                 // Agrega la información del producto al resumen en el formato deseado
                 resumen.AppendLine($"{producto.CodigoProducto,-10} {producto.Descripcion,-45} {producto.PrecioUnitario,-20:C2} {producto.Cantidad,-15} {subtotal,-10:C2}");
             }
 
+            iva = subtotal1 * 0.12M;
+            total = subtotal1 + iva - descuento;
             // Actualiza el texto del Label con el resumen
             labelDetalle.Text = resumen.ToString();
 
             // Actualiza el total en el Label lbTotal
-            lbTotal.Text = $"{total:C2}";
+            lbTotal.Text = $"{subtotal1:C2}";
+            label9.Text = $"{iva:C2}";
+            label13.Text = $"{descuento:C2}";
+            label44.Text = $"{total:C2}";
         }
 
 
@@ -505,7 +517,7 @@ namespace ProyectoPrototipo_1._0
 
         private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
-            
+
             string cedula = txtBcedulaCliente.Text.Trim();
 
             if (!string.IsNullOrEmpty(cedula))
@@ -677,6 +689,8 @@ namespace ProyectoPrototipo_1._0
         {
             TabSecuencialVentas.TabPages[0].Enabled = false;
             TabSecuencialVentas.TabPages[1].Enabled = true;
+            TabSecuencialVentas.SelectedTab = TabSecuencialVentas.TabPages[1];
+
         }
 
 

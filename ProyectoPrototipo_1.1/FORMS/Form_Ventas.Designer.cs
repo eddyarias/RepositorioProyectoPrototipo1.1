@@ -241,11 +241,11 @@
             // label45
             // 
             label45.AutoSize = true;
-            label45.Location = new Point(1530, 518);
+            label45.Location = new Point(1554, 518);
             label45.Name = "label45";
-            label45.Size = new Size(80, 18);
+            label45.Size = new Size(56, 18);
             label45.TabIndex = 30;
-            label45.Text = "SUBTOTAL:";
+            label45.Text = "TOTAL:";
             // 
             // label42
             // 
@@ -475,11 +475,11 @@
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
-            tabPage2.Location = new Point(4, 27);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 646);
+            tabPage2.Size = new Size(1713, 644);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
@@ -739,10 +739,10 @@
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttImprimir);
             tabPage4.Controls.Add(bttEnviarCorreo);
-            tabPage4.Location = new Point(4, 27);
+            tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 646);
+            tabPage4.Size = new Size(1713, 644);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;
@@ -887,9 +887,9 @@
             tabPage8.Controls.Add(dataGridViewFactura);
             tabPage8.Controls.Add(tabControlConsultar);
             tabPage8.Controls.Add(bttConsultarFactura);
-            tabPage8.Location = new Point(4, 27);
+            tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 710);
+            tabPage8.Size = new Size(1763, 708);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Consultar";
             tabPage8.UseVisualStyleBackColor = true;
@@ -1056,10 +1056,10 @@
             tabPage6.Controls.Add(textBox20);
             tabPage6.Controls.Add(label26);
             tabPage6.Controls.Add(BBuscar);
-            tabPage6.Location = new Point(4, 27);
+            tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(1763, 710);
+            tabPage6.Size = new Size(1763, 708);
             tabPage6.TabIndex = 1;
             tabPage6.Text = "Anular";
             tabPage6.UseVisualStyleBackColor = true;
@@ -1186,10 +1186,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 27);
+            tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 710);
+            tabPage7.Size = new Size(1763, 708);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
