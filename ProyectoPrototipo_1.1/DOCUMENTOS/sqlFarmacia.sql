@@ -79,8 +79,7 @@ VALUES
     (20, 50, 'Amlodipino Tableta 5 mg (Lote T)', 'Lote T', 12.99, 11.49, '2023-12-25', 0.0, 0.12);
 
 
-go
-
+    go
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Cliente')
 BEGIN
@@ -104,9 +103,16 @@ VALUES
     ( 1804934808, 'Persona Jurídica', 'Empresa B', 'C.A.', 'Parroquia 4', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 'Observaciones 4'),
     ( 1900854553, 'Persona Natural', 'Pedro', 'López', 'Parroquia 5', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 'Observaciones 5');
 END
-
-
 go
+
+
+
+--Consumidor Final
+INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
+VALUES
+    ( 1111111111, 'N/A', 'Consumidor final', 'N/A', 'N/A 1', 'N/A', 'N/A', '9999999999', 'N/A', NULL);
+
+go;
 
 -- Crear la tabla Factura
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Factura')

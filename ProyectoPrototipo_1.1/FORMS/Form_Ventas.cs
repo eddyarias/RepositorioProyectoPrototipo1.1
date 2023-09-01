@@ -83,6 +83,8 @@ namespace ProyectoPrototipo_1._0
             TabSecuencialVentas.TabPages[1].Enabled = false;
             TabSecuencialVentas.TabPages[2].Enabled = false;
             this.bttContinuarSelecProd.Enabled = false;
+            // Declaración e inicialización de dataGridViewFactura
+
         }
 
         private void MostrarProductos(DataGridView dataGridView)
@@ -145,9 +147,19 @@ namespace ProyectoPrototipo_1._0
                     DataTable dataTable = new DataTable();
                     dataAdapter.Fill(dataTable);
 
-
                     // Asigna los datos al DataGridView
                     dataGridView.DataSource = dataTable;
+
+                    // Verifica si la columna de botón "Anular" no existe antes de agregarla
+                    if (!dataGridView.Columns.Contains("Anular"))
+                    {
+                        // Agrega una columna de botón "Anular" al DataGridView
+                        DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
+                        buttonColumn.HeaderText = "Anular";
+                        buttonColumn.Text = "Anular";
+                        buttonColumn.UseColumnTextForButtonValue = true;
+                        dataGridView.Columns.Add(buttonColumn);
+                    }
 
                     // Configura el modo de ajuste automático del ancho de las columnas
                     dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -157,6 +169,13 @@ namespace ProyectoPrototipo_1._0
             {
                 Console.WriteLine("Error al llenar el DataGridView: " + ex.Message);
             }
+        }
+
+
+
+        private void DataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
 
         private void ConsultarFacturaPorNumeroFactura(BigInteger numeroFactura, DataGridView dataGridView)
@@ -735,13 +754,20 @@ namespace ProyectoPrototipo_1._0
                 mensaje += "Seleccione consumidor final o factura con datos.\n";
                 esNecesarioMensaje = true;
             }
-
-            // Validar la cédula
-            if (!ValidateCedula(txtBcedulaCliente.Text))
+            if (Consumidorfinal1)
             {
-                mensaje += "Por favor, introduzca un número de cédula válido.\n";
-                esNecesarioMensaje = true;
+
             }
+            else
+            {
+                // Validar la cédula
+                if (!ValidateCedula(txtBcedulaCliente.Text))
+                {
+                    mensaje += "Por favor, introduzca un número de cédula válido.\n";
+                    esNecesarioMensaje = true;
+                }
+            }
+
 
             // Mostrar mensajes de error si es necesario
             if (esNecesarioMensaje)
@@ -925,16 +951,20 @@ namespace ProyectoPrototipo_1._0
 
             return salida;
         }
-
+        Boolean Consumidorfinal1;
         private void radButtConsumidorfinal_CheckedChanged(object sender, EventArgs e)
         {
             if (radButtConsumidorfinal.Checked)
             {
                 txtBcedulaCliente.Enabled = false;
+                BuscarCliente("1111111111");
+                txtBcedulaCliente.Text = "1111111111";
+                Consumidorfinal1 = true;
             }
             else
             {
                 txtBcedulaCliente.Enabled = true;
+                Consumidorfinal1 = false;
             }
         }
 
@@ -943,10 +973,15 @@ namespace ProyectoPrototipo_1._0
             if (radButtFacturaDatos.Checked)
             {
                 txtBcedulaCliente.Enabled = true;
+                Consumidorfinal1 = false;
             }
             else
             {
                 txtBcedulaCliente.Enabled = false;
+                BuscarCliente("1111111111");
+                txtBcedulaCliente.Text = "1111111111";
+                Consumidorfinal1 = true;
+
             }
         }
 
@@ -1057,20 +1092,14 @@ namespace ProyectoPrototipo_1._0
 
         private void button1_Click(object sender, EventArgs e)
         {
-            // Intenta convertir el contenido de txtBoxConsultarNumeroCedula en un número de cédula válido
-            if (ValidateCedula(txtBoxConsultarNumeroCedula.Text))
-            {
-                // La cédula es válida, aquí puedes realizar la consulta con "txtBoxConsultarNumeroCedula.Text"
-                ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
-                this.txtBoxNumeroFacturaConsultar.Text = "";
-                dateTimeFin.Value = DateTime.Now;
-                dateTimeInicio.Value = DateTime.Now;
-            }
-            else
-            {
-                // Mostrar un mensaje de error si no se ingresó una cédula válida
-                MessageBox.Show("Por favor, ingrese un número de cédula válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
+            // La cédula es válida, aquí puedes realizar la consulta con "txtBoxConsultarNumeroCedula.Text"
+            ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
+            this.txtBoxNumeroFacturaConsultar.Text = "";
+            dateTimeFin.Value = DateTime.Now;
+            dateTimeInicio.Value = DateTime.Now;
+
+
         }
 
 
@@ -1178,7 +1207,7 @@ namespace ProyectoPrototipo_1._0
             // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
             decimal ingresos = ObtenerTotalIngresos(diacierre);
 
-            MessageBox.Show(ingresos+"");
+            MessageBox.Show(ingresos + "");
             // Establece el saldo inicial como $10
             decimal saldoInicial = 10.0m;
 
@@ -1265,6 +1294,36 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        private void dataGridViewFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+                if (e.ColumnIndex == dataGridViewFactura.Columns["Anular"].Index) {
+                    // Obtén el valor de la celda en la primera columna de la fila actual
+                    string numeroFactura = dataGridViewFactura[1, e.RowIndex].Value.ToString();
+
+                    if (numeroFactura != null)
+                    {
+
+                        // Muestra un cuadro de diálogo de confirmación antes de anular la factura
+                        DialogResult confirmResult = MessageBox.Show($"¿Seguro que deseas anular la factura #{numeroFactura}?", "Confirmar Anulación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                        if (confirmResult == DialogResult.Yes)
+                        {
+                            // Llama a tu función de anulación de factura pasando el número de factura
+                            AnularFactura(numeroFactura.ToString());
+
+                            // Refresca el DataGridView para actualizar los datos
+                            LlenarDataGridViewFacturas(dataGridViewFactura);
+                        }
+                    }
+
+                }
+                
+            }
+
+        }
     }
 }
 

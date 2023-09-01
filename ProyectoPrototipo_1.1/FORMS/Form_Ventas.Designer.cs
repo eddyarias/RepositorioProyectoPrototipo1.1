@@ -823,9 +823,9 @@
             tabPage8.Controls.Add(panel6);
             tabPage8.Controls.Add(panel5);
             tabPage8.Controls.Add(dataGridViewFactura);
-            tabPage8.Location = new Point(4, 29);
+            tabPage8.Location = new Point(4, 27);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 708);
+            tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Consultar";
             tabPage8.UseVisualStyleBackColor = true;
@@ -1017,12 +1017,13 @@
             // dataGridViewFactura
             // 
             dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewFactura.Location = new Point(22, 339);
+            dataGridViewFactura.Location = new Point(103, 371);
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.RowHeadersWidth = 51;
             dataGridViewFactura.RowTemplate.Height = 29;
-            dataGridViewFactura.Size = new Size(1714, 267);
+            dataGridViewFactura.Size = new Size(1567, 267);
             dataGridViewFactura.TabIndex = 91;
+            dataGridViewFactura.CellContentClick += dataGridViewFactura_CellContentClick;
             // 
             // tabPage7
             // 
@@ -1038,10 +1039,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 27);
+            tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 710);
+            tabPage7.Size = new Size(1763, 708);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
