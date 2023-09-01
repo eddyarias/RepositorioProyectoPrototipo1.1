@@ -20,13 +20,11 @@ namespace ProyectoPrototipo_1._0
     {
 
 
-        string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
+        string con;
 
-        //string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
+        
 
         public Connect connect;
-
-        double iva = 0.12;
 
         public int codigoProducto;
         public int cantidad;
@@ -34,21 +32,50 @@ namespace ProyectoPrototipo_1._0
         public int tabSeleccionado;
         public int tabRegistrarFacturaSeleccionado;
 
-        // Variable para controlar si el formulario está bloqueado
-        private bool formularioBloqueado = false;
 
         public List<ProductoCarrito> carritoDeCompras = new List<ProductoCarrito>();
+
+        public decimal descuento = 0;
+        public decimal iva = 0;
+        public decimal subtotal1 = 0;
+        public decimal total = 0;
+
+        public string cedulaCliente;
+
+
+        public class ProductoInfo
+        {
+            public string Descripcion { get; set; }
+            public decimal Precio { get; set; }
+        }
+        public class ProductoCarrito
+        {
+            public int CodigoProducto { get; set; }
+            public string Descripcion { get; set; }
+            public decimal PrecioUnitario { get; set; }
+            public int Cantidad { get; set; }
+
+            public ProductoCarrito(int codigo, string descripcion, decimal precio, int cantidad)
+            {
+                CodigoProducto = codigo;
+                Descripcion = descripcion;
+                PrecioUnitario = precio;
+                Cantidad = cantidad;
+            }
+        }
 
         public Form_Ventas(Connect connect)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.connect = connect;
+            con=connect.stringconnect;
             LlenarDataGridViewFacturas(dataGridViewFactura);
             MostrarProductos(dataGridViewProductos);
             this.txtBcedulaCliente.Enabled = false;
             TabSecuencialVentas.TabPages[1].Enabled = false;
             TabSecuencialVentas.TabPages[2].Enabled = false;
+            this.bttContinuarSelecProd.Enabled = false;
         }
 
         private void MostrarProductos(DataGridView dataGridView)
@@ -356,6 +383,7 @@ namespace ProyectoPrototipo_1._0
 
                     // Agregar el producto al carrito
                     carritoDeCompras.Add(productoSeleccionado);
+                    this.bttContinuarSelecProd.Enabled = true;
 
                     // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
                     ActualizarResumenCarrito();
@@ -371,14 +399,10 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
-        decimal descuento=0;
+
 
         private void ActualizarResumenCarrito()
         {
-
-            decimal iva = 0;
-            decimal subtotal1 = 0;
-            decimal total = 0;
 
             StringBuilder resumen = new StringBuilder();
 
@@ -446,57 +470,7 @@ namespace ProyectoPrototipo_1._0
             return productoInfo;
         }
 
-        // Define una clase ProductoInfo para almacenar la descripción y el precio del producto
-
-
-
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-            //this.AvanzarPestana();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        public void imprimirCliente()
-        {
-
-        }
-
-        public void imprimirDetalle()
-        {
-
-        }
-
-        private void tabPage8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
+ 
 
         private void dataGridViewProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -515,12 +489,13 @@ namespace ProyectoPrototipo_1._0
 
 
 
+
         private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
 
-            string cedula = txtBcedulaCliente.Text.Trim();
+            cedulaCliente = txtBcedulaCliente.Text.Trim();
 
-            if (!string.IsNullOrEmpty(cedula))
+            if (!string.IsNullOrEmpty(cedulaCliente))
             {
                 // Define la consulta SQL
                 string connectionString = con;
@@ -532,7 +507,7 @@ namespace ProyectoPrototipo_1._0
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@Cedula", cedula);
+                        cmd.Parameters.AddWithValue("@Cedula", cedulaCliente);
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -664,34 +639,24 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Por favor, ingrese un número de cédula válido.");
             }
         }
-        public class ProductoInfo
-        {
-            public string Descripcion { get; set; }
-            public decimal Precio { get; set; }
-        }
-        public class ProductoCarrito
-        {
-            public int CodigoProducto { get; set; }
-            public string Descripcion { get; set; }
-            public decimal PrecioUnitario { get; set; }
-            public int Cantidad { get; set; }
 
-            public ProductoCarrito(int codigo, string descripcion, decimal precio, int cantidad)
-            {
-                CodigoProducto = codigo;
-                Descripcion = descripcion;
-                PrecioUnitario = precio;
-                Cantidad = cantidad;
-            }
-        }
 
         private void bttContinuarSelecProd_Click(object sender, EventArgs e)
         {
-            TabSecuencialVentas.TabPages[0].Enabled = false;
-            TabSecuencialVentas.TabPages[1].Enabled = true;
-            TabSecuencialVentas.SelectedTab = TabSecuencialVentas.TabPages[1];
+            // Mostrar un cuadro de diálogo de confirmación
+            DialogResult result = MessageBox.Show("¿Está seguro de terminar con la selección de productos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
+            // Verificar la respuesta del usuario
+            if (result == DialogResult.Yes)
+            {
+                // Si el usuario selecciona "Sí", habilitar la siguiente pestaña y cambiar a ella
+                TabSecuencialVentas.TabPages[0].Enabled = false;
+                TabSecuencialVentas.TabPages[1].Enabled = true;
+                TabSecuencialVentas.SelectedTab = TabSecuencialVentas.TabPages[1];
+            }
+            // Si el usuario selecciona "No", no se realizará ninguna acción.
         }
+
 
 
 

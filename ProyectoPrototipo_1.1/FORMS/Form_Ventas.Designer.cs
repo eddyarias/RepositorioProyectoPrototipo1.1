@@ -215,7 +215,7 @@
             // 
             comboBox1.FormattingEnabled = true;
             comboBox1.Items.AddRange(new object[] { "1 %", "2 %", "3 %", "4 %", "5 %", "6 %", "7 %", "8 %", "9 %", "10 %", "11 %", "12 %", "13 %", "14 %", "15 %", "16 %", "17 %", "18 %", "19 %", "20 %", "21 %", "22 %", "23 %", "24 %", "25 %", "26 %", "27 %", "28 %", "29 %", "30 %", "31 %", "32 %", "33 %", "34 %", "35 %", "36 %", "37 %", "38 %", "39 %", "40 %", "41 %", "42 %", "43 %", "44 %", "45 %", "46 %", "47 %", "48 %", "49 %", "50 %", "51 %", "52 %", "53 %", "54 %", "55 %", "56 %", "57 %", "58 %", "59 %", "60 %", "61 %", "62 %", "63 %", "64 %", "65 %", "66 %", "67 %", "68 %", "69 %", "70 %", "71 %", "72 %", "73 %", "74 %", "75 %", "76 %", "77 %", "78 %", "79 %", "80 %", "81 %", "82 %", "83 %", "84 %", "85 %", "86 %", "87 %", "88 %", "89 %", "90 %", "91 %", "92 %", "93 %", "94 %", "95 %", "96 %", "97 %", "98 %", "99 %", "100 %" });
-            comboBox1.Location = new Point(917, 547);
+            comboBox1.Location = new Point(1239, 467);
             comboBox1.Name = "comboBox1";
             comboBox1.Size = new Size(151, 26);
             comboBox1.TabIndex = 33;
@@ -224,7 +224,7 @@
             // 
             chLisBoxAgregarDescueno.FormattingEnabled = true;
             chLisBoxAgregarDescueno.Items.AddRange(new object[] { "Agregar descuento" });
-            chLisBoxAgregarDescueno.Location = new Point(904, 497);
+            chLisBoxAgregarDescueno.Location = new Point(1228, 433);
             chLisBoxAgregarDescueno.Name = "chLisBoxAgregarDescueno";
             chLisBoxAgregarDescueno.Size = new Size(175, 24);
             chLisBoxAgregarDescueno.TabIndex = 32;
@@ -475,11 +475,11 @@
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 27);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 644);
+            tabPage2.Size = new Size(1713, 646);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
@@ -739,10 +739,10 @@
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttImprimir);
             tabPage4.Controls.Add(bttEnviarCorreo);
-            tabPage4.Location = new Point(4, 29);
+            tabPage4.Location = new Point(4, 27);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 644);
+            tabPage4.Size = new Size(1713, 646);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;

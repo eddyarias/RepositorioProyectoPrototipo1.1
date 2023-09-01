@@ -10,6 +10,7 @@ namespace ProyectoPrototipo_1._0
         public string server;
         private string bd;
         public string con;
+        public string stringconnect;
         public static SqlConnection? connect;
 
         public Connect(string usuario, string pass)
@@ -24,20 +25,11 @@ namespace ProyectoPrototipo_1._0
             */
 
             server = " DESKTOP-OUHSBBV";
-            //server = "DESKTOP-0BLRF7R\\MSSQLSERVER01";
 
             bd = "db_farmacia";
 
-            // con = "Server=" + server + ";Database=" + bd + ";Integrated Security = SSPI";
-
             con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
-
-            //con = "Data Source=" + server + ";Initial Catalog=" + bd + ";Integrated Security = true";
-
-
-            
-
-           
+            stringconnect = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
 
         }
 
