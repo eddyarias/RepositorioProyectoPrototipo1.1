@@ -62,24 +62,24 @@
             tabPage7 = new TabPage();
             checkedListBox1 = new CheckedListBox();
             button6 = new Button();
-            comboBox5 = new ComboBox();
-            label26 = new Label();
-            textBox4 = new TextBox();
-            textBox6 = new TextBox();
-            label27 = new Label();
-            label28 = new Label();
-            button1 = new Button();
-            label29 = new Label();
-            textBox9 = new TextBox();
-            textBox12 = new TextBox();
-            label30 = new Label();
-            label31 = new Label();
-            label32 = new Label();
-            label33 = new Label();
             textBox16 = new TextBox();
             label34 = new Label();
+            comboBox5 = new ComboBox();
+            textBox12 = new TextBox();
+            textBox6 = new TextBox();
+            label28 = new Label();
+            label29 = new Label();
+            label32 = new Label();
             label24 = new Label();
+            label31 = new Label();
+            label26 = new Label();
             label25 = new Label();
+            label33 = new Label();
+            textBox4 = new TextBox();
+            label30 = new Label();
+            button1 = new Button();
+            label27 = new Label();
+            textBox9 = new TextBox();
             tabPage8 = new TabPage();
             button8 = new Button();
             textBox17 = new TextBox();
@@ -104,8 +104,6 @@
             dataGridView1 = new DataGridView();
             label37 = new Label();
             button3 = new Button();
-            checkedListBox1 = new CheckedListBox();
-            checkedListBox2 = new CheckedListBox();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -164,7 +162,7 @@
             // checkedListBox2
             // 
             checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito", "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
             checkedListBox2.Location = new Point(434, 66);
             checkedListBox2.Name = "checkedListBox2";
             checkedListBox2.Size = new Size(193, 70);
@@ -425,7 +423,6 @@
             // tabPage7
             // 
             tabPage7.Controls.Add(checkedListBox1);
-            tabPage7.Controls.Add(comboBox2);
             tabPage7.Controls.Add(button6);
             tabPage7.Controls.Add(textBox16);
             tabPage7.Controls.Add(label34);
@@ -453,141 +450,24 @@
             tabPage7.Text = "Actualizar/añadir";
             tabPage7.UseVisualStyleBackColor = true;
             // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox1.Location = new Point(423, 159);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(193, 70);
+            checkedListBox1.TabIndex = 50;
+            // 
             // button6
             // 
-            button6.Location = new Point(303, 60);
+            button6.Location = new Point(142, 56);
             button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
             button6.Size = new Size(93, 35);
             button6.TabIndex = 49;
             button6.Text = "Buscar";
             button6.UseVisualStyleBackColor = true;
-            // 
-            // comboBox5
-            // 
-            comboBox5.FormattingEnabled = true;
-            comboBox5.Items.AddRange(new object[] { "Quito", "Guayaquil", "Cuenca", "Santo Domingo de los Colorados", "Machala", "Manta", "Portoviejo", "Loja", "Ambato", "Riobamba", "Esmeraldas", "Ibarra", "Quevedo", "Tulcán", "Latacunga", "Babahoyo", "Otavalo", "Santa Elena", "La Libertad", "San Lorenzo" });
-            comboBox5.Location = new Point(124, 207);
-            comboBox5.Name = "comboBox5";
-            comboBox5.Size = new Size(163, 28);
-            comboBox5.TabIndex = 47;
-            // 
-            // label26
-            // 
-            label26.AutoSize = true;
-            label26.Location = new Point(303, 159);
-            label26.Name = "label26";
-            label26.Size = new Size(120, 20);
-            label26.TabIndex = 46;
-            label26.Text = "Formas de pago:";
-            label26.Click += label26_Click;
-            // 
-            // textBox4
-            // 
-            textBox4.Location = new Point(423, 113);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(151, 27);
-            textBox4.TabIndex = 45;
-            textBox4.TextChanged += textBox4_TextChanged;
-            // 
-            // textBox6
-            // 
-            textBox6.Location = new Point(124, 247);
-            textBox6.Margin = new Padding(3, 4, 3, 4);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(163, 27);
-            textBox6.TabIndex = 44;
-            // 
-            // label27
-            // 
-            label27.AutoSize = true;
-            label27.Location = new Point(341, 120);
-            label27.Name = "label27";
-            label27.Size = new Size(76, 20);
-            label27.TabIndex = 43;
-            label27.Text = "N. Celular:";
-            label27.Click += label27_Click;
-            // 
-            // label28
-            // 
-            label28.AutoSize = true;
-            label28.Location = new Point(48, 251);
-            label28.Name = "label28";
-            label28.Size = new Size(75, 20);
-            label28.TabIndex = 42;
-            label28.Text = "Dirección:";
-            // 
-            // button1
-            // 
-            button1.Location = new Point(423, 244);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(88, 35);
-            button1.TabIndex = 41;
-            button1.Text = "Actualizar";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click_1;
-            // 
-            // label29
-            // 
-            label29.AutoSize = true;
-            label29.Location = new Point(57, 206);
-            label29.Name = "label29";
-            label29.Size = new Size(59, 20);
-            label29.TabIndex = 40;
-            label29.Text = "Ciudad:";
-            // 
-            // textBox9
-            // 
-            textBox9.Location = new Point(118, 155);
-            textBox9.Margin = new Padding(3, 4, 3, 4);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(169, 27);
-            textBox9.TabIndex = 39;
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(118, 113);
-            textBox12.Margin = new Padding(3, 4, 3, 4);
-            textBox12.Name = "textBox12";
-            textBox12.ReadOnly = true;
-            textBox12.Size = new Size(169, 27);
-            textBox12.TabIndex = 38;
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Location = new Point(59, 155);
-            label30.Name = "label30";
-            label30.Size = new Size(49, 20);
-            label30.TabIndex = 37;
-            label30.Text = "Email:";
-            // 
-            // label31
-            // 
-            label31.AutoSize = true;
-            label31.Location = new Point(52, 211);
-            label31.Name = "label31";
-            label31.Size = new Size(0, 20);
-            label31.TabIndex = 36;
-            // 
-            // label32
-            // 
-            label32.AutoSize = true;
-            label32.Location = new Point(53, 163);
-            label32.Name = "label32";
-            label32.Size = new Size(0, 20);
-            label32.TabIndex = 35;
-            // 
-            // label33
-            // 
-            label33.AutoSize = true;
-            label33.Location = new Point(13, 120);
-            label33.Name = "label33";
-            label33.Size = new Size(95, 20);
-            label33.TabIndex = 34;
-            label33.Text = "Razón social:";
             // 
             // textBox16
             // 
@@ -606,6 +486,58 @@
             label34.TabIndex = 32;
             label34.Text = "RUC: (*)";
             // 
+            // comboBox5
+            // 
+            comboBox5.FormattingEnabled = true;
+            comboBox5.Items.AddRange(new object[] { "Quito", "Guayaquil", "Cuenca", "Santo Domingo de los Colorados", "Machala", "Manta", "Portoviejo", "Loja", "Ambato", "Riobamba", "Esmeraldas", "Ibarra", "Quevedo", "Tulcán", "Latacunga", "Babahoyo", "Otavalo", "Santa Elena", "La Libertad", "San Lorenzo" });
+            comboBox5.Location = new Point(124, 207);
+            comboBox5.Name = "comboBox5";
+            comboBox5.Size = new Size(163, 28);
+            comboBox5.TabIndex = 47;
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(118, 113);
+            textBox12.Margin = new Padding(3, 4, 3, 4);
+            textBox12.Name = "textBox12";
+            textBox12.ReadOnly = true;
+            textBox12.Size = new Size(169, 27);
+            textBox12.TabIndex = 38;
+            // 
+            // textBox6
+            // 
+            textBox6.Location = new Point(124, 247);
+            textBox6.Margin = new Padding(3, 4, 3, 4);
+            textBox6.Name = "textBox6";
+            textBox6.Size = new Size(163, 27);
+            textBox6.TabIndex = 44;
+            // 
+            // label28
+            // 
+            label28.AutoSize = true;
+            label28.Location = new Point(48, 251);
+            label28.Name = "label28";
+            label28.Size = new Size(75, 20);
+            label28.TabIndex = 42;
+            label28.Text = "Dirección:";
+            // 
+            // label29
+            // 
+            label29.AutoSize = true;
+            label29.Location = new Point(57, 206);
+            label29.Name = "label29";
+            label29.Size = new Size(59, 20);
+            label29.TabIndex = 40;
+            label29.Text = "Ciudad:";
+            // 
+            // label32
+            // 
+            label32.AutoSize = true;
+            label32.Location = new Point(53, 163);
+            label32.Name = "label32";
+            label32.Size = new Size(0, 20);
+            label32.TabIndex = 35;
+            // 
             // label24
             // 
             label24.AutoSize = true;
@@ -614,6 +546,24 @@
             label24.Size = new Size(0, 20);
             label24.TabIndex = 29;
             // 
+            // label31
+            // 
+            label31.AutoSize = true;
+            label31.Location = new Point(52, 211);
+            label31.Name = "label31";
+            label31.Size = new Size(0, 20);
+            label31.TabIndex = 36;
+            // 
+            // label26
+            // 
+            label26.AutoSize = true;
+            label26.Location = new Point(303, 159);
+            label26.Name = "label26";
+            label26.Size = new Size(120, 20);
+            label26.TabIndex = 46;
+            label26.Text = "Formas de pago:";
+            label26.Click += label26_Click;
+            // 
             // label25
             // 
             label25.AutoSize = true;
@@ -621,6 +571,62 @@
             label25.Name = "label25";
             label25.Size = new Size(0, 20);
             label25.TabIndex = 28;
+            // 
+            // label33
+            // 
+            label33.AutoSize = true;
+            label33.Location = new Point(13, 120);
+            label33.Name = "label33";
+            label33.Size = new Size(95, 20);
+            label33.TabIndex = 34;
+            label33.Text = "Razón social:";
+            // 
+            // textBox4
+            // 
+            textBox4.Location = new Point(423, 113);
+            textBox4.Margin = new Padding(3, 4, 3, 4);
+            textBox4.Name = "textBox4";
+            textBox4.Size = new Size(151, 27);
+            textBox4.TabIndex = 45;
+            textBox4.TextChanged += textBox4_TextChanged;
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(59, 155);
+            label30.Name = "label30";
+            label30.Size = new Size(49, 20);
+            label30.TabIndex = 37;
+            label30.Text = "Email:";
+            // 
+            // button1
+            // 
+            button1.Location = new Point(423, 244);
+            button1.Margin = new Padding(3, 4, 3, 4);
+            button1.Name = "button1";
+            button1.Size = new Size(88, 35);
+            button1.TabIndex = 41;
+            button1.Text = "Actualizar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click_1;
+            // 
+            // label27
+            // 
+            label27.AutoSize = true;
+            label27.Location = new Point(341, 120);
+            label27.Name = "label27";
+            label27.Size = new Size(76, 20);
+            label27.TabIndex = 43;
+            label27.Text = "N. Celular:";
+            label27.Click += label27_Click;
+            // 
+            // textBox9
+            // 
+            textBox9.Location = new Point(118, 155);
+            textBox9.Margin = new Padding(3, 4, 3, 4);
+            textBox9.Name = "textBox9";
+            textBox9.Size = new Size(169, 27);
+            textBox9.TabIndex = 39;
             // 
             // tabPage8
             // 
@@ -869,24 +875,6 @@
             button3.TabIndex = 2;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
-            checkedListBox1.Location = new Point(423, 115);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(193, 70);
-            checkedListBox1.TabIndex = 50;
-            // 
-            // checkedListBox2
-            // 
-            checkedListBox2.FormattingEnabled = true;
-            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
-            checkedListBox2.Location = new Point(434, 66);
-            checkedListBox2.Name = "checkedListBox2";
-            checkedListBox2.Size = new Size(193, 70);
-            checkedListBox2.TabIndex = 51;
             // 
             // Form_Proveedores
             // 
