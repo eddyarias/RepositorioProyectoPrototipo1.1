@@ -17,13 +17,6 @@ namespace ProyectoPrototipo_1._0
         {
             this.usuario = usuario;
             this.pass = pass;
-
-
-            /*
-            server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
-            bd = "db_farmacy";
-            */
-
             server = " DESKTOP-OUHSBBV";
 
             bd = "db_farmacia";
@@ -32,6 +25,19 @@ namespace ProyectoPrototipo_1._0
             stringconnect = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
 
         }
+        //Connect Poaquiza
+        /*public Connect(string usuario, string pass)
+        {
+            this.usuario = usuario;
+            this.pass = pass;
+
+            server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
+
+            bd = "db_farmacia";
+
+            con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+            stringconnect = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+        }*/
 
         public SqlConnection? RealizarConexion()
         {
