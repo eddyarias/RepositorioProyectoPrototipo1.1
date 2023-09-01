@@ -1192,10 +1192,14 @@ namespace ProyectoPrototipo_1._0
         private void button10_Click(object sender, EventArgs e)
         {
             // Obtén la fecha de cierre de algún lugar, por ejemplo, un DateTimePicker
-            DateTime diacierre = diaCierre.Value;
+            DateTime diacierre = diaCierre.Value.Date;
+
+            string fecha = diacierre.ToString("yyyy-MM-dd");
+
+            MessageBox.Show(fecha);
 
             // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
-            decimal ingresos = ObtenerTotalIngresos(diacierre);
+            decimal ingresos = ObtenerTotalIngresos(fecha);
 
             MessageBox.Show(ingresos + "");
             // Establece el saldo inicial como $10
@@ -1214,10 +1218,10 @@ namespace ProyectoPrototipo_1._0
             lblSaldoFinal.Text = saldoFinal.ToString("C");
 
             // Llena la primera columna del DataGridViewCierreCaja
-            LlenarDataGridViewCierreCaja(diacierre);
+            LlenarDataGridViewCierreCaja(fecha);
         }
 
-        private decimal ObtenerTotalIngresos(DateTime diacierre)
+        private decimal ObtenerTotalIngresos(string diacierre)
         {
             decimal totalIngresos = 0.0m;
 
@@ -1246,7 +1250,7 @@ namespace ProyectoPrototipo_1._0
         }
 
 
-        private void LlenarDataGridViewCierreCaja(DateTime diacierre)
+        private void LlenarDataGridViewCierreCaja(string diacierre)
         {
             // Limpia el DataGridView antes de llenarlo
             dataGridViewCierreCaja.Rows.Clear();
@@ -1270,11 +1274,11 @@ namespace ProyectoPrototipo_1._0
                     {
                         while (reader.Read())
                         {
-                            int idFactura = reader.GetInt32(0);
+                            string idFactura = reader.GetString(0); // Si idFactura es de tipo char
                             decimal totalFactura = reader.GetDecimal(1);
                             string formaPago = reader.GetString(2);
 
-                            string descripcion = $"Factura #{idFactura} por la cantidad de {totalFactura:C}. Total factura recibido por {formaPago}";
+                            string descripcion = $"Factura #{idFactura}, valor: {totalFactura:C}, recibido por {formaPago}";
 
                             // Agrega una fila al DataGridView con la descripción
                             dataGridViewCierreCaja.Rows.Add(descripcion);

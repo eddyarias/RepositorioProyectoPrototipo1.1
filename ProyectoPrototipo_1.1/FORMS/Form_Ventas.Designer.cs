@@ -127,12 +127,12 @@
             label32 = new Label();
             diaCierre = new DateTimePicker();
             dataGridViewCierreCaja = new DataGridView();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
             label37 = new Label();
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -458,11 +458,11 @@
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(Continuar);
-            tabPage2.Location = new Point(4, 27);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 646);
+            tabPage2.Size = new Size(1713, 644);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
@@ -759,15 +759,13 @@
             // tabPage4
             // 
             tabPage4.BorderStyle = BorderStyle.Fixed3D;
-            tabPage4.Controls.Add(button3);
-            tabPage4.Controls.Add(button4);
             tabPage4.Controls.Add(panel2);
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttNuevaVenta);
-            tabPage4.Location = new Point(4, 27);
+            tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 646);
+            tabPage4.Size = new Size(1713, 644);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;
@@ -866,9 +864,9 @@
             tabPage8.Controls.Add(label19);
             tabPage8.Controls.Add(label17);
             tabPage8.Controls.Add(dataGridViewFactura);
-            tabPage8.Location = new Point(4, 27);
+            tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 710);
+            tabPage8.Size = new Size(1763, 708);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Lista de ventas";
             tabPage8.UseVisualStyleBackColor = true;
@@ -1095,7 +1093,7 @@
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.RowHeadersWidth = 51;
             dataGridViewFactura.RowTemplate.Height = 29;
-            dataGridViewFactura.Size = new Size(1234, 267);
+            dataGridViewFactura.Size = new Size(1238, 267);
             dataGridViewFactura.TabIndex = 91;
             dataGridViewFactura.CellContentClick += dataGridViewFactura_CellContentClick;
             dataGridViewFactura.CellContentDoubleClick += dataGridViewFactura_CellContentDoubleClick;
@@ -1194,26 +1192,12 @@
             // 
             dataGridViewCierreCaja.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCierreCaja.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9 });
-            dataGridViewCierreCaja.Location = new Point(585, 147);
+            dataGridViewCierreCaja.Location = new Point(263, 165);
             dataGridViewCierreCaja.Name = "dataGridViewCierreCaja";
             dataGridViewCierreCaja.RowHeadersWidth = 51;
             dataGridViewCierreCaja.RowTemplate.Height = 29;
-            dataGridViewCierreCaja.Size = new Size(554, 221);
+            dataGridViewCierreCaja.Size = new Size(1054, 245);
             dataGridViewCierreCaja.TabIndex = 31;
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Ingresos:";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.Width = 250;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Egresos:";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.Width = 250;
             // 
             // label37
             // 
@@ -1254,6 +1238,20 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
+            // 
+            // Column8
+            // 
+            Column8.HeaderText = "Ingresos:";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.Width = 500;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Egresos:";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.Width = 500;
             // 
             // Form_Ventas
             // 
@@ -1349,8 +1347,6 @@
         private Label label35;
         private Label label34;
         private DataGridView dataGridViewCierreCaja;
-        private DataGridViewTextBoxColumn Column8;
-        private DataGridViewTextBoxColumn Column9;
         private Label label31;
         private Label label32;
         private DateTimePicker diaCierre;
@@ -1415,5 +1411,7 @@
         private Button button4;
         private Label lblMensaje;
         private Label lblMensaje2;
+        private DataGridViewTextBoxColumn Column8;
+        private DataGridViewTextBoxColumn Column9;
     }
 }
