@@ -110,7 +110,7 @@ go
 --Consumidor Final
 INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
 VALUES
-    ( 1111111111, 'N/A', 'Consumidor final', 'N/A', 'N/A 1', 'N/A', 'N/A', '9999999999', null, NULL);
+    ( 1111111111, 'N/A', 'Consumidor final', 'N/A', 'N/A 1', 'N/A', 'N/A', '9999999999', '2023-09-01', NULL);
 
 go;
 
@@ -149,7 +149,6 @@ END
 go
 
 
-
 	
 -- Añadir datos a la tabla Factura
 INSERT INTO Factura (idFactura, fechaEmision, cedula, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
@@ -169,11 +168,12 @@ VALUES
 
 
 
-
-	select * from Proveedor;
+use db_farmacia
+select * from Proveedor;
 select * from Producto;
 select * from Cliente;
 select * from Factura;
 select * from ListaProductosSeleccionados;
+SELECT * FROM Cliente WHERE cedula = 1111111111;
 
 go
