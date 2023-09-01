@@ -1,6 +1,14 @@
-﻿using Microsoft.Data.SqlClient;
-using ProyectoPrototipo_1._0;
+﻿using ProyectoPrototipo_1._0;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Data.SqlClient;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
 
 
 namespace ProyectoPrototipo_1._1.FORMS
@@ -17,9 +25,7 @@ namespace ProyectoPrototipo_1._1.FORMS
         {
             InitializeComponent();
             this.connect = connect;
-            // Configurar el DateTimePicker para mostrar solo el año
-            dateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Custom;
-            dateTimePickerFechaNacimiento.CustomFormat = "yyyy";
+
         }
 
         private void Form_AgregarCliente_Load(object sender, EventArgs e)
