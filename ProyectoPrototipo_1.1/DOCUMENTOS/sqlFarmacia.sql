@@ -177,3 +177,29 @@ select * from ListaProductosSeleccionados;
 SELECT * FROM Cliente WHERE cedula = 1111111111;
 
 go
+
+create table Usuario(
+  CI varchar(10) not null primary key,
+  usuario varchar(30) not null,
+  contrasenia varchar(30) not null,
+  tipoDeUsuario nvarchar(30) not null
+)
+
+drop table Parametro
+create table Parametro(
+	identificador int identity(1,1) primary key,
+	parametro varchar(30) not null,
+	valor decimal(10,2) not null
+)
+
+insert into Usuario (CI, usuario, contrasenia, tipoDeUsuario)
+values
+	('1724732753', 'Jonathan', 'Jonathan1-', 'Administrador'),
+	('0502863673', 'Eddy', 'Arias-10', 'Vendedor')
+
+insert into Parametro (parametro, valor)
+values 
+	('iva (12%)',0.12)
+
+select * from Usuario
+select * from Parametro

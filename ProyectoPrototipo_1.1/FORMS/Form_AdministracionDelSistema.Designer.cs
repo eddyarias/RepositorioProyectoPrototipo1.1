@@ -30,6 +30,8 @@
         {
             TCProveedores = new TabControl();
             tabPage1 = new TabPage();
+            textBox14 = new TextBox();
+            label22 = new Label();
             comboBox1 = new ComboBox();
             label7 = new Label();
             label12 = new Label();
@@ -38,6 +40,10 @@
             label2 = new Label();
             textBox1 = new TextBox();
             label1 = new Label();
+            tabPage8 = new TabPage();
+            textBox5 = new TextBox();
+            label6 = new Label();
+            button8 = new Button();
             tabPage7 = new TabPage();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
@@ -54,10 +60,6 @@
             button3 = new Button();
             textBox9 = new TextBox();
             label15 = new Label();
-            tabPage8 = new TabPage();
-            textBox5 = new TextBox();
-            label6 = new Label();
-            button8 = new Button();
             tabPage12 = new TabPage();
             textBox13 = new TextBox();
             label21 = new Label();
@@ -91,15 +93,13 @@
             textBox12 = new TextBox();
             label20 = new Label();
             button7 = new Button();
-            textBox14 = new TextBox();
-            label22 = new Label();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
+            tabPage8.SuspendLayout();
             tabPage7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
-            tabPage8.SuspendLayout();
             tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             TCAdministracion.SuspendLayout();
@@ -146,6 +146,23 @@
             tabPage1.Size = new Size(507, 287);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar Usuario";
+            // 
+            // textBox14
+            // 
+            textBox14.Location = new Point(165, 36);
+            textBox14.Margin = new Padding(3, 4, 3, 4);
+            textBox14.Name = "textBox14";
+            textBox14.Size = new Size(169, 27);
+            textBox14.TabIndex = 28;
+            // 
+            // label22
+            // 
+            label22.AutoSize = true;
+            label22.Location = new Point(128, 39);
+            label22.Name = "label22";
+            label22.Size = new Size(28, 20);
+            label22.TabIndex = 27;
+            label22.Text = "C.I:";
             // 
             // comboBox1
             // 
@@ -217,6 +234,45 @@
             label1.Size = new Size(78, 20);
             label1.TabIndex = 2;
             label1.Text = "Username:";
+            // 
+            // tabPage8
+            // 
+            tabPage8.Controls.Add(textBox5);
+            tabPage8.Controls.Add(label6);
+            tabPage8.Controls.Add(button8);
+            tabPage8.Location = new Point(4, 29);
+            tabPage8.Name = "tabPage8";
+            tabPage8.Size = new Size(507, 287);
+            tabPage8.TabIndex = 5;
+            tabPage8.Text = "Consultar Usuario";
+            tabPage8.UseVisualStyleBackColor = true;
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(133, 45);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(169, 27);
+            textBox5.TabIndex = 54;
+            // 
+            // label6
+            // 
+            label6.AutoSize = true;
+            label6.Location = new Point(50, 51);
+            label6.Name = "label6";
+            label6.Size = new Size(81, 20);
+            label6.TabIndex = 53;
+            label6.Text = "CI-Usuario:";
+            // 
+            // button8
+            // 
+            button8.Location = new Point(341, 41);
+            button8.Margin = new Padding(3, 4, 3, 4);
+            button8.Name = "button8";
+            button8.Size = new Size(93, 35);
+            button8.TabIndex = 52;
+            button8.Text = "Consultar";
+            button8.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
@@ -377,45 +433,6 @@
             label15.Size = new Size(28, 20);
             label15.TabIndex = 50;
             label15.Text = "C.I:";
-            // 
-            // tabPage8
-            // 
-            tabPage8.Controls.Add(textBox5);
-            tabPage8.Controls.Add(label6);
-            tabPage8.Controls.Add(button8);
-            tabPage8.Location = new Point(4, 29);
-            tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(507, 287);
-            tabPage8.TabIndex = 5;
-            tabPage8.Text = "Consultar Usuario";
-            tabPage8.UseVisualStyleBackColor = true;
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(133, 45);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(169, 27);
-            textBox5.TabIndex = 54;
-            // 
-            // label6
-            // 
-            label6.AutoSize = true;
-            label6.Location = new Point(50, 51);
-            label6.Name = "label6";
-            label6.Size = new Size(81, 20);
-            label6.TabIndex = 53;
-            label6.Text = "CI-Usuario:";
-            // 
-            // button8
-            // 
-            button8.Location = new Point(341, 41);
-            button8.Margin = new Padding(3, 4, 3, 4);
-            button8.Name = "button8";
-            button8.Size = new Size(93, 35);
-            button8.TabIndex = 52;
-            button8.Text = "Consultar";
-            button8.UseVisualStyleBackColor = true;
             // 
             // tabPage12
             // 
@@ -757,23 +774,6 @@
             button7.Text = "Eliminar";
             button7.UseVisualStyleBackColor = true;
             // 
-            // textBox14
-            // 
-            textBox14.Location = new Point(165, 36);
-            textBox14.Margin = new Padding(3, 4, 3, 4);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(169, 27);
-            textBox14.TabIndex = 28;
-            // 
-            // label22
-            // 
-            label22.AutoSize = true;
-            label22.Location = new Point(128, 39);
-            label22.Name = "label22";
-            label22.Size = new Size(28, 20);
-            label22.TabIndex = 27;
-            label22.Text = "C.I:";
-            // 
             // Form_AdministracionDelSistema
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -787,14 +787,14 @@
             TCProveedores.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            tabPage8.ResumeLayout(false);
+            tabPage8.PerformLayout();
             tabPage7.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
-            tabPage8.ResumeLayout(false);
-            tabPage8.PerformLayout();
             tabPage12.ResumeLayout(false);
             tabPage12.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();

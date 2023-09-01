@@ -24,7 +24,6 @@ namespace ProyectoPrototipo_1._0
 
         private void BLogin_Click(object sender, EventArgs e)
         {
-
             string usuario = TBUsername.Text;
             string pass = TBPassword.Text;
 
@@ -33,11 +32,29 @@ namespace ProyectoPrototipo_1._0
 
             if (connection != null)
             {
-                // La conexión fue exitosa
+                // La conexión fue exitosa, ahora verifica las credenciales
+                string query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @usuario AND contrasenia = @contrasenia AND tipo";
 
-                Form_Menu form_menu = new Form_Menu(conexion);
-                form_menu.Show();
-                this.Hide();
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@usuario", usuario);
+                    cmd.Parameters.AddWithValue("@contrasenia", pass);
+
+                    int result = (int)cmd.ExecuteScalar();
+
+                    if (result > 0)
+                    {
+                        // Las credenciales son válidas, permite el acceso
+                        Form_Menu form_menu = new Form_Menu(conexion);
+                        form_menu.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        // Las credenciales no son válidas, muestra un mensaje de error
+                        MessageBox.Show("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+                    }
+                }
             }
             else
             {
@@ -45,5 +62,6 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Error al conectar a la base de datos.");
             }
         }
+
     }
 }
