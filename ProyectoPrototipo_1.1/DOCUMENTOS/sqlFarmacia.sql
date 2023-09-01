@@ -1,5 +1,7 @@
+
+
 drop database db_farmacia;
-go
+--go
 
 --drop table Class_Proveedor
 IF NOT EXISTS (SELECT name FROM sys.databases WHERE name = N'db_farmacia')
@@ -81,25 +83,23 @@ BEGIN
     );
 	INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
 VALUES
-    ( 1234567890, 'Persona Natural', 'Juan', 'Pérez', 'Parroquia 1', 'Dirección 1', 'juan@example.com', '1234567890', '1990-01-01', 'Observaciones 1'),
-    ( 9876543210, 'Persona Jurídica', 'Empresa A', 'S.A.', 'Parroquia 2', 'Dirección 2', 'empresaA@example.com', '0987654321', '1995-05-10', 'Observaciones 2'),
-    ( 5678901234, 'Persona Natural', 'María', 'Gómez', 'Parroquia 3', 'Dirección 3', 'maria@example.com', '5678901234', '1988-12-15', 'Observaciones 3'),
-    ( 4321098765, 'Persona Jurídica', 'Empresa B', 'C.A.', 'Parroquia 4', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 'Observaciones 4'),
-    ( 9999999999, 'Persona Natural', 'Pedro', 'López', 'Parroquia 5', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 'Observaciones 5');
+    ( 1717506289, 'Persona Natural', 'Juan', 'Pérez', 'Parroquia 1', 'Dirección 1', 'juan@example.com', '1234567890', '1990-01-01', 'Observaciones 1'),
+    ( 1724246234, 'Persona Jurídica', 'Empresa A', 'S.A.', 'Parroquia 2', 'Dirección 2', 'empresaA@example.com', '0987654321', '1995-05-10', 'Observaciones 2'),
+    ( 1718575192, 'Persona Natural', 'María', 'Gómez', 'Parroquia 3', 'Dirección 3', 'maria@example.com', '5678901234', '1988-12-15', 'Observaciones 3'),
+    ( 1804934808, 'Persona Jurídica', 'Empresa B', 'C.A.', 'Parroquia 4', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 'Observaciones 4'),
+    ( 1900854553, 'Persona Natural', 'Pedro', 'López', 'Parroquia 5', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 'Observaciones 5');
 END
 
 
 go
 
-
 -- Crear la tabla Factura
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Factura')
 BEGIN
     CREATE TABLE Factura (
-        idFactura INT PRIMARY KEY,
+        idFactura CHAR(15) PRIMARY KEY,
         fechaEmision DATE,
         cedula bigINT,
-        idListaProducSelec INT,
         subtotal DECIMAL(18, 2),
         iva DECIMAL(18, 2),
         descuentoTotalDolares DECIMAL(18, 2),
@@ -116,7 +116,7 @@ IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'ListaProductosFactura')
 BEGIN
     CREATE TABLE ListaProductosSeleccionados (
         idListaProducSelec INT primary key,
-		idFactura INT,
+		idFactura CHAR(15),
         idProducto INT,
         cantidad INT,
         precio DECIMAL(18, 2),
@@ -127,25 +127,29 @@ BEGIN
 END
 go
 
+
+
+	
 -- Añadir datos a la tabla Factura
-INSERT INTO Factura (idFactura, fechaEmision, cedula, idListaProducSelec, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
+INSERT INTO Factura (idFactura, fechaEmision, cedula, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
 VALUES
-    (1, '2023-08-30', 1234567890, 1, 100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
-    (2, '2023-08-31', 9876543210, 2, 150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
+    ('001001000000001', '2023-08-30', 1717506289,  100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
+    ('001001000000002', '2023-08-31', 1804934808,  150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
+
+
 
 -- Añadir datos a la tabla ListaProductosSeleccionados
 INSERT INTO ListaProductosSeleccionados (idListaProducSelec, idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares)
 VALUES
-    (1, 1, 101, 2, 50.00, 100.00, 0.00),
-    (2, 1, 102, 3, 20.00, 60.00, 5.00),
-    (3, 2, 103, 1, 80.00, 80.00, 2.50),
-    (4, 2, 104, 2, 35.00, 70.00, 0.00);
+    (1, '001001000000001', 101, 2, 50.00, 100.00, 0.00),
+    (2, '001001000000001', 102, 3, 20.00, 60.00, 5.00),
+    (3, '001001000000002', 103, 1, 80.00, 80.00, 2.50),
+    (4, '001001000000002', 104, 2, 35.00, 70.00, 0.00);
 
 
 
 
-	
-select * from Proveedor;
+	select * from Proveedor;
 select * from Producto;
 select * from Cliente;
 select * from Factura;

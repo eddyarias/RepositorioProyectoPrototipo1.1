@@ -22,7 +22,7 @@ namespace ProyectoPrototipo_1._0
 
         string con;
 
-        
+
 
         public Connect connect;
 
@@ -35,13 +35,16 @@ namespace ProyectoPrototipo_1._0
 
         public List<ProductoCarrito> carritoDeCompras = new List<ProductoCarrito>();
 
-        public decimal descuento = 0;
-        public decimal iva = 0;
-        public decimal subtotal1 = 0;
-        public decimal total = 0;
+        public decimal descuento;
+        public decimal iva;
+        public decimal subtotal1;
+        public decimal total;
+
 
         public string cedulaCliente;
 
+
+        public string formaPago;
 
         public class ProductoInfo
         {
@@ -64,12 +67,14 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        public string cedulaClienteEncontrado;
+
         public Form_Ventas(Connect connect)
         {
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
             this.connect = connect;
-            con=connect.stringconnect;
+            con = connect.stringconnect;
             LlenarDataGridViewFacturas(dataGridViewFactura);
             MostrarProductos(dataGridViewProductos);
             this.txtBcedulaCliente.Enabled = false;
@@ -470,7 +475,7 @@ namespace ProyectoPrototipo_1._0
             return productoInfo;
         }
 
- 
+
 
         private void dataGridViewProductos_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -493,9 +498,9 @@ namespace ProyectoPrototipo_1._0
         private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
 
-            cedulaCliente = txtBcedulaCliente.Text.Trim();
+            cedulaClienteEncontrado = txtBcedulaCliente.Text.Trim();
 
-            if (!string.IsNullOrEmpty(cedulaCliente))
+            if (!string.IsNullOrEmpty(cedulaClienteEncontrado))
             {
                 // Define la consulta SQL
                 string connectionString = con;
@@ -507,7 +512,7 @@ namespace ProyectoPrototipo_1._0
 
                     using (SqlCommand cmd = new SqlCommand(query, connection))
                     {
-                        cmd.Parameters.AddWithValue("@Cedula", cedulaCliente);
+                        cmd.Parameters.AddWithValue("@Cedula", cedulaClienteEncontrado);
 
                         using (SqlDataReader reader = cmd.ExecuteReader())
                         {
@@ -536,7 +541,7 @@ namespace ProyectoPrototipo_1._0
                                 txtBdireccionCliente.Text = clienteEncontrado.direccion_c;
                                 txtBcorreoCliente.Text = clienteEncontrado.email_c;
 
-                                // ...
+                                Continuar.Enabled = true;
                             }
                             else
                             {
@@ -643,6 +648,8 @@ namespace ProyectoPrototipo_1._0
 
         private void bttContinuarSelecProd_Click(object sender, EventArgs e)
         {
+
+
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de terminar con la selección de productos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
@@ -653,81 +660,195 @@ namespace ProyectoPrototipo_1._0
                 TabSecuencialVentas.TabPages[0].Enabled = false;
                 TabSecuencialVentas.TabPages[1].Enabled = true;
                 TabSecuencialVentas.SelectedTab = TabSecuencialVentas.TabPages[1];
+                panel3.Focus();
+                Continuar.Enabled = false;
             }
             // Si el usuario selecciona "No", no se realizará ninguna acción.
         }
 
 
+        public int ObtenerIdFacturaMasAlto()
+        {
+            int idMasAlto = -1; // Valor predeterminado en caso de que no haya registros
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT MAX(CAST(idFactura AS BigINT)) FROM Factura";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != DBNull.Value)
+                        {
+                            idMasAlto = Convert.ToInt32(result);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de errores, por ejemplo, puedes registrar el error o lanzar una excepción.
+                    Console.WriteLine("Error al obtener el ID de factura más alto: " + ex.Message);
+                }
+            }
+
+            return idMasAlto;
+        }
+
+        public int ObtenerIdListaProductosSeleccionadosMasAlto()
+        {
+            int idMasAlto = -1; // Valor predeterminado en caso de que no haya registros
+
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                try
+                {
+                    connection.Open();
+
+                    string query = "SELECT MAX(idListaProducSelec) FROM ListaProductosSeleccionados";
+
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        object result = cmd.ExecuteScalar();
+
+                        if (result != DBNull.Value)
+                        {
+                            idMasAlto = Convert.ToInt32(result);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    // Manejo de errores, por ejemplo, puedes registrar el error o lanzar una excepción.
+                    Console.WriteLine("Error al obtener el ID de ListaProductosSeleccionados más alto: " + ex.Message);
+                }
+            }
+
+            return idMasAlto;
+        }
+
 
 
         private void button2_Click_1(object sender, EventArgs e)
         {
+            string mensaje = "";
+            bool esNecesarioMensaje = false;
 
-
-            String mensaje = "";
-            Boolean esNecesarioMensaje = false;
-
-            string formaPago;
-
+            // Validar la forma de pago seleccionada
             if (radButtEfectivo.Checked)
-            {
                 formaPago = radButtEfectivo.Text;
-            }
+            else if (radButtTarjeDeb.Checked)
+                formaPago = radButtTarjeDeb.Text;
+            else if (radButtTarjetaCredito.Checked)
+                formaPago = radButtTarjetaCredito.Text;
+            else if (radButtTransferencia.Checked)
+                formaPago = radButtTransferencia.Text;
             else
             {
-                if (radButtTarjeDeb.Checked)
-                {
-                    formaPago = radButtTarjeDeb.Text;
-                }
-                else
-                {
-                    if (radButtTarjetaCredito.Checked)
-                    {
-                        formaPago = radButtTarjetaCredito.Text;
-                    }
-                    else
-                    {
-                        if (radButtTransferencia.Checked)
-                        {
-                            formaPago = radButtTransferencia.Text;
-                        }
-                        else
-                        {
-                            mensaje += "Seleccione una forma de pago.\n";
-                            esNecesarioMensaje = true;
-                        }
-                    }
-                }
+                mensaje += "Seleccione una forma de pago.\n";
+                esNecesarioMensaje = true;
             }
-            Boolean consumidorFinal;
 
-            if (radButtConsumidorfinal.Checked)
+            // Validar si es consumidor final o factura con datos
+            Boolean consumidorFinal = radButtConsumidorfinal.Checked;
+
+            if (!consumidorFinal && !radButtFacturaDatos.Checked)
             {
-                consumidorFinal = true;
+                mensaje += "Seleccione consumidor final o factura con datos.\n";
+                esNecesarioMensaje = true;
             }
-            else
+
+            // Validar la cédula
+            if (!ValidateCedula(txtBcedulaCliente.Text))
             {
-                if (radButtFacturaDatos.Checked)
-                {
-                    consumidorFinal = false;
-                }
-                else
-                {
-                    mensaje += "Seleccione consumidor final o factura con datos.\n";
-                    esNecesarioMensaje = true;
-
-                }
+                mensaje += "Por favor, introduzca un número de cédula válido.\n";
+                esNecesarioMensaje = true;
             }
 
-
-
+            // Mostrar mensajes de error si es necesario
             if (esNecesarioMensaje)
             {
                 MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                cedulaCliente = txtBcedulaCliente.Text;
+
+                // Confirmar los datos de la factura
+                DialogResult result = MessageBox.Show("¿Desea confirmar los datos de la factura?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
+                {
+                    using (SqlConnection connection = new SqlConnection(con))
+                    {
+                        try
+                        {
+                            connection.Open();
+
+                            int idFactura = ObtenerIdFacturaMasAlto() + 1;
+
+                            // Insertar una nueva factura en la tabla "Factura"
+                            string insertFacturaQuery = "INSERT INTO Factura (idFactura, fechaEmision, cedula,  subtotal, iva, descuentoTotalDolares, total, formaPago, estado) " +
+                                                        "VALUES (@idFactura, @fechaEmision, @cedula,  @subtotal, @iva, @descuento, @total, @formaPago, 'Vigente');";
+
+                            decimal subtotalConDescuento = subtotal1 - descuento;
+
+                            using (SqlCommand cmd = new SqlCommand(insertFacturaQuery, connection))
+                            {
+                                cmd.Parameters.AddWithValue("@idFactura", idFactura); // Utilizamos el ID calculado
+                                cmd.Parameters.AddWithValue("@fechaEmision", DateTime.Now); // Fecha actual
+                                cmd.Parameters.AddWithValue("@cedula", cedulaCliente);
+                                cmd.Parameters.AddWithValue("@subtotal", subtotalConDescuento);
+                                cmd.Parameters.AddWithValue("@iva", iva);
+                                cmd.Parameters.AddWithValue("@descuento", descuento);
+                                cmd.Parameters.AddWithValue("@total", total);
+                                cmd.Parameters.AddWithValue("@formaPago", formaPago);
 
 
+                                int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1; 
+                                // Insertar los productos del carrito en la tabla "ListaProductosSeleccionados"
+                                foreach (ProductoCarrito producto in carritoDeCompras)
+                                {
+                                    string insertProductoQuery = "INSERT INTO ListaProductosSeleccionados (idListaProducSelec,idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares) " +
+                                                                "VALUES (@idListaProducSelec,@idFactura, @idProducto, @cantidad, @precio, @subtotal, @descuentoDolares);";
+
+                                    using (SqlCommand productoCmd = new SqlCommand(insertProductoQuery, connection))
+                                    {
+                                        productoCmd.Parameters.AddWithValue("@idListaProducSelec", idListaProducSelec);
+                                        productoCmd.Parameters.AddWithValue("@idFactura", idFactura);
+                                        productoCmd.Parameters.AddWithValue("@idProducto", producto.CodigoProducto);
+                                        productoCmd.Parameters.AddWithValue("@cantidad", producto.Cantidad);
+                                        productoCmd.Parameters.AddWithValue("@precio", producto.PrecioUnitario);
+                                        productoCmd.Parameters.AddWithValue("@subtotal", producto.PrecioUnitario * producto.Cantidad);
+                                        productoCmd.Parameters.AddWithValue("@descuentoDolares", 0); // Puedes ajustar esto según tus necesidades
+
+                                        productoCmd.ExecuteNonQuery();
+                                    }
+                                }
+                            }
+
+                            // Mostrar un mensaje de éxito
+                            MessageBox.Show("La factura se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show($"Error al guardar la factura en la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+
+                        
+                    }
+
+                    TabSecuencialVentas.TabPages[1].Enabled = false;
+                    TabSecuencialVentas.TabPages[2].Enabled = true;
+                    TabSecuencialVentas.SelectedTab = TabSecuencialVentas.TabPages[2];
+                }
+            }
         }
+
 
 
         private void radButtConsumidorfinal_CheckedChanged(object sender, EventArgs e)
@@ -752,6 +873,74 @@ namespace ProyectoPrototipo_1._0
             {
                 txtBcedulaCliente.Enabled = false;
             }
+        }
+
+        private bool cedulaEsValida = false;
+
+        static bool ValidateCedula(string cedula)
+        {
+            // Check if the cedula has 10 digits
+            if (cedula.Length != 10)
+            {
+                Console.WriteLine("Esta cedula tiene menos de 10 Digitos");
+                return false;
+            }
+
+            // Get the region digit, which is the first two digits
+            string digitoRegion = cedula.Substring(0, 2);
+
+            // Check if the region exists; Ecuador is divided into 24 regions
+            if (!(int.TryParse(digitoRegion, out int region) && region >= 1 && region <= 24))
+            {
+                Console.WriteLine("Esta cedula no pertenece a ninguna region");
+                return false;
+            }
+
+            // Extract the last digit
+            int ultimoDigito = int.Parse(cedula.Substring(9, 1));
+
+            // Sum all the even digits
+            int pares = int.Parse(cedula[1].ToString()) +
+                        int.Parse(cedula[3].ToString()) +
+                        int.Parse(cedula[5].ToString()) +
+                        int.Parse(cedula[7].ToString());
+
+            // Calculate the sum of odd digits after doubling them and subtracting 9 if greater than 9
+            int numero1 = int.Parse(cedula[0].ToString()) * 2;
+            if (numero1 > 9) numero1 -= 9;
+
+            int numero3 = int.Parse(cedula[2].ToString()) * 2;
+            if (numero3 > 9) numero3 -= 9;
+
+            int numero5 = int.Parse(cedula[4].ToString()) * 2;
+            if (numero5 > 9) numero5 -= 9;
+
+            int numero7 = int.Parse(cedula[6].ToString()) * 2;
+            if (numero7 > 9) numero7 -= 9;
+
+            int numero9 = int.Parse(cedula[8].ToString()) * 2;
+            if (numero9 > 9) numero9 -= 9;
+
+            int impares = numero1 + numero3 + numero5 + numero7 + numero9;
+
+            // Calculate the total sum
+            int sumaTotal = pares + impares;
+
+            // Extract the first digit
+            int primerDigitoSuma = int.Parse(sumaTotal.ToString().Substring(0, 1));
+
+            // Get the immediate ten
+            int decena = (primerDigitoSuma + 1) * 10;
+
+            // Calculate the validation digit
+            int digitoValidador = decena - sumaTotal;
+
+            // If the validation digit is 10, set it to 0
+            if (digitoValidador == 10)
+                digitoValidador = 0;
+
+            // Validate that the validation digit matches the last digit of the cedula
+            return digitoValidador == ultimoDigito;
         }
     }
 }

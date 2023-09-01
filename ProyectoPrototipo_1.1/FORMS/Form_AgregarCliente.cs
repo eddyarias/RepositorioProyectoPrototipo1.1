@@ -1,18 +1,7 @@
 ﻿using Microsoft.Data.SqlClient;
 using ProyectoPrototipo_1._0;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Data.SqlClient;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using SqlCommand = System.Data.SqlClient.SqlCommand;
-using SqlConnection = System.Data.SqlClient.SqlConnection;
+
 
 namespace ProyectoPrototipo_1._1.FORMS
 {
@@ -22,14 +11,12 @@ namespace ProyectoPrototipo_1._1.FORMS
         public string CedulaClienteRegistrada { get; private set; }
 
 
-        string con;
 
-        //public string con = "Server=DESKTOP-0BLRF7R\\MSSQLSERVER01;Database=db_farmacia;Integrated Security=True;";
+        public string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
         public Form_AgregarCliente(Connect connect)
         {
             InitializeComponent();
             this.connect = connect;
-            con = connect.stringconnect;
             // Configurar el DateTimePicker para mostrar solo el año
             dateTimePickerFechaNacimiento.Format = DateTimePickerFormat.Custom;
             dateTimePickerFechaNacimiento.CustomFormat = "yyyy";
@@ -209,7 +196,7 @@ namespace ProyectoPrototipo_1._1.FORMS
 
             // Use a regular expression to check if the input contains only letters and spaces,
             // and allows for multiple first names separated by spaces
-            if (!Regex.IsMatch(nombres, "^[A-Za-z ]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(nombres, "^[A-Za-z ]+$"))
             {
                 lblerrorNombres.Text = "Nombres inválidos";
                 lblerrorNombres.ForeColor = Color.Red;
@@ -258,7 +245,7 @@ namespace ProyectoPrototipo_1._1.FORMS
 
             // Use a regular expression to check if the input contains only letters and spaces,
             // and allows for multiple last names separated by spaces
-            if (!Regex.IsMatch(apellidos, "^[A-Za-z ]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(apellidos, "^[A-Za-z ]+$"))
             {
                 lblerrorApellidos.Text = "Apellidos inválidos";
                 lblerrorApellidos.ForeColor = Color.Red;
@@ -290,7 +277,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             string celular = txtBCelular.Text;
 
             // Use a regular expression to check if the input contains only digits and starts with '0'
-            if (!Regex.IsMatch(celular, "^0[0-9]*$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(celular, "^0[0-9]*$"))
             {
                 lblerrorCelular.Text = "El número de celular debe comenzar con '0' y contener solo números";
                 lblerrorCelular.ForeColor = Color.Red;
@@ -333,7 +320,7 @@ namespace ProyectoPrototipo_1._1.FORMS
 
         private Boolean ValidateNombres(string nombres)
         {
-            if (!Regex.IsMatch(nombres, "^[A-Za-z ]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(nombres, "^[A-Za-z ]+$"))
             {
                 lblerrorNombres.Text = "Nombres inválidos";
                 lblerrorNombres.ForeColor = Color.Red;
@@ -348,7 +335,7 @@ namespace ProyectoPrototipo_1._1.FORMS
 
         private Boolean ValidateApellidos(string apellidos)
         {
-            if (!Regex.IsMatch(apellidos, "^[A-Za-z ]+$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(apellidos, "^[A-Za-z ]+$"))
             {
                 lblerrorApellidos.Text = "Apellidos inválidos";
                 lblerrorApellidos.ForeColor = Color.Red;
@@ -394,7 +381,7 @@ namespace ProyectoPrototipo_1._1.FORMS
 
         private Boolean ValidateCelular(string celular)
         {
-            if (!Regex.IsMatch(celular, "^0[0-9]*$"))
+            if (!System.Text.RegularExpressions.Regex.IsMatch(celular, "^0[0-9]*$"))
             {
                 lblerrorCelular.Text = "El número de celular debe comenzar con '0' y contener solo números";
                 lblerrorCelular.ForeColor = Color.Red;

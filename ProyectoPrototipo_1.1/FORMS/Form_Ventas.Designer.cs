@@ -57,6 +57,7 @@
             label12 = new Label();
             bttContinuarSelecProd = new Button();
             tabPage2 = new TabPage();
+            label46 = new Label();
             panel4 = new Panel();
             label7 = new Label();
             radButtConsumidorfinal = new RadioButton();
@@ -459,6 +460,7 @@
             // tabPage2
             // 
             tabPage2.BorderStyle = BorderStyle.Fixed3D;
+            tabPage2.Controls.Add(label46);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(bttBuscarClienteBaseDatos);
@@ -483,6 +485,15 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label46
+            // 
+            label46.AutoSize = true;
+            label46.Location = new Point(895, 132);
+            label46.Name = "label46";
+            label46.Size = new Size(16, 18);
+            label46.TabIndex = 27;
+            label46.Text = ".";
             // 
             // panel4
             // 
@@ -739,10 +750,10 @@
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttImprimir);
             tabPage4.Controls.Add(bttEnviarCorreo);
-            tabPage4.Location = new Point(4, 27);
+            tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 646);
+            tabPage4.Size = new Size(1713, 644);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;
@@ -1476,5 +1487,6 @@
         private Label lblDescuento;
         private CheckedListBox chLisBoxAgregarDescueno;
         private ComboBox comboBox1;
+        private Label label46;
     }
 }
