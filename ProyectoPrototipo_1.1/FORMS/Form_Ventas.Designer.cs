@@ -189,7 +189,7 @@
             tabPage1.Padding = new Padding(3, 4, 3, 4);
             tabPage1.Size = new Size(1713, 646);
             tabPage1.TabIndex = 0;
-            tabPage1.Text = "Seleccion Producto";
+            tabPage1.Text = "Selección Producto";
             tabPage1.UseVisualStyleBackColor = true;
             // 
             // label44
@@ -427,11 +427,11 @@
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(Continuar);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 27);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 644);
+            tabPage2.Size = new Size(1713, 646);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
@@ -823,9 +823,9 @@
             tabPage8.Controls.Add(panel6);
             tabPage8.Controls.Add(panel5);
             tabPage8.Controls.Add(dataGridViewFactura);
-            tabPage8.Location = new Point(4, 27);
+            tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 710);
+            tabPage8.Size = new Size(1763, 708);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Consultar";
             tabPage8.UseVisualStyleBackColor = true;

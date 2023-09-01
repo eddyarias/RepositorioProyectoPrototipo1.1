@@ -1299,7 +1299,8 @@ namespace ProyectoPrototipo_1._0
             if (e.RowIndex >= 0)
             {
 
-                if (e.ColumnIndex == dataGridViewFactura.Columns["Anular"].Index) {
+                if (e.ColumnIndex == dataGridViewFactura.Columns["Anular"].Index)
+                {
                     // Obtén el valor de la celda en la primera columna de la fila actual
                     string numeroFactura = dataGridViewFactura[1, e.RowIndex].Value.ToString();
 
@@ -1320,7 +1321,7 @@ namespace ProyectoPrototipo_1._0
                     }
 
                 }
-                
+
             }
 
         }
