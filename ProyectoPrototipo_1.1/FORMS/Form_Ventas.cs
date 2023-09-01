@@ -7,6 +7,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -334,26 +335,6 @@ namespace ProyectoPrototipo_1._0
 
 
 
-        private void button7_Click(object sender, EventArgs e)
-        {
-            //switch (tabControlConsultar.SelectedIndex)
-            //{
-            //    case 1:
-            DateTime fechaInicio = dateTimeInicio.Value;
-            DateTime fechaFin = dateTimeFin.Value;
-            ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
-
-            //        break;
-            //    case 2:
-            //        ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
-            //        break;
-            //    case 3:
-            //        ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
-            //        break;
-            //    default:
-            //        break;
-            //}
-        }
 
         private void Form_Ventas_Load(object sender, EventArgs e)
         {
@@ -411,14 +392,14 @@ namespace ProyectoPrototipo_1._0
         {
 
             StringBuilder resumen = new StringBuilder();
-
+            subtotal1 = 0;
             foreach (ProductoCarrito producto in carritoDeCompras)
             {
                 decimal subtotal = producto.PrecioUnitario * producto.Cantidad;
                 subtotal1 += subtotal;
 
                 // Agrega la información del producto al resumen en el formato deseado
-                resumen.AppendLine($"{producto.CodigoProducto,-10} {producto.Descripcion,-45} {producto.PrecioUnitario,-20:C2} {producto.Cantidad,-15} {subtotal,-10:C2}");
+                resumen.AppendLine($"{producto.CodigoProducto,-17} {producto.Descripcion,-43} {producto.PrecioUnitario,-25:C2} {producto.Cantidad,-15} {subtotal,-10:C2}");
             }
 
             iva = subtotal1 * 0.12M;
@@ -668,9 +649,9 @@ namespace ProyectoPrototipo_1._0
         }
 
 
-        public int ObtenerIdFacturaMasAlto()
+        public BigInteger ObtenerIdFacturaMasAlto()
         {
-            int idMasAlto = -1; // Valor predeterminado en caso de que no haya registros
+            BigInteger idMasAlto = -1; // Valor predeterminado en caso de que no haya registros
 
             using (SqlConnection connection = new SqlConnection(con))
             {
@@ -686,7 +667,7 @@ namespace ProyectoPrototipo_1._0
 
                         if (result != DBNull.Value)
                         {
-                            idMasAlto = Convert.ToInt32(result);
+                            idMasAlto = Convert.ToInt64(result); // Convertir a BigInteger en lugar de int
                         }
                     }
                 }
@@ -699,6 +680,7 @@ namespace ProyectoPrototipo_1._0
 
             return idMasAlto;
         }
+
 
         public int ObtenerIdListaProductosSeleccionadosMasAlto()
         {
@@ -733,7 +715,7 @@ namespace ProyectoPrototipo_1._0
         }
 
 
-
+        public String idFacturaManejable;
         private void button2_Click_1(object sender, EventArgs e)
         {
             string mensaje = "";
@@ -784,8 +766,11 @@ namespace ProyectoPrototipo_1._0
 
                 if (result == DialogResult.Yes)
                 {
-                    int idFactura = ObtenerIdFacturaMasAlto() + 1;
+                    BigInteger idFactura = ObtenerIdFacturaMasAlto() + 1;
+                    idFacturaManejable = idFactura + "";
                     int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1;
+
+                    MessageBox.Show(idFactura + "     " + idListaProducSelec);
 
                     using (SqlConnection connection = new SqlConnection(con))
                     {
@@ -803,7 +788,7 @@ namespace ProyectoPrototipo_1._0
 
                             using (SqlCommand cmd = new SqlCommand(insertFacturaQuery, connection))
                             {
-                                cmd.Parameters.AddWithValue("@idFactura", idFactura); // Utilizamos el ID calculado
+                                cmd.Parameters.AddWithValue("@idFactura", idFacturaManejable); // Utilizamos el ID calculado
                                 cmd.Parameters.AddWithValue("@fechaEmision", DateTime.Now); // Fecha actual
                                 cmd.Parameters.AddWithValue("@cedula", cedulaCliente);
                                 cmd.Parameters.AddWithValue("@subtotal", subtotalConDescuento);
@@ -812,6 +797,7 @@ namespace ProyectoPrototipo_1._0
                                 cmd.Parameters.AddWithValue("@total", total);
                                 cmd.Parameters.AddWithValue("@formaPago", formaPago);
 
+                                cmd.ExecuteNonQuery();
 
 
                                 // Insertar los productos del carrito en la tabla "ListaProductosSeleccionados"
@@ -823,7 +809,7 @@ namespace ProyectoPrototipo_1._0
                                     using (SqlCommand productoCmd = new SqlCommand(insertProductoQuery, connection))
                                     {
                                         productoCmd.Parameters.AddWithValue("@idListaProducSelec", idListaProducSelec);
-                                        productoCmd.Parameters.AddWithValue("@idFactura", idFactura);
+                                        productoCmd.Parameters.AddWithValue("@idFactura", idFacturaManejable);
                                         productoCmd.Parameters.AddWithValue("@idProducto", producto.CodigoProducto);
                                         productoCmd.Parameters.AddWithValue("@cantidad", producto.Cantidad);
                                         productoCmd.Parameters.AddWithValue("@precio", producto.PrecioUnitario);
@@ -832,11 +818,15 @@ namespace ProyectoPrototipo_1._0
 
                                         productoCmd.ExecuteNonQuery();
                                     }
+                                    idListaProducSelec++;
                                 }
                             }
 
                             // Mostrar un mensaje de éxito
                             MessageBox.Show("La factura se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            ConsultarFactura(label18);
+                            label24.Text = idFacturaManejable.ToString();
+
                         }
                         catch (Exception ex)
                         {
@@ -853,7 +843,99 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        public void ConsultarFactura(Label labelFactura)
+        {
+            // Comprobar si hay productos en el carrito de compras
+            if (carritoDeCompras.Count == 0)
+            {
+                labelFactura.Text = "El carrito de compras está vacío.";
+                return;
+            }
 
+            // Calcular el subtotal1, descuento, iva y total en función de los productos en el carrito
+            subtotal1 = carritoDeCompras.Sum(producto => producto.PrecioUnitario * producto.Cantidad);
+            // Asumiendo que ya tienes valores válidos para descuento, iva y formaPago
+            decimal descuentoDolares = descuento; // Ajusta esto según tu lógica
+            iva = subtotal1 * 0.12m; // 12% de IVA, ajusta según tus necesidades
+            total = subtotal1 + iva - descuentoDolares;
+
+            // Construir el texto de la factura
+            string facturaText = "Fecha emisión:       " + DateTime.Now.ToShortDateString() + "\n" +
+                                 "Datos del cliente\n" +
+                                "Cedula:           " + cedulaCliente + "\n\n" +
+                                 BuscarCliente2(cedulaCliente)+"\n"+
+                                 "Forma de pago:            " + formaPago + "\n\n" +
+                                 "Detalle\n" +
+                                 "Codigo     \tDescripcion         \tPrecio     \tCantidad     \tDescuento    \tSubtotal\n";
+
+            foreach (ProductoCarrito producto in carritoDeCompras)
+            {
+                facturaText += "  "+producto.CodigoProducto+"                  "+producto.Descripcion+"          "+producto.PrecioUnitario+"          "+producto.Cantidad+"         "+producto.PrecioUnitario * producto.Cantidad+"\n";
+            }
+
+            facturaText += "\nSubtotal:           " + subtotal1 + "\n" +
+                           "IVA 12%:            " + iva + "\n" +
+
+                           "________________________________\n"+
+                           "Total:              " + total;
+
+            // Mostrar la factura en el control Label
+            labelFactura.Text = facturaText;
+        }
+
+        private string BuscarCliente2(string cedula)
+        {
+            if (string.IsNullOrEmpty(cedula))
+            {
+                return "Cédula no proporcionada.";
+            }
+
+            string salida = "Cliente no encontrado.";
+
+            // Define la consulta SQL
+            string connectionString = con;
+            string query = "SELECT * FROM Cliente WHERE cedula = @Cedula";
+
+            using (SqlConnection connection = new SqlConnection(connectionString))
+            {
+                connection.Open();
+
+                using (SqlCommand cmd = new SqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@Cedula", cedula);
+
+                    using (SqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read()) // Verifica si se encontraron resultados
+                        {
+                            // Crea una instancia de Class_Cliente y asigna los valores desde el SqlDataReader
+                            Class_Cliente clienteEncontrado = new Class_Cliente
+                            {
+                                cedula = Convert.ToInt64(reader["cedula"]),
+                                tipo_persona = reader["tipo_persona"].ToString(),
+                                nombres_c = reader["nombres_c"].ToString(),
+                                apellidos_c = reader["apellidos_c"].ToString(),
+                                parroquia = reader["parroquia"].ToString(),
+                                direccion_c = reader["direccion_c"].ToString(),
+                                email_c = reader["email_c"].ToString(),
+                                telefono_c = reader["telefono_c"].ToString(),
+                                fecha_nac = Convert.ToDateTime(reader["fecha_nac"]),
+                                observaciones_c = reader["observaciones_c"].ToString()
+                            };
+
+                            // Puedes usar clienteEncontrado en tu aplicación
+                            // Por ejemplo, mostrar los datos en controles TextBox
+                            salida = "Nombre:             " + clienteEncontrado.nombres_c + " " + clienteEncontrado.apellidos_c + "\n";
+                            salida += "Teléfono:          " + clienteEncontrado.telefono_c + "\n";
+                            salida += "Email:             " + clienteEncontrado.email_c + "\n";
+                            salida += "Dirección:         " + clienteEncontrado.direccion_c + "\n";
+                        }
+                    }
+                }
+            }
+
+            return salida;
+        }
 
         private void radButtConsumidorfinal_CheckedChanged(object sender, EventArgs e)
         {
@@ -949,6 +1031,65 @@ namespace ProyectoPrototipo_1._0
 
         private void panel6_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+
+        private void bttConsultarFactura_Click(object sender, EventArgs e)
+        {
+            switch (atencion)
+            {
+                case 1:
+                    LlenarDataGridViewFacturas(dataGridViewFactura);
+
+                    DateTime fechaInicio = dateTimeInicio.Value;
+                    DateTime fechaFin = dateTimeFin.Value;
+                    ConsultarFacturasPorFechas(fechaInicio, fechaFin, dataGridViewFactura);
+
+                    break;
+                case 2:
+                    LlenarDataGridViewFacturas(dataGridViewFactura);
+
+                    ConsultarFacturaPorNumeroFactura(int.Parse(txtBoxNumeroFacturaConsultar.Text), dataGridViewFactura);
+                    break;
+                case 3:
+                    LlenarDataGridViewFacturas(dataGridViewFactura);
+
+                    ConsultarFacturaPorCedulaCliente(txtBoxConsultarNumeroCedula.Text, dataGridViewFactura);
+                    break;
+                default:
+                    break;
+            }
+        }
+        int atencion;
+        private void txtBoxNumeroFacturaConsultar_MouseClick(object sender, MouseEventArgs e)
+        {
+            atencion = 1;
+        }
+
+        private void txtBoxConsultarNumeroCedula_MouseClick(object sender, MouseEventArgs e)
+        {
+            atencion = 2;
+        }
+
+        private void dateTimeInicio_MouseLeave(object sender, EventArgs e)
+        {
+            atencion = 3;
+        }
+
+        private void dateTimeFin_MouseLeave(object sender, EventArgs e)
+        {
+            atencion = 3;
+        }
+
+        private void tabControl1_MouseClick(object sender, MouseEventArgs e)
+        {
+            LlenarDataGridViewFacturas(dataGridViewFactura);
+
+        }
+
+        private void tabControl1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            LlenarDataGridViewFacturas(dataGridViewFactura);
 
         }
     }
