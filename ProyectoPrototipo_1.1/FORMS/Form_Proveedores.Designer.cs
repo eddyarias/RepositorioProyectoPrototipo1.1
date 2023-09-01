@@ -104,6 +104,8 @@
             dataGridView1 = new DataGridView();
             label37 = new Label();
             button3 = new Button();
+            checkedListBox1 = new CheckedListBox();
+            checkedListBox2 = new CheckedListBox();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
@@ -127,7 +129,7 @@
             TCProveedores.Margin = new Padding(3, 4, 3, 4);
             TCProveedores.Name = "TCProveedores";
             TCProveedores.SelectedIndex = 0;
-            TCProveedores.Size = new Size(841, 289);
+            TCProveedores.Size = new Size(841, 328);
             TCProveedores.TabIndex = 0;
             // 
             // tabPage1
@@ -154,7 +156,7 @@
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(833, 256);
+            tabPage1.Size = new Size(833, 295);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar";
             tabPage1.UseVisualStyleBackColor = true;
@@ -331,7 +333,7 @@
             tabPage6.Location = new Point(4, 29);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(833, 256);
+            tabPage6.Size = new Size(833, 295);
             tabPage6.TabIndex = 3;
             tabPage6.Text = "Consultar";
             tabPage6.UseVisualStyleBackColor = true;
@@ -423,45 +425,37 @@
             // tabPage7
             // 
             tabPage7.Controls.Add(checkedListBox1);
+            tabPage7.Controls.Add(comboBox2);
             tabPage7.Controls.Add(button6);
-            tabPage7.Controls.Add(comboBox5);
-            tabPage7.Controls.Add(label26);
-            tabPage7.Controls.Add(textBox4);
-            tabPage7.Controls.Add(textBox6);
-            tabPage7.Controls.Add(label27);
-            tabPage7.Controls.Add(label28);
-            tabPage7.Controls.Add(button1);
-            tabPage7.Controls.Add(label29);
-            tabPage7.Controls.Add(textBox9);
-            tabPage7.Controls.Add(textBox12);
-            tabPage7.Controls.Add(label30);
-            tabPage7.Controls.Add(label31);
-            tabPage7.Controls.Add(label32);
-            tabPage7.Controls.Add(label33);
             tabPage7.Controls.Add(textBox16);
             tabPage7.Controls.Add(label34);
+            tabPage7.Controls.Add(comboBox5);
+            tabPage7.Controls.Add(textBox12);
+            tabPage7.Controls.Add(textBox6);
+            tabPage7.Controls.Add(label28);
+            tabPage7.Controls.Add(label29);
+            tabPage7.Controls.Add(label32);
             tabPage7.Controls.Add(label24);
+            tabPage7.Controls.Add(label31);
+            tabPage7.Controls.Add(label26);
             tabPage7.Controls.Add(label25);
+            tabPage7.Controls.Add(label33);
+            tabPage7.Controls.Add(textBox4);
+            tabPage7.Controls.Add(label30);
+            tabPage7.Controls.Add(button1);
+            tabPage7.Controls.Add(label27);
+            tabPage7.Controls.Add(textBox9);
             tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(833, 256);
+            tabPage7.Size = new Size(833, 295);
             tabPage7.TabIndex = 4;
-            tabPage7.Text = "Actualizar";
+            tabPage7.Text = "Actualizar/añadir";
             tabPage7.UseVisualStyleBackColor = true;
-            // 
-            // checkedListBox1
-            // 
-            checkedListBox1.FormattingEnabled = true;
-            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
-            checkedListBox1.Location = new Point(423, 115);
-            checkedListBox1.Name = "checkedListBox1";
-            checkedListBox1.Size = new Size(193, 70);
-            checkedListBox1.TabIndex = 50;
             // 
             // button6
             // 
-            button6.Location = new Point(303, 18);
+            button6.Location = new Point(303, 60);
             button6.Margin = new Padding(3, 4, 3, 4);
             button6.Name = "button6";
             button6.Size = new Size(93, 35);
@@ -473,7 +467,7 @@
             // 
             comboBox5.FormattingEnabled = true;
             comboBox5.Items.AddRange(new object[] { "Quito", "Guayaquil", "Cuenca", "Santo Domingo de los Colorados", "Machala", "Manta", "Portoviejo", "Loja", "Ambato", "Riobamba", "Esmeraldas", "Ibarra", "Quevedo", "Tulcán", "Latacunga", "Babahoyo", "Otavalo", "Santa Elena", "La Libertad", "San Lorenzo" });
-            comboBox5.Location = new Point(124, 163);
+            comboBox5.Location = new Point(124, 207);
             comboBox5.Name = "comboBox5";
             comboBox5.Size = new Size(163, 28);
             comboBox5.TabIndex = 47;
@@ -481,7 +475,7 @@
             // label26
             // 
             label26.AutoSize = true;
-            label26.Location = new Point(303, 115);
+            label26.Location = new Point(303, 159);
             label26.Name = "label26";
             label26.Size = new Size(120, 20);
             label26.TabIndex = 46;
@@ -490,7 +484,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(423, 69);
+            textBox4.Location = new Point(423, 113);
             textBox4.Margin = new Padding(3, 4, 3, 4);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(151, 27);
@@ -499,7 +493,7 @@
             // 
             // textBox6
             // 
-            textBox6.Location = new Point(124, 203);
+            textBox6.Location = new Point(124, 247);
             textBox6.Margin = new Padding(3, 4, 3, 4);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(163, 27);
@@ -508,7 +502,7 @@
             // label27
             // 
             label27.AutoSize = true;
-            label27.Location = new Point(341, 76);
+            label27.Location = new Point(341, 120);
             label27.Name = "label27";
             label27.Size = new Size(76, 20);
             label27.TabIndex = 43;
@@ -518,7 +512,7 @@
             // label28
             // 
             label28.AutoSize = true;
-            label28.Location = new Point(48, 207);
+            label28.Location = new Point(48, 251);
             label28.Name = "label28";
             label28.Size = new Size(75, 20);
             label28.TabIndex = 42;
@@ -526,7 +520,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(423, 200);
+            button1.Location = new Point(423, 244);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(88, 35);
@@ -538,7 +532,7 @@
             // label29
             // 
             label29.AutoSize = true;
-            label29.Location = new Point(57, 162);
+            label29.Location = new Point(57, 206);
             label29.Name = "label29";
             label29.Size = new Size(59, 20);
             label29.TabIndex = 40;
@@ -546,7 +540,7 @@
             // 
             // textBox9
             // 
-            textBox9.Location = new Point(118, 111);
+            textBox9.Location = new Point(118, 155);
             textBox9.Margin = new Padding(3, 4, 3, 4);
             textBox9.Name = "textBox9";
             textBox9.Size = new Size(169, 27);
@@ -554,16 +548,17 @@
             // 
             // textBox12
             // 
-            textBox12.Location = new Point(118, 69);
+            textBox12.Location = new Point(118, 113);
             textBox12.Margin = new Padding(3, 4, 3, 4);
             textBox12.Name = "textBox12";
+            textBox12.ReadOnly = true;
             textBox12.Size = new Size(169, 27);
             textBox12.TabIndex = 38;
             // 
             // label30
             // 
             label30.AutoSize = true;
-            label30.Location = new Point(59, 111);
+            label30.Location = new Point(59, 155);
             label30.Name = "label30";
             label30.Size = new Size(49, 20);
             label30.TabIndex = 37;
@@ -572,7 +567,7 @@
             // label31
             // 
             label31.AutoSize = true;
-            label31.Location = new Point(52, 167);
+            label31.Location = new Point(52, 211);
             label31.Name = "label31";
             label31.Size = new Size(0, 20);
             label31.TabIndex = 36;
@@ -580,7 +575,7 @@
             // label32
             // 
             label32.AutoSize = true;
-            label32.Location = new Point(53, 119);
+            label32.Location = new Point(53, 163);
             label32.Name = "label32";
             label32.Size = new Size(0, 20);
             label32.TabIndex = 35;
@@ -588,7 +583,7 @@
             // label33
             // 
             label33.AutoSize = true;
-            label33.Location = new Point(13, 76);
+            label33.Location = new Point(13, 120);
             label33.Name = "label33";
             label33.Size = new Size(95, 20);
             label33.TabIndex = 34;
@@ -614,7 +609,7 @@
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(63, 121);
+            label24.Location = new Point(63, 165);
             label24.Name = "label24";
             label24.Size = new Size(0, 20);
             label24.TabIndex = 29;
@@ -622,7 +617,7 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(57, 129);
+            label25.Location = new Point(57, 173);
             label25.Name = "label25";
             label25.Size = new Size(0, 20);
             label25.TabIndex = 28;
@@ -634,7 +629,7 @@
             tabPage8.Controls.Add(label35);
             tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(833, 256);
+            tabPage8.Size = new Size(833, 295);
             tabPage8.TabIndex = 5;
             tabPage8.Text = "Eliminar";
             tabPage8.UseVisualStyleBackColor = true;
@@ -682,7 +677,7 @@
             tabPage5.Margin = new Padding(3, 4, 3, 4);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3, 4, 3, 4);
-            tabPage5.Size = new Size(833, 256);
+            tabPage5.Size = new Size(833, 295);
             tabPage5.TabIndex = 2;
             tabPage5.Text = "Evaluación";
             tabPage5.UseVisualStyleBackColor = true;
@@ -789,7 +784,7 @@
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(833, 256);
+            tabPage2.Size = new Size(833, 295);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Historial de compras";
             tabPage2.UseVisualStyleBackColor = true;
@@ -874,6 +869,24 @@
             button3.TabIndex = 2;
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
+            // 
+            // checkedListBox1
+            // 
+            checkedListBox1.FormattingEnabled = true;
+            checkedListBox1.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox1.Location = new Point(423, 115);
+            checkedListBox1.Name = "checkedListBox1";
+            checkedListBox1.Size = new Size(193, 70);
+            checkedListBox1.TabIndex = 50;
+            // 
+            // checkedListBox2
+            // 
+            checkedListBox2.FormattingEnabled = true;
+            checkedListBox2.Items.AddRange(new object[] { "Efectivo", "Treansferencia Bancaria", "Trarjeta de Crédito" });
+            checkedListBox2.Location = new Point(434, 66);
+            checkedListBox2.Name = "checkedListBox2";
+            checkedListBox2.Size = new Size(193, 70);
+            checkedListBox2.TabIndex = 51;
             // 
             // Form_Proveedores
             // 
@@ -986,5 +999,6 @@
         private Button button3;
         private CheckedListBox checkedListBox2;
         private CheckedListBox checkedListBox1;
+        private ComboBox comboBox2;
     }
 }

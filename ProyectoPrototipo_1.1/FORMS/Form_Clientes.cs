@@ -24,7 +24,7 @@ namespace ProyectoPrototipo_1._0
 
         private void Form_Clientes_Load(object sender, EventArgs e)
         {
-            
+
 
             //dbContext.Cliente.Load();
             //dataGridView1.DataSource = dbContext.Cliente.Local.ToBindingList();
