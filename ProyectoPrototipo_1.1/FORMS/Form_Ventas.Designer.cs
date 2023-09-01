@@ -99,17 +99,13 @@
             tabPage5 = new TabPage();
             tabPage8 = new TabPage();
             dataGridViewFactura = new DataGridView();
-            tabControlConsultar = new TabControl();
-            tabPage9 = new TabPage();
             label40 = new Label();
             dateTimeFin = new DateTimePicker();
             label33 = new Label();
             dateTimeInicio = new DateTimePicker();
-            tabPage10 = new TabPage();
             label23 = new Label();
             label25 = new Label();
             txtBoxNumeroFacturaConsultar = new TextBox();
-            tabPage11 = new TabPage();
             label38 = new Label();
             label39 = new Label();
             txtBoxConsultarNumeroCedula = new TextBox();
@@ -143,6 +139,9 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
+            panel5 = new Panel();
+            panel6 = new Panel();
+            panel7 = new Panel();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -156,14 +155,13 @@
             tabPage5.SuspendLayout();
             tabPage8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).BeginInit();
-            tabControlConsultar.SuspendLayout();
-            tabPage9.SuspendLayout();
-            tabPage10.SuspendLayout();
-            tabPage11.SuspendLayout();
             tabPage6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
             tabPage7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).BeginInit();
+            panel5.SuspendLayout();
+            panel6.SuspendLayout();
+            panel7.SuspendLayout();
             SuspendLayout();
             // 
             // TabSecuencialVentas
@@ -477,11 +475,11 @@
             tabPage2.Controls.Add(label3);
             tabPage2.Controls.Add(label2);
             tabPage2.Controls.Add(label1);
-            tabPage2.Location = new Point(4, 27);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 646);
+            tabPage2.Size = new Size(1713, 644);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             tabPage2.UseVisualStyleBackColor = true;
@@ -895,12 +893,14 @@
             // 
             // tabPage8
             // 
+            tabPage8.Controls.Add(panel7);
+            tabPage8.Controls.Add(panel6);
+            tabPage8.Controls.Add(panel5);
             tabPage8.Controls.Add(dataGridViewFactura);
-            tabPage8.Controls.Add(tabControlConsultar);
             tabPage8.Controls.Add(bttConsultarFactura);
-            tabPage8.Location = new Point(4, 29);
+            tabPage8.Location = new Point(4, 27);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 708);
+            tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Consultar";
             tabPage8.UseVisualStyleBackColor = true;
@@ -915,36 +915,11 @@
             dataGridViewFactura.Size = new Size(1714, 267);
             dataGridViewFactura.TabIndex = 91;
             // 
-            // tabControlConsultar
-            // 
-            tabControlConsultar.Controls.Add(tabPage9);
-            tabControlConsultar.Controls.Add(tabPage10);
-            tabControlConsultar.Controls.Add(tabPage11);
-            tabControlConsultar.Location = new Point(461, 112);
-            tabControlConsultar.Name = "tabControlConsultar";
-            tabControlConsultar.SelectedIndex = 0;
-            tabControlConsultar.Size = new Size(673, 140);
-            tabControlConsultar.TabIndex = 90;
-            // 
-            // tabPage9
-            // 
-            tabPage9.Controls.Add(label40);
-            tabPage9.Controls.Add(dateTimeFin);
-            tabPage9.Controls.Add(label33);
-            tabPage9.Controls.Add(dateTimeInicio);
-            tabPage9.Location = new Point(4, 27);
-            tabPage9.Name = "tabPage9";
-            tabPage9.Padding = new Padding(3);
-            tabPage9.Size = new Size(665, 109);
-            tabPage9.TabIndex = 0;
-            tabPage9.Text = "Fecha";
-            tabPage9.UseVisualStyleBackColor = true;
-            // 
             // label40
             // 
             label40.AutoSize = true;
             label40.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label40.Location = new Point(44, 72);
+            label40.Location = new Point(45, 85);
             label40.Name = "label40";
             label40.Size = new Size(184, 17);
             label40.TabIndex = 89;
@@ -952,7 +927,7 @@
             // 
             // dateTimeFin
             // 
-            dateTimeFin.Location = new Point(234, 66);
+            dateTimeFin.Location = new Point(235, 79);
             dateTimeFin.Name = "dateTimeFin";
             dateTimeFin.Size = new Size(312, 25);
             dateTimeFin.TabIndex = 88;
@@ -961,7 +936,7 @@
             // 
             label33.AutoSize = true;
             label33.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label33.Location = new Point(20, 27);
+            label33.Location = new Point(21, 40);
             label33.Name = "label33";
             label33.Size = new Size(208, 17);
             label33.TabIndex = 87;
@@ -969,28 +944,15 @@
             // 
             // dateTimeInicio
             // 
-            dateTimeInicio.Location = new Point(234, 21);
+            dateTimeInicio.Location = new Point(235, 34);
             dateTimeInicio.Name = "dateTimeInicio";
             dateTimeInicio.Size = new Size(312, 25);
             dateTimeInicio.TabIndex = 86;
             // 
-            // tabPage10
-            // 
-            tabPage10.Controls.Add(label23);
-            tabPage10.Controls.Add(label25);
-            tabPage10.Controls.Add(txtBoxNumeroFacturaConsultar);
-            tabPage10.Location = new Point(4, 29);
-            tabPage10.Name = "tabPage10";
-            tabPage10.Padding = new Padding(3);
-            tabPage10.Size = new Size(665, 107);
-            tabPage10.TabIndex = 1;
-            tabPage10.Text = "#Factura";
-            tabPage10.UseVisualStyleBackColor = true;
-            // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(178, 45);
+            label23.Location = new Point(34, 60);
             label23.Name = "label23";
             label23.Size = new Size(184, 18);
             label23.TabIndex = 84;
@@ -999,36 +961,23 @@
             // label25
             // 
             label25.AutoSize = true;
-            label25.Location = new Point(252, 27);
+            label25.Location = new Point(134, 42);
             label25.Name = "label25";
             label25.Size = new Size(0, 18);
             label25.TabIndex = 82;
             // 
             // txtBoxNumeroFacturaConsultar
             // 
-            txtBoxNumeroFacturaConsultar.Location = new Point(353, 39);
+            txtBoxNumeroFacturaConsultar.Location = new Point(235, 54);
             txtBoxNumeroFacturaConsultar.Margin = new Padding(3, 4, 3, 4);
             txtBoxNumeroFacturaConsultar.Name = "txtBoxNumeroFacturaConsultar";
             txtBoxNumeroFacturaConsultar.Size = new Size(119, 25);
             txtBoxNumeroFacturaConsultar.TabIndex = 83;
             // 
-            // tabPage11
-            // 
-            tabPage11.Controls.Add(label38);
-            tabPage11.Controls.Add(label39);
-            tabPage11.Controls.Add(txtBoxConsultarNumeroCedula);
-            tabPage11.Location = new Point(4, 29);
-            tabPage11.Name = "tabPage11";
-            tabPage11.Padding = new Padding(3);
-            tabPage11.Size = new Size(665, 107);
-            tabPage11.TabIndex = 2;
-            tabPage11.Text = "#Cedula cliente";
-            tabPage11.UseVisualStyleBackColor = true;
-            // 
             // label38
             // 
             label38.AutoSize = true;
-            label38.Location = new Point(178, 45);
+            label38.Location = new Point(29, 56);
             label38.Name = "label38";
             label38.Size = new Size(176, 18);
             label38.TabIndex = 87;
@@ -1037,14 +986,14 @@
             // label39
             // 
             label39.AutoSize = true;
-            label39.Location = new Point(232, 35);
+            label39.Location = new Point(83, 46);
             label39.Name = "label39";
             label39.Size = new Size(0, 18);
             label39.TabIndex = 85;
             // 
             // txtBoxConsultarNumeroCedula
             // 
-            txtBoxConsultarNumeroCedula.Location = new Point(353, 39);
+            txtBoxConsultarNumeroCedula.Location = new Point(211, 53);
             txtBoxConsultarNumeroCedula.Margin = new Padding(3, 4, 3, 4);
             txtBoxConsultarNumeroCedula.Name = "txtBoxConsultarNumeroCedula";
             txtBoxConsultarNumeroCedula.Size = new Size(119, 25);
@@ -1052,7 +1001,7 @@
             // 
             // bttConsultarFactura
             // 
-            bttConsultarFactura.Location = new Point(1155, 157);
+            bttConsultarFactura.Location = new Point(1526, 242);
             bttConsultarFactura.Margin = new Padding(3, 4, 3, 4);
             bttConsultarFactura.Name = "bttConsultarFactura";
             bttConsultarFactura.Size = new Size(151, 63);
@@ -1323,6 +1272,41 @@
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
             // 
+            // panel5
+            // 
+            panel5.BorderStyle = BorderStyle.FixedSingle;
+            panel5.Controls.Add(label40);
+            panel5.Controls.Add(label33);
+            panel5.Controls.Add(dateTimeFin);
+            panel5.Controls.Add(dateTimeInicio);
+            panel5.Location = new Point(867, 199);
+            panel5.Name = "panel5";
+            panel5.Size = new Size(568, 125);
+            panel5.TabIndex = 92;
+            // 
+            // panel6
+            // 
+            panel6.BorderStyle = BorderStyle.FixedSingle;
+            panel6.Controls.Add(label23);
+            panel6.Controls.Add(txtBoxNumeroFacturaConsultar);
+            panel6.Controls.Add(label25);
+            panel6.Location = new Point(22, 199);
+            panel6.Name = "panel6";
+            panel6.Size = new Size(403, 125);
+            panel6.TabIndex = 93;
+            panel6.Paint += panel6_Paint;
+            // 
+            // panel7
+            // 
+            panel7.BorderStyle = BorderStyle.FixedSingle;
+            panel7.Controls.Add(label38);
+            panel7.Controls.Add(label39);
+            panel7.Controls.Add(txtBoxConsultarNumeroCedula);
+            panel7.Location = new Point(452, 199);
+            panel7.Name = "panel7";
+            panel7.Size = new Size(373, 125);
+            panel7.TabIndex = 94;
+            // 
             // Form_Ventas
             // 
             AutoScaleDimensions = new SizeF(8F, 18F);
@@ -1353,19 +1337,18 @@
             tabPage5.ResumeLayout(false);
             tabPage8.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewFactura).EndInit();
-            tabControlConsultar.ResumeLayout(false);
-            tabPage9.ResumeLayout(false);
-            tabPage9.PerformLayout();
-            tabPage10.ResumeLayout(false);
-            tabPage10.PerformLayout();
-            tabPage11.ResumeLayout(false);
-            tabPage11.PerformLayout();
             tabPage6.ResumeLayout(false);
             tabPage6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
             tabPage7.ResumeLayout(false);
             tabPage7.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView4).EndInit();
+            panel5.ResumeLayout(false);
+            panel5.PerformLayout();
+            panel6.ResumeLayout(false);
+            panel6.PerformLayout();
+            panel7.ResumeLayout(false);
+            panel7.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -1445,14 +1428,10 @@
         private Label label32;
         private DateTimePicker dateTimePicker1;
         private DataGridViewTextBoxColumn Column10;
-        private TabControl tabControlConsultar;
-        private TabPage tabPage9;
-        private TabPage tabPage10;
         private Label label33;
         private DateTimePicker dateTimeInicio;
         private Label label40;
         private DateTimePicker dateTimeFin;
-        private TabPage tabPage11;
         private Label label38;
         private Label label39;
         private TextBox txtBoxConsultarNumeroCedula;
@@ -1488,5 +1467,8 @@
         private CheckedListBox chLisBoxAgregarDescueno;
         private ComboBox comboBox1;
         private Label label46;
+        private Panel panel7;
+        private Panel panel6;
+        private Panel panel5;
     }
 }

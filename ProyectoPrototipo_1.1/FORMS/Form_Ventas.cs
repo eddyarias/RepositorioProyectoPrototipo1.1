@@ -9,6 +9,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
 
 namespace ProyectoPrototipo_1._0
@@ -619,7 +620,7 @@ namespace ProyectoPrototipo_1._0
                                 txtBdireccionCliente.Text = clienteEncontrado.direccion_c;
                                 txtBcorreoCliente.Text = clienteEncontrado.email_c;
 
-                                // ...
+                                Continuar.Enabled = true;
                             }
                             else
                             {
@@ -783,16 +784,19 @@ namespace ProyectoPrototipo_1._0
 
                 if (result == DialogResult.Yes)
                 {
+                    int idFactura = ObtenerIdFacturaMasAlto() + 1;
+                    int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1;
+
                     using (SqlConnection connection = new SqlConnection(con))
                     {
                         try
                         {
                             connection.Open();
 
-                            int idFactura = ObtenerIdFacturaMasAlto() + 1;
+
 
                             // Insertar una nueva factura en la tabla "Factura"
-                            string insertFacturaQuery = "INSERT INTO Factura (idFactura, fechaEmision, cedula,  subtotal, iva, descuentoTotalDolares, total, formaPago, estado) " +
+                            string insertFacturaQuery = "INSERT INTO Factura (idFactura, fechaEmision, cedula, subtotal, iva, descuentoTotalDolares, total, formaPago, estado) " +
                                                         "VALUES (@idFactura, @fechaEmision, @cedula,  @subtotal, @iva, @descuento, @total, @formaPago, 'Vigente');";
 
                             decimal subtotalConDescuento = subtotal1 - descuento;
@@ -809,11 +813,11 @@ namespace ProyectoPrototipo_1._0
                                 cmd.Parameters.AddWithValue("@formaPago", formaPago);
 
 
-                                int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1; 
+
                                 // Insertar los productos del carrito en la tabla "ListaProductosSeleccionados"
                                 foreach (ProductoCarrito producto in carritoDeCompras)
                                 {
-                                    string insertProductoQuery = "INSERT INTO ListaProductosSeleccionados (idListaProducSelec,idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares) " +
+                                    string insertProductoQuery = "INSERT INTO ListaProductosSeleccionados (idListaProducSelec, idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares) " +
                                                                 "VALUES (@idListaProducSelec,@idFactura, @idProducto, @cantidad, @precio, @subtotal, @descuentoDolares);";
 
                                     using (SqlCommand productoCmd = new SqlCommand(insertProductoQuery, connection))
@@ -839,7 +843,7 @@ namespace ProyectoPrototipo_1._0
                             MessageBox.Show($"Error al guardar la factura en la base de datos: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
 
-                        
+
                     }
 
                     TabSecuencialVentas.TabPages[1].Enabled = false;
@@ -941,6 +945,11 @@ namespace ProyectoPrototipo_1._0
 
             // Validate that the validation digit matches the last digit of the cedula
             return digitoValidador == ultimoDigito;
+        }
+
+        private void panel6_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

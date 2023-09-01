@@ -44,11 +44,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             string celular = txtBCelular.Text;
             DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
 
-            // Validate each field before attempting to save
-            
 
-
-            // Check if any validation failed
             if (!ValidateCedula(cedula)|| ValidateTipo(tipo)||ValidateNombres(nombres)||ValidateApellidos(apellidos)||ValidateDireccion(direccion)|| ValidateCorreo(correo)|| ValidateCelular(celular))
             {
                 MessageBox.Show("Corrija los campos invalidos antes de guardar.");
