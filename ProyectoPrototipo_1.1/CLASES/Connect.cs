@@ -17,14 +17,9 @@ namespace ProyectoPrototipo_1._0
         {
             this.usuario = usuario;
             this.pass = pass;
-            server = " DESKTOP-OUHSBBV";
-
+            server = "DESKTOP-PEKBI3D";
             bd = "db_farmacia";
-
-            con= "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
-            //con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
-            stringconnect = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
-
+            con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
         }
         //Connect Poaquiza
         //public Connect(string usuario, string pass)

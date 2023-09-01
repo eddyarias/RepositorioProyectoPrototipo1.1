@@ -177,3 +177,15 @@ select * from Factura;
 select * from ListaProductosSeleccionados;
 
 go
+
+create table Usuario(
+  CI varchar(10) not null primary key,
+  usuario varchar(30) not null,
+  contrasenia varchar(30) not null,
+  tipoDeUsuario nvarchar(30) not null
+)
+
+create table Parametro(
+	parametro varchar(30) not null primary key,
+	valor int not null
+)
