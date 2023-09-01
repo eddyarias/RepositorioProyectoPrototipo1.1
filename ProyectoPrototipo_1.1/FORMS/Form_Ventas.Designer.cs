@@ -58,6 +58,7 @@
             bttContinuarSelecProd = new Button();
             tabPage2 = new TabPage();
             panel8 = new Panel();
+            lblMensaje2 = new Label();
             txtBcedulaCliente = new TextBox();
             label1 = new Label();
             label2 = new Label();
@@ -132,11 +133,6 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            label29 = new Label();
-            label26 = new Label();
-            button4 = new Button();
-            button3 = new Button();
-            lblMensaje2 = new Label();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -492,6 +488,15 @@
             panel8.Name = "panel8";
             panel8.Size = new Size(653, 454);
             panel8.TabIndex = 28;
+            // 
+            // lblMensaje2
+            // 
+            lblMensaje2.AutoSize = true;
+            lblMensaje2.Location = new Point(193, 85);
+            lblMensaje2.Name = "lblMensaje2";
+            lblMensaje2.Size = new Size(16, 18);
+            lblMensaje2.TabIndex = 14;
+            lblMensaje2.Text = ".";
             // 
             // txtBcedulaCliente
             // 
@@ -861,9 +866,9 @@
             tabPage8.Controls.Add(label19);
             tabPage8.Controls.Add(label17);
             tabPage8.Controls.Add(dataGridViewFactura);
-            tabPage8.Location = new Point(4, 29);
+            tabPage8.Location = new Point(4, 27);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 708);
+            tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Lista de ventas";
             tabPage8.UseVisualStyleBackColor = true;
@@ -1086,11 +1091,11 @@
             // 
             dataGridViewFactura.BackgroundColor = Color.White;
             dataGridViewFactura.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewFactura.Location = new Point(165, 373);
+            dataGridViewFactura.Location = new Point(246, 390);
             dataGridViewFactura.Name = "dataGridViewFactura";
             dataGridViewFactura.RowHeadersWidth = 51;
             dataGridViewFactura.RowTemplate.Height = 29;
-            dataGridViewFactura.Size = new Size(1479, 267);
+            dataGridViewFactura.Size = new Size(1234, 267);
             dataGridViewFactura.TabIndex = 91;
             dataGridViewFactura.CellContentClick += dataGridViewFactura_CellContentClick;
             dataGridViewFactura.CellContentDoubleClick += dataGridViewFactura_CellContentDoubleClick;
@@ -1249,35 +1254,6 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
-            // 
-            // lblMensaje2
-            // 
-            lblMensaje2.AutoSize = true;
-            lblMensaje2.Location = new Point(193, 85);
-            lblMensaje2.Name = "lblMensaje2";
-            lblMensaje2.Size = new Size(16, 18);
-            lblMensaje2.TabIndex = 14;
-            lblMensaje2.Text = ".";
-            // 
-            // button4
-            // 
-            button4.Location = new Point(1240, 572);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(143, 66);
-            button4.TabIndex = 23;
-            button4.Text = "Imprimir";
-            button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            button3.Location = new Point(1404, 572);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(143, 66);
-            button3.TabIndex = 24;
-            button3.Text = "Enviar al correo";
-            button3.UseVisualStyleBackColor = true;
             // 
             // Form_Ventas
             // 
