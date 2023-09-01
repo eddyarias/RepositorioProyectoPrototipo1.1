@@ -30,6 +30,15 @@
         {
             clientesTabControl = new TabControl();
             registrarTabPage = new TabPage();
+            lblerrorFechaNacimiento = new Label();
+            lblerrorEstadoCivil = new Label();
+            lblerrorEmail = new Label();
+            lblerrorCelular = new Label();
+            lblerrorDireccion = new Label();
+            lblerrorApellidos = new Label();
+            lblerrorNombres = new Label();
+            lblerrorTipo = new Label();
+            lblerrorCedula = new Label();
             comboBoxTipoPersona = new ComboBox();
             Tipo = new Label();
             label5 = new Label();
@@ -74,14 +83,23 @@
             // clientesTabControl
             // 
             clientesTabControl.Controls.Add(registrarTabPage);
-            clientesTabControl.Location = new Point(39, 31);
+            clientesTabControl.Location = new Point(37, 12);
             clientesTabControl.Name = "clientesTabControl";
             clientesTabControl.SelectedIndex = 0;
-            clientesTabControl.Size = new Size(500, 600);
+            clientesTabControl.Size = new Size(500, 817);
             clientesTabControl.TabIndex = 43;
             // 
             // registrarTabPage
             // 
+            registrarTabPage.Controls.Add(lblerrorFechaNacimiento);
+            registrarTabPage.Controls.Add(lblerrorEstadoCivil);
+            registrarTabPage.Controls.Add(lblerrorEmail);
+            registrarTabPage.Controls.Add(lblerrorCelular);
+            registrarTabPage.Controls.Add(lblerrorDireccion);
+            registrarTabPage.Controls.Add(lblerrorApellidos);
+            registrarTabPage.Controls.Add(lblerrorNombres);
+            registrarTabPage.Controls.Add(lblerrorTipo);
+            registrarTabPage.Controls.Add(lblerrorCedula);
             registrarTabPage.Controls.Add(comboBoxTipoPersona);
             registrarTabPage.Controls.Add(Tipo);
             registrarTabPage.Controls.Add(label5);
@@ -113,24 +131,106 @@
             registrarTabPage.Location = new Point(4, 29);
             registrarTabPage.Name = "registrarTabPage";
             registrarTabPage.Padding = new Padding(3);
-            registrarTabPage.Size = new Size(492, 567);
+            registrarTabPage.Size = new Size(492, 784);
             registrarTabPage.TabIndex = 0;
             registrarTabPage.Text = "Registrar";
             registrarTabPage.UseVisualStyleBackColor = true;
+            // 
+            // lblerrorFechaNacimiento
+            // 
+            lblerrorFechaNacimiento.AutoSize = true;
+            lblerrorFechaNacimiento.Location = new Point(168, 667);
+            lblerrorFechaNacimiento.Name = "lblerrorFechaNacimiento";
+            lblerrorFechaNacimiento.Size = new Size(12, 20);
+            lblerrorFechaNacimiento.TabIndex = 62;
+            lblerrorFechaNacimiento.Text = ".";
+            // 
+            // lblerrorEstadoCivil
+            // 
+            lblerrorEstadoCivil.AutoSize = true;
+            lblerrorEstadoCivil.Location = new Point(168, 587);
+            lblerrorEstadoCivil.Name = "lblerrorEstadoCivil";
+            lblerrorEstadoCivil.Size = new Size(12, 20);
+            lblerrorEstadoCivil.TabIndex = 61;
+            lblerrorEstadoCivil.Text = ".";
+            // 
+            // lblerrorEmail
+            // 
+            lblerrorEmail.AutoSize = true;
+            lblerrorEmail.Location = new Point(168, 506);
+            lblerrorEmail.Name = "lblerrorEmail";
+            lblerrorEmail.Size = new Size(12, 20);
+            lblerrorEmail.TabIndex = 60;
+            lblerrorEmail.Text = ".";
+            // 
+            // lblerrorCelular
+            // 
+            lblerrorCelular.AutoSize = true;
+            lblerrorCelular.Location = new Point(168, 426);
+            lblerrorCelular.Name = "lblerrorCelular";
+            lblerrorCelular.Size = new Size(12, 20);
+            lblerrorCelular.TabIndex = 59;
+            lblerrorCelular.Text = ".";
+            // 
+            // lblerrorDireccion
+            // 
+            lblerrorDireccion.AutoSize = true;
+            lblerrorDireccion.Location = new Point(168, 346);
+            lblerrorDireccion.Name = "lblerrorDireccion";
+            lblerrorDireccion.Size = new Size(12, 20);
+            lblerrorDireccion.TabIndex = 58;
+            lblerrorDireccion.Text = ".";
+            // 
+            // lblerrorApellidos
+            // 
+            lblerrorApellidos.AutoSize = true;
+            lblerrorApellidos.Location = new Point(168, 272);
+            lblerrorApellidos.Name = "lblerrorApellidos";
+            lblerrorApellidos.Size = new Size(12, 20);
+            lblerrorApellidos.TabIndex = 57;
+            lblerrorApellidos.Text = ".";
+            // 
+            // lblerrorNombres
+            // 
+            lblerrorNombres.AutoSize = true;
+            lblerrorNombres.Location = new Point(168, 186);
+            lblerrorNombres.Name = "lblerrorNombres";
+            lblerrorNombres.Size = new Size(12, 20);
+            lblerrorNombres.TabIndex = 56;
+            lblerrorNombres.Text = ".";
+            // 
+            // lblerrorTipo
+            // 
+            lblerrorTipo.AutoSize = true;
+            lblerrorTipo.Location = new Point(168, 105);
+            lblerrorTipo.Name = "lblerrorTipo";
+            lblerrorTipo.Size = new Size(12, 20);
+            lblerrorTipo.TabIndex = 55;
+            lblerrorTipo.Text = ".";
+            // 
+            // lblerrorCedula
+            // 
+            lblerrorCedula.AutoSize = true;
+            lblerrorCedula.Location = new Point(168, 20);
+            lblerrorCedula.Name = "lblerrorCedula";
+            lblerrorCedula.Size = new Size(12, 20);
+            lblerrorCedula.TabIndex = 54;
+            lblerrorCedula.Text = ".";
             // 
             // comboBoxTipoPersona
             // 
             comboBoxTipoPersona.FormattingEnabled = true;
             comboBoxTipoPersona.Items.AddRange(new object[] { "Persona Natural", "Persona Jurídica" });
-            comboBoxTipoPersona.Location = new Point(154, 99);
+            comboBoxTipoPersona.Location = new Point(168, 130);
             comboBoxTipoPersona.Name = "comboBoxTipoPersona";
             comboBoxTipoPersona.Size = new Size(151, 28);
             comboBoxTipoPersona.TabIndex = 53;
+            comboBoxTipoPersona.Leave += comboBoxTipoPersona_Leave;
             // 
             // Tipo
             // 
             Tipo.AutoSize = true;
-            Tipo.Location = new Point(97, 107);
+            Tipo.Location = new Point(120, 133);
             Tipo.Name = "Tipo";
             Tipo.Size = new Size(42, 20);
             Tipo.TabIndex = 52;
@@ -148,14 +248,14 @@
             // 
             comboBEstadoCivil.FormattingEnabled = true;
             comboBEstadoCivil.Items.AddRange(new object[] { "Soltero(a)", "Casado(a)", "Divorciado(a)" });
-            comboBEstadoCivil.Location = new Point(154, 348);
+            comboBEstadoCivil.Location = new Point(168, 610);
             comboBEstadoCivil.Name = "comboBEstadoCivil";
             comboBEstadoCivil.Size = new Size(151, 28);
             comboBEstadoCivil.TabIndex = 49;
             // 
             // dateTimePickerFechaNacimiento
             // 
-            dateTimePickerFechaNacimiento.Location = new Point(154, 396);
+            dateTimePickerFechaNacimiento.Location = new Point(168, 690);
             dateTimePickerFechaNacimiento.Name = "dateTimePickerFechaNacimiento";
             dateTimePickerFechaNacimiento.Size = new Size(285, 27);
             dateTimePickerFechaNacimiento.TabIndex = 48;
@@ -163,43 +263,43 @@
             // label17
             // 
             label17.AutoSize = true;
-            label17.Location = new Point(101, 65);
+            label17.Location = new Point(117, 47);
             label17.Name = "label17";
             label17.Size = new Size(45, 20);
             label17.TabIndex = 40;
-            label17.Text = "CI: (*)";
+            label17.Text = "CI (*):";
             // 
             // label18
             // 
             label18.AutoSize = true;
-            label18.Location = new Point(53, 154);
+            label18.Location = new Point(69, 213);
             label18.Name = "label18";
             label18.Size = new Size(93, 20);
             label18.TabIndex = 41;
-            label18.Text = "Nombres: (*)";
+            label18.Text = "Nombres (*):";
             // 
             // label19
             // 
             label19.AutoSize = true;
-            label19.Location = new Point(53, 196);
+            label19.Location = new Point(67, 299);
             label19.Name = "label19";
             label19.Size = new Size(95, 20);
             label19.TabIndex = 42;
-            label19.Text = "Apellidos: (*)";
+            label19.Text = "Apellidos (*):";
             // 
             // label20
             // 
             label20.AutoSize = true;
-            label20.Location = new Point(99, 314);
+            label20.Location = new Point(27, 533);
             label20.Name = "label20";
-            label20.Size = new Size(49, 20);
+            label20.Size = new Size(135, 20);
             label20.TabIndex = 45;
-            label20.Text = "Email:";
+            label20.Text = "Correo electronico:";
             // 
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(73, 236);
+            label21.Location = new Point(87, 373);
             label21.Name = "label21";
             label21.Size = new Size(75, 20);
             label21.TabIndex = 44;
@@ -208,25 +308,25 @@
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(90, 276);
+            label22.Location = new Point(92, 453);
             label22.Name = "label22";
-            label22.Size = new Size(58, 20);
+            label22.Size = new Size(70, 20);
             label22.TabIndex = 46;
-            label22.Text = "Celular:";
+            label22.Text = "Teléfono:";
             // 
             // label23
             // 
             label23.AutoSize = true;
-            label23.Location = new Point(45, 401);
+            label23.Location = new Point(31, 695);
             label23.Name = "label23";
-            label23.Size = new Size(103, 20);
+            label23.Size = new Size(131, 20);
             label23.TabIndex = 47;
-            label23.Text = "F. Nacimiento:";
+            label23.Text = "Fecha Nacimiento:";
             // 
             // label24
             // 
             label24.AutoSize = true;
-            label24.Location = new Point(59, 356);
+            label24.Location = new Point(73, 613);
             label24.Name = "label24";
             label24.Size = new Size(89, 20);
             label24.TabIndex = 43;
@@ -235,23 +335,24 @@
             // codeLabel
             // 
             codeLabel.AutoSize = true;
-            codeLabel.Location = new Point(108, 65);
+            codeLabel.Location = new Point(108, 44);
             codeLabel.Name = "codeLabel";
             codeLabel.Size = new Size(0, 20);
             codeLabel.TabIndex = 3;
             // 
             // txtBCedula
             // 
-            txtBCedula.Location = new Point(154, 54);
+            txtBCedula.Location = new Point(168, 44);
             txtBCedula.Margin = new Padding(3, 4, 3, 4);
             txtBCedula.Multiline = true;
             txtBCedula.Name = "txtBCedula";
             txtBCedula.Size = new Size(165, 31);
             txtBCedula.TabIndex = 4;
+            txtBCedula.Leave += txtBCedula_Leave;
             // 
             // button4
             // 
-            button4.Location = new Point(205, 459);
+            button4.Location = new Point(191, 739);
             button4.Margin = new Padding(3, 4, 3, 4);
             button4.Name = "button4";
             button4.Size = new Size(114, 38);
@@ -278,35 +379,38 @@
             // 
             // txtBNombres
             // 
-            txtBNombres.Location = new Point(154, 145);
+            txtBNombres.Location = new Point(168, 210);
             txtBNombres.Margin = new Padding(3, 4, 3, 4);
             txtBNombres.Multiline = true;
             txtBNombres.Name = "txtBNombres";
             txtBNombres.Size = new Size(285, 29);
             txtBNombres.TabIndex = 15;
+            txtBNombres.Leave += txtBNombres_Leave;
             // 
             // txtBApellidos
             // 
-            txtBApellidos.Location = new Point(154, 185);
+            txtBApellidos.Location = new Point(168, 296);
             txtBApellidos.Margin = new Padding(3, 4, 3, 4);
             txtBApellidos.Multiline = true;
             txtBApellidos.Name = "txtBApellidos";
             txtBApellidos.Size = new Size(285, 29);
             txtBApellidos.TabIndex = 16;
+            txtBApellidos.Leave += txtBApellidos_Leave;
             // 
             // txtBEmail
             // 
-            txtBEmail.Location = new Point(154, 305);
+            txtBEmail.Location = new Point(168, 530);
             txtBEmail.Margin = new Padding(3, 4, 3, 4);
             txtBEmail.Multiline = true;
             txtBEmail.Name = "txtBEmail";
             txtBEmail.Size = new Size(285, 29);
             txtBEmail.TabIndex = 25;
+            txtBEmail.Leave += txtBEmail_Leave;
             // 
             // label8
             // 
             label8.AutoSize = true;
-            label8.Location = new Point(103, 316);
+            label8.Location = new Point(117, 525);
             label8.Name = "label8";
             label8.Size = new Size(0, 20);
             label8.TabIndex = 10;
@@ -314,36 +418,38 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(80, 185);
+            label7.Location = new Point(80, 168);
             label7.Name = "label7";
             label7.Size = new Size(0, 20);
             label7.TabIndex = 9;
             // 
             // txtBDireccion
             // 
-            txtBDireccion.Location = new Point(154, 225);
+            txtBDireccion.Location = new Point(168, 370);
             txtBDireccion.Margin = new Padding(3, 4, 3, 4);
             txtBDireccion.Multiline = true;
             txtBDireccion.Name = "txtBDireccion";
             txtBDireccion.Size = new Size(285, 29);
             txtBDireccion.TabIndex = 18;
+            txtBDireccion.Leave += txtBDireccion_Leave;
             // 
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(97, 276);
+            label1.Location = new Point(111, 462);
             label1.Name = "label1";
             label1.Size = new Size(0, 20);
             label1.TabIndex = 19;
             // 
             // txtBCelular
             // 
-            txtBCelular.Location = new Point(154, 265);
+            txtBCelular.Location = new Point(168, 450);
             txtBCelular.Margin = new Padding(3, 4, 3, 4);
             txtBCelular.Multiline = true;
             txtBCelular.Name = "txtBCelular";
             txtBCelular.Size = new Size(285, 29);
             txtBCelular.TabIndex = 20;
+            txtBCelular.Leave += txtBCelular_Leave;
             // 
             // label3
             // 
@@ -444,7 +550,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(582, 653);
+            ClientSize = new Size(582, 853);
             Controls.Add(clientesTabControl);
             Name = "Form_AgregarCliente";
             Text = "Form_AgregarCliente";
@@ -496,5 +602,14 @@
         private ComboBox comboBoxTipoPersona;
         private Label Tipo;
         private Label label5;
+        private Label lblerrorCedula;
+        private Label lblerrorFechaNacimiento;
+        private Label lblerrorEstadoCivil;
+        private Label lblerrorEmail;
+        private Label lblerrorCelular;
+        private Label lblerrorDireccion;
+        private Label lblerrorApellidos;
+        private Label lblerrorNombres;
+        private Label lblerrorTipo;
     }
 }
