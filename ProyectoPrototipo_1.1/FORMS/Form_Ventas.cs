@@ -52,6 +52,7 @@ namespace ProyectoPrototipo_1._0
         {
             public string Descripcion { get; set; }
             public decimal Precio { get; set; }
+            public int Cantidad { get; set; }
         }
         public class ProductoCarrito
         {
@@ -101,8 +102,10 @@ namespace ProyectoPrototipo_1._0
                     // Consulta SQL para obtener la información de los productos
                     string selectQuery = @"SELECT
                     codigo AS 'Código',
+                    cantidad  AS 'Cantidad',
                     descripcion AS 'Descripción',
                     precio_unitario AS 'Precio'
+                    
                 FROM
                     Producto;";
 
@@ -358,9 +361,16 @@ namespace ProyectoPrototipo_1._0
 
                 // Mostrar el formulario de cuadro de diálogo personalizado
                 DialogResult result = agregarProductoForm.ShowDialog();
+                while (agregarProductoForm.CantidadIngresada > productoInfo.Cantidad)
+                {
 
+                    MessageBox.Show($"No hay suficientes existencias disponibles. Stock {productoInfo.Cantidad}");
+                    result = agregarProductoForm.ShowDialog();
+
+                }
                 if (result == DialogResult.OK)
                 {
+
                     // El usuario hizo clic en "Aceptar" en el formulario de cuadro de diálogo
                     int cantidad = agregarProductoForm.CantidadIngresada;
 
@@ -428,7 +438,7 @@ namespace ProyectoPrototipo_1._0
                     connection.Open();
 
                     // Consulta SQL para obtener la descripción y el precio del producto por su código
-                    string sqlQuery = "SELECT descripcion, precio_unitario FROM Producto WHERE codigo = @CodigoProducto";
+                    string sqlQuery = "SELECT descripcion, precio_unitario, cantidad FROM Producto WHERE codigo = @CodigoProducto";
 
                     using (SqlCommand cmd = new SqlCommand(sqlQuery, connection))
                     {
@@ -442,7 +452,8 @@ namespace ProyectoPrototipo_1._0
                                 productoInfo = new ProductoInfo
                                 {
                                     Descripcion = reader["descripcion"].ToString(),
-                                    Precio = Convert.ToDecimal(reader["precio_unitario"])
+                                    Precio = Convert.ToDecimal(reader["precio_unitario"]),
+                                    Cantidad = Convert.ToInt32(reader["cantidad"])
                                 };
                             }
                         }
@@ -560,6 +571,7 @@ namespace ProyectoPrototipo_1._0
 
         private void BuscarCliente(string cedula)
         {
+
             if (!string.IsNullOrEmpty(cedula))
             {
                 // Define la consulta SQL
@@ -774,7 +786,7 @@ namespace ProyectoPrototipo_1._0
                 if (result == DialogResult.Yes)
                 {
                     BigInteger idFactura = ObtenerIdFacturaMasAlto() + 1;
-                    idFacturaManejable = idFactura + "";
+                    idFacturaManejable = "00" + idFactura + "";
                     int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1;
 
                     using (SqlConnection connection = new SqlConnection(con))

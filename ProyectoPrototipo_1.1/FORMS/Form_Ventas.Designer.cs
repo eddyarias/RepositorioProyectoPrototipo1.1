@@ -127,12 +127,12 @@
             label32 = new Label();
             diaCierre = new DateTimePicker();
             dataGridViewCierreCaja = new DataGridView();
+            Column8 = new DataGridViewTextBoxColumn();
+            Column9 = new DataGridViewTextBoxColumn();
             label37 = new Label();
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            Column8 = new DataGridViewTextBoxColumn();
-            Column9 = new DataGridViewTextBoxColumn();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -305,12 +305,13 @@
             dataGridViewProductos.AllowUserToAddRows = false;
             dataGridViewProductos.AllowUserToDeleteRows = false;
             dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProductos.Location = new Point(68, 203);
+            dataGridViewProductos.Location = new Point(33, 203);
             dataGridViewProductos.Name = "dataGridViewProductos";
             dataGridViewProductos.ReadOnly = true;
+            dataGridViewProductos.RowHeadersVisible = false;
             dataGridViewProductos.RowHeadersWidth = 51;
             dataGridViewProductos.RowTemplate.Height = 29;
-            dataGridViewProductos.Size = new Size(583, 359);
+            dataGridViewProductos.Size = new Size(680, 359);
             dataGridViewProductos.TabIndex = 21;
             dataGridViewProductos.CellContentDoubleClick += dataGridViewProductos_CellContentDoubleClick;
             // 
@@ -864,9 +865,9 @@
             tabPage8.Controls.Add(label19);
             tabPage8.Controls.Add(label17);
             tabPage8.Controls.Add(dataGridViewFactura);
-            tabPage8.Location = new Point(4, 29);
+            tabPage8.Location = new Point(4, 27);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 708);
+            tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Lista de ventas";
             tabPage8.UseVisualStyleBackColor = true;
@@ -1035,10 +1036,10 @@
             // 
             // txtBoxNumeroFacturaConsultar
             // 
-            txtBoxNumeroFacturaConsultar.Location = new Point(253, 32);
+            txtBoxNumeroFacturaConsultar.Location = new Point(215, 32);
             txtBoxNumeroFacturaConsultar.Margin = new Padding(3, 4, 3, 4);
             txtBoxNumeroFacturaConsultar.Name = "txtBoxNumeroFacturaConsultar";
-            txtBoxNumeroFacturaConsultar.Size = new Size(119, 25);
+            txtBoxNumeroFacturaConsultar.Size = new Size(173, 25);
             txtBoxNumeroFacturaConsultar.TabIndex = 83;
             // 
             // label25
@@ -1112,10 +1113,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 27);
+            tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 710);
+            tabPage7.Size = new Size(1763, 708);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
@@ -1199,6 +1200,20 @@
             dataGridViewCierreCaja.Size = new Size(1054, 245);
             dataGridViewCierreCaja.TabIndex = 31;
             // 
+            // Column8
+            // 
+            Column8.HeaderText = "Ingresos:";
+            Column8.MinimumWidth = 6;
+            Column8.Name = "Column8";
+            Column8.Width = 500;
+            // 
+            // Column9
+            // 
+            Column9.HeaderText = "Egresos:";
+            Column9.MinimumWidth = 6;
+            Column9.Name = "Column9";
+            Column9.Width = 500;
+            // 
             // label37
             // 
             label37.AutoSize = true;
@@ -1238,20 +1253,6 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
-            // 
-            // Column8
-            // 
-            Column8.HeaderText = "Ingresos:";
-            Column8.MinimumWidth = 6;
-            Column8.Name = "Column8";
-            Column8.Width = 500;
-            // 
-            // Column9
-            // 
-            Column9.HeaderText = "Egresos:";
-            Column9.MinimumWidth = 6;
-            Column9.Name = "Column9";
-            Column9.Width = 500;
             // 
             // Form_Ventas
             // 
