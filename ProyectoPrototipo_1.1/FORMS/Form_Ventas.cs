@@ -150,16 +150,6 @@ namespace ProyectoPrototipo_1._0
                     // Asigna los datos al DataGridView
                     dataGridView.DataSource = dataTable;
 
-                    // Verifica si la columna de botón "Anular" no existe antes de agregarla
-                    if (!dataGridView.Columns.Contains("Anular"))
-                    {
-                        // Agrega una columna de botón "Anular" al DataGridView
-                        DataGridViewButtonColumn buttonColumn = new DataGridViewButtonColumn();
-                        buttonColumn.HeaderText = "Anular";
-                        buttonColumn.Text = "Anular";
-                        buttonColumn.UseColumnTextForButtonValue = true;
-                        dataGridView.Columns.Add(buttonColumn);
-                    }
 
                     // Configura el modo de ajuste automático del ancho de las columnas
                     dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
@@ -473,7 +463,7 @@ namespace ProyectoPrototipo_1._0
         {
             if (this.dataGridViewProductos.Columns[e.ColumnIndex].Name == "Agregar")
             {
-                MessageBox.Show("HOla");
+
             }
         }
 
@@ -1296,34 +1286,90 @@ namespace ProyectoPrototipo_1._0
 
         private void dataGridViewFactura_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+
+
+        }
+
+        private void dataGridViewFactura_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.RowIndex >= 0)
             {
 
-                if (e.ColumnIndex == dataGridViewFactura.Columns["Anular"].Index)
+                // Obtén el valor de la celda en la primera columna de la fila actual
+                string numeroFactura = dataGridViewFactura[0, e.RowIndex].Value.ToString();
+
+                if (numeroFactura != null)
                 {
-                    // Obtén el valor de la celda en la primera columna de la fila actual
-                    string numeroFactura = dataGridViewFactura[1, e.RowIndex].Value.ToString();
 
-                    if (numeroFactura != null)
+                    // Muestra un cuadro de diálogo de confirmación antes de anular la factura
+                    DialogResult confirmResult = MessageBox.Show($"¿Seguro que deseas anular la factura #{numeroFactura}?", "Confirmar Anulación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                    if (confirmResult == DialogResult.Yes)
                     {
+                        // Llama a tu función de anulación de factura pasando el número de factura
+                        AnularFactura(numeroFactura.ToString());
 
-                        // Muestra un cuadro de diálogo de confirmación antes de anular la factura
-                        DialogResult confirmResult = MessageBox.Show($"¿Seguro que deseas anular la factura #{numeroFactura}?", "Confirmar Anulación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-                        if (confirmResult == DialogResult.Yes)
-                        {
-                            // Llama a tu función de anulación de factura pasando el número de factura
-                            AnularFactura(numeroFactura.ToString());
-
-                            // Refresca el DataGridView para actualizar los datos
-                            LlenarDataGridViewFacturas(dataGridViewFactura);
-                        }
+                        // Refresca el DataGridView para actualizar los datos
+                        LlenarDataGridViewFacturas(dataGridViewFactura);
                     }
-
                 }
 
-            }
 
+
+            }
+        }
+
+        private void dataGridViewProductos_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+
+                // Obtén el valor de la celda en la primera columna de la fila actual
+                int codigo = int.Parse(dataGridViewProductos[0, e.RowIndex].Value.ToString());
+
+                ProductoInfo productoInfo = ObtenerPrecioYDescripcionProducto(codigo);
+
+                if (productoInfo != null)
+                {
+                    // Crear una instancia del formulario de cuadro de diálogo personalizado
+                    AgregarProductoForm agregarProductoForm = new AgregarProductoForm();
+
+                    // Configurar las propiedades del formulario de acuerdo con los datos del producto
+                    agregarProductoForm.Descripcion = productoInfo.Descripcion;
+                    agregarProductoForm.Precio = productoInfo.Precio;
+
+                    // Mostrar el formulario de cuadro de diálogo personalizado
+                    DialogResult result = agregarProductoForm.ShowDialog();
+
+                    if (result == DialogResult.OK)
+                    {
+                        // El usuario hizo clic en "Aceptar" en el formulario de cuadro de diálogo
+                        int cantidad = agregarProductoForm.CantidadIngresada;
+
+                        // Crear un objeto ProductoCarrito para el producto seleccionado
+                        ProductoCarrito productoSeleccionado = new ProductoCarrito(this.codigoProducto, productoInfo.Descripcion, productoInfo.Precio, cantidad);
+
+
+                        // Agregar el producto al carrito
+                        carritoDeCompras.Add(productoSeleccionado);
+                        this.bttContinuarSelecProd.Enabled = true;
+
+                        // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
+                        ActualizarResumenCarrito();
+                    }
+                    else
+                    {
+                        // El usuario hizo clic en "Cancelar" o cerró el cuadro de diálogo sin aceptar
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Producto no encontrado.");
+                }
+
+
+
+            }
         }
     }
 }
