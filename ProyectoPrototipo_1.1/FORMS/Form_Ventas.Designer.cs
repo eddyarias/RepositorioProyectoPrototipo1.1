@@ -127,6 +127,8 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
+            button4 = new Button();
+            button3 = new Button();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -717,6 +719,8 @@
             // tabPage4
             // 
             tabPage4.BorderStyle = BorderStyle.Fixed3D;
+            tabPage4.Controls.Add(button3);
+            tabPage4.Controls.Add(button4);
             tabPage4.Controls.Add(panel2);
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttNuevaVenta);
@@ -1040,10 +1044,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 29);
+            tabPage7.Location = new Point(4, 27);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 708);
+            tabPage7.Size = new Size(1763, 710);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
@@ -1180,6 +1184,26 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
+            // 
+            // button4
+            // 
+            button4.Location = new Point(1240, 572);
+            button4.Margin = new Padding(3, 4, 3, 4);
+            button4.Name = "button4";
+            button4.Size = new Size(143, 66);
+            button4.TabIndex = 23;
+            button4.Text = "Imprimir";
+            button4.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            button3.Location = new Point(1404, 572);
+            button3.Margin = new Padding(3, 4, 3, 4);
+            button3.Name = "button3";
+            button3.Size = new Size(143, 66);
+            button3.TabIndex = 24;
+            button3.Text = "Enviar al correo";
+            button3.UseVisualStyleBackColor = true;
             // 
             // Form_Ventas
             // 
@@ -1331,5 +1355,7 @@
         private Label lblIngresos;
         private Label lblEgresos;
         private Label lblSaldoInicial;
+        private Button button3;
+        private Button button4;
     }
 }
