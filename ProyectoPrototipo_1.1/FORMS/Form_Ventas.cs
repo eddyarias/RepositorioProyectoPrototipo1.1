@@ -46,6 +46,8 @@ namespace ProyectoPrototipo_1._0
             LlenarDataGridViewFacturas(dataGridViewFactura);
             MostrarProductos(dataGridViewProductos);
             this.txtBcedulaCliente.Enabled = false;
+            TabSecuencialVentas.TabPages[1].Enabled = false;
+            TabSecuencialVentas.TabPages[2].Enabled = false;
         }
 
         private void MostrarProductos(DataGridView dataGridView)
@@ -503,6 +505,7 @@ namespace ProyectoPrototipo_1._0
 
         private void bttBuscarClienteBaseDatos_Click_1(object sender, EventArgs e)
         {
+            
             string cedula = txtBcedulaCliente.Text.Trim();
 
             if (!string.IsNullOrEmpty(cedula))
@@ -672,7 +675,8 @@ namespace ProyectoPrototipo_1._0
 
         private void bttContinuarSelecProd_Click(object sender, EventArgs e)
         {
-
+            TabSecuencialVentas.TabPages[0].Enabled = false;
+            TabSecuencialVentas.TabPages[1].Enabled = true;
         }
 
 
@@ -763,11 +767,11 @@ namespace ProyectoPrototipo_1._0
         {
             if (radButtFacturaDatos.Checked)
             {
-                radButtFacturaDatos.Enabled = true;
+                txtBcedulaCliente.Enabled = true;
             }
             else
             {
-                radButtFacturaDatos.Enabled = false;
+                txtBcedulaCliente.Enabled = false;
             }
         }
     }

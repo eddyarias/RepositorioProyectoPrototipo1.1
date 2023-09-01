@@ -30,6 +30,18 @@
         {
             TabSecuencialVentas = new TabControl();
             tabPage1 = new TabPage();
+            comboBox1 = new ComboBox();
+            chLisBoxAgregarDescueno = new CheckedListBox();
+            label44 = new Label();
+            label45 = new Label();
+            label42 = new Label();
+            label43 = new Label();
+            label41 = new Label();
+            lblDescuento = new Label();
+            label13 = new Label();
+            label30 = new Label();
+            label9 = new Label();
+            label11 = new Label();
             dataGridViewProductos = new DataGridView();
             label29 = new Label();
             label28 = new Label();
@@ -130,18 +142,6 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
-            label9 = new Label();
-            label11 = new Label();
-            label13 = new Label();
-            label30 = new Label();
-            lblDescuento = new Label();
-            label41 = new Label();
-            label42 = new Label();
-            label43 = new Label();
-            label44 = new Label();
-            label45 = new Label();
-            chLisBoxAgregarDescueno = new CheckedListBox();
-            comboBox1 = new ComboBox();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -179,6 +179,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BorderStyle = BorderStyle.Fixed3D;
             tabPage1.Controls.Add(comboBox1);
             tabPage1.Controls.Add(chLisBoxAgregarDescueno);
             tabPage1.Controls.Add(label44);
@@ -209,6 +210,114 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Seleccion Producto";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "1 %", "2 %", "3 %", "4 %", "5 %", "6 %", "7 %", "8 %", "9 %", "10 %", "11 %", "12 %", "13 %", "14 %", "15 %", "16 %", "17 %", "18 %", "19 %", "20 %", "21 %", "22 %", "23 %", "24 %", "25 %", "26 %", "27 %", "28 %", "29 %", "30 %", "31 %", "32 %", "33 %", "34 %", "35 %", "36 %", "37 %", "38 %", "39 %", "40 %", "41 %", "42 %", "43 %", "44 %", "45 %", "46 %", "47 %", "48 %", "49 %", "50 %", "51 %", "52 %", "53 %", "54 %", "55 %", "56 %", "57 %", "58 %", "59 %", "60 %", "61 %", "62 %", "63 %", "64 %", "65 %", "66 %", "67 %", "68 %", "69 %", "70 %", "71 %", "72 %", "73 %", "74 %", "75 %", "76 %", "77 %", "78 %", "79 %", "80 %", "81 %", "82 %", "83 %", "84 %", "85 %", "86 %", "87 %", "88 %", "89 %", "90 %", "91 %", "92 %", "93 %", "94 %", "95 %", "96 %", "97 %", "98 %", "99 %", "100 %" });
+            comboBox1.Location = new Point(917, 547);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(151, 26);
+            comboBox1.TabIndex = 33;
+            // 
+            // chLisBoxAgregarDescueno
+            // 
+            chLisBoxAgregarDescueno.FormattingEnabled = true;
+            chLisBoxAgregarDescueno.Items.AddRange(new object[] { "Agregar descuento" });
+            chLisBoxAgregarDescueno.Location = new Point(904, 497);
+            chLisBoxAgregarDescueno.Name = "chLisBoxAgregarDescueno";
+            chLisBoxAgregarDescueno.Size = new Size(175, 24);
+            chLisBoxAgregarDescueno.TabIndex = 32;
+            // 
+            // label44
+            // 
+            label44.AutoSize = true;
+            label44.Location = new Point(1623, 518);
+            label44.Name = "label44";
+            label44.Size = new Size(48, 18);
+            label44.TabIndex = 31;
+            label44.Text = "00.00";
+            // 
+            // label45
+            // 
+            label45.AutoSize = true;
+            label45.Location = new Point(1530, 518);
+            label45.Name = "label45";
+            label45.Size = new Size(80, 18);
+            label45.TabIndex = 30;
+            label45.Text = "SUBTOTAL:";
+            // 
+            // label42
+            // 
+            label42.AutoSize = true;
+            label42.Location = new Point(1585, 439);
+            label42.Name = "label42";
+            label42.Size = new Size(32, 18);
+            label42.TabIndex = 29;
+            label42.Text = "% )";
+            // 
+            // label43
+            // 
+            label43.AutoSize = true;
+            label43.Location = new Point(1563, 439);
+            label43.Name = "label43";
+            label43.Size = new Size(16, 18);
+            label43.TabIndex = 28;
+            label43.Text = "0";
+            // 
+            // label41
+            // 
+            label41.AutoSize = true;
+            label41.Location = new Point(1585, 475);
+            label41.Name = "label41";
+            label41.Size = new Size(32, 18);
+            label41.TabIndex = 27;
+            label41.Text = "% )";
+            // 
+            // lblDescuento
+            // 
+            lblDescuento.AutoSize = true;
+            lblDescuento.Location = new Point(1563, 475);
+            lblDescuento.Name = "lblDescuento";
+            lblDescuento.Size = new Size(16, 18);
+            lblDescuento.TabIndex = 26;
+            lblDescuento.Text = "0";
+            // 
+            // label13
+            // 
+            label13.AutoSize = true;
+            label13.Location = new Point(1623, 475);
+            label13.Name = "label13";
+            label13.Size = new Size(48, 18);
+            label13.TabIndex = 25;
+            label13.Text = "00.00";
+            // 
+            // label30
+            // 
+            label30.AutoSize = true;
+            label30.Location = new Point(1461, 475);
+            label30.Name = "label30";
+            label30.Size = new Size(96, 18);
+            label30.TabIndex = 24;
+            label30.Text = "DESCUENTO (";
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(1623, 439);
+            label9.Name = "label9";
+            label9.Size = new Size(48, 18);
+            label9.TabIndex = 23;
+            label9.Text = "00.00";
+            // 
+            // label11
+            // 
+            label11.AutoSize = true;
+            label11.Location = new Point(1509, 439);
+            label11.Name = "label11";
+            label11.Size = new Size(48, 18);
+            label11.TabIndex = 22;
+            label11.Text = "IVA (";
             // 
             // dataGridViewProductos
             // 
@@ -349,6 +458,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.BorderStyle = BorderStyle.Fixed3D;
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(bttBuscarClienteBaseDatos);
@@ -376,6 +486,7 @@
             // 
             // panel4
             // 
+            panel4.BorderStyle = BorderStyle.Fixed3D;
             panel4.Controls.Add(label7);
             panel4.Controls.Add(radButtConsumidorfinal);
             panel4.Controls.Add(radButtFacturaDatos);
@@ -387,7 +498,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(28, 48);
+            label7.Location = new Point(12, 24);
             label7.Name = "label7";
             label7.Size = new Size(104, 18);
             label7.TabIndex = 17;
@@ -396,7 +507,7 @@
             // radButtConsumidorfinal
             // 
             radButtConsumidorfinal.AutoSize = true;
-            radButtConsumidorfinal.Location = new Point(138, 69);
+            radButtConsumidorfinal.Location = new Point(122, 45);
             radButtConsumidorfinal.Name = "radButtConsumidorfinal";
             radButtConsumidorfinal.Size = new Size(157, 22);
             radButtConsumidorfinal.TabIndex = 19;
@@ -408,7 +519,7 @@
             // radButtFacturaDatos
             // 
             radButtFacturaDatos.AutoSize = true;
-            radButtFacturaDatos.Location = new Point(138, 97);
+            radButtFacturaDatos.Location = new Point(122, 73);
             radButtFacturaDatos.Name = "radButtFacturaDatos";
             radButtFacturaDatos.Size = new Size(165, 22);
             radButtFacturaDatos.TabIndex = 20;
@@ -419,6 +530,7 @@
             // 
             // panel3
             // 
+            panel3.BorderStyle = BorderStyle.Fixed3D;
             panel3.Controls.Add(radButtTarjetaCredito);
             panel3.Controls.Add(label6);
             panel3.Controls.Add(radButtTransferencia);
@@ -622,20 +734,22 @@
             // 
             // tabPage4
             // 
+            tabPage4.BorderStyle = BorderStyle.Fixed3D;
             tabPage4.Controls.Add(panel2);
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttImprimir);
             tabPage4.Controls.Add(bttEnviarCorreo);
-            tabPage4.Location = new Point(4, 29);
+            tabPage4.Location = new Point(4, 27);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 644);
+            tabPage4.Size = new Size(1713, 646);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
+            panel2.BorderStyle = BorderStyle.FixedSingle;
             panel2.Controls.Add(label16);
             panel2.Controls.Add(label22);
             panel2.Controls.Add(label17);
@@ -758,6 +872,7 @@
             // 
             // tabPage5
             // 
+            tabPage5.BorderStyle = BorderStyle.Fixed3D;
             tabPage5.Controls.Add(TabSecuencialVentas);
             tabPage5.Location = new Point(4, 27);
             tabPage5.Name = "tabPage5";
@@ -772,9 +887,9 @@
             tabPage8.Controls.Add(dataGridViewFactura);
             tabPage8.Controls.Add(tabControlConsultar);
             tabPage8.Controls.Add(bttConsultarFactura);
-            tabPage8.Location = new Point(4, 29);
+            tabPage8.Location = new Point(4, 27);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(1763, 708);
+            tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Consultar";
             tabPage8.UseVisualStyleBackColor = true;
@@ -941,10 +1056,10 @@
             tabPage6.Controls.Add(textBox20);
             tabPage6.Controls.Add(label26);
             tabPage6.Controls.Add(BBuscar);
-            tabPage6.Location = new Point(4, 29);
+            tabPage6.Location = new Point(4, 27);
             tabPage6.Name = "tabPage6";
             tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(1763, 708);
+            tabPage6.Size = new Size(1763, 710);
             tabPage6.TabIndex = 1;
             tabPage6.Text = "Anular";
             tabPage6.UseVisualStyleBackColor = true;
@@ -1071,10 +1186,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 29);
+            tabPage7.Location = new Point(4, 27);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 708);
+            tabPage7.Size = new Size(1763, 710);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
@@ -1196,114 +1311,6 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(1623, 439);
-            label9.Name = "label9";
-            label9.Size = new Size(48, 18);
-            label9.TabIndex = 23;
-            label9.Text = "00.00";
-            // 
-            // label11
-            // 
-            label11.AutoSize = true;
-            label11.Location = new Point(1509, 439);
-            label11.Name = "label11";
-            label11.Size = new Size(48, 18);
-            label11.TabIndex = 22;
-            label11.Text = "IVA (";
-            // 
-            // label13
-            // 
-            label13.AutoSize = true;
-            label13.Location = new Point(1623, 475);
-            label13.Name = "label13";
-            label13.Size = new Size(48, 18);
-            label13.TabIndex = 25;
-            label13.Text = "00.00";
-            // 
-            // label30
-            // 
-            label30.AutoSize = true;
-            label30.Location = new Point(1461, 475);
-            label30.Name = "label30";
-            label30.Size = new Size(96, 18);
-            label30.TabIndex = 24;
-            label30.Text = "DESCUENTO (";
-            // 
-            // lblDescuento
-            // 
-            lblDescuento.AutoSize = true;
-            lblDescuento.Location = new Point(1563, 475);
-            lblDescuento.Name = "lblDescuento";
-            lblDescuento.Size = new Size(16, 18);
-            lblDescuento.TabIndex = 26;
-            lblDescuento.Text = "0";
-            // 
-            // label41
-            // 
-            label41.AutoSize = true;
-            label41.Location = new Point(1585, 475);
-            label41.Name = "label41";
-            label41.Size = new Size(32, 18);
-            label41.TabIndex = 27;
-            label41.Text = "% )";
-            // 
-            // label42
-            // 
-            label42.AutoSize = true;
-            label42.Location = new Point(1585, 439);
-            label42.Name = "label42";
-            label42.Size = new Size(32, 18);
-            label42.TabIndex = 29;
-            label42.Text = "% )";
-            // 
-            // label43
-            // 
-            label43.AutoSize = true;
-            label43.Location = new Point(1563, 439);
-            label43.Name = "label43";
-            label43.Size = new Size(16, 18);
-            label43.TabIndex = 28;
-            label43.Text = "0";
-            // 
-            // label44
-            // 
-            label44.AutoSize = true;
-            label44.Location = new Point(1623, 518);
-            label44.Name = "label44";
-            label44.Size = new Size(48, 18);
-            label44.TabIndex = 31;
-            label44.Text = "00.00";
-            // 
-            // label45
-            // 
-            label45.AutoSize = true;
-            label45.Location = new Point(1530, 518);
-            label45.Name = "label45";
-            label45.Size = new Size(80, 18);
-            label45.TabIndex = 30;
-            label45.Text = "SUBTOTAL:";
-            // 
-            // chLisBoxAgregarDescueno
-            // 
-            chLisBoxAgregarDescueno.FormattingEnabled = true;
-            chLisBoxAgregarDescueno.Items.AddRange(new object[] { "Agregar descuento" });
-            chLisBoxAgregarDescueno.Location = new Point(904, 497);
-            chLisBoxAgregarDescueno.Name = "chLisBoxAgregarDescueno";
-            chLisBoxAgregarDescueno.Size = new Size(175, 24);
-            chLisBoxAgregarDescueno.TabIndex = 32;
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "1 %", "2 %", "3 %", "4 %", "5 %", "6 %", "7 %", "8 %", "9 %", "10 %", "11 %", "12 %", "13 %", "14 %", "15 %", "16 %", "17 %", "18 %", "19 %", "20 %", "21 %", "22 %", "23 %", "24 %", "25 %", "26 %", "27 %", "28 %", "29 %", "30 %", "31 %", "32 %", "33 %", "34 %", "35 %", "36 %", "37 %", "38 %", "39 %", "40 %", "41 %", "42 %", "43 %", "44 %", "45 %", "46 %", "47 %", "48 %", "49 %", "50 %", "51 %", "52 %", "53 %", "54 %", "55 %", "56 %", "57 %", "58 %", "59 %", "60 %", "61 %", "62 %", "63 %", "64 %", "65 %", "66 %", "67 %", "68 %", "69 %", "70 %", "71 %", "72 %", "73 %", "74 %", "75 %", "76 %", "77 %", "78 %", "79 %", "80 %", "81 %", "82 %", "83 %", "84 %", "85 %", "86 %", "87 %", "88 %", "89 %", "90 %", "91 %", "92 %", "93 %", "94 %", "95 %", "96 %", "97 %", "98 %", "99 %", "100 %" });
-            comboBox1.Location = new Point(917, 547);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(151, 26);
-            comboBox1.TabIndex = 33;
             // 
             // Form_Ventas
             // 
