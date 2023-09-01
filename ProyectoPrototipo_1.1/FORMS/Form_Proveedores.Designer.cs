@@ -95,24 +95,24 @@
             label14 = new Label();
             textBox13 = new TextBox();
             label13 = new Label();
-            tabPage2 = new TabPage();
-            dataGridView2 = new DataGridView();
-            label10 = new Label();
-            BEvaluacion = new Button();
-            textBox11 = new TextBox();
-            label9 = new Label();
             dataGridView1 = new DataGridView();
             label37 = new Label();
             button3 = new Button();
+            label9 = new Label();
+            tabPage2 = new TabPage();
+            dataGridView2 = new DataGridView();
+            BEvaluacion = new Button();
+            label10 = new Label();
+            textBox11 = new TextBox();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage6.SuspendLayout();
             tabPage7.SuspendLayout();
             tabPage8.SuspendLayout();
             tabPage5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // TCProveedores
@@ -779,71 +779,6 @@
             label13.Size = new Size(0, 20);
             label13.TabIndex = 4;
             // 
-            // tabPage2
-            // 
-            tabPage2.Controls.Add(dataGridView2);
-            tabPage2.Controls.Add(label10);
-            tabPage2.Controls.Add(BEvaluacion);
-            tabPage2.Controls.Add(textBox11);
-            tabPage2.Controls.Add(label9);
-            tabPage2.Location = new Point(4, 29);
-            tabPage2.Margin = new Padding(3, 4, 3, 4);
-            tabPage2.Name = "tabPage2";
-            tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(833, 295);
-            tabPage2.TabIndex = 1;
-            tabPage2.Text = "Historial de compras";
-            tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // dataGridView2
-            // 
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(238, 19);
-            dataGridView2.Margin = new Padding(3, 4, 3, 4);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 24;
-            dataGridView2.Size = new Size(575, 218);
-            dataGridView2.TabIndex = 35;
-            // 
-            // label10
-            // 
-            label10.AutoSize = true;
-            label10.Location = new Point(22, 19);
-            label10.Name = "label10";
-            label10.Size = new Size(60, 20);
-            label10.TabIndex = 34;
-            label10.Text = "RUC: (*)";
-            // 
-            // BEvaluacion
-            // 
-            BEvaluacion.BackColor = Color.Transparent;
-            BEvaluacion.Location = new Point(29, 69);
-            BEvaluacion.Margin = new Padding(3, 4, 3, 4);
-            BEvaluacion.Name = "BEvaluacion";
-            BEvaluacion.Size = new Size(168, 46);
-            BEvaluacion.TabIndex = 8;
-            BEvaluacion.Text = "Historial de compras";
-            BEvaluacion.UseVisualStyleBackColor = false;
-            BEvaluacion.Click += BEvaluacion_Click;
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(88, 12);
-            textBox11.Margin = new Padding(3, 4, 3, 4);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(119, 27);
-            textBox11.TabIndex = 7;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(55, 19);
-            label9.Name = "label9";
-            label9.Size = new Size(0, 20);
-            label9.TabIndex = 3;
-            // 
             // dataGridView1
             // 
             dataGridView1.BackgroundColor = Color.White;
@@ -876,6 +811,71 @@
             button3.Text = "button3";
             button3.UseVisualStyleBackColor = true;
             // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(55, 19);
+            label9.Name = "label9";
+            label9.Size = new Size(0, 20);
+            label9.TabIndex = 3;
+            // 
+            // tabPage2
+            // 
+            tabPage2.Controls.Add(dataGridView2);
+            tabPage2.Controls.Add(label10);
+            tabPage2.Controls.Add(BEvaluacion);
+            tabPage2.Controls.Add(textBox11);
+            tabPage2.Controls.Add(label9);
+            tabPage2.Location = new Point(4, 29);
+            tabPage2.Margin = new Padding(3, 4, 3, 4);
+            tabPage2.Name = "tabPage2";
+            tabPage2.Padding = new Padding(3, 4, 3, 4);
+            tabPage2.Size = new Size(833, 295);
+            tabPage2.TabIndex = 1;
+            tabPage2.Text = "Historial de compras";
+            tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView2
+            // 
+            dataGridView2.BackgroundColor = Color.White;
+            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView2.Location = new Point(234, 19);
+            dataGridView2.Margin = new Padding(3, 4, 3, 4);
+            dataGridView2.Name = "dataGridView2";
+            dataGridView2.RowHeadersWidth = 51;
+            dataGridView2.RowTemplate.Height = 24;
+            dataGridView2.Size = new Size(575, 218);
+            dataGridView2.TabIndex = 35;
+            // 
+            // BEvaluacion
+            // 
+            BEvaluacion.BackColor = Color.Transparent;
+            BEvaluacion.Location = new Point(29, 69);
+            BEvaluacion.Margin = new Padding(3, 4, 3, 4);
+            BEvaluacion.Name = "BEvaluacion";
+            BEvaluacion.Size = new Size(168, 46);
+            BEvaluacion.TabIndex = 8;
+            BEvaluacion.Text = "Historial de compras";
+            BEvaluacion.UseVisualStyleBackColor = false;
+            BEvaluacion.Click += BEvaluacion_Click;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Location = new Point(22, 19);
+            label10.Name = "label10";
+            label10.Size = new Size(60, 20);
+            label10.TabIndex = 34;
+            label10.Text = "RUC: (*)";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(88, 12);
+            textBox11.Margin = new Padding(3, 4, 3, 4);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(119, 27);
+            textBox11.TabIndex = 7;
+            // 
             // Form_Proveedores
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -901,10 +901,10 @@
             tabPage8.PerformLayout();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -914,7 +914,6 @@
         private TabControl TCProveedores;
         private TabPage tabPage1;
         private DataGridView dataGridView1;
-        private TabPage tabPage2;
         private Label label6;
         private TextBox textBox5;
         private TextBox textBox2;
@@ -931,9 +930,6 @@
         private Label label7;
         private Label label12;
         private Label label11;
-        private Button BEvaluacion;
-        private TextBox textBox11;
-        private Label label9;
         private TabPage tabPage5;
         private TextBox textBox13;
         private Label label13;
@@ -980,13 +976,17 @@
         private Label label15;
         private Label label14;
         private Label label36;
-        private DataGridView dataGridView2;
-        private Label label10;
         private Button button2;
         private Label label37;
         private Button button3;
         private CheckedListBox checkedListBox2;
         private CheckedListBox checkedListBox1;
         private ComboBox comboBox2;
+        private TabPage tabPage2;
+        private DataGridView dataGridView2;
+        private Label label10;
+        private Button BEvaluacion;
+        private TextBox textBox11;
+        private Label label9;
     }
 }
