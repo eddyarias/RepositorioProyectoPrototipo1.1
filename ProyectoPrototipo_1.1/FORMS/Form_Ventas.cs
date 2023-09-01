@@ -45,6 +45,7 @@ namespace ProyectoPrototipo_1._0
             this.connect = connect;
             LlenarDataGridViewFacturas(dataGridViewFactura);
             MostrarProductos(dataGridViewProductos);
+            this.txtBcedulaCliente.Enabled = false;
         }
 
         private void MostrarProductos(DataGridView dataGridView)
@@ -669,6 +670,106 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
+        private void bttContinuarSelecProd_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+
+
+            String mensaje = "";
+            Boolean esNecesarioMensaje = false;
+
+            string formaPago;
+
+            if (radButtEfectivo.Checked)
+            {
+                formaPago = radButtEfectivo.Text;
+            }
+            else
+            {
+                if (radButtTarjeDeb.Checked)
+                {
+                    formaPago = radButtTarjeDeb.Text;
+                }
+                else
+                {
+                    if (radButtTarjetaCredito.Checked)
+                    {
+                        formaPago = radButtTarjetaCredito.Text;
+                    }
+                    else
+                    {
+                        if (radButtTransferencia.Checked)
+                        {
+                            formaPago = radButtTransferencia.Text;
+                        }
+                        else
+                        {
+                            mensaje += "Seleccione una forma de pago.\n";
+                            esNecesarioMensaje = true;
+                        }
+                    }
+                }
+            }
+            Boolean consumidorFinal;
+
+            if (radButtConsumidorfinal.Checked)
+            {
+                consumidorFinal = true;
+            }
+            else
+            {
+                if (radButtFacturaDatos.Checked)
+                {
+                    consumidorFinal = false;
+                }
+                else
+                {
+                    mensaje += "Seleccione consumidor final o factura con datos.\n";
+                    esNecesarioMensaje = true;
+
+                }
+            }
+
+
+
+            if (esNecesarioMensaje)
+            {
+                MessageBox.Show(mensaje, "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+
+        }
+
+
+        private void radButtConsumidorfinal_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radButtConsumidorfinal.Checked)
+            {
+                txtBcedulaCliente.Enabled = false;
+            }
+            else
+            {
+                txtBcedulaCliente.Enabled = true;
+            }
+        }
+
+        private void radButtFacturaDatos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (radButtFacturaDatos.Checked)
+            {
+                radButtFacturaDatos.Enabled = true;
+            }
+            else
+            {
+                radButtFacturaDatos.Enabled = false;
+            }
+        }
     }
 }
 
