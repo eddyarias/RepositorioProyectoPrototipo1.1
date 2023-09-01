@@ -40,14 +40,11 @@ namespace ProyectoPrototipo_1._0
             textBox10.Clear();
             textBox11.Clear();
             textBox14.Clear();
-            textBox15.Clear();
             //tabPage4.Text = string.Empty;
         }
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             //if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
-            //{
-            //    // Obtener el código del producto desde la fila seleccionada
             //    int codigo = Convert.ToInt32(dataGridView1.Rows[e.RowIndex].Cells["Codigo"].Value);
 
             //    // Buscar el producto en la lista de productos del inventario
