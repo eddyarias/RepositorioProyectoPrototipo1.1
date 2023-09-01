@@ -78,7 +78,7 @@ VALUES
     (19, 80, 'Acetaminofén Jarabe Infantil 120 mg/5ml (Lote S)', 'Lote S', 5.99, 4.99, '2023-11-30', 0.0, 0.12),
     (20, 50, 'Amlodipino Tableta 5 mg (Lote T)', 'Lote T', 12.99, 11.49, '2023-12-25', 0.0, 0.12);
 
-
+end
     go
 
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Cliente')
@@ -110,7 +110,7 @@ go
 --Consumidor Final
 INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
 VALUES
-    ( 1111111111, 'N/A', 'Consumidor final', 'N/A', 'N/A 1', 'N/A', 'N/A', '9999999999', 'N/A', NULL);
+    ( 1111111111, 'N/A', 'Consumidor final', 'N/A', 'N/A 1', 'N/A', 'N/A', '9999999999', null, NULL);
 
 go;
 
