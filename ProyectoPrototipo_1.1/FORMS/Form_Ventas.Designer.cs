@@ -123,7 +123,6 @@
             dataGridViewCierreCaja = new DataGridView();
             Column8 = new DataGridViewTextBoxColumn();
             Column9 = new DataGridViewTextBoxColumn();
-            button9 = new Button();
             label37 = new Label();
             label36 = new Label();
             label35 = new Label();
@@ -1035,7 +1034,6 @@
             tabPage7.Controls.Add(label32);
             tabPage7.Controls.Add(diaCierre);
             tabPage7.Controls.Add(dataGridViewCierreCaja);
-            tabPage7.Controls.Add(button9);
             tabPage7.Controls.Add(label37);
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
@@ -1052,7 +1050,7 @@
             // 
             lblSaldoFinal.AutoSize = true;
             lblSaldoFinal.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSaldoFinal.Location = new Point(630, 525);
+            lblSaldoFinal.Location = new Point(875, 576);
             lblSaldoFinal.Name = "lblSaldoFinal";
             lblSaldoFinal.Size = new Size(48, 17);
             lblSaldoFinal.TabIndex = 86;
@@ -1062,7 +1060,7 @@
             // 
             lblIngresos.AutoSize = true;
             lblIngresos.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblIngresos.Location = new Point(630, 445);
+            lblIngresos.Location = new Point(875, 496);
             lblIngresos.Name = "lblIngresos";
             lblIngresos.Size = new Size(48, 17);
             lblIngresos.TabIndex = 85;
@@ -1072,7 +1070,7 @@
             // 
             lblEgresos.AutoSize = true;
             lblEgresos.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblEgresos.Location = new Point(630, 484);
+            lblEgresos.Location = new Point(875, 535);
             lblEgresos.Name = "lblEgresos";
             lblEgresos.Size = new Size(48, 17);
             lblEgresos.TabIndex = 84;
@@ -1082,7 +1080,7 @@
             // 
             lblSaldoInicial.AutoSize = true;
             lblSaldoInicial.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            lblSaldoInicial.Location = new Point(630, 405);
+            lblSaldoInicial.Location = new Point(875, 456);
             lblSaldoInicial.Name = "lblSaldoInicial";
             lblSaldoInicial.Size = new Size(48, 17);
             lblSaldoInicial.TabIndex = 83;
@@ -1141,20 +1139,11 @@
             Column9.Name = "Column9";
             Column9.Width = 250;
             // 
-            // button9
-            // 
-            button9.Location = new Point(767, 593);
-            button9.Name = "button9";
-            button9.Size = new Size(231, 76);
-            button9.TabIndex = 28;
-            button9.Text = "IMPRIMIR CIERRE DE CAJA";
-            button9.UseVisualStyleBackColor = true;
-            // 
             // label37
             // 
             label37.AutoSize = true;
             label37.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label37.Location = new Point(460, 525);
+            label37.Location = new Point(705, 576);
             label37.Name = "label37";
             label37.Size = new Size(96, 17);
             label37.TabIndex = 27;
@@ -1164,7 +1153,7 @@
             // 
             label36.AutoSize = true;
             label36.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label36.Location = new Point(460, 484);
+            label36.Location = new Point(705, 535);
             label36.Name = "label36";
             label36.Size = new Size(120, 17);
             label36.TabIndex = 26;
@@ -1174,7 +1163,7 @@
             // 
             label35.AutoSize = true;
             label35.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label35.Location = new Point(460, 445);
+            label35.Location = new Point(705, 496);
             label35.Name = "label35";
             label35.Size = new Size(128, 17);
             label35.TabIndex = 25;
@@ -1184,7 +1173,7 @@
             // 
             label34.AutoSize = true;
             label34.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label34.Location = new Point(460, 405);
+            label34.Location = new Point(705, 456);
             label34.Name = "label34";
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
@@ -1285,7 +1274,6 @@
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
         private Label label31;
-        private Button button9;
         private Label label32;
         private DateTimePicker diaCierre;
         private DataGridViewTextBoxColumn Column10;

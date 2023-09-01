@@ -21,7 +21,8 @@ namespace ProyectoPrototipo_1._0
 
             bd = "db_farmacia";
 
-            con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+            con= "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
+            //con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
             stringconnect = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
 
         }

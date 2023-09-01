@@ -761,8 +761,6 @@ namespace ProyectoPrototipo_1._0
                     idFacturaManejable = idFactura + "";
                     int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1;
 
-                    MessageBox.Show(idFactura + "     " + idListaProducSelec);
-
                     using (SqlConnection connection = new SqlConnection(con))
                     {
                         try
@@ -1180,6 +1178,7 @@ namespace ProyectoPrototipo_1._0
             // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
             decimal ingresos = ObtenerTotalIngresos(diacierre);
 
+            MessageBox.Show(ingresos+"");
             // Establece el saldo inicial como $10
             decimal saldoInicial = 10.0m;
 
@@ -1203,23 +1202,19 @@ namespace ProyectoPrototipo_1._0
         {
             decimal totalIngresos = 0.0m;
 
-            // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
-            // Reemplaza esto con tu código real de consulta a la base de datos
-            // Supongamos que tienes una conexión de base de datos llamada "connection"
+            string query = "SELECT SUM(total) FROM Factura WHERE fechaEmision = @diacierre AND estado = 'Vigente';";
 
             using (SqlConnection connection = new SqlConnection(con))
             {
                 connection.Open();
 
-                // Define tu consulta SQL aquí
-                string consultaSQL = "SELECT SUM(total) FROM Factura WHERE fechaEmision = @diacierre AND estado = 'Vigente';";
-
-                using (SqlCommand cmd = new SqlCommand(consultaSQL, connection))
+                using (SqlCommand cmd = new SqlCommand(query, connection))
                 {
                     cmd.Parameters.AddWithValue("@diacierre", diacierre);
 
-                    // Ejecuta la consulta y obtén el resultado
                     object resultado = cmd.ExecuteScalar();
+
+                    MessageBox.Show(resultado.ToString());
 
                     if (resultado != null && resultado != DBNull.Value)
                     {
@@ -1230,6 +1225,7 @@ namespace ProyectoPrototipo_1._0
 
             return totalIngresos;
         }
+
 
         private void LlenarDataGridViewCierreCaja(DateTime diacierre)
         {
