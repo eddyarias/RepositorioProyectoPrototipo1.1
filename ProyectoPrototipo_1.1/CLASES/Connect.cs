@@ -15,11 +15,18 @@ namespace ProyectoPrototipo_1._0
 
         public Connect(string usuario, string pass)
         {
+            //this.usuario = usuario;
+            //this.pass = pass;
+            //server = "DESKTOP-PEKBI3D";
+            //bd = "db_farmacia";
+            //con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
+
             this.usuario = usuario;
             this.pass = pass;
-            server = "DESKTOP-PEKBI3D";
+            server = "LAPTOP-VF0SV152\\SQLEXPRESS";
             bd = "db_farmacia";
             con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
+
         }
         //Connect Poaquiza
         //public Connect(string usuario, string pass)
