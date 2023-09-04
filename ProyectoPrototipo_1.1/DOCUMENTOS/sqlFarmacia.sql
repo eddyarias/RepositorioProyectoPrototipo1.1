@@ -105,7 +105,7 @@ VALUES
 END
 go
 
-
+drop table Cliente
 
 --Consumidor Final
 INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
@@ -148,6 +148,8 @@ BEGIN
 END
 go
 
+drop table Factura
+drop table ListaProductosSeleccionados
 delete from Factura
 delete from ListaProductosSeleccionados
 	
@@ -169,32 +171,36 @@ VALUES
 
 
 --Administración del sistema
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Usuarios')
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Usuario')
 BEGIN
-    CREATE TABLE Usuarios (
+    CREATE TABLE Usuario (
     cedula_identidad NVARCHAR(10) PRIMARY KEY,
     username NVARCHAR(20) NOT NULL,
     pass NVARCHAR(128), -- Para almacenar el hash SHA-512
     tipo_usuario NVARCHAR(20) CHECK (tipo_usuario IN ('Vendedor', 'Administrador'))
 );
 END
-drop table Usuarios
 
-IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Parametros')
+drop table Usuario
+delete from Usuario
+drop table Parametro
+delete from Parametro
+
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Parametro')
 BEGIN
-	CREATE TABLE Parametros (
+	CREATE TABLE Parametro (
 		id INT IDENTITY(1,1) PRIMARY KEY,
 		parametro NVARCHAR(40) COLLATE Latin1_General_BIN,
 		valor NUMERIC(5,2)
 	);
 END
 -- Insertar usuario administrador
-INSERT INTO Usuarios (cedula_identidad, username, pass, tipo_usuario)
+INSERT INTO Usuario (cedula_identidad, username, pass, tipo_usuario)
 VALUES ('0502863673', 'jonathan', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', 'Administrador');
 
 use db_farmacia
-select * from Usuarios;
-select * from Parametros;
+select * from Usuario;
+select * from Parametro;
 select * from Proveedor;
 select * from Producto;
 select * from Cliente;

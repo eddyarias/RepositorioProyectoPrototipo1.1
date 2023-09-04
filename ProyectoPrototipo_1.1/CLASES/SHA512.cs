@@ -8,11 +8,12 @@ namespace ProyectoPrototipo_1._1.CLASES
 {
     public class SHA512
     {
-        public string ComputeHash(byte[] input)
+        public string HashPassword(string password)
         {
-            using (SHA512Managed sha512 = new())
+            using (SHA512Managed sha512 = new SHA512Managed())
             {
-                byte[] hashBytes = sha512.ComputeHash(input);
+                byte[] passwordBytes = Encoding.UTF8.GetBytes(password);
+                byte[] hashBytes = sha512.ComputeHash(passwordBytes);
                 return BitConverter.ToString(hashBytes).Replace("-", "").ToLower();
             }
         }

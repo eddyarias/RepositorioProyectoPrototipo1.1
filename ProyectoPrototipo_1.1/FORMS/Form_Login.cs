@@ -39,11 +39,9 @@ namespace ProyectoPrototipo_1._0
                 this.Hide();
                 //try
                 //{
-                //    // Convierte la contraseña a bytes (asegúrate de usar la codificación correcta)
-                //    byte[] passBytes = Encoding.UTF8.GetBytes(pass);
-                //    // Calcula el hash usando la clase SHA512
+
                 //    SHA512 hasher = new SHA512();
-                //    string hashPass = hasher.ComputeHash(passBytes);
+                //    string hashPass = hasher.HashPassword(pass);
 
                 //    // La conexión fue exitosa, ahora verifica las credenciales
                 //    string query = "SELECT COUNT(*) FROM Usuarios WHERE username = @usuario AND pass = @pass AND tipo_usuario = @tipo_usuario";
@@ -69,15 +67,15 @@ namespace ProyectoPrototipo_1._0
                 //            MessageBox.Show("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
                 //        }
                 //    }
-            //}
-            //    catch (Exception ex)
-            //    {
-            //        MessageBox.Show("Error al iniciar sesión: " + ex.Message);
-            //    }
-            //    finally
-            //    {
-            //        connection.Close();
-            //    }
+                //}
+                //    catch (Exception ex)
+                //    {
+                //        MessageBox.Show("Error al iniciar sesión: " + ex.Message);
+                //    }
+                //    finally
+                //    {
+                //        connection.Close();
+                //    }
             }
             else
             {
@@ -86,6 +84,18 @@ namespace ProyectoPrototipo_1._0
             }
         }
 
-
+        private void PBVerPassword_Click(object sender, EventArgs e)
+        {
+            if (TBPassword.PasswordChar == '*')
+            {
+                TBPassword.PasswordChar = '\0'; // Mostrar contraseña
+                PBVerPassword.Image = Image.FromFile("RECURSOS/REC_FORM_LOGIN/candadoAbierto.jpg");
+            }
+            else
+            {
+                TBPassword.PasswordChar = '*'; // Ocultar contraseña
+                PBVerPassword.Image = Image.FromFile("RECURSOS/REC_FORM_LOGIN/candadoCerrado.jpg");
+            }
+        }
     }
 }

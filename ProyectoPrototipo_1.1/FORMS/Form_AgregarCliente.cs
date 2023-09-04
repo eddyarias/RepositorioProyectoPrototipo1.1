@@ -131,7 +131,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             // Check if the cedula has 10 digits
             if (cedula.Length != 10)
             {
-                Console.WriteLine("Esta cedula tiene menos de 10 Digitos");
+                Console.WriteLine("Esta cédula tiene menos de 10 Dígitos");
                 return false;
             }
 
@@ -141,7 +141,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             // Check if the region exists; Ecuador is divided into 24 regions
             if (!(int.TryParse(digitoRegion, out int region) && region >= 1 && region <= 24))
             {
-                Console.WriteLine("Esta cedula no pertenece a ninguna region");
+                Console.WriteLine("Esta cédula no pertenece a ninguna región");
                 return false;
             }
 
@@ -215,7 +215,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             string cedula = txtBCedula.Text;
             if (!ValidateCedula(cedula))
             {
-                lblerrorCedula.Text = "Cedula inválida";
+                lblerrorCedula.Text = "Cédula inválida";
 
                 lblerrorCedula.ForeColor = Color.Red;
             }

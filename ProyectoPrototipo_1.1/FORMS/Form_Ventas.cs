@@ -1195,9 +1195,8 @@ namespace ProyectoPrototipo_1._0
             this.Close();
 
             // Crea una nueva instancia del formulario actual
-            Form_Ventas nuevoFormulario = new Form_Ventas(connect); // Reemplaza "Form1" con el nombre de tu formulario
+            Form_Ventas nuevoFormulario = new Form_Ventas(connect);
             nuevoFormulario.Show();
-
 
         }
 

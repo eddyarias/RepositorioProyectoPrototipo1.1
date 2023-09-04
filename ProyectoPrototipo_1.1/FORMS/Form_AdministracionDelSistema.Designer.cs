@@ -28,8 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_AdministracionDelSistema));
             TCProveedores = new TabControl();
             tabPage1 = new TabPage();
+            PBVerPassword = new PictureBox();
+            LbValidarCedula = new Label();
             TBCedulaUsuario = new TextBox();
             label22 = new Label();
             CBTipoUsuario = new ComboBox();
@@ -47,6 +50,7 @@
             tabPage7 = new TabPage();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
+            PBVerPassActualizar = new PictureBox();
             label9 = new Label();
             BActualizarPass = new Button();
             TBPasswordActualizar = new TextBox();
@@ -95,10 +99,12 @@
             BEliminarParametro = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PBVerPassword).BeginInit();
             tabPage8.SuspendLayout();
             tabPage7.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)PBVerPassActualizar).BeginInit();
             tabPage3.SuspendLayout();
             tabPage12.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)DGVUsuarios).BeginInit();
@@ -123,12 +129,14 @@
             TCProveedores.Margin = new Padding(3, 4, 3, 4);
             TCProveedores.Name = "TCProveedores";
             TCProveedores.SelectedIndex = 0;
-            TCProveedores.Size = new Size(515, 320);
+            TCProveedores.Size = new Size(515, 344);
             TCProveedores.TabIndex = 1;
             // 
             // tabPage1
             // 
             tabPage1.BackColor = Color.Transparent;
+            tabPage1.Controls.Add(PBVerPassword);
+            tabPage1.Controls.Add(LbValidarCedula);
             tabPage1.Controls.Add(TBCedulaUsuario);
             tabPage1.Controls.Add(label22);
             tabPage1.Controls.Add(CBTipoUsuario);
@@ -143,22 +151,42 @@
             tabPage1.Margin = new Padding(3, 4, 3, 4);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3, 4, 3, 4);
-            tabPage1.Size = new Size(507, 287);
+            tabPage1.Size = new Size(507, 311);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar Usuario";
             // 
+            // PBVerPassword
+            // 
+            PBVerPassword.Image = (Image)resources.GetObject("PBVerPassword.Image");
+            PBVerPassword.Location = new Point(375, 133);
+            PBVerPassword.Name = "PBVerPassword";
+            PBVerPassword.Size = new Size(31, 27);
+            PBVerPassword.SizeMode = PictureBoxSizeMode.StretchImage;
+            PBVerPassword.TabIndex = 30;
+            PBVerPassword.TabStop = false;
+            PBVerPassword.Click += PBVerPassword_Click;
+            // 
+            // LbValidarCedula
+            // 
+            LbValidarCedula.AutoSize = true;
+            LbValidarCedula.Location = new Point(203, 14);
+            LbValidarCedula.Name = "LbValidarCedula";
+            LbValidarCedula.Size = new Size(0, 20);
+            LbValidarCedula.TabIndex = 29;
+            // 
             // TBCedulaUsuario
             // 
-            TBCedulaUsuario.Location = new Point(165, 36);
+            TBCedulaUsuario.Location = new Point(200, 37);
             TBCedulaUsuario.Margin = new Padding(3, 4, 3, 4);
             TBCedulaUsuario.Name = "TBCedulaUsuario";
             TBCedulaUsuario.Size = new Size(169, 27);
             TBCedulaUsuario.TabIndex = 28;
+            TBCedulaUsuario.Leave += TBCedulaUsuario_Leave;
             // 
             // label22
             // 
             label22.AutoSize = true;
-            label22.Location = new Point(128, 39);
+            label22.Location = new Point(163, 40);
             label22.Name = "label22";
             label22.Size = new Size(28, 20);
             label22.TabIndex = 27;
@@ -168,7 +196,7 @@
             // 
             CBTipoUsuario.FormattingEnabled = true;
             CBTipoUsuario.Items.AddRange(new object[] { "Vendedor", "Administrador" });
-            CBTipoUsuario.Location = new Point(165, 190);
+            CBTipoUsuario.Location = new Point(200, 191);
             CBTipoUsuario.Name = "CBTipoUsuario";
             CBTipoUsuario.Size = new Size(169, 28);
             CBTipoUsuario.TabIndex = 26;
@@ -176,7 +204,7 @@
             // label7
             // 
             label7.AutoSize = true;
-            label7.Location = new Point(41, 191);
+            label7.Location = new Point(76, 192);
             label7.Name = "label7";
             label7.Size = new Size(115, 20);
             label7.TabIndex = 25;
@@ -192,27 +220,28 @@
             // 
             // BRegistrarUsuario
             // 
-            BRegistrarUsuario.Location = new Point(374, 106);
+            BRegistrarUsuario.Location = new Point(225, 245);
             BRegistrarUsuario.Margin = new Padding(3, 4, 3, 4);
             BRegistrarUsuario.Name = "BRegistrarUsuario";
             BRegistrarUsuario.Size = new Size(88, 35);
             BRegistrarUsuario.TabIndex = 16;
             BRegistrarUsuario.Text = "Registrar";
             BRegistrarUsuario.UseVisualStyleBackColor = true;
-            BRegistrarUsuario.Click += button4_Click;
+            BRegistrarUsuario.Click += BRegistrarUsuario_Click;
             // 
             // TBPasswordUsuario
             // 
-            TBPasswordUsuario.Location = new Point(165, 131);
+            TBPasswordUsuario.Location = new Point(200, 132);
             TBPasswordUsuario.Margin = new Padding(3, 4, 3, 4);
             TBPasswordUsuario.Name = "TBPasswordUsuario";
+            TBPasswordUsuario.PasswordChar = '*';
             TBPasswordUsuario.Size = new Size(169, 27);
             TBPasswordUsuario.TabIndex = 8;
             // 
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(83, 139);
+            label2.Location = new Point(118, 140);
             label2.Name = "label2";
             label2.Size = new Size(73, 20);
             label2.TabIndex = 4;
@@ -220,7 +249,7 @@
             // 
             // TBNombreUsuario
             // 
-            TBNombreUsuario.Location = new Point(165, 83);
+            TBNombreUsuario.Location = new Point(200, 84);
             TBNombreUsuario.Margin = new Padding(3, 4, 3, 4);
             TBNombreUsuario.Name = "TBNombreUsuario";
             TBNombreUsuario.Size = new Size(169, 27);
@@ -229,7 +258,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(83, 91);
+            label1.Location = new Point(118, 92);
             label1.Name = "label1";
             label1.Size = new Size(78, 20);
             label1.TabIndex = 2;
@@ -242,7 +271,7 @@
             tabPage8.Controls.Add(BConsultarUsuario);
             tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
-            tabPage8.Size = new Size(507, 287);
+            tabPage8.Size = new Size(507, 311);
             tabPage8.TabIndex = 5;
             tabPage8.Text = "Consultar Usuario";
             tabPage8.UseVisualStyleBackColor = true;
@@ -273,6 +302,7 @@
             BConsultarUsuario.TabIndex = 52;
             BConsultarUsuario.Text = "Consultar";
             BConsultarUsuario.UseVisualStyleBackColor = true;
+            BConsultarUsuario.Click += BConsultarUsuario_Click;
             // 
             // tabPage7
             // 
@@ -280,7 +310,7 @@
             tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(507, 287);
+            tabPage7.Size = new Size(507, 311);
             tabPage7.TabIndex = 4;
             tabPage7.Text = "Actualizar Usuario";
             tabPage7.UseVisualStyleBackColor = true;
@@ -298,6 +328,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.Controls.Add(PBVerPassActualizar);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(BActualizarPass);
             tabPage2.Controls.Add(TBPasswordActualizar);
@@ -313,6 +344,17 @@
             tabPage2.Text = "Contraseña";
             tabPage2.UseVisualStyleBackColor = true;
             // 
+            // PBVerPassActualizar
+            // 
+            PBVerPassActualizar.Image = (Image)resources.GetObject("PBVerPassActualizar.Image");
+            PBVerPassActualizar.Location = new Point(337, 86);
+            PBVerPassActualizar.Name = "PBVerPassActualizar";
+            PBVerPassActualizar.Size = new Size(31, 27);
+            PBVerPassActualizar.SizeMode = PictureBoxSizeMode.StretchImage;
+            PBVerPassActualizar.TabIndex = 31;
+            PBVerPassActualizar.TabStop = false;
+            PBVerPassActualizar.Click += pictureBox1_Click;
+            // 
             // label9
             // 
             label9.AutoSize = true;
@@ -323,17 +365,18 @@
             // 
             // BActualizarPass
             // 
-            BActualizarPass.Location = new Point(347, 75);
+            BActualizarPass.Location = new Point(202, 145);
             BActualizarPass.Margin = new Padding(3, 4, 3, 4);
             BActualizarPass.Name = "BActualizarPass";
             BActualizarPass.Size = new Size(88, 35);
             BActualizarPass.TabIndex = 16;
             BActualizarPass.Text = "Actualizar";
             BActualizarPass.UseVisualStyleBackColor = true;
+            BActualizarPass.Click += BActualizarPass_Click;
             // 
             // TBPasswordActualizar
             // 
-            TBPasswordActualizar.Location = new Point(122, 83);
+            TBPasswordActualizar.Location = new Point(162, 86);
             TBPasswordActualizar.Margin = new Padding(3, 4, 3, 4);
             TBPasswordActualizar.Name = "TBPasswordActualizar";
             TBPasswordActualizar.Size = new Size(169, 27);
@@ -342,7 +385,7 @@
             // label11
             // 
             label11.AutoSize = true;
-            label11.Location = new Point(43, 87);
+            label11.Location = new Point(83, 90);
             label11.Name = "label11";
             label11.Size = new Size(73, 20);
             label11.TabIndex = 4;
@@ -350,7 +393,7 @@
             // 
             // TBCedulaUActualizarPass
             // 
-            TBCedulaUActualizarPass.Location = new Point(122, 35);
+            TBCedulaUActualizarPass.Location = new Point(162, 38);
             TBCedulaUActualizarPass.Margin = new Padding(3, 4, 3, 4);
             TBCedulaUActualizarPass.Name = "TBCedulaUActualizarPass";
             TBCedulaUActualizarPass.Size = new Size(169, 27);
@@ -359,7 +402,7 @@
             // label13
             // 
             label13.AutoSize = true;
-            label13.Location = new Point(88, 42);
+            label13.Location = new Point(128, 45);
             label13.Name = "label13";
             label13.Size = new Size(28, 20);
             label13.TabIndex = 2;
@@ -416,6 +459,7 @@
             BActualizarTipo.TabIndex = 54;
             BActualizarTipo.Text = "Actualizar";
             BActualizarTipo.UseVisualStyleBackColor = true;
+            BActualizarTipo.Click += BActualizarTipo_Click;
             // 
             // TBCedulaUActualizarTipo
             // 
@@ -441,7 +485,7 @@
             tabPage12.Controls.Add(BResetearUsuario);
             tabPage12.Location = new Point(4, 29);
             tabPage12.Name = "tabPage12";
-            tabPage12.Size = new Size(507, 287);
+            tabPage12.Size = new Size(507, 311);
             tabPage12.TabIndex = 6;
             tabPage12.Text = "Resetear Usuario";
             tabPage12.UseVisualStyleBackColor = true;
@@ -472,6 +516,7 @@
             BResetearUsuario.TabIndex = 52;
             BResetearUsuario.Text = "Eliminar";
             BResetearUsuario.UseVisualStyleBackColor = true;
+            BResetearUsuario.Click += BResetearUsuario_Click;
             // 
             // DGVUsuarios
             // 
@@ -482,7 +527,7 @@
             DGVUsuarios.Name = "DGVUsuarios";
             DGVUsuarios.RowHeadersWidth = 51;
             DGVUsuarios.RowTemplate.Height = 24;
-            DGVUsuarios.Size = new Size(290, 389);
+            DGVUsuarios.Size = new Size(627, 389);
             DGVUsuarios.TabIndex = 2;
             // 
             // label3
@@ -502,7 +547,7 @@
             TCAdministracion.Margin = new Padding(3, 4, 3, 4);
             TCAdministracion.Name = "TCAdministracion";
             TCAdministracion.SelectedIndex = 0;
-            TCAdministracion.Size = new Size(891, 580);
+            TCAdministracion.Size = new Size(1331, 580);
             TCAdministracion.TabIndex = 4;
             // 
             // tabPage4
@@ -514,7 +559,7 @@
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
             tabPage4.Padding = new Padding(3, 4, 3, 4);
-            tabPage4.Size = new Size(883, 547);
+            tabPage4.Size = new Size(1323, 547);
             tabPage4.TabIndex = 0;
             tabPage4.Text = "Administración de Usuarios";
             tabPage4.UseVisualStyleBackColor = true;
@@ -528,7 +573,7 @@
             tabPage5.Margin = new Padding(3, 4, 3, 4);
             tabPage5.Name = "tabPage5";
             tabPage5.Padding = new Padding(3, 4, 3, 4);
-            tabPage5.Size = new Size(883, 547);
+            tabPage5.Size = new Size(1323, 547);
             tabPage5.TabIndex = 1;
             tabPage5.Text = "Administración de Parámetros";
             tabPage5.UseVisualStyleBackColor = true;
@@ -551,7 +596,7 @@
             DGVParametros.Name = "DGVParametros";
             DGVParametros.RowHeadersWidth = 51;
             DGVParametros.RowTemplate.Height = 24;
-            DGVParametros.Size = new Size(262, 431);
+            DGVParametros.Size = new Size(389, 431);
             DGVParametros.TabIndex = 7;
             // 
             // tabControl2
@@ -601,6 +646,7 @@
             BRegistrarParametro.TabIndex = 16;
             BRegistrarParametro.Text = "Registrar";
             BRegistrarParametro.UseVisualStyleBackColor = true;
+            BRegistrarParametro.Click += BRegistrarParametro_Click;
             // 
             // TBRegistrarValor
             // 
@@ -675,6 +721,7 @@
             BConsultarParametro.TabIndex = 55;
             BConsultarParametro.Text = "Consultar";
             BConsultarParametro.UseVisualStyleBackColor = true;
+            BConsultarParametro.Click += BConsultarParametro_Click;
             // 
             // tabPage10
             // 
@@ -700,6 +747,7 @@
             BActualizarParametro.TabIndex = 21;
             BActualizarParametro.Text = "Actualizar";
             BActualizarParametro.UseVisualStyleBackColor = true;
+            BActualizarParametro.Click += BActualizarParametro_Click;
             // 
             // TBActualizarValor
             // 
@@ -773,6 +821,7 @@
             BEliminarParametro.TabIndex = 52;
             BEliminarParametro.Text = "Eliminar";
             BEliminarParametro.UseVisualStyleBackColor = true;
+            BEliminarParametro.Click += BEliminarParametro_Click;
             // 
             // Form_AdministracionDelSistema
             // 
@@ -787,12 +836,14 @@
             TCProveedores.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PBVerPassword).EndInit();
             tabPage8.ResumeLayout(false);
             tabPage8.PerformLayout();
             tabPage7.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)PBVerPassActualizar).EndInit();
             tabPage3.ResumeLayout(false);
             tabPage3.PerformLayout();
             tabPage12.ResumeLayout(false);
@@ -883,5 +934,8 @@
         private Button BResetearUsuario;
         private TextBox TBCedulaUsuario;
         private Label label22;
+        private Label LbValidarCedula;
+        private PictureBox PBVerPassword;
+        private PictureBox PBVerPassActualizar;
     }
 }
