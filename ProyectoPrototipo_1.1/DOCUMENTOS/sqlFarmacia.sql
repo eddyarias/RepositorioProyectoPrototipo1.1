@@ -156,8 +156,8 @@ delete from ListaProductosSeleccionados
 -- Añadir datos a la tabla Factura
 INSERT INTO Factura (idFactura, fechaEmision, cedula, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
 VALUES
-    ('1001000000001', '2023-08-30', 1717506289,  100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
-    ('1001000000002', '2023-08-31', 1804934808,  150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
+    ('001001000000001', '2023-08-30', 1717506289,  100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
+    ('001001000000002', '2023-08-31', 1804934808,  150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
 
 
 

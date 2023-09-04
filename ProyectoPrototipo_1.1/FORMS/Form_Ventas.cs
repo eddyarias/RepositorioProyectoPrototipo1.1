@@ -801,7 +801,7 @@ namespace ProyectoPrototipo_1._0
                 if (result == DialogResult.Yes)
                 {
                     BigInteger idFactura = ObtenerIdFacturaMasAlto() + 1;
-                    idFacturaManejable = "00" + idFactura + "";
+                    idFacturaManejable = "00" + idFactura;
                     int idListaProducSelec = ObtenerIdListaProductosSeleccionadosMasAlto() + 1;
 
                     using (SqlConnection connection = new SqlConnection(con))
