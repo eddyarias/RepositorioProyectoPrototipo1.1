@@ -1,4 +1,5 @@
-﻿using ProyectoPrototipo_1._0.CLASES;
+﻿using Microsoft.EntityFrameworkCore;
+using ProyectoPrototipo_1._0.CLASES;
 using ProyectoPrototipo_1._1.FORMS;
 using System;
 using System.Collections.Generic;
@@ -12,20 +13,21 @@ using System.Text;
 using System.Threading.Tasks;
 
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace ProyectoPrototipo_1._0
 {
-
-
-
     public partial class Form_Ventas : Form
     {
-
+        //para el iva
+        private FarmaciaDbContext dbContext;
+        private void Form_Ventas_Load_1(object sender, EventArgs e)
+        {
+            dbContext = new FarmaciaDbContext();
+            dbContext.Parametro.Load();
+        }
 
         string con;
-
-
-
         public Connect connect;
 
         public int codigoProducto;
@@ -38,6 +40,7 @@ namespace ProyectoPrototipo_1._0
         public List<ProductoCarrito> carritoDeCompras = new List<ProductoCarrito>();
 
         public decimal descuento;
+
         public decimal iva;
         public decimal subtotal1;
         public decimal total;
@@ -400,28 +403,40 @@ namespace ProyectoPrototipo_1._0
 
         private void ActualizarResumenCarrito()
         {
-
-            StringBuilder resumen = new StringBuilder();
-            subtotal1 = 0;
-            foreach (ProductoCarrito producto in carritoDeCompras)
+            var parametroIVA = dbContext.Parametro.Local.FirstOrDefault(p => p.parametro == "IVA");
+            if (parametroIVA != null)
             {
-                decimal subtotal = producto.PrecioUnitario * producto.Cantidad;
-                subtotal1 += subtotal;
+                StringBuilder resumen = new StringBuilder();
+                subtotal1 = 0;
+                foreach (ProductoCarrito producto in carritoDeCompras)
+                {
+                    decimal subtotal = producto.PrecioUnitario * producto.Cantidad;
+                    subtotal1 += subtotal;
 
-                // Agrega la información del producto al resumen en el formato deseado
-                resumen.AppendLine($"{producto.CodigoProducto,-17} {producto.Descripcion,-43} {producto.PrecioUnitario,-25:C2} {producto.Cantidad,-15} {subtotal,-10:C2}");
+                    // Agrega la información del producto al resumen en el formato deseado
+                    resumen.AppendLine($"{producto.CodigoProducto,-17} {producto.Descripcion,-43} {producto.PrecioUnitario,-25:C2} {producto.Cantidad,-15} {subtotal,-10:C2}");
+                }
+
+
+                iva = subtotal1 * Math.Round(parametroIVA.valor, 2);
+                total = subtotal1 + iva - descuento;
+                // Actualiza el texto del Label con el resumen
+                labelDetalle.Text = resumen.ToString();
+
+                label43.Text = (parametroIVA.valor * 100).ToString();
+
+
+                // Actualiza el total en el Label lbTotal
+                lbTotal.Text = $"{subtotal1:C2}";
+                label9.Text = $"{iva:C2}";
+                label13.Text = $"{descuento:C2}";
+                label44.Text = $"{total:C2}";
+            }
+            else
+            {
+                label43.Text = "No se encontró el valor del IVA";
             }
 
-            iva = subtotal1 * 0.12M;
-            total = subtotal1 + iva - descuento;
-            // Actualiza el texto del Label con el resumen
-            labelDetalle.Text = resumen.ToString();
-
-            // Actualiza el total en el Label lbTotal
-            lbTotal.Text = $"{subtotal1:C2}";
-            label9.Text = $"{iva:C2}";
-            label13.Text = $"{descuento:C2}";
-            label44.Text = $"{total:C2}";
         }
 
 
@@ -842,7 +857,7 @@ namespace ProyectoPrototipo_1._0
                             // Mostrar un mensaje de éxito
                             MessageBox.Show("La factura se ha guardado correctamente.", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             ConsultarFactura(label18);
-                            label24.Text = idFacturaManejable.ToString();
+                            LBNumFactura.Text = idFacturaManejable.ToString();
 
                         }
                         catch (Exception ex)
@@ -862,42 +877,51 @@ namespace ProyectoPrototipo_1._0
 
         public void ConsultarFactura(Label labelFactura)
         {
-            // Comprobar si hay productos en el carrito de compras
-            if (carritoDeCompras.Count == 0)
+            var parametroIVA = dbContext.Parametro.Local.FirstOrDefault(p => p.parametro == "IVA");//para el iva
+            if (parametroIVA != null)
             {
-                labelFactura.Text = "El carrito de compras está vacío.";
-                return;
+                // Comprobar si hay productos en el carrito de compras
+                if (carritoDeCompras.Count == 0)
+                {
+                    labelFactura.Text = "El carrito de compras está vacío.";
+                    return;
+                }
+
+                // Calcular el subtotal1, descuento, iva y total en función de los productos en el carrito
+                subtotal1 = carritoDeCompras.Sum(producto => producto.PrecioUnitario * producto.Cantidad);
+                // Asumiendo que ya tienes valores válidos para descuento, iva y formaPago
+                decimal descuentoDolares = descuento; // Ajusta esto según tu lógica
+                iva = subtotal1 * parametroIVA.valor; // 12% de IVA, ajusta según tus necesidades
+                total = subtotal1 + iva - descuentoDolares;
+
+                // Construir el texto de la factura
+                string facturaText = "Fecha emisión:       " + DateTime.Now.ToShortDateString() + "\n" +
+                                     "Datos del cliente\n" +
+                                    "Cedula:           " + cedulaCliente + "\n\n" +
+                                     BuscarCliente2(cedulaCliente) + "\n" +
+                                     "Forma de pago:            " + formaPago + "\n\n" +
+                                     "Detalle\n" +
+                                     "Codigo     \tDescripcion                                    \tPrecio               \tCantidad              \tSubtotal\n";
+
+                foreach (ProductoCarrito producto in carritoDeCompras)
+                {
+                    facturaText += $" {producto.CodigoProducto,-10} {producto.Descripcion,-47} {producto.PrecioUnitario,-20:F2} {producto.Cantidad,-20} {(producto.PrecioUnitario * producto.Cantidad),-20:F2}\n";
+                }
+
+                facturaText += "\n                                                                                 Subtotal:             " + subtotal1.ToString("F2") + "\n" +
+                               "                                                                                  IVA " + Convert.ToInt32(parametroIVA.valor * 100) + " %:             " + iva.ToString("F2") + "\n" +
+
+                               "                                                                                 _____________________________\n" +
+                               "                                                                                    Total:             " + total.ToString("F2");
+
+
+                // Mostrar la factura en el control Label
+                labelFactura.Text = facturaText;
             }
-
-            // Calcular el subtotal1, descuento, iva y total en función de los productos en el carrito
-            subtotal1 = carritoDeCompras.Sum(producto => producto.PrecioUnitario * producto.Cantidad);
-            // Asumiendo que ya tienes valores válidos para descuento, iva y formaPago
-            decimal descuentoDolares = descuento; // Ajusta esto según tu lógica
-            iva = subtotal1 * 0.12m; // 12% de IVA, ajusta según tus necesidades
-            total = subtotal1 + iva - descuentoDolares;
-
-            // Construir el texto de la factura
-            string facturaText = "Fecha emisión:       " + DateTime.Now.ToShortDateString() + "\n" +
-                                 "Datos del cliente\n" +
-                                "Cedula:           " + cedulaCliente + "\n\n" +
-                                 BuscarCliente2(cedulaCliente) + "\n" +
-                                 "Forma de pago:            " + formaPago + "\n\n" +
-                                 "Detalle\n" +
-                                 "Codigo     \tDescripcion                                    \tPrecio               \tCantidad              \tSubtotal\n";
-
-            foreach (ProductoCarrito producto in carritoDeCompras)
+            else
             {
-                facturaText += $" {producto.CodigoProducto,-10} {producto.Descripcion,-47} {producto.PrecioUnitario,-20:F2} {producto.Cantidad,-20} {(producto.PrecioUnitario * producto.Cantidad),-20:F2}\n";
+                label43.Text = "No se encontró el valor del IVA";
             }
-
-            facturaText += "\n                                                                                 Subtotal:             " + subtotal1.ToString("F2") + "\n" +
-                           "                                                                                  IVA 12%:             " + iva.ToString("F2") + "\n" +
-
-                           "                                                                                 _____________________________\n" +
-                           "                                                                                    Total:             " + total.ToString("F2");
-
-            // Mostrar la factura en el control Label
-            labelFactura.Text = facturaText;
         }
 
         private string BuscarCliente2(string cedula)
@@ -1190,14 +1214,39 @@ namespace ProyectoPrototipo_1._0
 
         private void bttNuevaVenta_Click(object sender, EventArgs e)
         {
+            carritoDeCompras = new List<ProductoCarrito>();
+            descuento = 0;
+            iva = 0;
+            subtotal1 = 0;
+            total = 0;
 
-            // Cierra el formulario actual
-            this.Close();
+            TabSecuencialVentas.SelectedTab = tabPage1;
+            this.txtBcedulaCliente.Enabled = false;
+            TabSecuencialVentas.TabPages[0].Enabled = true;
+            TabSecuencialVentas.TabPages[2].Enabled = false;
+            this.bttContinuarSelecProd.Enabled = false;
 
-            // Crea una nueva instancia del formulario actual
-            Form_Ventas nuevoFormulario = new Form_Ventas(connect);
-            nuevoFormulario.Show();
+            txtBcedulaCliente.Text = string.Empty;
+            txtBnombresCliente.Text = string.Empty;
+            txtBapellidosClientes.Text = string.Empty;
+            txtBtelefonoCliente.Text = string.Empty;
+            txtBdireccionCliente.Text = string.Empty;
+            txtBcorreoCliente.Text = string.Empty;
+            txtCodigo.Text = string.Empty;
+            label18.Text = string.Empty;
+            LBNumFactura.Text = string.Empty;
+            labelDetalle.Text = string.Empty;
+            label9.Text = string.Empty;
+            label13.Text = string.Empty;
+            label44.Text = string.Empty;
+            lbTotal.Text = string.Empty;
 
+            radButtFacturaDatos.Checked = false;
+            radButtConsumidorfinal.Checked = false;
+            radButtTransferencia.Checked = false;
+            radButtTarjeDeb.Checked = false;
+            radButtTarjetaCredito.Checked = false;
+            radButtEfectivo.Checked = false;
         }
 
         private void button10_Click(object sender, EventArgs e)
@@ -1207,12 +1256,12 @@ namespace ProyectoPrototipo_1._0
 
             string fecha = diacierre.ToString("yyyy-MM-dd");
 
-            MessageBox.Show(fecha);
+            //MessageBox.Show(fecha);
 
             // Realiza una consulta SQL para obtener la suma de los totales de las facturas vigentes
             decimal ingresos = ObtenerTotalIngresos(fecha);
 
-            MessageBox.Show(ingresos + "");
+            //MessageBox.Show(ingresos + "");
             // Establece el saldo inicial como $10
             decimal saldoInicial = 10.0m;
 

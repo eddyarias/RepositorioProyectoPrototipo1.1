@@ -10,7 +10,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             InitializeComponent();
             // Inicializar componentes (generados por el diseñador)
             this.SuspendLayout();
-            this.ClientSize = new System.Drawing.Size(334, 211);
+            this.ClientSize = new System.Drawing.Size(350, 211);
             this.Name = "AgregarProductoForm";
             this.Text = "Agregar Producto";
             this.ResumeLayout(false);

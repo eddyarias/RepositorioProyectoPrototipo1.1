@@ -87,7 +87,7 @@
             Continuar = new Button();
             tabPage4 = new TabPage();
             panel2 = new Panel();
-            label24 = new Label();
+            LBNumFactura = new Label();
             label16 = new Label();
             label18 = new Label();
             bttAnular = new Button();
@@ -304,14 +304,15 @@
             // 
             dataGridViewProductos.AllowUserToAddRows = false;
             dataGridViewProductos.AllowUserToDeleteRows = false;
+            dataGridViewProductos.BackgroundColor = Color.White;
             dataGridViewProductos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewProductos.Location = new Point(33, 203);
+            dataGridViewProductos.Location = new Point(21, 203);
             dataGridViewProductos.Name = "dataGridViewProductos";
             dataGridViewProductos.ReadOnly = true;
             dataGridViewProductos.RowHeadersVisible = false;
             dataGridViewProductos.RowHeadersWidth = 51;
             dataGridViewProductos.RowTemplate.Height = 29;
-            dataGridViewProductos.Size = new Size(680, 359);
+            dataGridViewProductos.Size = new Size(692, 359);
             dataGridViewProductos.TabIndex = 21;
             dataGridViewProductos.CellContentDoubleClick += dataGridViewProductos_CellContentDoubleClick;
             // 
@@ -774,7 +775,7 @@
             // panel2
             // 
             panel2.BorderStyle = BorderStyle.FixedSingle;
-            panel2.Controls.Add(label24);
+            panel2.Controls.Add(LBNumFactura);
             panel2.Controls.Add(label16);
             panel2.Controls.Add(label18);
             panel2.Location = new Point(50, 31);
@@ -782,15 +783,15 @@
             panel2.Size = new Size(1156, 552);
             panel2.TabIndex = 21;
             // 
-            // label24
+            // LBNumFactura
             // 
-            label24.AutoSize = true;
-            label24.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
-            label24.Location = new Point(422, 51);
-            label24.Name = "label24";
-            label24.Size = new Size(19, 29);
-            label24.TabIndex = 21;
-            label24.Text = ".";
+            LBNumFactura.AutoSize = true;
+            LBNumFactura.Font = new Font("Microsoft Sans Serif", 13.8F, FontStyle.Regular, GraphicsUnit.Point);
+            LBNumFactura.Location = new Point(422, 51);
+            LBNumFactura.Name = "LBNumFactura";
+            LBNumFactura.Size = new Size(19, 29);
+            LBNumFactura.TabIndex = 21;
+            LBNumFactura.Text = ".";
             // 
             // label16
             // 
@@ -1113,10 +1114,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 29);
+            tabPage7.Location = new Point(4, 27);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 708);
+            tabPage7.Size = new Size(1763, 710);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             tabPage7.UseVisualStyleBackColor = true;
@@ -1191,13 +1192,16 @@
             // 
             // dataGridViewCierreCaja
             // 
+            dataGridViewCierreCaja.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCierreCaja.BackgroundColor = Color.White;
             dataGridViewCierreCaja.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCierreCaja.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9 });
-            dataGridViewCierreCaja.Location = new Point(263, 165);
+            dataGridViewCierreCaja.Location = new Point(166, 165);
             dataGridViewCierreCaja.Name = "dataGridViewCierreCaja";
-            dataGridViewCierreCaja.RowHeadersWidth = 51;
+            dataGridViewCierreCaja.RowHeadersVisible = false;
+            dataGridViewCierreCaja.RowHeadersWidth = 25;
             dataGridViewCierreCaja.RowTemplate.Height = 29;
-            dataGridViewCierreCaja.Size = new Size(1054, 245);
+            dataGridViewCierreCaja.Size = new Size(1325, 245);
             dataGridViewCierreCaja.TabIndex = 31;
             // 
             // Column8
@@ -1205,14 +1209,12 @@
             Column8.HeaderText = "Ingresos:";
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
-            Column8.Width = 500;
             // 
             // Column9
             // 
             Column9.HeaderText = "Egresos:";
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
-            Column9.Width = 500;
             // 
             // label37
             // 
@@ -1220,9 +1222,9 @@
             label37.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             label37.Location = new Point(705, 576);
             label37.Name = "label37";
-            label37.Size = new Size(96, 17);
+            label37.Size = new Size(104, 17);
             label37.TabIndex = 27;
-            label37.Text = "SALO FINAL:";
+            label37.Text = "SALDO FINAL:";
             // 
             // label36
             // 
@@ -1265,6 +1267,7 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Ventas";
             Text = "Ventas";
+            Load += Form_Ventas_Load_1;
             TabSecuencialVentas.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
@@ -1391,7 +1394,7 @@
         private Panel panel7;
         private Panel panel6;
         private Panel panel5;
-        private Label label24;
+        private Label LBNumFactura;
         private Panel panel8;
         private Button button1;
         private Button button2;
