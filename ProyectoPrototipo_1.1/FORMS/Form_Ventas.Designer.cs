@@ -206,9 +206,9 @@
             label26.Font = new Font("Cascadia Mono", 7.8F, FontStyle.Regular, GraphicsUnit.Point);
             label26.Location = new Point(291, 575);
             label26.Name = "label26";
-            label26.Size = new Size(360, 17);
+            label26.Size = new Size(16, 17);
             label26.TabIndex = 32;
-            label26.Text = "* Doble click en el producto para selecionar";
+            label26.Text = ".";
             // 
             // label44
             // 
@@ -1192,13 +1192,11 @@
             // 
             // dataGridViewCierreCaja
             // 
-            dataGridViewCierreCaja.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dataGridViewCierreCaja.BackgroundColor = Color.White;
             dataGridViewCierreCaja.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCierreCaja.Columns.AddRange(new DataGridViewColumn[] { Column8, Column9 });
             dataGridViewCierreCaja.Location = new Point(166, 165);
             dataGridViewCierreCaja.Name = "dataGridViewCierreCaja";
-            dataGridViewCierreCaja.RowHeadersVisible = false;
             dataGridViewCierreCaja.RowHeadersWidth = 25;
             dataGridViewCierreCaja.RowTemplate.Height = 29;
             dataGridViewCierreCaja.Size = new Size(1325, 245);
@@ -1209,12 +1207,14 @@
             Column8.HeaderText = "Ingresos:";
             Column8.MinimumWidth = 6;
             Column8.Name = "Column8";
+            Column8.Width = 661;
             // 
             // Column9
             // 
             Column9.HeaderText = "Egresos:";
             Column9.MinimumWidth = 6;
             Column9.Name = "Column9";
+            Column9.Width = 661;
             // 
             // label37
             // 

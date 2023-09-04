@@ -32,6 +32,7 @@ namespace ProyectoPrototipo_1._0
 
         public int codigoProducto;
         public int cantidad;
+        public int cantidadIC;//cantidad del producto ingresado
 
         public int tabSeleccionado;
         public int tabRegistrarFacturaSeleccionado;
@@ -374,19 +375,46 @@ namespace ProyectoPrototipo_1._0
                 if (result == DialogResult.OK)
                 {
 
-                    // El usuario hizo clic en "Aceptar" en el formulario de cuadro de diálogo
-                    int cantidad = agregarProductoForm.CantidadIngresada;
+                    // El usuario hizo clic en "Aceptar" en el formulario de cuadro de diálogo AQUI SE AÑADIÓ
+                    cantidadIC = agregarProductoForm.CantidadIngresada;
+                    using (SqlConnection connection = new SqlConnection(con))
+                    {
+                        connection.Open();
 
-                    // Crear un objeto ProductoCarrito para el producto seleccionado
-                    ProductoCarrito productoSeleccionado = new ProductoCarrito(this.codigoProducto, productoInfo.Descripcion, productoInfo.Precio, cantidad);
+                        //Paso 1: Consulta SQL para obtener la cantidad actual del producto
+                        string consultaCantidadActual = "SELECT cantidad FROM Producto WHERE codigo = @codigo";
+                        SqlCommand cmdConsulta = new SqlCommand(consultaCantidadActual, connection);
+                        cmdConsulta.Parameters.AddWithValue("@codigo", codigoProducto);
+
+                        int cantidadActual = (int)cmdConsulta.ExecuteScalar();
 
 
-                    // Agregar el producto al carrito
-                    carritoDeCompras.Add(productoSeleccionado);
-                    this.bttContinuarSelecProd.Enabled = true;
+                        //Paso 2: Resta la cantidad ingresada a la cantidad actual
+                        int nuevaCantidad = cantidadActual - cantidadIC;
 
-                    // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
-                    ActualizarResumenCarrito();
+
+                        //Paso 3: Actualiza la cantidad en la base de datos
+                        string consultaActualizarCantidad = "UPDATE Producto SET cantidad = @nuevaCantidad WHERE codigo = @codigo";
+                        SqlCommand cmdActualizar = new SqlCommand(consultaActualizarCantidad, connection);
+                        cmdActualizar.Parameters.AddWithValue("@nuevaCantidad", nuevaCantidad);
+                        cmdActualizar.Parameters.AddWithValue("@codigo", codigoProducto);
+
+                        cmdActualizar.ExecuteNonQuery();
+                        //Paso 4: Recarga los datos en el DataGridView
+                        MostrarProductos(dataGridViewProductos);
+
+
+                        // Crear un objeto ProductoCarrito para el producto seleccionado
+                        ProductoCarrito productoSeleccionado = new ProductoCarrito(this.codigoProducto, productoInfo.Descripcion, productoInfo.Precio, cantidadIC);
+
+
+                        // Agregar el producto al carrito
+                        carritoDeCompras.Add(productoSeleccionado);
+                        this.bttContinuarSelecProd.Enabled = true;
+
+                        // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
+                        ActualizarResumenCarrito();
+                    }
                 }
                 else
                 {
@@ -657,7 +685,6 @@ namespace ProyectoPrototipo_1._0
 
         private void bttContinuarSelecProd_Click(object sender, EventArgs e)
         {
-
 
             // Mostrar un cuadro de diálogo de confirmación
             DialogResult result = MessageBox.Show("¿Está seguro de terminar con la selección de productos?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -1098,18 +1125,38 @@ namespace ProyectoPrototipo_1._0
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // Intenta convertir el contenido de txtBoxNumeroFacturaConsultar en un número entero
-            if (BigInteger.TryParse(txtBoxNumeroFacturaConsultar.Text, out BigInteger numeroFactura))
+            string numeroFactura = txtBoxNumeroFacturaConsultar.Text;
+
+            // Verifica que la cadena no esté vacía
+            if (!string.IsNullOrEmpty(numeroFactura))
             {
-                // La conversión fue exitosa, aquí puedes realizar la consulta con "numeroFactura"
-                ConsultarFacturaPorNumeroFactura(numeroFactura, dataGridViewFactura);
-                this.txtBoxConsultarNumeroCedula.Text = "";
-                dateTimeFin.Value = DateTime.Now;
-                dateTimeInicio.Value = DateTime.Now;
+                // Realiza la consulta SQL utilizando la cadena "numeroFactura"
+                string consultaSQL = "SELECT * FROM Factura WHERE idFactura = @numeroFactura";
+
+                using (SqlConnection connection = new SqlConnection(con))
+                {
+                    connection.Open();
+
+                    using (SqlCommand cmd = new SqlCommand(consultaSQL, connection))
+                    {
+                        // Agrega el parámetro para "numeroFactura"
+                        cmd.Parameters.AddWithValue("@numeroFactura", numeroFactura);
+
+                        // Crea un adaptador de datos y llena un DataTable con los resultados
+                        SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
+
+                        // Asigna el DataTable al DataGridView
+                        dataGridViewFactura.DataSource = dataTable;
+
+                        // Limpia el contenido del TextBox
+                        txtBoxNumeroFacturaConsultar.Clear();
+                    }
+                }
             }
             else
             {
-                // Mostrar un mensaje de error si no se ingresaron números
                 MessageBox.Show("Por favor, ingrese un número de factura válido.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
@@ -1161,7 +1208,38 @@ namespace ProyectoPrototipo_1._0
 
         private void bttAnular_Click(object sender, EventArgs e)
         {
+            using (SqlConnection connection = new SqlConnection(con))
+            {
+                connection.Open();
 
+                foreach (ProductoCarrito productoCarrito in carritoDeCompras)
+                {
+                    // Obtener el código y la cantidad del producto en el carrito
+                    int codigoProducto = productoCarrito.CodigoProducto;
+                    int cantidadIC = productoCarrito.Cantidad;
+
+                    // Paso 1: Consulta SQL para obtener la cantidad actual del producto
+                    string consultaCantidadActual = "SELECT cantidad FROM Producto WHERE codigo = @codigo";
+                    SqlCommand cmdConsulta = new SqlCommand(consultaCantidadActual, connection);
+                    cmdConsulta.Parameters.AddWithValue("@codigo", codigoProducto);
+
+                    int cantidadActual = (int)cmdConsulta.ExecuteScalar();
+
+                    // Paso 2: Resta la cantidad ingresada a la cantidad actual
+                    int nuevaCantidad = cantidadActual + cantidadIC;
+
+                    // Paso 3: Actualiza la cantidad en la base de datos
+                    string consultaActualizarCantidad = "UPDATE Producto SET cantidad = @nuevaCantidad WHERE codigo = @codigo";
+                    SqlCommand cmdActualizar = new SqlCommand(consultaActualizarCantidad, connection);
+                    cmdActualizar.Parameters.AddWithValue("@nuevaCantidad", nuevaCantidad);
+                    cmdActualizar.Parameters.AddWithValue("@codigo", codigoProducto);
+
+                    cmdActualizar.ExecuteNonQuery();
+                }
+
+                // Paso 4: Recarga los datos en el DataGridView
+                MostrarProductos(dataGridViewProductos);
+            }
             DialogResult result = MessageBox.Show($"¿Estás seguro de que deseas anular la factura con ID {idFacturaManejable}?", "Confirmación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
             // Si el usuario confirma la acción, procede a anular la factura
