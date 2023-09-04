@@ -30,69 +30,69 @@
         {
             TCProveedores = new TabControl();
             tabPage1 = new TabPage();
-            textBox14 = new TextBox();
+            TBCedulaUsuario = new TextBox();
             label22 = new Label();
-            comboBox1 = new ComboBox();
+            CBTipoUsuario = new ComboBox();
             label7 = new Label();
             label12 = new Label();
-            button4 = new Button();
-            textBox2 = new TextBox();
+            BRegistrarUsuario = new Button();
+            TBPasswordUsuario = new TextBox();
             label2 = new Label();
-            textBox1 = new TextBox();
+            TBNombreUsuario = new TextBox();
             label1 = new Label();
             tabPage8 = new TabPage();
-            textBox5 = new TextBox();
+            TBCedulaUConsultar = new TextBox();
             label6 = new Label();
-            button8 = new Button();
+            BConsultarUsuario = new Button();
             tabPage7 = new TabPage();
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             label9 = new Label();
-            button2 = new Button();
-            textBox6 = new TextBox();
+            BActualizarPass = new Button();
+            TBPasswordActualizar = new TextBox();
             label11 = new Label();
-            textBox7 = new TextBox();
+            TBCedulaUActualizarPass = new TextBox();
             label13 = new Label();
             tabPage3 = new TabPage();
-            comboBox2 = new ComboBox();
+            CBActualizarTipo = new ComboBox();
             label8 = new Label();
             label10 = new Label();
-            button3 = new Button();
-            textBox9 = new TextBox();
+            BActualizarTipo = new Button();
+            TBCedulaUActualizarTipo = new TextBox();
             label15 = new Label();
             tabPage12 = new TabPage();
-            textBox13 = new TextBox();
+            TBResetearUsuario = new TextBox();
             label21 = new Label();
-            button9 = new Button();
-            dataGridView1 = new DataGridView();
+            BResetearUsuario = new Button();
+            DGVUsuarios = new DataGridView();
             label3 = new Label();
             TCAdministracion = new TabControl();
             tabPage4 = new TabPage();
             tabPage5 = new TabPage();
             label4 = new Label();
-            dataGridView2 = new DataGridView();
+            DGVParametros = new DataGridView();
             tabControl2 = new TabControl();
             tabPage6 = new TabPage();
             label5 = new Label();
-            button1 = new Button();
-            textBox3 = new TextBox();
+            BRegistrarParametro = new Button();
+            TBRegistrarValor = new TextBox();
             label14 = new Label();
-            textBox4 = new TextBox();
+            TBRegistrarParametro = new TextBox();
             label16 = new Label();
             tabPage9 = new TabPage();
-            textBox8 = new TextBox();
+            TBConsultarParametro = new TextBox();
             label17 = new Label();
-            button5 = new Button();
+            BConsultarParametro = new Button();
             tabPage10 = new TabPage();
-            button6 = new Button();
-            textBox10 = new TextBox();
+            BActualizarParametro = new Button();
+            TBActualizarValor = new TextBox();
             label18 = new Label();
-            textBox11 = new TextBox();
+            TBActualizarParametro = new TextBox();
             label19 = new Label();
             tabPage11 = new TabPage();
-            textBox12 = new TextBox();
+            TBEliminarParametro = new TextBox();
             label20 = new Label();
-            button7 = new Button();
+            BEliminarParametro = new Button();
             TCProveedores.SuspendLayout();
             tabPage1.SuspendLayout();
             tabPage8.SuspendLayout();
@@ -101,11 +101,11 @@
             tabPage2.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage12.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVUsuarios).BeginInit();
             TCAdministracion.SuspendLayout();
             tabPage4.SuspendLayout();
             tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DGVParametros).BeginInit();
             tabControl2.SuspendLayout();
             tabPage6.SuspendLayout();
             tabPage9.SuspendLayout();
@@ -129,15 +129,15 @@
             // tabPage1
             // 
             tabPage1.BackColor = Color.Transparent;
-            tabPage1.Controls.Add(textBox14);
+            tabPage1.Controls.Add(TBCedulaUsuario);
             tabPage1.Controls.Add(label22);
-            tabPage1.Controls.Add(comboBox1);
+            tabPage1.Controls.Add(CBTipoUsuario);
             tabPage1.Controls.Add(label7);
             tabPage1.Controls.Add(label12);
-            tabPage1.Controls.Add(button4);
-            tabPage1.Controls.Add(textBox2);
+            tabPage1.Controls.Add(BRegistrarUsuario);
+            tabPage1.Controls.Add(TBPasswordUsuario);
             tabPage1.Controls.Add(label2);
-            tabPage1.Controls.Add(textBox1);
+            tabPage1.Controls.Add(TBNombreUsuario);
             tabPage1.Controls.Add(label1);
             tabPage1.Location = new Point(4, 29);
             tabPage1.Margin = new Padding(3, 4, 3, 4);
@@ -147,13 +147,13 @@
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar Usuario";
             // 
-            // textBox14
+            // TBCedulaUsuario
             // 
-            textBox14.Location = new Point(165, 36);
-            textBox14.Margin = new Padding(3, 4, 3, 4);
-            textBox14.Name = "textBox14";
-            textBox14.Size = new Size(169, 27);
-            textBox14.TabIndex = 28;
+            TBCedulaUsuario.Location = new Point(165, 36);
+            TBCedulaUsuario.Margin = new Padding(3, 4, 3, 4);
+            TBCedulaUsuario.Name = "TBCedulaUsuario";
+            TBCedulaUsuario.Size = new Size(169, 27);
+            TBCedulaUsuario.TabIndex = 28;
             // 
             // label22
             // 
@@ -164,14 +164,14 @@
             label22.TabIndex = 27;
             label22.Text = "C.I:";
             // 
-            // comboBox1
+            // CBTipoUsuario
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Vendedor", "Administrador" });
-            comboBox1.Location = new Point(165, 190);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(169, 28);
-            comboBox1.TabIndex = 26;
+            CBTipoUsuario.FormattingEnabled = true;
+            CBTipoUsuario.Items.AddRange(new object[] { "Vendedor", "Administrador" });
+            CBTipoUsuario.Location = new Point(165, 190);
+            CBTipoUsuario.Name = "CBTipoUsuario";
+            CBTipoUsuario.Size = new Size(169, 28);
+            CBTipoUsuario.TabIndex = 26;
             // 
             // label7
             // 
@@ -190,24 +190,24 @@
             label12.Size = new Size(0, 20);
             label12.TabIndex = 24;
             // 
-            // button4
+            // BRegistrarUsuario
             // 
-            button4.Location = new Point(374, 106);
-            button4.Margin = new Padding(3, 4, 3, 4);
-            button4.Name = "button4";
-            button4.Size = new Size(88, 35);
-            button4.TabIndex = 16;
-            button4.Text = "Registrar";
-            button4.UseVisualStyleBackColor = true;
-            button4.Click += button4_Click;
+            BRegistrarUsuario.Location = new Point(374, 106);
+            BRegistrarUsuario.Margin = new Padding(3, 4, 3, 4);
+            BRegistrarUsuario.Name = "BRegistrarUsuario";
+            BRegistrarUsuario.Size = new Size(88, 35);
+            BRegistrarUsuario.TabIndex = 16;
+            BRegistrarUsuario.Text = "Registrar";
+            BRegistrarUsuario.UseVisualStyleBackColor = true;
+            BRegistrarUsuario.Click += button4_Click;
             // 
-            // textBox2
+            // TBPasswordUsuario
             // 
-            textBox2.Location = new Point(165, 131);
-            textBox2.Margin = new Padding(3, 4, 3, 4);
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(169, 27);
-            textBox2.TabIndex = 8;
+            TBPasswordUsuario.Location = new Point(165, 131);
+            TBPasswordUsuario.Margin = new Padding(3, 4, 3, 4);
+            TBPasswordUsuario.Name = "TBPasswordUsuario";
+            TBPasswordUsuario.Size = new Size(169, 27);
+            TBPasswordUsuario.TabIndex = 8;
             // 
             // label2
             // 
@@ -218,13 +218,13 @@
             label2.TabIndex = 4;
             label2.Text = "Password:";
             // 
-            // textBox1
+            // TBNombreUsuario
             // 
-            textBox1.Location = new Point(165, 83);
-            textBox1.Margin = new Padding(3, 4, 3, 4);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(169, 27);
-            textBox1.TabIndex = 3;
+            TBNombreUsuario.Location = new Point(165, 83);
+            TBNombreUsuario.Margin = new Padding(3, 4, 3, 4);
+            TBNombreUsuario.Name = "TBNombreUsuario";
+            TBNombreUsuario.Size = new Size(169, 27);
+            TBNombreUsuario.TabIndex = 3;
             // 
             // label1
             // 
@@ -237,9 +237,9 @@
             // 
             // tabPage8
             // 
-            tabPage8.Controls.Add(textBox5);
+            tabPage8.Controls.Add(TBCedulaUConsultar);
             tabPage8.Controls.Add(label6);
-            tabPage8.Controls.Add(button8);
+            tabPage8.Controls.Add(BConsultarUsuario);
             tabPage8.Location = new Point(4, 29);
             tabPage8.Name = "tabPage8";
             tabPage8.Size = new Size(507, 287);
@@ -247,13 +247,13 @@
             tabPage8.Text = "Consultar Usuario";
             tabPage8.UseVisualStyleBackColor = true;
             // 
-            // textBox5
+            // TBCedulaUConsultar
             // 
-            textBox5.Location = new Point(133, 45);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(169, 27);
-            textBox5.TabIndex = 54;
+            TBCedulaUConsultar.Location = new Point(133, 45);
+            TBCedulaUConsultar.Margin = new Padding(3, 4, 3, 4);
+            TBCedulaUConsultar.Name = "TBCedulaUConsultar";
+            TBCedulaUConsultar.Size = new Size(169, 27);
+            TBCedulaUConsultar.TabIndex = 54;
             // 
             // label6
             // 
@@ -264,15 +264,15 @@
             label6.TabIndex = 53;
             label6.Text = "CI-Usuario:";
             // 
-            // button8
+            // BConsultarUsuario
             // 
-            button8.Location = new Point(341, 41);
-            button8.Margin = new Padding(3, 4, 3, 4);
-            button8.Name = "button8";
-            button8.Size = new Size(93, 35);
-            button8.TabIndex = 52;
-            button8.Text = "Consultar";
-            button8.UseVisualStyleBackColor = true;
+            BConsultarUsuario.Location = new Point(341, 41);
+            BConsultarUsuario.Margin = new Padding(3, 4, 3, 4);
+            BConsultarUsuario.Name = "BConsultarUsuario";
+            BConsultarUsuario.Size = new Size(93, 35);
+            BConsultarUsuario.TabIndex = 52;
+            BConsultarUsuario.Text = "Consultar";
+            BConsultarUsuario.UseVisualStyleBackColor = true;
             // 
             // tabPage7
             // 
@@ -299,10 +299,10 @@
             // tabPage2
             // 
             tabPage2.Controls.Add(label9);
-            tabPage2.Controls.Add(button2);
-            tabPage2.Controls.Add(textBox6);
+            tabPage2.Controls.Add(BActualizarPass);
+            tabPage2.Controls.Add(TBPasswordActualizar);
             tabPage2.Controls.Add(label11);
-            tabPage2.Controls.Add(textBox7);
+            tabPage2.Controls.Add(TBCedulaUActualizarPass);
             tabPage2.Controls.Add(label13);
             tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
@@ -321,23 +321,23 @@
             label9.Size = new Size(0, 20);
             label9.TabIndex = 24;
             // 
-            // button2
+            // BActualizarPass
             // 
-            button2.Location = new Point(347, 75);
-            button2.Margin = new Padding(3, 4, 3, 4);
-            button2.Name = "button2";
-            button2.Size = new Size(88, 35);
-            button2.TabIndex = 16;
-            button2.Text = "Actualizar";
-            button2.UseVisualStyleBackColor = true;
+            BActualizarPass.Location = new Point(347, 75);
+            BActualizarPass.Margin = new Padding(3, 4, 3, 4);
+            BActualizarPass.Name = "BActualizarPass";
+            BActualizarPass.Size = new Size(88, 35);
+            BActualizarPass.TabIndex = 16;
+            BActualizarPass.Text = "Actualizar";
+            BActualizarPass.UseVisualStyleBackColor = true;
             // 
-            // textBox6
+            // TBPasswordActualizar
             // 
-            textBox6.Location = new Point(122, 83);
-            textBox6.Margin = new Padding(3, 4, 3, 4);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(169, 27);
-            textBox6.TabIndex = 8;
+            TBPasswordActualizar.Location = new Point(122, 83);
+            TBPasswordActualizar.Margin = new Padding(3, 4, 3, 4);
+            TBPasswordActualizar.Name = "TBPasswordActualizar";
+            TBPasswordActualizar.Size = new Size(169, 27);
+            TBPasswordActualizar.TabIndex = 8;
             // 
             // label11
             // 
@@ -348,13 +348,13 @@
             label11.TabIndex = 4;
             label11.Text = "Password:";
             // 
-            // textBox7
+            // TBCedulaUActualizarPass
             // 
-            textBox7.Location = new Point(122, 35);
-            textBox7.Margin = new Padding(3, 4, 3, 4);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(169, 27);
-            textBox7.TabIndex = 3;
+            TBCedulaUActualizarPass.Location = new Point(122, 35);
+            TBCedulaUActualizarPass.Margin = new Padding(3, 4, 3, 4);
+            TBCedulaUActualizarPass.Name = "TBCedulaUActualizarPass";
+            TBCedulaUActualizarPass.Size = new Size(169, 27);
+            TBCedulaUActualizarPass.TabIndex = 3;
             // 
             // label13
             // 
@@ -367,11 +367,11 @@
             // 
             // tabPage3
             // 
-            tabPage3.Controls.Add(comboBox2);
+            tabPage3.Controls.Add(CBActualizarTipo);
             tabPage3.Controls.Add(label8);
             tabPage3.Controls.Add(label10);
-            tabPage3.Controls.Add(button3);
-            tabPage3.Controls.Add(textBox9);
+            tabPage3.Controls.Add(BActualizarTipo);
+            tabPage3.Controls.Add(TBCedulaUActualizarTipo);
             tabPage3.Controls.Add(label15);
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
@@ -381,14 +381,14 @@
             tabPage3.Text = "Tipo de Usuario";
             tabPage3.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // CBActualizarTipo
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "Vendedor", "Administrador" });
-            comboBox2.Location = new Point(153, 89);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(169, 28);
-            comboBox2.TabIndex = 57;
+            CBActualizarTipo.FormattingEnabled = true;
+            CBActualizarTipo.Items.AddRange(new object[] { "Vendedor", "Administrador" });
+            CBActualizarTipo.Location = new Point(153, 89);
+            CBActualizarTipo.Name = "CBActualizarTipo";
+            CBActualizarTipo.Size = new Size(169, 28);
+            CBActualizarTipo.TabIndex = 57;
             // 
             // label8
             // 
@@ -407,23 +407,23 @@
             label10.Size = new Size(0, 20);
             label10.TabIndex = 55;
             // 
-            // button3
+            // BActualizarTipo
             // 
-            button3.Location = new Point(351, 85);
-            button3.Margin = new Padding(3, 4, 3, 4);
-            button3.Name = "button3";
-            button3.Size = new Size(88, 35);
-            button3.TabIndex = 54;
-            button3.Text = "Actualizar";
-            button3.UseVisualStyleBackColor = true;
+            BActualizarTipo.Location = new Point(351, 85);
+            BActualizarTipo.Margin = new Padding(3, 4, 3, 4);
+            BActualizarTipo.Name = "BActualizarTipo";
+            BActualizarTipo.Size = new Size(88, 35);
+            BActualizarTipo.TabIndex = 54;
+            BActualizarTipo.Text = "Actualizar";
+            BActualizarTipo.UseVisualStyleBackColor = true;
             // 
-            // textBox9
+            // TBCedulaUActualizarTipo
             // 
-            textBox9.Location = new Point(151, 36);
-            textBox9.Margin = new Padding(3, 4, 3, 4);
-            textBox9.Name = "textBox9";
-            textBox9.Size = new Size(169, 27);
-            textBox9.TabIndex = 51;
+            TBCedulaUActualizarTipo.Location = new Point(151, 36);
+            TBCedulaUActualizarTipo.Margin = new Padding(3, 4, 3, 4);
+            TBCedulaUActualizarTipo.Name = "TBCedulaUActualizarTipo";
+            TBCedulaUActualizarTipo.Size = new Size(169, 27);
+            TBCedulaUActualizarTipo.TabIndex = 51;
             // 
             // label15
             // 
@@ -436,9 +436,9 @@
             // 
             // tabPage12
             // 
-            tabPage12.Controls.Add(textBox13);
+            tabPage12.Controls.Add(TBResetearUsuario);
             tabPage12.Controls.Add(label21);
-            tabPage12.Controls.Add(button9);
+            tabPage12.Controls.Add(BResetearUsuario);
             tabPage12.Location = new Point(4, 29);
             tabPage12.Name = "tabPage12";
             tabPage12.Size = new Size(507, 287);
@@ -446,13 +446,13 @@
             tabPage12.Text = "Resetear Usuario";
             tabPage12.UseVisualStyleBackColor = true;
             // 
-            // textBox13
+            // TBResetearUsuario
             // 
-            textBox13.Location = new Point(133, 45);
-            textBox13.Margin = new Padding(3, 4, 3, 4);
-            textBox13.Name = "textBox13";
-            textBox13.Size = new Size(169, 27);
-            textBox13.TabIndex = 54;
+            TBResetearUsuario.Location = new Point(133, 45);
+            TBResetearUsuario.Margin = new Padding(3, 4, 3, 4);
+            TBResetearUsuario.Name = "TBResetearUsuario";
+            TBResetearUsuario.Size = new Size(169, 27);
+            TBResetearUsuario.TabIndex = 54;
             // 
             // label21
             // 
@@ -463,27 +463,27 @@
             label21.TabIndex = 53;
             label21.Text = "CI-Usuario:";
             // 
-            // button9
+            // BResetearUsuario
             // 
-            button9.Location = new Point(341, 41);
-            button9.Margin = new Padding(3, 4, 3, 4);
-            button9.Name = "button9";
-            button9.Size = new Size(93, 35);
-            button9.TabIndex = 52;
-            button9.Text = "Eliminar";
-            button9.UseVisualStyleBackColor = true;
+            BResetearUsuario.Location = new Point(341, 41);
+            BResetearUsuario.Margin = new Padding(3, 4, 3, 4);
+            BResetearUsuario.Name = "BResetearUsuario";
+            BResetearUsuario.Size = new Size(93, 35);
+            BResetearUsuario.TabIndex = 52;
+            BResetearUsuario.Text = "Eliminar";
+            BResetearUsuario.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // DGVUsuarios
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(526, 37);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(290, 389);
-            dataGridView1.TabIndex = 2;
+            DGVUsuarios.BackgroundColor = Color.White;
+            DGVUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVUsuarios.Location = new Point(526, 37);
+            DGVUsuarios.Margin = new Padding(3, 4, 3, 4);
+            DGVUsuarios.Name = "DGVUsuarios";
+            DGVUsuarios.RowHeadersWidth = 51;
+            DGVUsuarios.RowTemplate.Height = 24;
+            DGVUsuarios.Size = new Size(290, 389);
+            DGVUsuarios.TabIndex = 2;
             // 
             // label3
             // 
@@ -509,7 +509,7 @@
             // 
             tabPage4.Controls.Add(TCProveedores);
             tabPage4.Controls.Add(label3);
-            tabPage4.Controls.Add(dataGridView1);
+            tabPage4.Controls.Add(DGVUsuarios);
             tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
@@ -522,7 +522,7 @@
             // tabPage5
             // 
             tabPage5.Controls.Add(label4);
-            tabPage5.Controls.Add(dataGridView2);
+            tabPage5.Controls.Add(DGVParametros);
             tabPage5.Controls.Add(tabControl2);
             tabPage5.Location = new Point(4, 29);
             tabPage5.Margin = new Padding(3, 4, 3, 4);
@@ -542,17 +542,17 @@
             label4.TabIndex = 8;
             label4.Text = "Tabla de Parámetros";
             // 
-            // dataGridView2
+            // DGVParametros
             // 
-            dataGridView2.BackgroundColor = Color.White;
-            dataGridView2.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView2.Location = new Point(612, 32);
-            dataGridView2.Margin = new Padding(3, 4, 3, 4);
-            dataGridView2.Name = "dataGridView2";
-            dataGridView2.RowHeadersWidth = 51;
-            dataGridView2.RowTemplate.Height = 24;
-            dataGridView2.Size = new Size(262, 431);
-            dataGridView2.TabIndex = 7;
+            DGVParametros.BackgroundColor = Color.White;
+            DGVParametros.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            DGVParametros.Location = new Point(612, 32);
+            DGVParametros.Margin = new Padding(3, 4, 3, 4);
+            DGVParametros.Name = "DGVParametros";
+            DGVParametros.RowHeadersWidth = 51;
+            DGVParametros.RowTemplate.Height = 24;
+            DGVParametros.Size = new Size(262, 431);
+            DGVParametros.TabIndex = 7;
             // 
             // tabControl2
             // 
@@ -570,10 +570,10 @@
             // tabPage6
             // 
             tabPage6.Controls.Add(label5);
-            tabPage6.Controls.Add(button1);
-            tabPage6.Controls.Add(textBox3);
+            tabPage6.Controls.Add(BRegistrarParametro);
+            tabPage6.Controls.Add(TBRegistrarValor);
             tabPage6.Controls.Add(label14);
-            tabPage6.Controls.Add(textBox4);
+            tabPage6.Controls.Add(TBRegistrarParametro);
             tabPage6.Controls.Add(label16);
             tabPage6.Location = new Point(4, 29);
             tabPage6.Margin = new Padding(3, 4, 3, 4);
@@ -592,23 +592,23 @@
             label5.Size = new Size(0, 20);
             label5.TabIndex = 24;
             // 
-            // button1
+            // BRegistrarParametro
             // 
-            button1.Location = new Point(216, 148);
-            button1.Margin = new Padding(3, 4, 3, 4);
-            button1.Name = "button1";
-            button1.Size = new Size(88, 35);
-            button1.TabIndex = 16;
-            button1.Text = "Registrar";
-            button1.UseVisualStyleBackColor = true;
+            BRegistrarParametro.Location = new Point(216, 148);
+            BRegistrarParametro.Margin = new Padding(3, 4, 3, 4);
+            BRegistrarParametro.Name = "BRegistrarParametro";
+            BRegistrarParametro.Size = new Size(88, 35);
+            BRegistrarParametro.TabIndex = 16;
+            BRegistrarParametro.Text = "Registrar";
+            BRegistrarParametro.UseVisualStyleBackColor = true;
             // 
-            // textBox3
+            // TBRegistrarValor
             // 
-            textBox3.Location = new Point(190, 96);
-            textBox3.Margin = new Padding(3, 4, 3, 4);
-            textBox3.Name = "textBox3";
-            textBox3.Size = new Size(169, 27);
-            textBox3.TabIndex = 8;
+            TBRegistrarValor.Location = new Point(190, 96);
+            TBRegistrarValor.Margin = new Padding(3, 4, 3, 4);
+            TBRegistrarValor.Name = "TBRegistrarValor";
+            TBRegistrarValor.Size = new Size(169, 27);
+            TBRegistrarValor.TabIndex = 8;
             // 
             // label14
             // 
@@ -619,13 +619,13 @@
             label14.TabIndex = 4;
             label14.Text = "Valor:";
             // 
-            // textBox4
+            // TBRegistrarParametro
             // 
-            textBox4.Location = new Point(190, 48);
-            textBox4.Margin = new Padding(3, 4, 3, 4);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(169, 27);
-            textBox4.TabIndex = 3;
+            TBRegistrarParametro.Location = new Point(190, 48);
+            TBRegistrarParametro.Margin = new Padding(3, 4, 3, 4);
+            TBRegistrarParametro.Name = "TBRegistrarParametro";
+            TBRegistrarParametro.Size = new Size(169, 27);
+            TBRegistrarParametro.TabIndex = 3;
             // 
             // label16
             // 
@@ -638,9 +638,9 @@
             // 
             // tabPage9
             // 
-            tabPage9.Controls.Add(textBox8);
+            tabPage9.Controls.Add(TBConsultarParametro);
             tabPage9.Controls.Add(label17);
-            tabPage9.Controls.Add(button5);
+            tabPage9.Controls.Add(BConsultarParametro);
             tabPage9.Location = new Point(4, 29);
             tabPage9.Name = "tabPage9";
             tabPage9.Padding = new Padding(3);
@@ -649,13 +649,13 @@
             tabPage9.Text = "Consultar Parámetro";
             tabPage9.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // TBConsultarParametro
             // 
-            textBox8.Location = new Point(139, 44);
-            textBox8.Margin = new Padding(3, 4, 3, 4);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(169, 27);
-            textBox8.TabIndex = 57;
+            TBConsultarParametro.Location = new Point(139, 44);
+            TBConsultarParametro.Margin = new Padding(3, 4, 3, 4);
+            TBConsultarParametro.Name = "TBConsultarParametro";
+            TBConsultarParametro.Size = new Size(169, 27);
+            TBConsultarParametro.TabIndex = 57;
             // 
             // label17
             // 
@@ -666,22 +666,22 @@
             label17.TabIndex = 56;
             label17.Text = "Parámetro:";
             // 
-            // button5
+            // BConsultarParametro
             // 
-            button5.Location = new Point(336, 40);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(93, 35);
-            button5.TabIndex = 55;
-            button5.Text = "Consultar";
-            button5.UseVisualStyleBackColor = true;
+            BConsultarParametro.Location = new Point(336, 40);
+            BConsultarParametro.Margin = new Padding(3, 4, 3, 4);
+            BConsultarParametro.Name = "BConsultarParametro";
+            BConsultarParametro.Size = new Size(93, 35);
+            BConsultarParametro.TabIndex = 55;
+            BConsultarParametro.Text = "Consultar";
+            BConsultarParametro.UseVisualStyleBackColor = true;
             // 
             // tabPage10
             // 
-            tabPage10.Controls.Add(button6);
-            tabPage10.Controls.Add(textBox10);
+            tabPage10.Controls.Add(BActualizarParametro);
+            tabPage10.Controls.Add(TBActualizarValor);
             tabPage10.Controls.Add(label18);
-            tabPage10.Controls.Add(textBox11);
+            tabPage10.Controls.Add(TBActualizarParametro);
             tabPage10.Controls.Add(label19);
             tabPage10.Location = new Point(4, 29);
             tabPage10.Name = "tabPage10";
@@ -691,23 +691,23 @@
             tabPage10.Text = "Actualizar Parámetro";
             tabPage10.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // BActualizarParametro
             // 
-            button6.Location = new Point(217, 156);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(88, 35);
-            button6.TabIndex = 21;
-            button6.Text = "Actualizar";
-            button6.UseVisualStyleBackColor = true;
+            BActualizarParametro.Location = new Point(217, 156);
+            BActualizarParametro.Margin = new Padding(3, 4, 3, 4);
+            BActualizarParametro.Name = "BActualizarParametro";
+            BActualizarParametro.Size = new Size(88, 35);
+            BActualizarParametro.TabIndex = 21;
+            BActualizarParametro.Text = "Actualizar";
+            BActualizarParametro.UseVisualStyleBackColor = true;
             // 
-            // textBox10
+            // TBActualizarValor
             // 
-            textBox10.Location = new Point(191, 104);
-            textBox10.Margin = new Padding(3, 4, 3, 4);
-            textBox10.Name = "textBox10";
-            textBox10.Size = new Size(169, 27);
-            textBox10.TabIndex = 20;
+            TBActualizarValor.Location = new Point(191, 104);
+            TBActualizarValor.Margin = new Padding(3, 4, 3, 4);
+            TBActualizarValor.Name = "TBActualizarValor";
+            TBActualizarValor.Size = new Size(169, 27);
+            TBActualizarValor.TabIndex = 20;
             // 
             // label18
             // 
@@ -718,13 +718,13 @@
             label18.TabIndex = 19;
             label18.Text = "Valor:";
             // 
-            // textBox11
+            // TBActualizarParametro
             // 
-            textBox11.Location = new Point(191, 56);
-            textBox11.Margin = new Padding(3, 4, 3, 4);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(169, 27);
-            textBox11.TabIndex = 18;
+            TBActualizarParametro.Location = new Point(191, 56);
+            TBActualizarParametro.Margin = new Padding(3, 4, 3, 4);
+            TBActualizarParametro.Name = "TBActualizarParametro";
+            TBActualizarParametro.Size = new Size(169, 27);
+            TBActualizarParametro.TabIndex = 18;
             // 
             // label19
             // 
@@ -737,9 +737,9 @@
             // 
             // tabPage11
             // 
-            tabPage11.Controls.Add(textBox12);
+            tabPage11.Controls.Add(TBEliminarParametro);
             tabPage11.Controls.Add(label20);
-            tabPage11.Controls.Add(button7);
+            tabPage11.Controls.Add(BEliminarParametro);
             tabPage11.Location = new Point(4, 29);
             tabPage11.Name = "tabPage11";
             tabPage11.Size = new Size(598, 275);
@@ -747,13 +747,13 @@
             tabPage11.Text = "Eliminar Parámetro";
             tabPage11.UseVisualStyleBackColor = true;
             // 
-            // textBox12
+            // TBEliminarParametro
             // 
-            textBox12.Location = new Point(139, 44);
-            textBox12.Margin = new Padding(3, 4, 3, 4);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(169, 27);
-            textBox12.TabIndex = 54;
+            TBEliminarParametro.Location = new Point(139, 44);
+            TBEliminarParametro.Margin = new Padding(3, 4, 3, 4);
+            TBEliminarParametro.Name = "TBEliminarParametro";
+            TBEliminarParametro.Size = new Size(169, 27);
+            TBEliminarParametro.TabIndex = 54;
             // 
             // label20
             // 
@@ -764,15 +764,15 @@
             label20.TabIndex = 53;
             label20.Text = "Parámetro:";
             // 
-            // button7
+            // BEliminarParametro
             // 
-            button7.Location = new Point(336, 40);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(93, 35);
-            button7.TabIndex = 52;
-            button7.Text = "Eliminar";
-            button7.UseVisualStyleBackColor = true;
+            BEliminarParametro.Location = new Point(336, 40);
+            BEliminarParametro.Margin = new Padding(3, 4, 3, 4);
+            BEliminarParametro.Name = "BEliminarParametro";
+            BEliminarParametro.Size = new Size(93, 35);
+            BEliminarParametro.TabIndex = 52;
+            BEliminarParametro.Text = "Eliminar";
+            BEliminarParametro.UseVisualStyleBackColor = true;
             // 
             // Form_AdministracionDelSistema
             // 
@@ -797,13 +797,13 @@
             tabPage3.PerformLayout();
             tabPage12.ResumeLayout(false);
             tabPage12.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVUsuarios).EndInit();
             TCAdministracion.ResumeLayout(false);
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             tabPage5.ResumeLayout(false);
             tabPage5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DGVParametros).EndInit();
             tabControl2.ResumeLayout(false);
             tabPage6.ResumeLayout(false);
             tabPage6.PerformLayout();
@@ -821,32 +821,32 @@
         private TabControl TCProveedores;
         private TabPage tabPage1;
         private Label label12;
-        private Button button4;
-        private TextBox textBox2;
+        private Button BRegistrarUsuario;
+        private TextBox TBPasswordUsuario;
         private Label label2;
-        private TextBox textBox1;
+        private TextBox TBNombreUsuario;
         private Label label1;
         private TabPage tabPage7;
         private TabPage tabPage8;
-        private Button button8;
-        private DataGridView dataGridView1;
-        private TextBox textBox5;
+        private Button BConsultarUsuario;
+        private DataGridView DGVUsuarios;
+        private TextBox TBCedulaUConsultar;
         private Label label6;
         private TabControl tabControl1;
         private TabPage tabPage2;
         private Label label9;
-        private Button button2;
-        private TextBox textBox6;
+        private Button BActualizarPass;
+        private TextBox TBPasswordActualizar;
         private Label label11;
-        private TextBox textBox7;
+        private TextBox TBCedulaUActualizarPass;
         private Label label13;
         private TabPage tabPage3;
-        private Button button3;
-        private TextBox textBox9;
+        private Button BActualizarTipo;
+        private TextBox TBCedulaUActualizarTipo;
         private Label label15;
-        private ComboBox comboBox1;
+        private ComboBox CBTipoUsuario;
         private Label label7;
-        private ComboBox comboBox2;
+        private ComboBox CBActualizarTipo;
         private Label label8;
         private Label label10;
         private Label label3;
@@ -854,34 +854,34 @@
         private TabPage tabPage4;
         private TabPage tabPage5;
         private Label label4;
-        private DataGridView dataGridView2;
+        private DataGridView DGVParametros;
         private TabControl tabControl2;
         private TabPage tabPage6;
         private Label label5;
-        private Button button1;
-        private TextBox textBox3;
+        private Button BRegistrarParametro;
+        private TextBox TBRegistrarValor;
         private Label label14;
-        private TextBox textBox4;
+        private TextBox TBRegistrarParametro;
         private Label label16;
         private TabPage tabPage9;
-        private TextBox textBox8;
+        private TextBox TBConsultarParametro;
         private Label label17;
-        private Button button5;
+        private Button BConsultarParametro;
         private TabPage tabPage10;
-        private Button button6;
-        private TextBox textBox10;
+        private Button BActualizarParametro;
+        private TextBox TBActualizarValor;
         private Label label18;
-        private TextBox textBox11;
+        private TextBox TBActualizarParametro;
         private Label label19;
         private TabPage tabPage11;
-        private TextBox textBox12;
+        private TextBox TBEliminarParametro;
         private Label label20;
-        private Button button7;
+        private Button BEliminarParametro;
         private TabPage tabPage12;
-        private TextBox textBox13;
+        private TextBox TBResetearUsuario;
         private Label label21;
-        private Button button9;
-        private TextBox textBox14;
+        private Button BResetearUsuario;
+        private TextBox TBCedulaUsuario;
         private Label label22;
     }
 }

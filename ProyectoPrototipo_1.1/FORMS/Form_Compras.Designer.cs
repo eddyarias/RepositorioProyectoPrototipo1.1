@@ -30,6 +30,11 @@
         {
             TCCompras = new TabControl();
             tabPage2 = new TabPage();
+            label9 = new Label();
+            textBox5 = new TextBox();
+            label12 = new Label();
+            label18 = new Label();
+            comboBox1 = new ComboBox();
             tabControl2 = new TabControl();
             tabPage7 = new TabPage();
             label7 = new Label();
@@ -38,6 +43,12 @@
             label4 = new Label();
             textBox9 = new TextBox();
             button4 = new Button();
+            tabPage6 = new TabPage();
+            textBox7 = new TextBox();
+            label14 = new Label();
+            label15 = new Label();
+            textBox8 = new TextBox();
+            button5 = new Button();
             tabPage9 = new TabPage();
             label8 = new Label();
             textBox4 = new TextBox();
@@ -48,6 +59,15 @@
             label17 = new Label();
             dataGridView3 = new DataGridView();
             button1 = new Button();
+            tabPage11 = new TabPage();
+            label19 = new Label();
+            textBox11 = new TextBox();
+            button7 = new Button();
+            label20 = new Label();
+            tabPage12 = new TabPage();
+            label21 = new Label();
+            textBox12 = new TextBox();
+            button9 = new Button();
             tabPage1 = new TabPage();
             tabControl1 = new TabControl();
             tabPage3 = new TabPage();
@@ -62,40 +82,20 @@
             label6 = new Label();
             dataGridView1 = new DataGridView();
             label37 = new Label();
-            tabPage6 = new TabPage();
-            textBox7 = new TextBox();
-            label14 = new Label();
-            label15 = new Label();
-            textBox8 = new TextBox();
-            button5 = new Button();
-            tabPage11 = new TabPage();
-            label19 = new Label();
-            textBox11 = new TextBox();
-            button7 = new Button();
-            label20 = new Label();
-            tabPage12 = new TabPage();
-            label21 = new Label();
-            textBox12 = new TextBox();
-            button9 = new Button();
-            label9 = new Label();
-            textBox5 = new TextBox();
-            label12 = new Label();
-            label18 = new Label();
-            comboBox1 = new ComboBox();
             TCCompras.SuspendLayout();
             tabPage2.SuspendLayout();
             tabControl2.SuspendLayout();
             tabPage7.SuspendLayout();
+            tabPage6.SuspendLayout();
             tabPage9.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).BeginInit();
+            tabPage11.SuspendLayout();
+            tabPage12.SuspendLayout();
             tabPage1.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage3.SuspendLayout();
             tabPage4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            tabPage6.SuspendLayout();
-            tabPage11.SuspendLayout();
-            tabPage12.SuspendLayout();
             SuspendLayout();
             // 
             // TCCompras
@@ -133,6 +133,50 @@
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Pedido de compra";
             tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // label9
+            // 
+            label9.AutoSize = true;
+            label9.Location = new Point(437, 268);
+            label9.Name = "label9";
+            label9.Size = new Size(44, 20);
+            label9.TabIndex = 56;
+            label9.Text = "RUC: ";
+            // 
+            // textBox5
+            // 
+            textBox5.Location = new Point(487, 265);
+            textBox5.Margin = new Padding(3, 4, 3, 4);
+            textBox5.Name = "textBox5";
+            textBox5.Size = new Size(152, 27);
+            textBox5.TabIndex = 57;
+            // 
+            // label12
+            // 
+            label12.AutoSize = true;
+            label12.Location = new Point(437, 268);
+            label12.Name = "label12";
+            label12.Size = new Size(0, 20);
+            label12.TabIndex = 58;
+            // 
+            // label18
+            // 
+            label18.AutoSize = true;
+            label18.Location = new Point(433, 309);
+            label18.Name = "label18";
+            label18.Size = new Size(125, 20);
+            label18.TabIndex = 55;
+            label18.Text = "Método de pago:";
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Efectivo", "Transferencia bancaria", "Tarjeta de Crédito" });
+            comboBox1.Location = new Point(487, 333);
+            comboBox1.Margin = new Padding(3, 4, 3, 4);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(152, 28);
+            comboBox1.TabIndex = 54;
             // 
             // tabControl2
             // 
@@ -215,6 +259,65 @@
             button4.Text = "Registrar";
             button4.UseVisualStyleBackColor = true;
             button4.Click += button4_Click;
+            // 
+            // tabPage6
+            // 
+            tabPage6.Controls.Add(textBox7);
+            tabPage6.Controls.Add(label14);
+            tabPage6.Controls.Add(label15);
+            tabPage6.Controls.Add(textBox8);
+            tabPage6.Controls.Add(button5);
+            tabPage6.Location = new Point(4, 29);
+            tabPage6.Name = "tabPage6";
+            tabPage6.Padding = new Padding(3);
+            tabPage6.Size = new Size(665, 189);
+            tabPage6.TabIndex = 3;
+            tabPage6.Text = "Actualizar Producto";
+            tabPage6.UseVisualStyleBackColor = true;
+            // 
+            // textBox7
+            // 
+            textBox7.Location = new Point(226, 39);
+            textBox7.Margin = new Padding(3, 4, 3, 4);
+            textBox7.Name = "textBox7";
+            textBox7.Size = new Size(119, 27);
+            textBox7.TabIndex = 39;
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Location = new Point(135, 93);
+            label14.Name = "label14";
+            label14.Size = new Size(90, 20);
+            label14.TabIndex = 37;
+            label14.Text = "Descripción:";
+            // 
+            // label15
+            // 
+            label15.AutoSize = true;
+            label15.Location = new Point(156, 43);
+            label15.Name = "label15";
+            label15.Size = new Size(72, 20);
+            label15.TabIndex = 38;
+            label15.Text = "Cantidad:";
+            // 
+            // textBox8
+            // 
+            textBox8.Location = new Point(226, 89);
+            textBox8.Margin = new Padding(3, 4, 3, 4);
+            textBox8.Name = "textBox8";
+            textBox8.Size = new Size(247, 27);
+            textBox8.TabIndex = 40;
+            // 
+            // button5
+            // 
+            button5.Location = new Point(385, 39);
+            button5.Margin = new Padding(3, 4, 3, 4);
+            button5.Name = "button5";
+            button5.Size = new Size(88, 38);
+            button5.TabIndex = 41;
+            button5.Text = "Actualizar";
+            button5.UseVisualStyleBackColor = true;
             // 
             // tabPage9
             // 
@@ -312,6 +415,96 @@
             button1.Text = "Guardar pedido";
             button1.UseVisualStyleBackColor = true;
             button1.Click += button1_Click;
+            // 
+            // tabPage11
+            // 
+            tabPage11.Controls.Add(label19);
+            tabPage11.Controls.Add(textBox11);
+            tabPage11.Controls.Add(button7);
+            tabPage11.Controls.Add(label20);
+            tabPage11.Location = new Point(4, 29);
+            tabPage11.Margin = new Padding(3, 4, 3, 4);
+            tabPage11.Name = "tabPage11";
+            tabPage11.Padding = new Padding(3, 4, 3, 4);
+            tabPage11.Size = new Size(676, 509);
+            tabPage11.TabIndex = 3;
+            tabPage11.Text = "Consultar pedido";
+            tabPage11.UseVisualStyleBackColor = true;
+            // 
+            // label19
+            // 
+            label19.AutoSize = true;
+            label19.Location = new Point(172, 52);
+            label19.Name = "label19";
+            label19.Size = new Size(110, 20);
+            label19.TabIndex = 31;
+            label19.Text = "Ruc-Proveedor:";
+            // 
+            // textBox11
+            // 
+            textBox11.Location = new Point(283, 45);
+            textBox11.Margin = new Padding(3, 4, 3, 4);
+            textBox11.Name = "textBox11";
+            textBox11.Size = new Size(247, 27);
+            textBox11.TabIndex = 32;
+            // 
+            // button7
+            // 
+            button7.Location = new Point(302, 89);
+            button7.Margin = new Padding(3, 4, 3, 4);
+            button7.Name = "button7";
+            button7.Size = new Size(112, 66);
+            button7.TabIndex = 20;
+            button7.Text = "Consultar pedido";
+            button7.UseVisualStyleBackColor = true;
+            // 
+            // label20
+            // 
+            label20.AutoSize = true;
+            label20.Location = new Point(30, 49);
+            label20.Name = "label20";
+            label20.Size = new Size(0, 20);
+            label20.TabIndex = 17;
+            // 
+            // tabPage12
+            // 
+            tabPage12.Controls.Add(label21);
+            tabPage12.Controls.Add(textBox12);
+            tabPage12.Controls.Add(button9);
+            tabPage12.Location = new Point(4, 29);
+            tabPage12.Name = "tabPage12";
+            tabPage12.Padding = new Padding(3);
+            tabPage12.Size = new Size(676, 509);
+            tabPage12.TabIndex = 5;
+            tabPage12.Text = "Eliminar pedido";
+            tabPage12.UseVisualStyleBackColor = true;
+            // 
+            // label21
+            // 
+            label21.AutoSize = true;
+            label21.Location = new Point(159, 43);
+            label21.Name = "label21";
+            label21.Size = new Size(110, 20);
+            label21.TabIndex = 34;
+            label21.Text = "Ruc-Proveedor:";
+            // 
+            // textBox12
+            // 
+            textBox12.Location = new Point(270, 37);
+            textBox12.Margin = new Padding(3, 4, 3, 4);
+            textBox12.Name = "textBox12";
+            textBox12.Size = new Size(247, 27);
+            textBox12.TabIndex = 35;
+            // 
+            // button9
+            // 
+            button9.Location = new Point(289, 81);
+            button9.Margin = new Padding(3, 4, 3, 4);
+            button9.Name = "button9";
+            button9.Size = new Size(112, 66);
+            button9.TabIndex = 33;
+            button9.Text = "Eliminar pedido";
+            button9.UseVisualStyleBackColor = true;
             // 
             // tabPage1
             // 
@@ -440,12 +633,12 @@
             // 
             dataGridView1.BackgroundColor = Color.White;
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(755, 46);
+            dataGridView1.Location = new Point(694, 33);
             dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(412, 511);
+            dataGridView1.Size = new Size(1076, 534);
             dataGridView1.TabIndex = 1;
             // 
             // label37
@@ -458,204 +651,11 @@
             label37.TabIndex = 5;
             label37.Text = "COMPRAS";
             // 
-            // tabPage6
-            // 
-            tabPage6.Controls.Add(textBox7);
-            tabPage6.Controls.Add(label14);
-            tabPage6.Controls.Add(label15);
-            tabPage6.Controls.Add(textBox8);
-            tabPage6.Controls.Add(button5);
-            tabPage6.Location = new Point(4, 29);
-            tabPage6.Name = "tabPage6";
-            tabPage6.Padding = new Padding(3);
-            tabPage6.Size = new Size(665, 189);
-            tabPage6.TabIndex = 3;
-            tabPage6.Text = "Actualizar Producto";
-            tabPage6.UseVisualStyleBackColor = true;
-            // 
-            // textBox7
-            // 
-            textBox7.Location = new Point(226, 39);
-            textBox7.Margin = new Padding(3, 4, 3, 4);
-            textBox7.Name = "textBox7";
-            textBox7.Size = new Size(119, 27);
-            textBox7.TabIndex = 39;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Location = new Point(135, 93);
-            label14.Name = "label14";
-            label14.Size = new Size(90, 20);
-            label14.TabIndex = 37;
-            label14.Text = "Descripción:";
-            // 
-            // label15
-            // 
-            label15.AutoSize = true;
-            label15.Location = new Point(156, 43);
-            label15.Name = "label15";
-            label15.Size = new Size(72, 20);
-            label15.TabIndex = 38;
-            label15.Text = "Cantidad:";
-            // 
-            // textBox8
-            // 
-            textBox8.Location = new Point(226, 89);
-            textBox8.Margin = new Padding(3, 4, 3, 4);
-            textBox8.Name = "textBox8";
-            textBox8.Size = new Size(247, 27);
-            textBox8.TabIndex = 40;
-            // 
-            // button5
-            // 
-            button5.Location = new Point(385, 39);
-            button5.Margin = new Padding(3, 4, 3, 4);
-            button5.Name = "button5";
-            button5.Size = new Size(88, 38);
-            button5.TabIndex = 41;
-            button5.Text = "Actualizar";
-            button5.UseVisualStyleBackColor = true;
-            // 
-            // tabPage11
-            // 
-            tabPage11.Controls.Add(label19);
-            tabPage11.Controls.Add(textBox11);
-            tabPage11.Controls.Add(button7);
-            tabPage11.Controls.Add(label20);
-            tabPage11.Location = new Point(4, 29);
-            tabPage11.Margin = new Padding(3, 4, 3, 4);
-            tabPage11.Name = "tabPage11";
-            tabPage11.Padding = new Padding(3, 4, 3, 4);
-            tabPage11.Size = new Size(676, 509);
-            tabPage11.TabIndex = 3;
-            tabPage11.Text = "Consultar pedido";
-            tabPage11.UseVisualStyleBackColor = true;
-            // 
-            // label19
-            // 
-            label19.AutoSize = true;
-            label19.Location = new Point(172, 52);
-            label19.Name = "label19";
-            label19.Size = new Size(110, 20);
-            label19.TabIndex = 31;
-            label19.Text = "Ruc-Proveedor:";
-            // 
-            // textBox11
-            // 
-            textBox11.Location = new Point(283, 45);
-            textBox11.Margin = new Padding(3, 4, 3, 4);
-            textBox11.Name = "textBox11";
-            textBox11.Size = new Size(247, 27);
-            textBox11.TabIndex = 32;
-            // 
-            // button7
-            // 
-            button7.Location = new Point(302, 89);
-            button7.Margin = new Padding(3, 4, 3, 4);
-            button7.Name = "button7";
-            button7.Size = new Size(112, 66);
-            button7.TabIndex = 20;
-            button7.Text = "Consultar pedido";
-            button7.UseVisualStyleBackColor = true;
-            // 
-            // label20
-            // 
-            label20.AutoSize = true;
-            label20.Location = new Point(30, 49);
-            label20.Name = "label20";
-            label20.Size = new Size(0, 20);
-            label20.TabIndex = 17;
-            // 
-            // tabPage12
-            // 
-            tabPage12.Controls.Add(label21);
-            tabPage12.Controls.Add(textBox12);
-            tabPage12.Controls.Add(button9);
-            tabPage12.Location = new Point(4, 29);
-            tabPage12.Name = "tabPage12";
-            tabPage12.Padding = new Padding(3);
-            tabPage12.Size = new Size(676, 509);
-            tabPage12.TabIndex = 5;
-            tabPage12.Text = "Eliminar pedido";
-            tabPage12.UseVisualStyleBackColor = true;
-            // 
-            // label21
-            // 
-            label21.AutoSize = true;
-            label21.Location = new Point(159, 43);
-            label21.Name = "label21";
-            label21.Size = new Size(110, 20);
-            label21.TabIndex = 34;
-            label21.Text = "Ruc-Proveedor:";
-            // 
-            // textBox12
-            // 
-            textBox12.Location = new Point(270, 37);
-            textBox12.Margin = new Padding(3, 4, 3, 4);
-            textBox12.Name = "textBox12";
-            textBox12.Size = new Size(247, 27);
-            textBox12.TabIndex = 35;
-            // 
-            // button9
-            // 
-            button9.Location = new Point(289, 81);
-            button9.Margin = new Padding(3, 4, 3, 4);
-            button9.Name = "button9";
-            button9.Size = new Size(112, 66);
-            button9.TabIndex = 33;
-            button9.Text = "Eliminar pedido";
-            button9.UseVisualStyleBackColor = true;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Location = new Point(437, 268);
-            label9.Name = "label9";
-            label9.Size = new Size(44, 20);
-            label9.TabIndex = 56;
-            label9.Text = "RUC: ";
-            // 
-            // textBox5
-            // 
-            textBox5.Location = new Point(487, 265);
-            textBox5.Margin = new Padding(3, 4, 3, 4);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(152, 27);
-            textBox5.TabIndex = 57;
-            // 
-            // label12
-            // 
-            label12.AutoSize = true;
-            label12.Location = new Point(437, 268);
-            label12.Name = "label12";
-            label12.Size = new Size(0, 20);
-            label12.TabIndex = 58;
-            // 
-            // label18
-            // 
-            label18.AutoSize = true;
-            label18.Location = new Point(433, 309);
-            label18.Name = "label18";
-            label18.Size = new Size(125, 20);
-            label18.TabIndex = 55;
-            label18.Text = "Método de pago:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Efectivo", "Transferencia bancaria", "Tarjeta de Crédito" });
-            comboBox1.Location = new Point(487, 333);
-            comboBox1.Margin = new Padding(3, 4, 3, 4);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(152, 28);
-            comboBox1.TabIndex = 54;
-            // 
             // Form_Compras
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1337, 656);
+            ClientSize = new Size(1782, 656);
             ControlBox = false;
             Controls.Add(label37);
             Controls.Add(dataGridView1);
@@ -670,9 +670,15 @@
             tabControl2.ResumeLayout(false);
             tabPage7.ResumeLayout(false);
             tabPage7.PerformLayout();
+            tabPage6.ResumeLayout(false);
+            tabPage6.PerformLayout();
             tabPage9.ResumeLayout(false);
             tabPage9.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView3).EndInit();
+            tabPage11.ResumeLayout(false);
+            tabPage11.PerformLayout();
+            tabPage12.ResumeLayout(false);
+            tabPage12.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabControl1.ResumeLayout(false);
             tabPage3.ResumeLayout(false);
@@ -680,12 +686,6 @@
             tabPage4.ResumeLayout(false);
             tabPage4.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            tabPage6.ResumeLayout(false);
-            tabPage6.PerformLayout();
-            tabPage11.ResumeLayout(false);
-            tabPage11.PerformLayout();
-            tabPage12.ResumeLayout(false);
-            tabPage12.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }

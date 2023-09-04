@@ -148,27 +148,53 @@ BEGIN
 END
 go
 
-
+delete from Factura
+delete from ListaProductosSeleccionados
 	
 -- Añadir datos a la tabla Factura
 INSERT INTO Factura (idFactura, fechaEmision, cedula, subtotal, iva, descuentoTotalDolares, total, formaPago, estado)
 VALUES
-    ('001001000000001', '2023-08-30', 1717506289,  100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
-    ('001001000000002', '2023-08-31', 1804934808,  150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
+    ('1001000000001', '2023-08-30', 1717506289,  100.00, 12.00, 5.00, 107.00, 'Tarjeta de crédito', 'Vigente'),
+    ('1001000000002', '2023-08-31', 1804934808,  150.00, 18.00, 7.50, 160.50, 'Efectivo', 'Vigente');
 
 
 
 -- Añadir datos a la tabla ListaProductosSeleccionados
 INSERT INTO ListaProductosSeleccionados (idListaProducSelec, idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares)
 VALUES
-    (1, '001001000000001', 101, 2, 50.00, 100.00, 0.00),
-    (2, '001001000000001', 102, 3, 20.00, 60.00, 5.00),
-    (3, '001001000000002', 103, 1, 80.00, 80.00, 2.50),
-    (4, '001001000000002', 104, 2, 35.00, 70.00, 0.00);
+    (1, '1001000000001', 101, 2, 50.00, 100.00, 0.00),
+    (2, '1001000000001', 102, 3, 20.00, 60.00, 5.00),
+    (3, '1001000000002', 103, 1, 80.00, 80.00, 2.50),
+    (4, '1001000000002', 104, 2, 35.00, 70.00, 0.00);
 
 
+--Administración del sistema
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Usuarios')
+BEGIN
+    CREATE TABLE Usuarios (
+    cedula_identidad NVARCHAR(10) PRIMARY KEY,
+    username NVARCHAR(20) NOT NULL,
+    pass NVARCHAR(128), -- Para almacenar el hash SHA-512
+    tipo_usuario NVARCHAR(20) CHECK (tipo_usuario IN ('Vendedor', 'Administrador'))
+);
+END
+drop table Usuarios
+
+IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Parametros')
+BEGIN
+	CREATE TABLE Parametros (
+		id INT IDENTITY(1,1) PRIMARY KEY,
+		parametro NVARCHAR(40) COLLATE Latin1_General_BIN,
+		valor NUMERIC(5,2)
+	);
+END
+-- Insertar usuario administrador
+INSERT INTO Usuarios (cedula_identidad, username, pass, tipo_usuario)
+VALUES ('0502863673', 'jonathan', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', 'Administrador');
 
 use db_farmacia
+select * from Usuarios;
+select * from Parametros;
 select * from Proveedor;
 select * from Producto;
 select * from Cliente;
@@ -177,29 +203,3 @@ select * from ListaProductosSeleccionados;
 SELECT * FROM Cliente WHERE cedula = 1111111111;
 
 go
-
-create table Usuario(
-  CI varchar(10) not null primary key,
-  usuario varchar(30) not null,
-  contrasenia varchar(30) not null,
-  tipoDeUsuario nvarchar(30) not null
-)
-
-drop table Parametro
-create table Parametro(
-	identificador int identity(1,1) primary key,
-	parametro varchar(30) not null,
-	valor decimal(10,2) not null
-)
-
-insert into Usuario (CI, usuario, contrasenia, tipoDeUsuario)
-values
-	('1724732753', 'Jonathan', 'Jonathan1-', 'Administrador'),
-	('0502863673', 'Eddy', 'Arias-10', 'Vendedor')
-
-insert into Parametro (parametro, valor)
-values 
-	('iva (12%)',0.12)
-
-select * from Usuario
-select * from Parametro

@@ -24,11 +24,9 @@ namespace ProyectoPrototipo_1._0
 
         private void Form_Proveedores_Load(object sender, EventArgs e)
         {
-
-
-            //dbContext.Proveedor.Load();
-            //dataGridView1.DataSource = dbContext.Proveedor.Local.ToBindingList();
-            //dbContext.SaveChanges();
+            dbContext.Proveedor.Load();
+            dataGridView1.DataSource = dbContext.Proveedor.Local.ToBindingList();
+            dbContext.SaveChanges();
         }
 
         // Variable para almacenar el índice de la pestaña actual

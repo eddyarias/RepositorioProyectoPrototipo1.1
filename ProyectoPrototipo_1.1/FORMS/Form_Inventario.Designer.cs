@@ -33,6 +33,7 @@
             tabPage3 = new TabPage();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            comboBox1 = new ComboBox();
             BAgregar = new Button();
             label11 = new Label();
             label10 = new Label();
@@ -78,7 +79,6 @@
             dataGridView4 = new DataGridView();
             button2 = new Button();
             label37 = new Label();
-            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             tabControl2.SuspendLayout();
             tabPage3.SuspendLayout();
@@ -103,7 +103,7 @@
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(389, 455);
+            dataGridView1.Size = new Size(1287, 532);
             dataGridView1.TabIndex = 0;
             dataGridView1.CellClick += dataGridView1_CellClick;
             // 
@@ -117,7 +117,7 @@
             tabControl2.Margin = new Padding(3, 4, 3, 4);
             tabControl2.Name = "tabControl2";
             tabControl2.SelectedIndex = 0;
-            tabControl2.Size = new Size(915, 528);
+            tabControl2.Size = new Size(1749, 613);
             tabControl2.TabIndex = 3;
             // 
             // tabPage3
@@ -128,7 +128,7 @@
             tabPage3.Margin = new Padding(3, 4, 3, 4);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3, 4, 3, 4);
-            tabPage3.Size = new Size(907, 495);
+            tabPage3.Size = new Size(1741, 580);
             tabPage3.TabIndex = 0;
             tabPage3.Text = "Inventario";
             tabPage3.UseVisualStyleBackColor = true;
@@ -141,7 +141,7 @@
             tabControl1.Location = new Point(3, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(422, 496);
+            tabControl1.Size = new Size(422, 561);
             tabControl1.TabIndex = 76;
             // 
             // tabPage1
@@ -168,10 +168,19 @@
             tabPage1.Location = new Point(4, 29);
             tabPage1.Name = "tabPage1";
             tabPage1.Padding = new Padding(3);
-            tabPage1.Size = new Size(414, 463);
+            tabPage1.Size = new Size(414, 528);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Registrar Producto";
             tabPage1.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "0%" });
+            comboBox1.Location = new Point(225, 329);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(118, 28);
+            comboBox1.TabIndex = 76;
             // 
             // BAgregar
             // 
@@ -600,20 +609,11 @@
             label37.TabIndex = 4;
             label37.Text = "INVENTARIO";
             // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "0%" });
-            comboBox1.Location = new Point(225, 329);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(118, 28);
-            comboBox1.TabIndex = 76;
-            // 
             // Form_Inventario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 591);
+            ClientSize = new Size(1782, 653);
             ControlBox = false;
             Controls.Add(label37);
             Controls.Add(tabControl2);

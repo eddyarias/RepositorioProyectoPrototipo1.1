@@ -36,8 +36,8 @@
             TBPassword = new TextBox();
             pictureBox1 = new PictureBox();
             panel1 = new Panel();
+            CBTipoUsuario = new ComboBox();
             label3 = new Label();
-            comboBox1 = new ComboBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -103,7 +103,7 @@
             // panel1
             // 
             panel1.BorderStyle = BorderStyle.FixedSingle;
-            panel1.Controls.Add(comboBox1);
+            panel1.Controls.Add(CBTipoUsuario);
             panel1.Controls.Add(label3);
             panel1.Controls.Add(TBUsername);
             panel1.Controls.Add(BLogin);
@@ -116,6 +116,15 @@
             panel1.Size = new Size(321, 298);
             panel1.TabIndex = 6;
             // 
+            // CBTipoUsuario
+            // 
+            CBTipoUsuario.FormattingEnabled = true;
+            CBTipoUsuario.Items.AddRange(new object[] { "Administrador", "Vendedor" });
+            CBTipoUsuario.Location = new Point(136, 31);
+            CBTipoUsuario.Name = "CBTipoUsuario";
+            CBTipoUsuario.Size = new Size(160, 28);
+            CBTipoUsuario.TabIndex = 6;
+            // 
             // label3
             // 
             label3.AutoSize = true;
@@ -124,15 +133,6 @@
             label3.Size = new Size(115, 20);
             label3.TabIndex = 5;
             label3.Text = "Tipo de usuario:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Administrador", "Vendedor" });
-            comboBox1.Location = new Point(136, 31);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(160, 28);
-            comboBox1.TabIndex = 6;
             // 
             // Form_Login
             // 
@@ -160,7 +160,7 @@
         private TextBox TBPassword;
         private PictureBox pictureBox1;
         private Panel panel1;
-        private ComboBox comboBox1;
+        private ComboBox CBTipoUsuario;
         private Label label3;
     }
 }

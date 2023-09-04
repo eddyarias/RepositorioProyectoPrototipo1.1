@@ -14,10 +14,10 @@ namespace ProyectoPrototipo_1._0
 {
     public partial class Form_Inventario : Form
     {
-        //Class_Inventario inventario;
+        Class_Inventario inventario;
         public Form_Inventario()
         {
-            //this.inventario = new Class_Inventario();
+            this.inventario = new Class_Inventario();
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
@@ -26,7 +26,7 @@ namespace ProyectoPrototipo_1._0
         {
 
             // READ: inventario en el dataGridView1
-            //dataGridView1.DataSource = inventario.productos;
+            dataGridView1.DataSource = inventario.productos;
         }
 
         private void ClearTextFields()

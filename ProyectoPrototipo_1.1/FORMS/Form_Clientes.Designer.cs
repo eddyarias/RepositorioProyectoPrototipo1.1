@@ -45,7 +45,6 @@
             label3 = new Label();
             textBox9 = new TextBox();
             textBox10 = new TextBox();
-            dataGridView1 = new DataGridView();
             button4 = new Button();
             clientesTabControl = new TabControl();
             registrarTabPage = new TabPage();
@@ -53,7 +52,12 @@
             tabControl1 = new TabControl();
             tabPage2 = new TabPage();
             textBox1 = new TextBox();
+            comboBox1 = new ComboBox();
             label2 = new Label();
+            tabPage3 = new TabPage();
+            textBox20 = new TextBox();
+            button6 = new Button();
+            label17 = new Label();
             actualizarTabPage = new TabPage();
             comboBox3 = new ComboBox();
             button5 = new Button();
@@ -85,21 +89,17 @@
             textBox19 = new TextBox();
             button7 = new Button();
             label37 = new Label();
-            tabPage3 = new TabPage();
-            textBox20 = new TextBox();
-            button6 = new Button();
-            label17 = new Label();
-            comboBox1 = new ComboBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            dataGridView1 = new DataGridView();
             clientesTabControl.SuspendLayout();
             registrarTabPage.SuspendLayout();
             consultarTabPage.SuspendLayout();
             tabControl1.SuspendLayout();
             tabPage2.SuspendLayout();
+            tabPage3.SuspendLayout();
             actualizarTabPage.SuspendLayout();
             eliminarTabPage.SuspendLayout();
             tabPage1.SuspendLayout();
-            tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             SuspendLayout();
             // 
             // findClientButton
@@ -256,18 +256,6 @@
             textBox10.Size = new Size(285, 29);
             textBox10.TabIndex = 25;
             // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.WhiteSmoke;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(466, 51);
-            dataGridView1.Margin = new Padding(3, 4, 3, 4);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.RowTemplate.Height = 24;
-            dataGridView1.Size = new Size(424, 511);
-            dataGridView1.TabIndex = 28;
-            // 
             // button4
             // 
             button4.Location = new Point(142, 370);
@@ -277,6 +265,7 @@
             button4.TabIndex = 39;
             button4.Text = "Registrar";
             button4.UseVisualStyleBackColor = true;
+            button4.Click += button4_Click_1;
             // 
             // clientesTabControl
             // 
@@ -361,6 +350,15 @@
             textBox1.Size = new Size(233, 27);
             textBox1.TabIndex = 1;
             // 
+            // comboBox1
+            // 
+            comboBox1.FormattingEnabled = true;
+            comboBox1.Items.AddRange(new object[] { "Toda la información", "Nombres", "Apellidos", "Dirección", "N. Celular", "Email", "Estado civil", "Fecha de nacimiento" });
+            comboBox1.Location = new Point(80, 82);
+            comboBox1.Name = "comboBox1";
+            comboBox1.Size = new Size(233, 28);
+            comboBox1.TabIndex = 2;
+            // 
             // label2
             // 
             label2.AutoSize = true;
@@ -369,6 +367,45 @@
             label2.Size = new Size(25, 20);
             label2.TabIndex = 0;
             label2.Text = "CI:";
+            // 
+            // tabPage3
+            // 
+            tabPage3.Controls.Add(textBox20);
+            tabPage3.Controls.Add(button6);
+            tabPage3.Controls.Add(label17);
+            tabPage3.Location = new Point(4, 29);
+            tabPage3.Name = "tabPage3";
+            tabPage3.Padding = new Padding(3);
+            tabPage3.Size = new Size(404, 436);
+            tabPage3.TabIndex = 1;
+            tabPage3.Text = "Facturas";
+            tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // textBox20
+            // 
+            textBox20.Location = new Point(80, 64);
+            textBox20.Name = "textBox20";
+            textBox20.Size = new Size(233, 27);
+            textBox20.TabIndex = 1;
+            // 
+            // button6
+            // 
+            button6.Location = new Point(132, 132);
+            button6.Margin = new Padding(3, 4, 3, 4);
+            button6.Name = "button6";
+            button6.Size = new Size(114, 40);
+            button6.TabIndex = 2;
+            button6.Text = "Consultar";
+            button6.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            label17.AutoSize = true;
+            label17.Location = new Point(52, 72);
+            label17.Name = "label17";
+            label17.Size = new Size(25, 20);
+            label17.TabIndex = 0;
+            label17.Text = "CI:";
             // 
             // actualizarTabPage
             // 
@@ -688,67 +725,30 @@
             label37.TabIndex = 42;
             label37.Text = "CLIENTES";
             // 
-            // tabPage3
+            // dataGridView1
             // 
-            tabPage3.Controls.Add(textBox20);
-            tabPage3.Controls.Add(button6);
-            tabPage3.Controls.Add(label17);
-            tabPage3.Location = new Point(4, 29);
-            tabPage3.Name = "tabPage3";
-            tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(404, 436);
-            tabPage3.TabIndex = 1;
-            tabPage3.Text = "Facturas";
-            tabPage3.UseVisualStyleBackColor = true;
-            // 
-            // textBox20
-            // 
-            textBox20.Location = new Point(80, 64);
-            textBox20.Name = "textBox20";
-            textBox20.Size = new Size(233, 27);
-            textBox20.TabIndex = 1;
-            // 
-            // button6
-            // 
-            button6.Location = new Point(132, 132);
-            button6.Margin = new Padding(3, 4, 3, 4);
-            button6.Name = "button6";
-            button6.Size = new Size(114, 40);
-            button6.TabIndex = 2;
-            button6.Text = "Consultar";
-            button6.UseVisualStyleBackColor = true;
-            // 
-            // label17
-            // 
-            label17.AutoSize = true;
-            label17.Location = new Point(52, 72);
-            label17.Name = "label17";
-            label17.Size = new Size(25, 20);
-            label17.TabIndex = 0;
-            label17.Text = "CI:";
-            // 
-            // comboBox1
-            // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Toda la información", "Nombres", "Apellidos", "Dirección", "N. Celular", "Email", "Estado civil", "Fecha de nacimiento" });
-            comboBox1.Location = new Point(80, 82);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(233, 28);
-            comboBox1.TabIndex = 2;
+            dataGridView1.BackgroundColor = Color.White;
+            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridView1.Location = new Point(444, 80);
+            dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
+            dataGridView1.RowTemplate.Height = 29;
+            dataGridView1.Size = new Size(1001, 478);
+            dataGridView1.TabIndex = 43;
             // 
             // Form_Clientes
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(912, 591);
+            ClientSize = new Size(1457, 591);
             ControlBox = false;
+            Controls.Add(dataGridView1);
             Controls.Add(label37);
             Controls.Add(clientesTabControl);
-            Controls.Add(dataGridView1);
             Margin = new Padding(3, 4, 3, 4);
             Name = "Form_Clientes";
             Text = "Clientes";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += Form_Clientes_Load_1;
             clientesTabControl.ResumeLayout(false);
             registrarTabPage.ResumeLayout(false);
             registrarTabPage.PerformLayout();
@@ -756,14 +756,15 @@
             tabControl1.ResumeLayout(false);
             tabPage2.ResumeLayout(false);
             tabPage2.PerformLayout();
+            tabPage3.ResumeLayout(false);
+            tabPage3.PerformLayout();
             actualizarTabPage.ResumeLayout(false);
             actualizarTabPage.PerformLayout();
             eliminarTabPage.ResumeLayout(false);
             eliminarTabPage.PerformLayout();
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            tabPage3.ResumeLayout(false);
-            tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -786,7 +787,6 @@
         private Label label3;
         private TextBox textBox9;
         private TextBox textBox10;
-        private DataGridView dataGridView1;
         private Button button4;
         private TabControl clientesTabControl;
         private TabPage registrarTabPage;
@@ -831,5 +831,6 @@
         private TextBox textBox20;
         private Button button6;
         private Label label17;
+        private DataGridView dataGridView1;
     }
 }

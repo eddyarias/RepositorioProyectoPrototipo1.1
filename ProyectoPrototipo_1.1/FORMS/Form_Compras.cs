@@ -25,9 +25,9 @@ namespace ProyectoPrototipo_1._0
         private void Form_Compras_Load(object sender, EventArgs e)
         {
 
-            //dbContext.Producto.Load();
-            //dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
-            //dbContext.SaveChanges();
+            dbContext.Producto.Load();
+            dataGridView1.DataSource = dbContext.Producto.Local.ToBindingList();
+            dbContext.SaveChanges();
         }
 
         private int indicePestanaActual = 0;

@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProyectoPrototipo_1._1.CLASES;
 
 namespace ProyectoPrototipo_1._0
 {
@@ -26,35 +27,57 @@ namespace ProyectoPrototipo_1._0
         {
             string usuario = TBUsername.Text;
             string pass = TBPassword.Text;
+            //string tipoUsuario = CBTipoUsuario.SelectedItem.ToString();
 
-            Connect conexion = new Connect(usuario, pass);
-            SqlConnection? connection = conexion.RealizarConexion();
+            Connect conexion = new Connect();
+            SqlConnection connection = conexion.RealizarConexion();
 
             if (connection != null)
             {
-                // La conexión fue exitosa, ahora verifica las credenciales
-                string query = "SELECT COUNT(*) FROM Usuario WHERE usuario = @usuario AND contrasenia = @contrasenia";
+                Form_Menu form_menu = new Form_Menu(conexion);
+                form_menu.Show();
+                this.Hide();
+                //try
+                //{
+                //    // Convierte la contraseña a bytes (asegúrate de usar la codificación correcta)
+                //    byte[] passBytes = Encoding.UTF8.GetBytes(pass);
+                //    // Calcula el hash usando la clase SHA512
+                //    SHA512 hasher = new SHA512();
+                //    string hashPass = hasher.ComputeHash(passBytes);
 
-                using (SqlCommand cmd = new SqlCommand(query, connection))
-                {
-                    cmd.Parameters.AddWithValue("@usuario", usuario);
-                    cmd.Parameters.AddWithValue("@contrasenia", pass);
+                //    // La conexión fue exitosa, ahora verifica las credenciales
+                //    string query = "SELECT COUNT(*) FROM Usuarios WHERE username = @usuario AND pass = @pass AND tipo_usuario = @tipo_usuario";
 
-                    int result = (int)cmd.ExecuteScalar();
+                //    using (SqlCommand cmd = new SqlCommand(query, connection))
+                //    {
+                //        cmd.Parameters.AddWithValue("@usuario", usuario);
+                //        cmd.Parameters.AddWithValue("@pass", hashPass);
+                //        cmd.Parameters.AddWithValue("@tipo_usuario", tipoUsuario);
 
-                    if (result > 0)
-                    {
-                        // Las credenciales son válidas, permite el acceso
-                        Form_Menu form_menu = new Form_Menu(conexion);
-                        form_menu.Show();
-                        this.Hide();
-                    }
-                    else
-                    {
-                        // Las credenciales no son válidas, muestra un mensaje de error
-                        MessageBox.Show("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
-                    }
-                }
+                //        int result = (int)cmd.ExecuteScalar();
+
+                //        if (result > 0)
+                //        {
+                //            // Las credenciales son válidas, permite el acceso
+                //            Form_Menu form_menu = new Form_Menu(conexion);
+                //            form_menu.Show();
+                //            this.Hide();
+                //        }
+                //        else
+                //        {
+                //            // Las credenciales no son válidas, muestra un mensaje de error
+                //            MessageBox.Show("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+                //        }
+                //    }
+            //}
+            //    catch (Exception ex)
+            //    {
+            //        MessageBox.Show("Error al iniciar sesión: " + ex.Message);
+            //    }
+            //    finally
+            //    {
+            //        connection.Close();
+            //    }
             }
             else
             {
@@ -62,6 +85,7 @@ namespace ProyectoPrototipo_1._0
                 MessageBox.Show("Error al conectar a la base de datos.");
             }
         }
+
 
     }
 }

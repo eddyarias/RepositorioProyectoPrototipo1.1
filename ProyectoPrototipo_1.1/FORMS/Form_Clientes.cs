@@ -21,27 +21,19 @@ namespace ProyectoPrototipo_1._0
             InitializeComponent();
             this.WindowState = FormWindowState.Maximized;
         }
-
-        private void Form_Clientes_Load(object sender, EventArgs e)
+        private void Form_Clientes_Load_1(object sender, EventArgs e)
         {
-
-
-            //dbContext.Cliente.Load();
-            //dataGridView1.DataSource = dbContext.Cliente.Local.ToBindingList();
-            //dbContext.SaveChanges();
-        }
-
-        private void findClientButton_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button4_Click(object sender, EventArgs e)
-        {
-
+            dbContext.Cliente.Load();
+            dataGridView1.DataSource = dbContext.Cliente.Local.ToBindingList();
+            dbContext.SaveChanges();
         }
 
         private void registrarTabPage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click_1(object sender, EventArgs e)
         {
 
         }
