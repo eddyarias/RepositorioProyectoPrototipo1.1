@@ -63,7 +63,7 @@ namespace ProyectoPrototipo_1._1.FORMS
                 DGVUsuarios.DataSource = dbContext.Usuario.ToList();
 
                 // Mostrar un mensaje de éxito
-                MessageBox.Show("El usuario se ha eliminado correctamente.");
+                MessageBox.Show("Usuario reseteado correctamente.");
             }
             else
             {

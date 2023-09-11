@@ -133,6 +133,8 @@
             label36 = new Label();
             label35 = new Label();
             label34 = new Label();
+            label24 = new Label();
+            label47 = new Label();
             TabSecuencialVentas.SuspendLayout();
             tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewProductos).BeginInit();
@@ -461,11 +463,11 @@
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(Continuar);
-            tabPage2.Location = new Point(4, 27);
+            tabPage2.Location = new Point(4, 29);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 646);
+            tabPage2.Size = new Size(1713, 644);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
             // 
@@ -765,10 +767,10 @@
             tabPage4.Controls.Add(panel2);
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttNuevaVenta);
-            tabPage4.Location = new Point(4, 27);
+            tabPage4.Location = new Point(4, 29);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 646);
+            tabPage4.Size = new Size(1713, 644);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
             // 
@@ -867,6 +869,7 @@
             // tabPage8
             // 
             tabPage8.BackColor = Color.White;
+            tabPage8.Controls.Add(label24);
             tabPage8.Controls.Add(panel9);
             tabPage8.Controls.Add(label21);
             tabPage8.Controls.Add(label20);
@@ -1060,11 +1063,11 @@
             // label21
             // 
             label21.AutoSize = true;
-            label21.Location = new Point(89, 322);
+            label21.Location = new Point(844, 672);
             label21.Name = "label21";
-            label21.Size = new Size(640, 18);
+            label21.Size = new Size(632, 18);
             label21.TabIndex = 97;
-            label21.Text = "* Para anular una factura, por favor, realice doble clic en la factura deseada:";
+            label21.Text = "* Para anular una factura, por favor, realice doble clic en la factura deseada";
             // 
             // label20
             // 
@@ -1109,6 +1112,7 @@
             // tabPage7
             // 
             tabPage7.BackColor = Color.White;
+            tabPage7.Controls.Add(label47);
             tabPage7.Controls.Add(lblSaldoFinal);
             tabPage7.Controls.Add(lblIngresos);
             tabPage7.Controls.Add(lblEgresos);
@@ -1121,10 +1125,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 29);
+            tabPage7.Location = new Point(4, 27);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 708);
+            tabPage7.Size = new Size(1763, 710);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             // 
@@ -1261,6 +1265,24 @@
             label34.Size = new Size(120, 17);
             label34.TabIndex = 24;
             label34.Text = "Saldo Inicial:";
+            // 
+            // label24
+            // 
+            label24.AutoSize = true;
+            label24.Location = new Point(246, 369);
+            label24.Name = "label24";
+            label24.Size = new Size(248, 18);
+            label24.TabIndex = 99;
+            label24.Text = "Tabla de registros de facturas";
+            // 
+            // label47
+            // 
+            label47.AutoSize = true;
+            label47.Location = new Point(166, 144);
+            label47.Name = "label47";
+            label47.Size = new Size(224, 18);
+            label47.TabIndex = 87;
+            label47.Text = "Tabla de ingresos y egresos";
             // 
             // Form_Ventas
             // 
@@ -1423,5 +1445,7 @@
         private Label lblMensaje2;
         private DataGridViewTextBoxColumn Column8;
         private DataGridViewTextBoxColumn Column9;
+        private Label label24;
+        private Label label47;
     }
 }

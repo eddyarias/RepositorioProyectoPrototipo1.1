@@ -265,12 +265,18 @@ namespace ProyectoPrototipo_1._0
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
+                        if (dataTable.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No existe facturas con esa cédula de identidad.", "Sin registros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            // Asigna los datos al DataGridView proporcionado
+                            dataGridView.DataSource = dataTable;
 
-                        // Asigna los datos al DataGridView proporcionado
-                        dataGridView.DataSource = dataTable;
-
-                        // Configura el modo de ajuste automático del ancho de las columnas
-                        dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                            // Configura el modo de ajuste automático del ancho de las columnas
+                            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        }
                     }
                 }
             }
@@ -325,12 +331,19 @@ namespace ProyectoPrototipo_1._0
                         SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
                         dataAdapter.Fill(dataTable);
+                        // Verifica si el DataTable está vacío
+                        if (dataTable.Rows.Count == 0)
+                        {
+                            MessageBox.Show("No existen facturas dentro del período de tiempo.", "Sin registros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            // Asigna los datos al DataGridView proporcionado
+                            dataGridView.DataSource = dataTable;
 
-                        // Asigna los datos al DataGridView proporcionado
-                        dataGridView.DataSource = dataTable;
-
-                        // Configura el modo de ajuste automático del ancho de las columnas
-                        dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                            // Configura el modo de ajuste automático del ancho de las columnas
+                            dataGridView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                        }
                     }
                 }
             }
@@ -926,7 +939,7 @@ namespace ProyectoPrototipo_1._0
                                      BuscarCliente2(cedulaCliente) + "\n" +
                                      "Forma de pago:            " + formaPago + "\n\n" +
                                      "Detalle\n" +
-                                     "Código                     \tDescripción                                    \tPrecio               \tCantidad              \tSubtotal\n";
+                                     "Código             \tDescripción                               \tPrecio               \tCantidad              \tSubtotal\n";
 
                 foreach (ProductoCarrito producto in carritoDeCompras)
                 {
@@ -1141,12 +1154,18 @@ namespace ProyectoPrototipo_1._0
                         SqlDataAdapter adapter = new SqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
+                        if (dataTable.Rows.Count == 0)
+                        {
+                            MessageBox.Show("Factura no existe.", "Sin registros", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
+                        else
+                        {
+                            // Asigna el DataTable al DataGridView
+                            dataGridViewFactura.DataSource = dataTable;
 
-                        // Asigna el DataTable al DataGridView
-                        dataGridViewFactura.DataSource = dataTable;
-
-                        // Limpia el contenido del TextBox
-                        txtBoxNumeroFacturaConsultar.Clear();
+                            // Limpia el contenido del TextBox
+                            txtBoxNumeroFacturaConsultar.Clear();
+                        }
                     }
                 }
             }
