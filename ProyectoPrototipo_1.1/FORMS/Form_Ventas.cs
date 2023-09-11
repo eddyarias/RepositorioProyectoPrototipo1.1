@@ -30,7 +30,7 @@ namespace ProyectoPrototipo_1._0
         string con;
         public Connect connect;
 
-        public int codigoProducto;
+        public long codigoProducto;
         public int cantidad;
         public int cantidadIC;//cantidad del producto ingresado
 
@@ -60,12 +60,12 @@ namespace ProyectoPrototipo_1._0
         }
         public class ProductoCarrito
         {
-            public int CodigoProducto { get; set; }
+            public long CodigoProducto { get; set; }
             public string Descripcion { get; set; }
             public decimal PrecioUnitario { get; set; }
             public int Cantidad { get; set; }
 
-            public ProductoCarrito(int codigo, string descripcion, decimal precio, int cantidad)
+            public ProductoCarrito(long codigo, string descripcion, decimal precio, int cantidad)
             {
                 CodigoProducto = codigo;
                 Descripcion = descripcion;
@@ -351,7 +351,11 @@ namespace ProyectoPrototipo_1._0
 
         private void bttAgregarProdCodBarr_Click(object sender, EventArgs e)
         {
-            this.codigoProducto = int.Parse(txtCodigo.Text);
+            long codigo;
+            if (long.TryParse(txtCodigo.Text, out codigo))
+            {
+                this.codigoProducto = codigo;
+            }
             ProductoInfo productoInfo = ObtenerPrecioYDescripcionProducto(codigoProducto);
 
             if (productoInfo != null)
@@ -470,7 +474,7 @@ namespace ProyectoPrototipo_1._0
 
 
 
-        private ProductoInfo ObtenerPrecioYDescripcionProducto(int codigoProducto)
+        private ProductoInfo ObtenerPrecioYDescripcionProducto(long codigoProducto)
         {
             ProductoInfo productoInfo = null; // Valor predeterminado en caso de que el producto no se encuentre
 
@@ -558,15 +562,12 @@ namespace ProyectoPrototipo_1._0
                                 Class_Cliente clienteEncontrado = new Class_Cliente
                                 {
                                     cedula = Convert.ToInt64(reader["cedula"]),
-                                    tipo_persona = reader["tipo_persona"].ToString(),
                                     nombres_c = reader["nombres_c"].ToString(),
                                     apellidos_c = reader["apellidos_c"].ToString(),
-                                    parroquia = reader["parroquia"].ToString(),
                                     direccion_c = reader["direccion_c"].ToString(),
                                     email_c = reader["email_c"].ToString(),
                                     telefono_c = reader["telefono_c"].ToString(),
                                     fecha_nac = Convert.ToDateTime(reader["fecha_nac"]),
-                                    observaciones_c = reader["observaciones_c"].ToString()
                                 };
 
                                 // Puedes usar clienteEncontrado en tu aplicación
@@ -637,15 +638,12 @@ namespace ProyectoPrototipo_1._0
                                 Class_Cliente clienteEncontrado = new Class_Cliente
                                 {
                                     cedula = Convert.ToInt64(reader["cedula"]),
-                                    tipo_persona = reader["tipo_persona"].ToString(),
                                     nombres_c = reader["nombres_c"].ToString(),
                                     apellidos_c = reader["apellidos_c"].ToString(),
-                                    parroquia = reader["parroquia"].ToString(),
                                     direccion_c = reader["direccion_c"].ToString(),
                                     email_c = reader["email_c"].ToString(),
                                     telefono_c = reader["telefono_c"].ToString(),
                                     fecha_nac = Convert.ToDateTime(reader["fecha_nac"]),
-                                    observaciones_c = reader["observaciones_c"].ToString()
                                 };
 
                                 // Puedes usar clienteEncontrado en tu aplicación
@@ -980,15 +978,12 @@ namespace ProyectoPrototipo_1._0
                             Class_Cliente clienteEncontrado = new Class_Cliente
                             {
                                 cedula = Convert.ToInt64(reader["cedula"]),
-                                tipo_persona = reader["tipo_persona"].ToString(),
                                 nombres_c = reader["nombres_c"].ToString(),
                                 apellidos_c = reader["apellidos_c"].ToString(),
-                                parroquia = reader["parroquia"].ToString(),
                                 direccion_c = reader["direccion_c"].ToString(),
                                 email_c = reader["email_c"].ToString(),
                                 telefono_c = reader["telefono_c"].ToString(),
                                 fecha_nac = Convert.ToDateTime(reader["fecha_nac"]),
-                                observaciones_c = reader["observaciones_c"].ToString()
                             };
 
                             // Puedes usar clienteEncontrado en tu aplicación
@@ -1215,7 +1210,7 @@ namespace ProyectoPrototipo_1._0
                 foreach (ProductoCarrito productoCarrito in carritoDeCompras)
                 {
                     // Obtener el código y la cantidad del producto en el carrito
-                    int codigoProducto = productoCarrito.CodigoProducto;
+                    long codigoProducto = productoCarrito.CodigoProducto;
                     int cantidadIC = productoCarrito.Cantidad;
 
                     // Paso 1: Consulta SQL para obtener la cantidad actual del producto
@@ -1467,7 +1462,7 @@ namespace ProyectoPrototipo_1._0
             {
 
                 // Obtén el valor de la celda en la primera columna de la fila actual
-                int codigo = int.Parse(dataGridViewProductos[0, e.RowIndex].Value.ToString());
+                long codigo = long.Parse(dataGridViewProductos[0, e.RowIndex].Value.ToString());
 
                 ProductoInfo productoInfo = ObtenerPrecioYDescripcionProducto(codigo);
 

@@ -13,34 +13,34 @@ namespace ProyectoPrototipo_1._0
         public string stringconnect;
         public static SqlConnection? connect;
 
-        public Connect(string usuario, string pass)//deben cambiar para que se les conecte automaticamente.
-        {
-            //this.usuario = usuario;
-            //this.pass = pass;
-            //server = "DESKTOP-PEKBI3D";
-            //bd = "db_farmacia";
-            //con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
-
-            this.usuario = usuario;
-            this.pass = pass;
-            server = "LAPTOP-VF0SV152\\SQLEXPRESS";
-            bd = "db_farmacia";
-            con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
-
-        }
-        //Connect Poaquiza
-        //public Connect()
+        //public Connect(string usuario, string pass)//deben cambiar para que se les conecte automaticamente.
         //{
-        //    this.usuario = "jonathan";
-        //    this.pass = "123";
+        //    //this.usuario = usuario;
+        //    //this.pass = pass;
+        //    //server = "DESKTOP-PEKBI3D";
+        //    //bd = "db_farmacia";
+        //    //con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
 
-        //    server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
-
+        //    this.usuario = usuario;
+        //    this.pass = pass;
+        //    server = "LAPTOP-VF0SV152\\SQLEXPRESS";
         //    bd = "db_farmacia";
-
-        //    con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
-        //    stringconnect = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+        //    con = "Server=" + server + ";Database=" + bd + ";Integrated Security=True;";
         //}
+
+        ////Connect Poaquiza
+        public Connect()
+        {
+            this.usuario = "jonathan";
+            this.pass = "123";
+
+            server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
+
+            bd = "db_farmacia";
+
+            con = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+            stringconnect = "Server=" + server + ";Database=" + bd + ";User Id=" + usuario + ";Password=" + pass;
+        }
 
         public SqlConnection? RealizarConexion()
         {

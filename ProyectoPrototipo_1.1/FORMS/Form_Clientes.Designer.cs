@@ -282,6 +282,7 @@
             // 
             // registrarTabPage
             // 
+            registrarTabPage.BackColor = Color.White;
             registrarTabPage.Controls.Add(codeLabel);
             registrarTabPage.Controls.Add(textBox2);
             registrarTabPage.Controls.Add(button4);
@@ -305,7 +306,6 @@
             registrarTabPage.Size = new Size(418, 478);
             registrarTabPage.TabIndex = 0;
             registrarTabPage.Text = "Registrar";
-            registrarTabPage.UseVisualStyleBackColor = true;
             registrarTabPage.Click += registrarTabPage_Click;
             // 
             // consultarTabPage
@@ -331,6 +331,7 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.White;
             tabPage2.Controls.Add(textBox1);
             tabPage2.Controls.Add(comboBox1);
             tabPage2.Controls.Add(findClientButton);
@@ -341,7 +342,6 @@
             tabPage2.Size = new Size(404, 436);
             tabPage2.TabIndex = 0;
             tabPage2.Text = "Datos";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // textBox1
             // 
@@ -370,6 +370,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.BackColor = Color.White;
             tabPage3.Controls.Add(textBox20);
             tabPage3.Controls.Add(button6);
             tabPage3.Controls.Add(label17);
@@ -379,7 +380,6 @@
             tabPage3.Size = new Size(404, 436);
             tabPage3.TabIndex = 1;
             tabPage3.Text = "Facturas";
-            tabPage3.UseVisualStyleBackColor = true;
             // 
             // textBox20
             // 
@@ -409,6 +409,7 @@
             // 
             // actualizarTabPage
             // 
+            actualizarTabPage.BackColor = Color.White;
             actualizarTabPage.Controls.Add(comboBox3);
             actualizarTabPage.Controls.Add(button5);
             actualizarTabPage.Controls.Add(label4);
@@ -434,7 +435,6 @@
             actualizarTabPage.Size = new Size(418, 478);
             actualizarTabPage.TabIndex = 2;
             actualizarTabPage.Text = "Actualizar";
-            actualizarTabPage.UseVisualStyleBackColor = true;
             // 
             // comboBox3
             // 
@@ -614,6 +614,7 @@
             // 
             // eliminarTabPage
             // 
+            eliminarTabPage.BackColor = Color.White;
             eliminarTabPage.Controls.Add(button2);
             eliminarTabPage.Controls.Add(label15);
             eliminarTabPage.Controls.Add(textBox18);
@@ -624,7 +625,6 @@
             eliminarTabPage.Size = new Size(418, 478);
             eliminarTabPage.TabIndex = 3;
             eliminarTabPage.Text = "Eliminar";
-            eliminarTabPage.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -666,6 +666,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.White;
             tabPage1.Controls.Add(comboBox2);
             tabPage1.Controls.Add(label16);
             tabPage1.Controls.Add(textBox19);
@@ -676,12 +677,11 @@
             tabPage1.Size = new Size(418, 478);
             tabPage1.TabIndex = 4;
             tabPage1.Text = "Descuentos";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // comboBox2
             // 
             comboBox2.FormattingEnabled = true;
-            comboBox2.Items.AddRange(new object[] { "5%", "10%", "15%", "20%", "25%", "30%", "35%", "40%", "45%", "50%" });
+            comboBox2.Items.AddRange(new object[] { "5%", "10%", "15%", "20%" });
             comboBox2.Location = new Point(103, 121);
             comboBox2.Name = "comboBox2";
             comboBox2.Size = new Size(135, 28);
@@ -740,6 +740,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
             ClientSize = new Size(1457, 591);
             ControlBox = false;
             Controls.Add(dataGridView1);

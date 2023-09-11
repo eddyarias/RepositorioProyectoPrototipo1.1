@@ -27,55 +27,55 @@ namespace ProyectoPrototipo_1._0
         {
             string usuario = TBUsername.Text;
             string pass = TBPassword.Text;
-            //string tipoUsuario = CBTipoUsuario.SelectedItem.ToString();
+            string tipoUsuario = CBTipoUsuario.SelectedItem?.ToString();
 
             Connect conexion = new Connect();
             SqlConnection connection = conexion.RealizarConexion();
 
             if (connection != null)
             {
-                Form_Menu form_menu = new Form_Menu(conexion);
-                form_menu.Show();
-                this.Hide();
-                //try
-                //{
+                //Form_Menu form_menu = new Form_Menu(conexion);
+                //form_menu.Show();
+                //this.Hide();
+                try
+                {
 
-                //    SHA512 hasher = new SHA512();
-                //    string hashPass = hasher.HashPassword(pass);
+                    SHA512 hasher = new SHA512();
+                    string hashPass = hasher.HashPassword(pass);
 
-                //    // La conexión fue exitosa, ahora verifica las credenciales
-                //    string query = "SELECT COUNT(*) FROM Usuarios WHERE username = @usuario AND pass = @pass AND tipo_usuario = @tipo_usuario";
+                    // La conexión fue exitosa, ahora verifica las credenciales
+                    string query = "SELECT COUNT(*) FROM Usuario WHERE username = @usuario AND pass = @pass AND tipo_usuario = @tipo_usuario";
 
-                //    using (SqlCommand cmd = new SqlCommand(query, connection))
-                //    {
-                //        cmd.Parameters.AddWithValue("@usuario", usuario);
-                //        cmd.Parameters.AddWithValue("@pass", hashPass);
-                //        cmd.Parameters.AddWithValue("@tipo_usuario", tipoUsuario);
+                    using (SqlCommand cmd = new SqlCommand(query, connection))
+                    {
+                        cmd.Parameters.AddWithValue("@usuario", usuario);
+                        cmd.Parameters.AddWithValue("@pass", hashPass);
+                        cmd.Parameters.AddWithValue("@tipo_usuario", tipoUsuario);
 
-                //        int result = (int)cmd.ExecuteScalar();
+                        int result = (int)cmd.ExecuteScalar();
 
-                //        if (result > 0)
-                //        {
-                //            // Las credenciales son válidas, permite el acceso
-                //            Form_Menu form_menu = new Form_Menu(conexion);
-                //            form_menu.Show();
-                //            this.Hide();
-                //        }
-                //        else
-                //        {
-                //            // Las credenciales no son válidas, muestra un mensaje de error
-                //            MessageBox.Show("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
-                //        }
-                //    }
-                //}
-                //    catch (Exception ex)
-                //    {
-                //        MessageBox.Show("Error al iniciar sesión: " + ex.Message);
-                //    }
-                //    finally
-                //    {
-                //        connection.Close();
-                //    }
+                        if (result > 0)
+                        {
+                            // Las credenciales son válidas, permite el acceso
+                            Form_Menu form_menu = new Form_Menu(conexion);
+                            form_menu.Show();
+                            this.Hide();
+                        }
+                        else
+                        {
+                            // Las credenciales no son válidas, muestra un mensaje de error
+                            MessageBox.Show("Credenciales incorrectas. Por favor, inténtalo de nuevo.");
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Error al iniciar sesión: " + ex.Message);
+                }
+                finally
+                {
+                    connection.Close();
+                }
             }
             else
             {

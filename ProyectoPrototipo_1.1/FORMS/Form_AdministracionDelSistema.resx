@@ -121,7 +121,7 @@
   <data name="PBVerPassword.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJoAAACfCAIAAACOUFfzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAqn5JREFUeF7svQV8G0e3/73aFZnDnDRJ2yRlZk7bcINN03AaTsPMju3YMbNjZmZm
+        vgAADr4B6kKxwAAAqn5JREFUeF7svQV8G0e3/73aFZnDnDRJ2yRlZk7bcINN03AaTsPMju3YMbNjZmZm
         ZmZmZkuymOV9z0hpbp4+cOm5/3vf+7nTqbJagXfnO+ec35mZXWHk/5X/ReX/cP6vKv+H839V+T+c/6vK
         /+H8X1X+D+f/qvJ/OP9Xlf/D+b+q/I/DqVQqn22RJIfD0WzI5XKhUCiRSDSvzszMwB6ZTKZQKDQbKpUK
         tuEl2IBH2IZ3QoF3os//UV58Ctuajz9/m+YpbMCXiMVikUgEe+DL1W8nYY9mQ3MY8BF41PyhP/2V/8by
@@ -854,7 +854,7 @@
   <data name="PBVerPassActualizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAJoAAACfCAIAAACOUFfzAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vgAADr4B6kKxwAAAqn5JREFUeF7svQV8G0e3/73aFZnDnDRJ2yRlZk7bcINN03AaTsPMju3YMbNjZmZm
+        vQAADr0BR/uQrQAAqn5JREFUeF7svQV8G0e3/73aFZnDnDRJ2yRlZk7bcINN03AaTsPMju3YMbNjZmZm
         ZmZmZkuymOV9z0hpbp4+cOm5/3vf+7nTqbJagXfnO+ec35mZXWHk/5X/ReX/cP6vKv+H839V+T+c/6vK
         /+H8X1X+D+f/qvJ/OP9Xlf/D+b+q/I/DqVQqn22RJIfD0WzI5XKhUCiRSDSvzszMwB6ZTKZQKDQbKpUK
         tuEl2IBH2IZ3QoF3os//UV58Ctuajz9/m+YpbMCXiMVikUgEe+DL1W8nYY9mQ3MY8BF41PyhP/2V/8by

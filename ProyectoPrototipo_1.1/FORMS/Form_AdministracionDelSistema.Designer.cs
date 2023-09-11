@@ -134,7 +134,7 @@
             // 
             // tabPage1
             // 
-            tabPage1.BackColor = Color.Transparent;
+            tabPage1.BackColor = Color.White;
             tabPage1.Controls.Add(PBVerPassword);
             tabPage1.Controls.Add(LbValidarCedula);
             tabPage1.Controls.Add(TBCedulaUsuario);
@@ -266,6 +266,7 @@
             // 
             // tabPage8
             // 
+            tabPage8.BackColor = Color.White;
             tabPage8.Controls.Add(TBCedulaUConsultar);
             tabPage8.Controls.Add(label6);
             tabPage8.Controls.Add(BConsultarUsuario);
@@ -274,7 +275,6 @@
             tabPage8.Size = new Size(507, 311);
             tabPage8.TabIndex = 5;
             tabPage8.Text = "Consultar Usuario";
-            tabPage8.UseVisualStyleBackColor = true;
             // 
             // TBCedulaUConsultar
             // 
@@ -323,11 +323,12 @@
             tabControl1.Margin = new Padding(3, 4, 3, 4);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(485, 245);
+            tabControl1.Size = new Size(485, 303);
             tabControl1.TabIndex = 55;
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.White;
             tabPage2.Controls.Add(PBVerPassActualizar);
             tabPage2.Controls.Add(label9);
             tabPage2.Controls.Add(BActualizarPass);
@@ -339,10 +340,9 @@
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(477, 212);
+            tabPage2.Size = new Size(477, 270);
             tabPage2.TabIndex = 0;
             tabPage2.Text = "Contraseña";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // PBVerPassActualizar
             // 
@@ -410,6 +410,7 @@
             // 
             // tabPage3
             // 
+            tabPage3.BackColor = Color.White;
             tabPage3.Controls.Add(CBActualizarTipo);
             tabPage3.Controls.Add(label8);
             tabPage3.Controls.Add(label10);
@@ -419,10 +420,9 @@
             tabPage3.Location = new Point(4, 29);
             tabPage3.Name = "tabPage3";
             tabPage3.Padding = new Padding(3);
-            tabPage3.Size = new Size(477, 212);
+            tabPage3.Size = new Size(477, 270);
             tabPage3.TabIndex = 4;
             tabPage3.Text = "Tipo de Usuario";
-            tabPage3.UseVisualStyleBackColor = true;
             // 
             // CBActualizarTipo
             // 
@@ -480,6 +480,7 @@
             // 
             // tabPage12
             // 
+            tabPage12.BackColor = Color.White;
             tabPage12.Controls.Add(TBResetearUsuario);
             tabPage12.Controls.Add(label21);
             tabPage12.Controls.Add(BResetearUsuario);
@@ -488,7 +489,6 @@
             tabPage12.Size = new Size(507, 311);
             tabPage12.TabIndex = 6;
             tabPage12.Text = "Resetear Usuario";
-            tabPage12.UseVisualStyleBackColor = true;
             // 
             // TBResetearUsuario
             // 
@@ -552,6 +552,7 @@
             // 
             // tabPage4
             // 
+            tabPage4.BackColor = Color.White;
             tabPage4.Controls.Add(TCProveedores);
             tabPage4.Controls.Add(label3);
             tabPage4.Controls.Add(DGVUsuarios);
@@ -562,10 +563,10 @@
             tabPage4.Size = new Size(1323, 547);
             tabPage4.TabIndex = 0;
             tabPage4.Text = "Administración de Usuarios";
-            tabPage4.UseVisualStyleBackColor = true;
             // 
             // tabPage5
             // 
+            tabPage5.BackColor = Color.White;
             tabPage5.Controls.Add(label4);
             tabPage5.Controls.Add(DGVParametros);
             tabPage5.Controls.Add(tabControl2);
@@ -576,7 +577,6 @@
             tabPage5.Size = new Size(1323, 547);
             tabPage5.TabIndex = 1;
             tabPage5.Text = "Administración de Parámetros";
-            tabPage5.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -614,6 +614,7 @@
             // 
             // tabPage6
             // 
+            tabPage6.BackColor = Color.White;
             tabPage6.Controls.Add(label5);
             tabPage6.Controls.Add(BRegistrarParametro);
             tabPage6.Controls.Add(TBRegistrarValor);
@@ -627,7 +628,6 @@
             tabPage6.Size = new Size(598, 275);
             tabPage6.TabIndex = 0;
             tabPage6.Text = "Registrar Parámetro";
-            tabPage6.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -684,6 +684,7 @@
             // 
             // tabPage9
             // 
+            tabPage9.BackColor = Color.White;
             tabPage9.Controls.Add(TBConsultarParametro);
             tabPage9.Controls.Add(label17);
             tabPage9.Controls.Add(BConsultarParametro);
@@ -693,7 +694,6 @@
             tabPage9.Size = new Size(598, 275);
             tabPage9.TabIndex = 6;
             tabPage9.Text = "Consultar Parámetro";
-            tabPage9.UseVisualStyleBackColor = true;
             // 
             // TBConsultarParametro
             // 
@@ -725,6 +725,7 @@
             // 
             // tabPage10
             // 
+            tabPage10.BackColor = Color.White;
             tabPage10.Controls.Add(BActualizarParametro);
             tabPage10.Controls.Add(TBActualizarValor);
             tabPage10.Controls.Add(label18);
@@ -736,7 +737,6 @@
             tabPage10.Size = new Size(598, 275);
             tabPage10.TabIndex = 4;
             tabPage10.Text = "Actualizar Parámetro";
-            tabPage10.UseVisualStyleBackColor = true;
             // 
             // BActualizarParametro
             // 
@@ -785,6 +785,7 @@
             // 
             // tabPage11
             // 
+            tabPage11.BackColor = Color.White;
             tabPage11.Controls.Add(TBEliminarParametro);
             tabPage11.Controls.Add(label20);
             tabPage11.Controls.Add(BEliminarParametro);
@@ -793,7 +794,6 @@
             tabPage11.Size = new Size(598, 275);
             tabPage11.TabIndex = 5;
             tabPage11.Text = "Eliminar Parámetro";
-            tabPage11.UseVisualStyleBackColor = true;
             // 
             // TBEliminarParametro
             // 

@@ -41,11 +41,11 @@ VALUES
 END
 
 go
-
+drop table Producto
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Producto')
 BEGIN
     CREATE TABLE Producto (
-        codigo INT PRIMARY KEY,
+        codigo BIGINT PRIMARY KEY,
         cantidad INT,
         descripcion NVARCHAR(255),
         lote NVARCHAR(50),
@@ -57,62 +57,59 @@ BEGIN
     );
 	INSERT INTO Producto (codigo, cantidad, descripcion, lote, PVP, precio_unitario, fecha_cad, descuento, iva)
 VALUES
-    (1, 100, 'Paracetamol Tableta 200 mg (Lote A)', 'Lote A', 4.99, 3.99, '2023-12-31', 0.0, 0.12),
-    (2, 80, 'Ibuprofeno Tableta 400 mg (Lote B)', 'Lote B', 7.99, 6.49, '2023-11-15', 0.0, 0.12),
-    (3, 50, 'Amoxicilina Suspensión Oral 250 mg/5ml (Lote C)', 'Lote C', 12.99, 10.99, '2023-12-25', 0.0, 0.12),
-    (4, 120, 'Omeprazol Cápsula 20 mg (Lote D)', 'Lote D', 14.99, 12.99, '2023-11-30', 0.0, 0.12),
-    (5, 60, 'Dipirona Jarabe 500 mg/5ml (Lote E)', 'Lote E', 8.99, 7.49, '2023-10-28', 0.0, 0.12),
-	(6, 75, 'Aspirina Tableta 500 mg (Lote F)', 'Lote F', 3.99, 2.99, '2023-11-30', 0.0, 0.12),
-    (7, 40, 'Cetirizina Tableta 10 mg (Lote G)', 'Lote G', 9.99, 8.49, '2023-12-15', 0.0, 0.12),
-    (8, 90, 'Vitamina C Tableta Efervescente 1000 mg (Lote H)', 'Lote H', 7.49, 6.99, '2023-10-31', 0.0, 0.12),
-    (9, 60, 'Loratadina Tableta 10 mg (Lote I)', 'Lote I', 6.99, 5.99, '2023-12-20', 0.0, 0.12),
-    (10, 120, 'Dextrometorfano Jarabe 15 mg/5ml (Lote J)', 'Lote J', 5.49, 4.99, '2023-11-25', 0.0, 0.12),
-    (11, 70, 'Vitamina D Cápsula 1000 UI (Lote K)', 'Lote K', 12.99, 11.49, '2023-11-30', 0.0, 0.12),
-    (12, 50, 'Ranitidina Tableta 150 mg (Lote L)', 'Lote L', 8.49, 7.99, '2023-12-31', 0.0, 0.12),
-    (13, 35, 'Salbutamol Inhalador 100 mcg (Lote M)', 'Lote M', 14.99, 13.49, '2023-11-15', 0.0, 0.12),
-    (14, 85, 'Ciprofloxacino Tableta 500 mg (Lote N)', 'Lote N', 15.99, 14.49, '2023-12-25', 0.0, 0.12),
-    (15, 55, 'Metamizol Tableta 500 mg (Lote O)', 'Lote O', 6.99, 5.99, '2023-11-30', 0.0, 0.12),
-	(16, 25, 'Lansoprazol Cápsula 30 mg (Lote P)', 'Lote P', 10.99, 9.49, '2023-12-20', 0.0, 0.12),
-    (17, 60, 'Diazepam Tableta 5 mg (Lote Q)', 'Lote Q', 6.99, 5.99, '2023-11-15', 0.0, 0.12),
-    (18, 40, 'Sertralina Tableta 50 mg (Lote R)', 'Lote R', 8.49, 7.99, '2023-12-31', 0.0, 0.12),
-    (19, 80, 'Acetaminofén Jarabe Infantil 120 mg/5ml (Lote S)', 'Lote S', 5.99, 4.99, '2023-11-30', 0.0, 0.12),
-    (20, 50, 'Amlodipino Tableta 5 mg (Lote T)', 'Lote T', 12.99, 11.49, '2023-12-25', 0.0, 0.12);
-
+    (1000000000001, 100, 'Paracetamol Tableta 200 mg (Lote A)', 'Lote A', 4.99, 3.99, '2023-12-31', 0.0, 0.12),
+    (1000000000002, 80, 'Ibuprofeno Tableta 400 mg (Lote B)', 'Lote B', 7.99, 6.49, '2023-11-15', 0.0, 0.12),
+    (1000000000003, 50, 'Amoxicilina Suspensión Oral 250 mg/5ml (Lote C)', 'Lote C', 12.99, 10.99, '2023-12-25', 0.0, 0.12),
+    (1000000000004, 120, 'Omeprazol Cápsula 20 mg (Lote D)', 'Lote D', 14.99, 12.99, '2023-11-30', 0.0, 0.12),
+    (1000000000005, 60, 'Dipirona Jarabe 500 mg/5ml (Lote E)', 'Lote E', 8.99, 7.49, '2023-10-28', 0.0, 0.12),
+    (1000000000006, 75, 'Aspirina Tableta 500 mg (Lote F)', 'Lote F', 3.99, 2.99, '2023-11-30', 0.0, 0.12),
+    (1000000000007, 40, 'Cetirizina Tableta 10 mg (Lote G)', 'Lote G', 9.99, 8.49, '2023-12-15', 0.0, 0.12),
+    (1000000000008, 90, 'Vitamina C Tableta Efervescente 1000 mg (Lote H)', 'Lote H', 7.49, 6.99, '2023-10-31', 0.0, 0.12),
+    (1000000000009, 60, 'Loratadina Tableta 10 mg (Lote I)', 'Lote I', 6.99, 5.99, '2023-12-20', 0.0, 0.12),
+    (1000000000010, 120, 'Dextrometorfano Jarabe 15 mg/5ml (Lote J)', 'Lote J', 5.49, 4.99, '2023-11-25', 0.0, 0.12),
+    (1000000000011, 70, 'Vitamina D Cápsula 1000 UI (Lote K)', 'Lote K', 12.99, 11.49, '2023-11-30', 0.0, 0.12),
+    (1000000000012, 50, 'Ranitidina Tableta 150 mg (Lote L)', 'Lote L', 8.49, 7.99, '2023-12-31', 0.0, 0.12),
+    (1000000000013, 35, 'Salbutamol Inhalador 100 mcg (Lote M)', 'Lote M', 14.99, 13.49, '2023-11-15', 0.0, 0.12),
+    (1000000000014, 85, 'Ciprofloxacino Tableta 500 mg (Lote N)', 'Lote N', 15.99, 14.49, '2023-12-25', 0.0, 0.12),
+    (1000000000015, 55, 'Metamizol Tableta 500 mg (Lote O)', 'Lote O', 6.99, 5.99, '2023-11-30', 0.0, 0.12),
+    (1000000000016, 25, 'Lansoprazol Cápsula 30 mg (Lote P)', 'Lote P', 10.99, 9.49, '2023-12-20', 0.0, 0.12),
+    (1000000000017, 60, 'Diazepam Tableta 5 mg (Lote Q)', 'Lote Q', 6.99, 5.99, '2023-11-15', 0.0, 0.12),
+    (1000000000018, 40, 'Sertralina Tableta 50 mg (Lote R)', 'Lote R', 8.49, 7.99, '2023-12-31', 0.0, 0.12),
+    (1000000000019, 80, 'Acetaminofén Jarabe Infantil 120 mg/5ml (Lote S)', 'Lote S', 5.99, 4.99, '2023-11-30', 0.0, 0.12),
+    (1000000000020, 50, 'Amlodipino Tableta 5 mg (Lote T)', 'Lote T', 12.99, 11.49, '2023-12-25', 0.0, 0.12);
 end
-    go
+go
 
+drop table Cliente
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Cliente')
 BEGIN
     CREATE TABLE Cliente (
         cedula BIGINT PRIMARY KEY,
-        tipo_persona NVARCHAR(50),
-        nombres_c NVARCHAR(100),
-        apellidos_c NVARCHAR(100),
-        parroquia NVARCHAR(100),
+        nombres_c NVARCHAR(30),
+        apellidos_c NVARCHAR(30),
         direccion_c NVARCHAR(100),
-        email_c NVARCHAR(100),
-        telefono_c NVARCHAR(40),
+        email_c NVARCHAR(60),
+        telefono_c NVARCHAR(10),
         fecha_nac DATE,
-        observaciones_c VARCHAR(200)
+        descuentos DECIMAL(6, 2)
     );
-	INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
-VALUES
-    ( 1717506289, 'Persona Natural', 'Juan', 'Pérez', 'Parroquia 1', 'Dirección 1', 'juan@example.com', '1234567890', '1990-01-01', 'Observaciones 1'),
-    ( 1724246234, 'Persona Jurídica', 'Empresa A', 'S.A.', 'Parroquia 2', 'Dirección 2', 'empresaA@example.com', '0987654321', '1995-05-10', 'Observaciones 2'),
-    ( 1718575192, 'Persona Natural', 'María', 'Gómez', 'Parroquia 3', 'Dirección 3', 'maria@example.com', '5678901234', '1988-12-15', 'Observaciones 3'),
-    ( 1804934808, 'Persona Jurídica', 'Empresa B', 'C.A.', 'Parroquia 4', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 'Observaciones 4'),
-    ( 1900854553, 'Persona Natural', 'Pedro', 'López', 'Parroquia 5', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 'Observaciones 5');
-END
-go
 
-drop table Cliente
+    INSERT INTO Cliente (cedula, nombres_c, apellidos_c, direccion_c, email_c, telefono_c, fecha_nac, descuentos)
+    VALUES
+        (1717506289, 'Juan', 'Pérez', 'Dirección 1', 'juan@example.com', '1234567890', '1990-01-01', 0.00),
+        (1724246234, 'Empresa A', 'S.A.', 'Dirección 2', 'empresaA@example.com', '0987654321', '1995-05-10', 0.00),
+        (1718575192, 'María', 'Gómez', 'Dirección 3', 'maria@example.com', '5678901234', '1988-12-15', 0.00),
+        (1804934808, 'Empresa B', 'C.A.', 'Dirección 4', 'empresaB@example.com', '0432109876', '2000-07-20', 0.00),
+        (1900854553, 'Pedro', 'López', 'Dirección 5', 'pedro@example.com', '9999999999', '1993-06-30', 0.00);
+END
+GO
+
 
 --Consumidor Final
-INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, parroquia, direccion_c, email_c, telefono_c, fecha_nac, observaciones_c)
+INSERT INTO Cliente (cedula, nombres_c, apellidos_c, direccion_c, email_c, telefono_c, fecha_nac, descuentos)
 VALUES
-    ( 1111111111, 'N/A', 'Consumidor final', 'N/A', 'N/A 1', 'N/A', 'N/A', '9999999999', '2023-09-01', NULL);
+    ( 1111111111, 'Consumidor final', 'N/A', 'N/A 1', 'N/A', '9999999999', GETDATE(), 0.00);
 
-go;
 
 -- Crear la tabla Factura
 IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = 'Factura')
@@ -209,3 +206,23 @@ select * from ListaProductosSeleccionados;
 SELECT * FROM Cliente WHERE cedula = 1111111111;
 
 go
+
+use db_farmacia
+exec sp_spaceused '[dbo].[Producto]'
+exec sp_spaceused '[dbo].[Cliente]'
+exec sp_spaceused '[dbo].[Factura]'
+exec sp_spaceused '[dbo].[Parametro]'
+exec sp_spaceused '[dbo].[Proveedor]'
+exec sp_spaceused '[dbo].[Usuario]'
+exec sp_spaceused '[dbo].[ListaProductosSeleccionados]'
+
+exec sp_helpdb
+DECLARE @TableName NVARCHAR(128) = 'Cliente'
+
+-- Calcula el tamaño promedio de un registro en bytes
+SELECT
+    ROUND(SUM(LEN(column_name)) / COUNT(*), 2) AS TamañoPromedioBytes
+FROM
+    INFORMATION_SCHEMA.COLUMNS
+WHERE
+    TABLE_NAME = @TableName

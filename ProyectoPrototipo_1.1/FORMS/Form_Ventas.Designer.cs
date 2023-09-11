@@ -169,6 +169,7 @@
             // 
             // tabPage1
             // 
+            tabPage1.BackColor = Color.White;
             tabPage1.BorderStyle = BorderStyle.Fixed3D;
             tabPage1.Controls.Add(label26);
             tabPage1.Controls.Add(label44);
@@ -198,7 +199,6 @@
             tabPage1.Size = new Size(1713, 646);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Selección Producto";
-            tabPage1.UseVisualStyleBackColor = true;
             // 
             // label26
             // 
@@ -454,20 +454,20 @@
             // 
             // tabPage2
             // 
+            tabPage2.BackColor = Color.White;
             tabPage2.BorderStyle = BorderStyle.Fixed3D;
             tabPage2.Controls.Add(panel8);
             tabPage2.Controls.Add(label46);
             tabPage2.Controls.Add(panel4);
             tabPage2.Controls.Add(panel3);
             tabPage2.Controls.Add(Continuar);
-            tabPage2.Location = new Point(4, 29);
+            tabPage2.Location = new Point(4, 27);
             tabPage2.Margin = new Padding(3, 4, 3, 4);
             tabPage2.Name = "tabPage2";
             tabPage2.Padding = new Padding(3, 4, 3, 4);
-            tabPage2.Size = new Size(1713, 644);
+            tabPage2.Size = new Size(1713, 646);
             tabPage2.TabIndex = 1;
             tabPage2.Text = "Datos cliente";
-            tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel8
             // 
@@ -760,17 +760,17 @@
             // 
             // tabPage4
             // 
+            tabPage4.BackColor = Color.White;
             tabPage4.BorderStyle = BorderStyle.Fixed3D;
             tabPage4.Controls.Add(panel2);
             tabPage4.Controls.Add(bttAnular);
             tabPage4.Controls.Add(bttNuevaVenta);
-            tabPage4.Location = new Point(4, 29);
+            tabPage4.Location = new Point(4, 27);
             tabPage4.Margin = new Padding(3, 4, 3, 4);
             tabPage4.Name = "tabPage4";
-            tabPage4.Size = new Size(1713, 644);
+            tabPage4.Size = new Size(1713, 646);
             tabPage4.TabIndex = 3;
             tabPage4.Text = "Factura";
-            tabPage4.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -815,6 +815,9 @@
             // 
             // bttAnular
             // 
+            bttAnular.FlatAppearance.BorderColor = Color.Red;
+            bttAnular.FlatStyle = FlatStyle.Flat;
+            bttAnular.Font = new Font("Cooper Black", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             bttAnular.Location = new Point(1278, 145);
             bttAnular.Margin = new Padding(3, 4, 3, 4);
             bttAnular.Name = "bttAnular";
@@ -826,6 +829,9 @@
             // 
             // bttNuevaVenta
             // 
+            bttNuevaVenta.FlatAppearance.BorderColor = Color.Lime;
+            bttNuevaVenta.FlatStyle = FlatStyle.Flat;
+            bttNuevaVenta.Font = new Font("Cooper Black", 10.8F, FontStyle.Regular, GraphicsUnit.Point);
             bttNuevaVenta.Location = new Point(1278, 357);
             bttNuevaVenta.Margin = new Padding(3, 4, 3, 4);
             bttNuevaVenta.Name = "bttNuevaVenta";
@@ -860,6 +866,7 @@
             // 
             // tabPage8
             // 
+            tabPage8.BackColor = Color.White;
             tabPage8.Controls.Add(panel9);
             tabPage8.Controls.Add(label21);
             tabPage8.Controls.Add(label20);
@@ -871,7 +878,6 @@
             tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
             tabPage8.Text = "Lista de ventas";
-            tabPage8.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
@@ -1102,6 +1108,7 @@
             // 
             // tabPage7
             // 
+            tabPage7.BackColor = Color.White;
             tabPage7.Controls.Add(lblSaldoFinal);
             tabPage7.Controls.Add(lblIngresos);
             tabPage7.Controls.Add(lblEgresos);
@@ -1120,7 +1127,6 @@
             tabPage7.Size = new Size(1763, 710);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
-            tabPage7.UseVisualStyleBackColor = true;
             // 
             // lblSaldoFinal
             // 

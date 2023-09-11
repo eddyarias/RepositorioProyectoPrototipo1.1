@@ -15,12 +15,9 @@ namespace ProyectoPrototipo_1._1.FORMS
 {
     public partial class Form_AgregarCliente : Form
     {
-        public Connect connect;
+        public Connect connect = new Connect();
         public string CedulaClienteRegistrada { get; private set; }
 
-
-
-        public string con = "Server=DESKTOP-OUHSBBV;Database=db_farmacia;Integrated Security=True;";
         public Form_AgregarCliente(Connect connect)
         {
             InitializeComponent();
@@ -36,7 +33,6 @@ namespace ProyectoPrototipo_1._1.FORMS
         private void button4_Click(object sender, EventArgs e)
         {
             string cedula = txtBCedula.Text;
-            string tipo = comboBoxTipoPersona.Text;
             string nombres = txtBNombres.Text;
             string apellidos = txtBApellidos.Text;
             string direccion = txtBDireccion.Text;
@@ -45,17 +41,17 @@ namespace ProyectoPrototipo_1._1.FORMS
             DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
 
 
-            if (!ValidateCedula(cedula)|| ValidateTipo(tipo)||ValidateNombres(nombres)||ValidateApellidos(apellidos)||ValidateDireccion(direccion)|| ValidateCorreo(correo)|| ValidateCelular(celular))
+            if (!ValidateCedula(cedula)  || ValidateNombres(nombres) || ValidateApellidos(apellidos) || ValidateDireccion(direccion) || ValidateCorreo(correo) || ValidateCelular(celular))
             {
                 MessageBox.Show("Corrija los campos invalidos antes de guardar.");
-  
+
                 return;
             }
 
-            GuardarCliente(cedula, tipo, nombres, apellidos, direccion, correo, celular, fechaNacimiento);
+            GuardarCliente(cedula, nombres, apellidos, direccion, correo, celular, fechaNacimiento);
         }
 
-        private void GuardarCliente(string cedula, string tipo, string nombres, string apellidos, string direccion, string correo, string celular, DateTime fechaNacimiento)
+        private void GuardarCliente(string cedula, string nombres, string apellidos, string direccion, string correo, string celular, DateTime fechaNacimiento)
         {
 
 
@@ -66,10 +62,10 @@ namespace ProyectoPrototipo_1._1.FORMS
                 {
 
                     // Define la consulta SQL para insertar un nuevo cliente
-                    string insertQuery = "INSERT INTO Cliente (cedula, tipo_persona, nombres_c, apellidos_c, direccion_c, email_c, telefono_c, fecha_nac) " +
-                        "VALUES (@Cedula, @Tipo, @Nombres, @Apellidos, @Direccion, @Correo, @Celular, @FechaNacimiento)";
+                    string insertQuery = "INSERT INTO Cliente (cedula, nombres_c, apellidos_c, direccion_c, email_c, telefono_c, fecha_nac) " +
+                        "VALUES (@Cedula, @Nombres, @Apellidos, @Direccion, @Correo, @Celular, @FechaNacimiento)";
 
-                    using (SqlConnection connection = new SqlConnection(con))
+                    using (SqlConnection connection = new SqlConnection(connect.con))
                     {
                         connection.Open();
 
@@ -77,7 +73,6 @@ namespace ProyectoPrototipo_1._1.FORMS
                         {
                             // Asigna los valores de los parámetros a las variables en la consulta SQL
                             cmd.Parameters.AddWithValue("@Cedula", cedula);
-                            cmd.Parameters.AddWithValue("@Tipo", tipo);
                             cmd.Parameters.AddWithValue("@Nombres", nombres);
                             cmd.Parameters.AddWithValue("@Apellidos", apellidos);
                             cmd.Parameters.AddWithValue("@Direccion", direccion);
@@ -225,21 +220,6 @@ namespace ProyectoPrototipo_1._1.FORMS
             }
         }
 
-        private void comboBoxTipoPersona_Leave(object sender, EventArgs e)
-        {
-            // Validate Tipo Persona (ComboBox)
-
-            if (string.IsNullOrEmpty(comboBoxTipoPersona.Text))
-            {
-                lblerrorTipo.Text = "Seleccione un tipo de persona";
-                lblerrorTipo.ForeColor = Color.Red;
-            }
-            else
-            {
-                lblerrorTipo.Text = ""; // Clear the error message
-            }
-
-        }
 
         private void txtBApellidos_Leave(object sender, EventArgs e)
         {
@@ -288,7 +268,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             {
                 lblerrorCelular.Text = ""; // Clear the error message
             }
-            
+
         }
 
         private void txtBEmail_Leave(object sender, EventArgs e)
@@ -305,20 +285,6 @@ namespace ProyectoPrototipo_1._1.FORMS
             }
         }
 
-        private Boolean ValidateTipo(string tipo)
-        {
-            if (string.IsNullOrEmpty(tipo))
-            {
-                lblerrorTipo.Text = "Seleccione un tipo de persona";
-                lblerrorTipo.ForeColor = Color.Red;
-                return true;
-            }
-            else
-            {
-                lblerrorTipo.Text = ""; // Clear the error message
-                return false;
-            }
-        }
 
         private Boolean ValidateNombres(string nombres)
         {

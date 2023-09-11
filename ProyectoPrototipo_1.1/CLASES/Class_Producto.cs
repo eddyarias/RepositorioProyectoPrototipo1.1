@@ -10,7 +10,7 @@ namespace ProyectoPrototipo_1._0.CLASES
     public class Class_Producto
     {
         [Key]
-        public int codigo { get; set; }
+        public long codigo { get; set; }
         public int cantidad { get; set; }
         public string descripcion { get; set; }
         public string lote { get; set; }

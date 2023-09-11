@@ -28,17 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.SuspendLayout();
+            SuspendLayout();
             // 
             // AgregarProductoForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Name = "AgregarProductoForm";
-            this.Text = "AgregarProductoForm";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(800, 450);
+            Name = "AgregarProductoForm";
+            Text = "AgregarProductoForm";
+            Load += AgregarProductoForm_Load;
+            ResumeLayout(false);
         }
 
         #endregion

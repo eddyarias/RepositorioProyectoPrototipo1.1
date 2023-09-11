@@ -93,9 +93,9 @@ namespace ProyectoPrototipo_1._1.FORMS
             get { return (int)numericUpDownCantidad.Value; }
         }
 
-        
-            
-        
+
+
+
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
@@ -113,5 +113,10 @@ namespace ProyectoPrototipo_1._1.FORMS
         private TextBox txtDescripcion;
         private TextBox txtPrecio;
         private NumericUpDown numericUpDownCantidad;
+
+        private void AgregarProductoForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
