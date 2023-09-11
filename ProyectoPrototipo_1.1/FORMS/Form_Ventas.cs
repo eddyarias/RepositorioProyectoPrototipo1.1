@@ -922,11 +922,11 @@ namespace ProyectoPrototipo_1._0
                 // Construir el texto de la factura
                 string facturaText = "Fecha emisión:       " + DateTime.Now.ToShortDateString() + "\n" +
                                      "Datos del cliente\n" +
-                                    "Cedula:           " + cedulaCliente + "\n\n" +
+                                    "Cédula:           " + cedulaCliente + "\n\n" +
                                      BuscarCliente2(cedulaCliente) + "\n" +
                                      "Forma de pago:            " + formaPago + "\n\n" +
                                      "Detalle\n" +
-                                     "Codigo     \tDescripcion                                    \tPrecio               \tCantidad              \tSubtotal\n";
+                                     "Código                     \tDescripción                                    \tPrecio               \tCantidad              \tSubtotal\n";
 
                 foreach (ProductoCarrito producto in carritoDeCompras)
                 {

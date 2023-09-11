@@ -135,7 +135,7 @@ BEGIN
     CREATE TABLE ListaProductosSeleccionados (
         idListaProducSelec INT primary key,
 		idFactura CHAR(15),
-        idProducto INT,
+        idProducto BIGINT,
         cantidad INT,
         precio DECIMAL(18, 2),
         subtotal DECIMAL(18, 2),
@@ -161,10 +161,10 @@ VALUES
 -- Añadir datos a la tabla ListaProductosSeleccionados
 INSERT INTO ListaProductosSeleccionados (idListaProducSelec, idFactura, idProducto, cantidad, precio, subtotal, descuentoDolares)
 VALUES
-    (1, '1001000000001', 101, 2, 50.00, 100.00, 0.00),
-    (2, '1001000000001', 102, 3, 20.00, 60.00, 5.00),
-    (3, '1001000000002', 103, 1, 80.00, 80.00, 2.50),
-    (4, '1001000000002', 104, 2, 35.00, 70.00, 0.00);
+    (1, '1001000000001', 1000000000001, 2, 50.00, 100.00, 0.00),
+    (2, '1001000000001', 1000000000002, 3, 20.00, 60.00, 5.00),
+    (3, '1001000000002', 1000000000003, 1, 80.00, 80.00, 2.50),
+    (4, '1001000000002', 1000000000004, 2, 35.00, 70.00, 0.00);
 
 
 --Administración del sistema
@@ -226,3 +226,5 @@ FROM
     INFORMATION_SCHEMA.COLUMNS
 WHERE
     TABLE_NAME = @TableName
+
+	select * from Producto

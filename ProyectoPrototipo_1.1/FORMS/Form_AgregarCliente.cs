@@ -41,7 +41,7 @@ namespace ProyectoPrototipo_1._1.FORMS
             DateTime fechaNacimiento = dateTimePickerFechaNacimiento.Value;
 
 
-            if (!ValidateCedula(cedula)  || ValidateNombres(nombres) || ValidateApellidos(apellidos) || ValidateDireccion(direccion) || ValidateCorreo(correo) || ValidateCelular(celular))
+            if (!ValidateCedula(cedula) || ValidateNombres(nombres) || ValidateApellidos(apellidos) || ValidateDireccion(direccion) || ValidateCorreo(correo) || ValidateCelular(celular))
             {
                 MessageBox.Show("Corrija los campos invalidos antes de guardar.");
 

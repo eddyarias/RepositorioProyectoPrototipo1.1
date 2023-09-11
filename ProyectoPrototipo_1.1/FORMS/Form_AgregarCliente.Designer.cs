@@ -236,7 +236,7 @@
             label20.Name = "label20";
             label20.Size = new Size(135, 20);
             label20.TabIndex = 45;
-            label20.Text = "Correo electronico:";
+            label20.Text = "Correo electrónico:";
             // 
             // label21
             // 

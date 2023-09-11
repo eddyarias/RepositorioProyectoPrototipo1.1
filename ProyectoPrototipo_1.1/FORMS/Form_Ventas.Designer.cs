@@ -809,9 +809,9 @@
             label18.Font = new Font("Consolas", 9F, FontStyle.Regular, GraphicsUnit.Point);
             label18.Location = new Point(46, 113);
             label18.Name = "label18";
-            label18.Size = new Size(64, 18);
+            label18.Size = new Size(16, 18);
             label18.TabIndex = 5;
-            label18.Text = "label18";
+            label18.Text = ".";
             // 
             // bttAnular
             // 
@@ -877,7 +877,7 @@
             tabPage8.Name = "tabPage8";
             tabPage8.Size = new Size(1763, 710);
             tabPage8.TabIndex = 3;
-            tabPage8.Text = "Lista de ventas";
+            tabPage8.Text = "Lista de Ventas";
             // 
             // panel9
             // 
@@ -1121,10 +1121,10 @@
             tabPage7.Controls.Add(label36);
             tabPage7.Controls.Add(label35);
             tabPage7.Controls.Add(label34);
-            tabPage7.Location = new Point(4, 27);
+            tabPage7.Location = new Point(4, 29);
             tabPage7.Name = "tabPage7";
             tabPage7.Padding = new Padding(3);
-            tabPage7.Size = new Size(1763, 710);
+            tabPage7.Size = new Size(1763, 708);
             tabPage7.TabIndex = 2;
             tabPage7.Text = "Cerrar caja";
             // 
