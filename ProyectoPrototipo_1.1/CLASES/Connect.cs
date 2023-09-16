@@ -31,10 +31,10 @@ namespace ProyectoPrototipo_1._0
         ////Connect Poaquiza
         public Connect()
         {
-            this.usuario = "jonathan";
-            this.pass = "123";
+            this.usuario = "Milton";
+            this.pass = "Epn123";
 
-            server = "LAPTOP-S7D8N62P\\MSSQLSERVER10";
+            server = "LAPTOP-VF0SV152\\SQLEXPRESS";
 
             bd = "db_farmacia";
 

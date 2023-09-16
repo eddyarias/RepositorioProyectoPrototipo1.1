@@ -191,6 +191,10 @@ BEGIN
 		valor NUMERIC(5,2)
 	);
 END
+--Insertar un parametro
+INSERT INTO Parametro ( parametro, valor)
+VALUES ('IVA', 0.12)
+
 -- Insertar usuario administrador
 INSERT INTO Usuario (cedula_identidad, username, pass, tipo_usuario)
 VALUES ('0502863673', 'jonathan', 'fa585d89c851dd338a70dcf535aa2a92fee7836dd6aff1226583e88e0996293f16bc009c652826e0fc5c706695a03cddce372f139eff4d13959da6f1f5d3eabe', 'Administrador');

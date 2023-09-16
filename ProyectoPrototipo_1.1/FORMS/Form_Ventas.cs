@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Numerics;
@@ -373,6 +374,7 @@ namespace ProyectoPrototipo_1._0
 
             if (productoInfo != null)
             {
+                Debug.WriteLine("Hola, producto info si se obtiene");
                 // Crear una instancia del formulario de cuadro de diálogo personalizado
                 AgregarProductoForm agregarProductoForm = new AgregarProductoForm();
 
@@ -428,6 +430,12 @@ namespace ProyectoPrototipo_1._0
                         // Agregar el producto al carrito
                         carritoDeCompras.Add(productoSeleccionado);
                         this.bttContinuarSelecProd.Enabled = true;
+
+                        foreach (var producto in carritoDeCompras)
+                        {
+                            Debug.WriteLine($"Código: {producto.CodigoProducto}, Descripción: {producto.Descripcion}, Precio Unitario: {producto.PrecioUnitario}, Cantidad: {producto.Cantidad}");
+                        }
+
 
                         // Ahora puedes usar el carritoDeCompras para realizar un seguimiento de los productos seleccionados
                         ActualizarResumenCarrito();
